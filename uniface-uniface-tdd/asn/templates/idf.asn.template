@@ -1,0 +1,5 @@
+#file .\asn\include.asn
+
+[RESOURCES]
+<uniface_packages_path>VersionControl\VersionControl.uar
+<uniface_packages_path>VersionControl\UnifaceMeta.uar

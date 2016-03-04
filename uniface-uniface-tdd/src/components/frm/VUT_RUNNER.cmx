@@ -1,0 +1,1542 @@
+﻿<?xml version='1.0' encoding='UTF-8' ?>
+<!-- Created by Uniface - (C) Uniface B.V. All rights reserved -->
+<!DOCTYPE UNIFACE PUBLIC "UNIFACE.DTD" "UNIFACE.DTD">
+<UNIFACE release="9.6" xmlengine="2.0">
+<TABLE>
+<DSC name="UFORM" model="DICT" system="S" pseudo ="73" level="1" noupdate="0"
+ rbk="0" ffsql="0" transnr="0" segsize="0" ufocc="1000" charset=".U">
+<FLD name="UTIMESTAMP" seqno="1" type="E" level="2" pack="0" scale="0" length="15"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="UCOMPSTAMP" seqno="2" type="E" level="2" pack="0" scale="0" length="15"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="ULABEL" seqno="3" type="S" level="2" pack="0" scale="0" length="16"
+ pointer="0" inum="1" ufocc="0" mandatory="yes" idxnum="1" idxsnr="101" />
+<FLD name="FTYP" seqno="4" type="S" level="2" pack="0" scale="0" length="4"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="UVERS" seqno="5" type="S" level="2" pack="0" scale="0" length="12"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="UDESCR" seqno="6" type="S" level="2" pack="0" scale="0" length="25"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="FHEAD" seqno="7" type="S" level="2" pack="0" scale="0" length="6"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="VMAAT" seqno="8" type="S" level="2" pack="0" scale="0" length="6"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="HMAAT" seqno="9" type="S" level="2" pack="0" scale="0" length="6"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="UCOLOR" seqno="10" type="S" level="2" pack="0" scale="0" length="6"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="WVPOS" seqno="11" type="S" level="2" pack="0" scale="0" length="6"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="WHPOS" seqno="12" type="S" level="2" pack="0" scale="0" length="6"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="WVSIZ" seqno="13" type="S" level="2" pack="0" scale="0" length="6"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="WHSIZ" seqno="14" type="S" level="2" pack="0" scale="0" length="6"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="CLRSCRN" seqno="15" type="S" level="2" pack="0" scale="0" length="1"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="UBORDER" seqno="16" type="S" level="2" pack="0" scale="0" length="1"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="RIBIN" seqno="17" type="S" level="2" pack="0" scale="0" length="16"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="RIBOT" seqno="18" type="S" level="2" pack="0" scale="0" length="16"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="MOVABLE" seqno="19" type="S" level="2" pack="0" scale="0" length="1"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="VIDEOINVERSE" seqno="20" type="S" level="2" pack="0" scale="0" length="1"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="VIDEOBRIGHT" seqno="21" type="S" level="2" pack="0" scale="0" length="1"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="VIDEOUNLINE" seqno="22" type="S" level="2" pack="0" scale="0" length="1"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="VIDEOBLINK" seqno="23" type="S" level="2" pack="0" scale="0" length="1"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="UPANEL" seqno="24" type="S" level="2" pack="0" scale="0" length="16"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="POSPANEL" seqno="25" type="S" level="2" pack="0" scale="0" length="1"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="UPULL" seqno="26" type="S" level="2" pack="0" scale="0" length="16"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="HIDESTACK" seqno="27" type="S" level="2" pack="0" scale="0" length="1"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="TEMPLATENAME" seqno="28" type="S" level="2" pack="0" scale="0" length="16"
+ pointer="0" inum="1" ufocc="0" idxnum="2" idxsnr="1" />
+<FLD name="UINHERIT" seqno="29" type="B" level="2" pack="0" scale="0" length="1"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="LIBRAR" seqno="30" type="S" level="2" pack="0" scale="0" length="16"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="UTRANSACT" seqno="31" type="S" level="2" pack="0" scale="0" length="8"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="TPLACTUAL" seqno="32" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\D3,0,0,0,,0,0,0,," />
+<FLD name="CONSTRAINTS" seqno="33" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\D4,0,0,0,,0,0,0,," />
+<FLD name="INIT" seqno="34" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\C1,0,0,0,,0,0,0,," />
+<FLD name="CLEAR" seqno="35" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\C2,0,0,0,,0,0,0,," />
+<FLD name="RETRIEVE" seqno="36" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\C3,0,0,0,,0,0,0,," />
+<FLD name="RECORD" seqno="37" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\C4,0,0,0,,0,0,0,," />
+<FLD name="STORE" seqno="38" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\C5,0,0,0,,0,0,0,," />
+<FLD name="DELET" seqno="39" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\C6,0,0,0,,0,0,0,," />
+<FLD name="ACCEPT" seqno="40" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\C7,0,0,0,,0,0,0,," />
+<FLD name="QUIT" seqno="41" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\C8,0,0,0,,0,0,0,," />
+<FLD name="MENU" seqno="42" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\C9,0,0,0,,0,0,0,," />
+<FLD name="INTKEY" seqno="43" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\CA,0,0,0,,0,0,0,," />
+<FLD name="SPRINT" seqno="44" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\CB,0,0,0,,0,0,0,," />
+<FLD name="EPRINT" seqno="45" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\CC,0,0,0,,0,0,0,," />
+<FLD name="ASYNC" seqno="46" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\CD,0,0,0,,0,0,0,," />
+<FLD name="GENERAL" seqno="47" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\CE,0,0,0,,0,0,0,," />
+<FLD name="FORMPIC" seqno="48" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\E0,0,0,0,,0,0,0,," />
+<FLD name="HEADER" seqno="49" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\E3,0,0,0,,0,0,0,," />
+<FLD name="LISTING" seqno="50" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\E5,0,0,0,,0,0,0,," />
+<FLD name="PERF" seqno="51" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\E1,0,0,0,,0,0,0,," />
+<FLD name="PROTO" seqno="52" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\E2,0,0,0,,0,0,0,," />
+<FLD name="TITLE" seqno="53" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\E7,0,0,0,,0,0,0,," />
+<FLD name="WINPROP" seqno="54" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\D2,0,0,0,,0,0,0,," />
+<FLD name="FRLF" seqno="55" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\E4,0,0,0,,0,0,0,," />
+<FLD name="FRGF" seqno="56" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\E6,0,0,0,,0,0,0,," />
+<FLD name="SFUNC" seqno="57" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\DC,0,0,0,,0,0,0,," />
+<FLD name="HTMLPROP" seqno="58" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\DD,0,0,0,,0,0,0,," />
+<FLD name="USCONTAINED" seqno="59" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\CF,0,0,0,,0,0,0,," />
+<FLD name="UEXECDEF" seqno="60" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\D0,0,0,0,,0,0,0,," />
+<FLD name="UPOPUP" seqno="61" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\D5,0,0,0,,0,0,0,," />
+<FLD name="UML_DATA" seqno="62" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\D6,0,0,0,,0,0,0,," />
+<FLD name="HTML_CMPPROP" seqno="63" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\D1,0,0,0,,0,0,0,," />
+<FLD name="HTML_FORMAT" seqno="64" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\D7,0,0,0,,0,0,0,," />
+<FLD name="HTML_STYLES" seqno="65" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\D8,0,0,0,,0,0,0,," />
+<FLD name="HTML_HOOK_H" seqno="66" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\D9,0,0,0,,0,0,0,," />
+<FLD name="HTML_HOOK_B" seqno="67" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\DA,0,0,0,,0,0,0,," />
+<FLD name="HTML_HOOK_E" seqno="68" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\DB,0,0,0,,0,0,0,," />
+<FLD name="HTML_BODYHOOK" seqno="69" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\DE,0,0,0,,0,0,0,," />
+<FLD name="HTML_CMPCLASS" seqno="70" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\DF,0,0,0,,0,0,0,," />
+<FLD name="GETSTATE" seqno="71" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\E8,0,0,0,,0,0,0,," />
+<FLD name="SETSTATE" seqno="72" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\E9,0,0,0,,0,0,0,," />
+<FLD name="UNOSTATE" seqno="73" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\EA,0,0,0,,0,0,0,," />
+<FLD name="CMP_EXT" seqno="74" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\EB,0,0,0,,0,0,0,," />
+<FLD name="UCTRIGGERS" seqno="75" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\EC,0,0,0,,0,0,0,," />
+<FLD name="UACCESSPATH" seqno="76" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\ED,0,0,0,,0,0,0,," />
+<FLD name="USPLITPROP" seqno="77" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\EE,0,0,0,,0,0,0,," />
+<FLD name="TPLACTUAL2" seqno="78" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\EF,0,0,0,,0,0,0,," />
+<FLD name="USTATEMANAGEDBY" seqno="79" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\F0,0,0,0,,0,0,0,," />
+<FLD name="HTMLSKELETON" seqno="80" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\F1,0,0,0,,0,0,0,," />
+</DSC>
+<OCC>
+<DAT name="UTIMESTAMP">2011-05-12T11:47:51.00</DAT>
+<DAT name="UCOMPSTAMP">2011-06-01T10:45:39.00</DAT>
+<DAT name="ULABEL">VUT_RUNNER</DAT>
+<DAT name="FTYP">LQ</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Unit Test Runner</DAT>
+<DAT name="WVPOS">3</DAT>
+<DAT name="WHPOS">1</DAT>
+<DAT name="WVSIZ">19</DAT>
+<DAT name="WHSIZ">101</DAT>
+<DAT name="CLRSCRN">N</DAT>
+<DAT name="UBORDER">N</DAT>
+<DAT name="MOVABLE">Y</DAT>
+<DAT name="UPANEL">TESTRUNNER</DAT>
+<DAT name="POSPANEL">T</DAT>
+<DAT name="HIDESTACK">N</DAT>
+<DAT name="UINHERIT">F</DAT>
+<DAT name="UTRANSACT">0</DAT>
+<DAT name="TPLACTUAL" xml:space='preserve'>
+#Comment ----------------------------------------------
+#Comment start_of_references
+#ifdefined TEMPLATENAME
+#info symbol TEMPLATENAME is already or also defined as a global or local constant
+#endif
+#define TEMPLATENAME=
+#Comment 
+
+#Comment end_of_references
+
+
+#Comment ----------------------------------------------
+#Comment start_of_mappings
+#Comment end_of_mappings
+
+
+#Comment ----------------------------------------------
+#Comment start_of_symbols
+#Comment end_of_symbols
+
+
+#Comment ----------------------------------------------
+</DAT>
+<DAT name="INIT" xml:space='preserve'>call lpRetrieve("&uALL;")
+
+if($batch)
+	call lpRun()
+; Return error status to calling script
+; TODO: Make filename build specific
+	if ($Errors$ + $Failures$ &gt; 0)
+		lfiledump "1", "errorlevel.log"
+	else
+		lfiledump "0", "errorlevel.log"
+	endif
+else
+	edit
+endif
+</DAT>
+<DAT name="CLEAR" xml:space='preserve'>#ifdefined frmEntity
+  ; Generated three tier component: Delegate clear() to FRM Subtype.
+  ; This allows a uniform implementation that can be invoked
+  ; by other objects too (for example, by a 'Clear' Button).
+  $collhandle("&lt;frmEntity&gt;")-&gt;clear()
+
+#else
+  clear
+
+#endif
+</DAT>
+<DAT name="RETRIEVE" xml:space='preserve'>call lpRetrieve(COMPONENT_NAME.DUMMY)</DAT>
+<DAT name="RECORD">;</DAT>
+<DAT name="STORE" xml:space='preserve'>#ifdefined frmEntity
+  ; Generated three tier component: Delegate save() to FRM Subtype.
+  ; This allows a uniform implementation that can be invoked
+  ; by other objects too (for example, by a 'Save' Button).
+  $collhandle("&lt;frmEntity&gt;")-&gt;save()
+
+#else
+  store
+  if ($status &lt; 0)
+     message $text(1500)    ; error
+     rollback
+  else
+    if ($status = 1)
+      message $text(1723)   ; no change
+    else
+      commit
+      if ($status &lt; 0)
+        rollback
+      else
+        message $text(1805) ; Ok
+      endif
+    endif
+  endif
+
+#endif</DAT>
+<DAT name="DELET">;</DAT>
+<DAT name="ACCEPT" xml:space='preserve'>#ifdefined frmEntity
+  ; Generated three tier component: Delegate save() to FRM Subtype.
+  ; This allows a uniform implementation that can be invoked
+  ; by other objects too (for example, by an 'OK' Button).
+if ($formmod)
+  $collhandle("&lt;frmEntity&gt;")-&gt;save()       ; save modifications
+  if ($status &lt; 0)                         ; check negative status from Save()
+    return (-1)
+  endif
+endif
+
+exit (0)
+#else
+#endif</DAT>
+<DAT name="GENERAL" xml:space='preserve'>;---------------------------------------
+entry lpClear
+;---------------------------------------
+	clear/e "DUMMY"
+end ; lpRetrieve
+
+;---------------------------------------
+entry lpRetrieve
+;---------------------------------------
+params
+	string pComponentProfile : IN
+endparams
+variables
+	String	vOperationsCode
+	String	vOperationType
+	String	vTextBeforeOperation
+	Numeric	vResult
+	Numeric	vOperationWordStart
+	Numeric	vPos
+	Numeric	vPosEol
+	String	vBuffer
+	String	vOperationName
+	String	vTestList
+	string	vChar
+endvariables
+
+putmess "Scanning for Tests"
+if (!$batch)
+	fieldsyntax XMLFILE.BUTTONS, "HID"
+	fieldsyntax SUFFIX.BUTTONS, "HID"
+endif
+
+;Scan through all the components looking for test cases
+clear/e "DUMMY"
+$TestComponents$ = 0
+
+clear/e "UFORM"
+ULABEL.UFORM/init = pComponentProfile
+retrieve/e "UFORM"
+setocc "UFORM", 1 
+while($status &gt; 0)
+	;Does this component have any tests in it?
+	if ($scan(SFUNC.UFORM, 'test') &gt; 0)
+
+		vOperationsCode = $uppercase(SFUNC.UFORM)
+
+		;vOperationWordStart = 0
+		;vOperationWordStart = $scan(vOperationsCode, 'operation ')
+		vOperationWordStart = $scan(vOperationsCode, "OPERATION ")
+
+		while(vOperationWordStart &gt; 0)
+			;This component has an operation
+
+			; Is it commented out?
+			vPos = vOperationWordStart - 1
+			vChar = ""
+			while (vPos &gt; 0)
+				vChar = vOperationsCode[vPos:1]
+				if (vChar = ";" | vChar = "%%^")
+					break
+				endif
+				vPos -= 1
+			endwhile
+			if (vChar != ";")
+				;If not commented out, check if it is marked as a Unit test
+				vOperationType = lpGetOperationType(vOperationsCode, vOperationWordStart)
+			else
+				vOperationType = ""
+			endif
+
+			vBuffer = vOperationsCode[vOperationWordStart + 9]
+			vOperationsCode = vBuffer
+
+			if(vOperationType = "TEST" | vOperationType = "BEFORE" | vOperationType = "AFTER")
+
+				vPosEol = $scan(vBuffer, "%%^")
+				vPosEol -= 1
+				vOperationName = vBuffer[1,vPosEol]
+				vOperationName = $ltrim(vOperationName, " ")
+				vOperationName = $rtrim(vOperationName, " ")
+
+				if(vOperationType = "TEST")
+					creocc "DUMMY", -1
+					TEST_NAME.DUMMY      = vOperationName
+					COMPONENT_NAME.DUMMY = ULABEL.UFORM
+					if (!$batch)
+						fieldsyntax "COMPONENT_NAME.DUMMY", "NED"
+					endif
+					DEBUG_FLAG.DUMMY		= 0
+					RUN_TEST.DUMMY		= 1
+					RESULT.DUMMY			= "Not Run"
+				elseif(vOperationType = "BEFORE")
+					putitem/id $TESTS_BEFORE_LIST$, ULABEL.UFORM, vOperationName
+				elseif(vOperationType = "AFTER")
+					putitem/id $TESTS_AFTER_LIST$, ULABEL.UFORM, vOperationName
+				endif
+				putmess "Found %%vOperationType%%% %%vOperationName%%% in %%ULABEL.UFORM%%%"
+			endif
+
+;			vOperationWordStart = 0
+			vOperationWordStart = $scan(vOperationsCode, "OPERATION ")		
+			;vOperationWordStart = $scan(vOperationsCode, 'operation ')
+
+		endwhile
+	endif
+	if (vOperationType != "")
+		$TestComponents$ += 1
+	endif
+	
+	setocc "UFORM", $curocc("UFORM") + 1
+endwhile
+
+if (!$batch)
+	setocc "DUMMY.DUMMY",1
+	$prompt = "COMPONENT_NAME.DUMMY"
+endif
+
+end ; lpRetrieve
+
+;---------------------------------------
+entry lpRun
+;---------------------------------------
+
+	putmess "Running tests"
+	setocc "DUMMY", 1
+	call lpNewComponent()
+
+	setocc "DUMMY",1
+	while($status &gt; 0)
+		if ($Component$ != component_name.dummy)
+			$Elapsed_Time$ = $clock - $Start_Time$
+			call lpLogXmlResults()
+			call lpNewComponent()
+		endif
+
+		if(RUN_TEST.DUMMY)
+			call lpRunTest()
+		else
+			RESULT.DUMMY = "Not Run"
+			MESSAGE.DUMMY = ""
+			fieldvideo "RESULT.DUMMY", "COL=6" ; Yellow
+		endif
+
+		if($batch)
+			putmess "%%RESULT.DUMMY%%%, %%TEST_NAME.DUMMY%%%, %%"%%MESSAGE.DUMMY%%%%%""
+		endif
+
+		setocc "DUMMY", $curocc("DUMMY") + 1
+		
+	endwhile
+
+	if (component_name.dummy != "")
+		$Elapsed_Time$ = $clock - $Start_Time$
+		call lpLogXmlResults()
+	endif
+	
+end ;lpRun
+
+;---------------------------------------
+entry lpNewComponent
+;---------------------------------------
+
+	$Start_Time$ = $clock
+	$Test_Results_List$ = ""
+	$Errors$ = 0
+	$Failures$ = 0
+	if ($IS_XML_OUTPUT$)
+		if ($lfileexists($XML_OUTPUT_FILE$) = 1)
+			lfiledelete $XML_OUTPUT_FILE$
+			if ($status &lt; 0)
+				putmess "Error %%$procerrorcontext deleting %%$XML_OUTPUT_FILE$"
+			endif
+		endif
+	endif
+	$Component$ = component_name.dummy
+	return (0)
+
+end ; lpNewComponent
+
+;---------------------------------------
+entry lpRunTest
+;---------------------------------------
+variables
+	Handle	vTestRunnerInstance
+	Handle	vComponentInstance
+	String	vBeforeTestName
+	string	vFailureList
+	string	vErrorList
+	String	vAfterTestName
+	String	vReturn
+	string 	vContext
+	String	vTestResultList
+	datetime	vStartTime
+	datetime	vEndTime
+	datetime	vElapsedTime
+	boolean	vIsPass
+endvariables
+
+	;TODO: do we need to instantiate this for every test?
+	newinstance "VUT_SERVICE", vTestRunnerInstance
+	
+	;Do we need to run anything before this test?
+	;TODO: Log failure in XML file
+	vIsPass = "T" ; Assume test will pass
+	vFailureList = ""
+	getitem/id vBeforeTestName, $TESTS_BEFORE_LIST$, COMPONENT_NAME.DUMMY
+	if($status &gt; 0 &amp; vBeforeTestName != "")
+		vReturn = vTestRunnerInstance-&gt;runTest(COMPONENT_NAME.DUMMY, vBeforeTestName, MESSAGE.DUMMY, vContext)
+		if($status &lt; 0 | vReturn &lt; 0)
+			if ($status &lt; 0)
+				RESULT.DUMMY = "Error"
+				$Errors$ += 1
+			else
+				RESULT.DUMMY = "Failed"
+				$Failures$ += 1
+			endif
+			MESSAGE.DUMMY = "BEFORE operation %%vBeforeTestName%%% failed to complete"
+			putitem/id vErrorList, "message", MESSAGE.DUMMY
+			putitem/id vErrorList, "type", "Before"
+			if (vContext != "")
+				putitem/id vErrorList, "context", vContext
+			else
+				putitem/id vErrorList, "context", $procerrorcontext
+			endif
+			vIsPass = "F"
+			fieldvideo "RESULT.DUMMY", "COL=4" ; Red
+		endif
+	endif
+
+	; Run test if we don't have a setup failure
+	if (vIsPass)
+		if(DEBUG_FLAG.DUMMY &amp; !$batch)
+			debug
+		endif
+		vStartTime = $clock
+		vReturn = vTestRunnerInstance-&gt;runTest(COMPONENT_NAME.DUMMY, TEST_NAME.DUMMY, MESSAGE.DUMMY, vContext)
+		vEndTime = $clock
+		if($status &lt; 0 | vReturn &lt; 0)
+			; TODO: Show "Error" when can't run test
+			if ($status &lt; 0)
+				RESULT.DUMMY = "Error"
+				$Errors$ += 1
+			else
+				RESULT.DUMMY = "Failed"
+				$Failures$ += 1
+			endif
+			fieldvideo "RESULT.DUMMY", "COL=4" ; Red
+			vIsPass = "F"
+			;TODO: show harness error?
+			if (vFailureList = "")
+				putitem/id vFailureList, "message", MESSAGE.DUMMY
+				putitem/id vFailureList, "type", RESULT.DUMMY
+				putitem/id vFailureList, "context", $procerrorcontext
+			endif
+		else
+			RESULT.DUMMY = "Passed"
+			fieldvideo "RESULT.DUMMY", "COL=2"
+		endif
+	endif
+
+	;Do we need to run anything after this test?
+	getitem/id vAfterTestName, $TESTS_AFTER_LIST$, COMPONENT_NAME.DUMMY
+	if($status &gt; 0 &amp; vAfterTestName != "")
+		;TODO: show harness error?
+		vReturn = vTestRunnerInstance-&gt;runTest(COMPONENT_NAME.DUMMY, vAfterTestName, MESSAGE.DUMMY, vContext)
+		if($status &lt; 0 | vReturn &lt; 0)
+			if ($status &lt; 0)
+				RESULT.DUMMY = "Error"
+				$Errors$ += 1
+			else
+				RESULT.DUMMY = "Failed"
+				$Failures$ += 1
+			endif
+			if (MESSAGE.DUMMY = "")
+				MESSAGE.DUMMY = "AFTER operation %%vAfterTestName%%% failed to complete"
+			else
+				MESSAGE.DUMMY = $concat(MESSAGE.DUMMY, ",","AFTER operation %%vAfterTestName%%% failed to complete")
+			endif
+			if (vFailureList = "")
+				putitem/id vErrorList, "message", MESSAGE.DUMMY
+				putitem/id vErrorList, "type", "After"
+				if (vContext != "")
+					putitem/id vErrorList, "context", vContext
+				else
+					putitem/id vErrorList, "context", $procerrorcontext
+				endif
+			endif
+			vIsPass = "F"
+			fieldvideo "RESULT.DUMMY", "COL=4"
+		endif
+	endif
+
+	vElapsedTime = vEndTime - vStartTime
+
+	if ($IS_XML_OUTPUT$)
+		; Create list of results to log as XML
+		vTestResultList = ""
+		putitem/id vTestResultList, "component", COMPONENT_NAME.DUMMY
+		putitem/id vTestResultList, "name", TEST_NAME.DUMMY
+		putitem/id vTestResultList, "time", vElapsedTime
+		if (vErrorList != "")
+			putitem/id vTestResultList, "error", vErrorList
+		endif
+		if (vFailureList != "")
+			putitem/id vTestResultList, "failure", vFailureList
+		endif
+		putitem $TEST_RESULTS_LIST$, -1, vTestResultList
+	endif
+
+	if (!vIsPass)
+		return -1
+	endif
+
+end ;lpRunTest
+
+
+;---------------------------------------
+entry lpGetOperationType
+;---------------------------------------
+returns String
+
+params
+	String	pOperationsCode			: IN
+	Numeric	pOperationWordStart		: IN
+endparams
+
+variables
+	Numeric	vTemp
+	String	vTextBeforeOperation
+	Numeric	vResult
+endvariables
+
+	vTemp = pOperationWordStart - 1
+	vTextBeforeOperation = pOperationsCode[1,vTemp]
+
+	vResult = $scan(vTextBeforeOperation, "%%^; @TEST")
+	if(vResult &gt; 0)
+		return "TEST"
+	endif
+
+	vResult = $scan(vTextBeforeOperation, "%%^; @BEFORE")
+	if(vResult &gt; 0)
+		return "BEFORE"
+	endif
+
+	vResult = $scan(vTextBeforeOperation, "%%^; @AFTER")
+	if(vResult &gt; 0)
+		return "AFTER"
+	endif
+
+	return ""
+
+end ;lpGetOperationType
+
+;---------------------------------------
+entry lpLogXmlResults
+;---------------------------------------
+variables
+	String	vTestResultList
+	String	vErrorList
+	String	vFailureList
+	String	vMessage
+	String	vType
+	String	vContext
+	String	vTestName
+	String	vVersion
+	String	vXmlOutputFile
+	String vTimestamp
+	Datetime	vElapsedTime
+	Numeric	vItemCount
+	Numeric	vItemNo
+	Numeric	vSecs
+endvariables
+
+	vXmlOutputFile = $concat($XML_OUTPUT_FILE$, $Component$, ".xml")
+	vItemCount = $itemcount($TEST_RESULTS_LIST$)
+
+	if ($status &lt; 0)
+		putmess "Error %%$procerrorcontext creating %%vXmlOutputFile"
+	endif
+
+	getitem/id vVersion, $about, "version"
+	call lpXmlTimestamp($datim, vTimestamp)
+
+	lfiledump "&lt;?xml version=%%"1.0%%" encoding=%%"UTF-8%%"?&gt;%%^", vXmlOutputFile, "UTF-8"
+	vSecs = $Elapsed_Time$[H] * 3600 + $Elapsed_Time$[N] * 60 + $Elapsed_Time$[S] + ($Elapsed_Time$[T]/100)
+
+	lfiledump/append "&lt;testsuite name=%%"%%$Component$%%" tests=%%"%%vItemCount%%"  errors=%%"%%$Errors$%%" failures=%%"%%$Failures$%%" timestamp=%%"%%vTimestamp%%" time=%%"%%vSecs%%"&gt;%%^", vXmlOutputFile
+	lfiledump/append "  &lt;properties&gt;%%^", vXmlOutputFile
+	lfiledump/append "    &lt;property name=%%"uniface.version%%" value=%%"%%vVersion%%" /&gt;%%^", vXmlOutputFile
+	lfiledump/append "  &lt;/properties&gt;%%^", vXmlOutputFile
+
+	vItemNo = 0
+	while (vItemNo &lt; vItemCount)
+		vItemNo += 1
+		getitem vTestResultList, $TEST_RESULTS_LIST$, 1
+		delitem $TEST_RESULTS_LIST$, 1
+		getitem/id $Component$, vTestResultList, "component"
+		getitem/id vTestName, vTestResultList, "name"
+		getitem/id vElapsedTime, vTestResultList, "time"
+		$1 = $concat("classname=","%%"", $Component$, "%%"")
+		$2 = $concat("name=","%%"", vTestName, "%%"")
+		vSecs = vElapsedTime[H] * 3600 + vElapsedTime[N] * 60 + vElapsedTime[S] + (vElapsedTime[T]/100)
+		
+		$3 = $concat("time=","%%"", "%%vSecs%%%", "%%"")
+		getitem/id vErrorList, vTestResultList, "error"
+		getitem/id vFailureList, vTestResultList, "failure"
+		if (vErrorList != "" | vFailureList != "")
+			;debug
+			lfiledump/append "  &lt;testcase %%$1%%% %%$2%%% %%$3%%%&gt;%%^", vXmlOutputFile
+			if (vErrorList != "")
+				; TODO: extract error
+				getitem/id vMessage, vErrorList, "message"
+				getitem/id vType, vErrorList, "type"
+				getitem/id vContext, vErrorList, "context"
+				if (vContext == "")
+					lfiledump/append "    &lt;error message=%%"%%vMessage%%" type=%%"%%vType%%" /&gt;%%^", vXmlOutputFile
+				else
+					lfiledump/append "    &lt;error message=%%"%%vMessage%%" type=%%"%%vType%%"&gt;%%vContext%%%&lt;/error&gt;%%^", vXmlOutputFile
+				endif
+			endif
+			if (vFailureList != "")
+				; TODO: extract error
+				getitem/id vMessage, vFailureList, "message"
+				getitem/id vType, vFailureList, "type"
+				getitem/id vContext, vFailureList, "context"
+				if (vContext == "")
+					lfiledump/append "    &lt;failure message=%%"%%vMessage%%" type=%%"%%vType%%" /&gt;%%^", vXmlOutputFile
+				else
+					lfiledump/append "    &lt;failure message=%%"%%vMessage%%" type=%%"%%vType%%"&gt;%%vContext%%%&lt;/failure&gt;%%^", vXmlOutputFile
+				endif
+			endif
+			lfiledump/append "  &lt;/testcase&gt;%%^", vXmlOutputFile
+		else
+			lfiledump/append "  &lt;testcase %%$1%%% %%$2%%% %%$3%%% /&gt;%%^", vXmlOutputFile
+		endif
+	endwhile
+	lfiledump/append "  &lt;system-out&gt;&lt;![CDATA[]]&gt;&lt;/system-out&gt;%%^", vXmlOutputFile
+	lfiledump/append "  &lt;system-err&gt;&lt;![CDATA[]]&gt;&lt;/system-err&gt;%%^", vXmlOutputFile
+	lfiledump/append "&lt;/testsuite&gt;%%^", vXmlOutputFile
+
+end ; lpLogXmlResults
+
+;---------------------------------------
+entry lpXmlTimestamp
+;---------------------------------------
+params
+	datetime pTimestamp : in
+	String   pFormatted : out
+endparams
+
+	$Formatted_Date$ = pTimeStamp[date]
+	$Formatted_Time$ = pTimestamp[clock]
+	
+	pFormatted = "%%$Formatted_Date$%%%T%%$Formatted_Time$%%%"
+
+end; lpXmlTimestamp
+</DAT>
+<DAT name="FORMPIC" xml:space='preserve'>&uFRM;TYP=E&uSEP;NAM=TOOLBAR.DUMMY&uSEP;WID=100&uSEP;HEI=2&uSEP;HOC=100&uSEP;VOC=2&uFRM;&uFRM;TYP=F&uSEP;NAM=CMD_CLEAR&uSEP;WID=8&uSEP;HEI=2&uFRM;&uFRM;TYP=F&uSEP;NAM=CMD_RETRIEVE&uSEP;WID=8&uSEP;HEI=2&uFRM;&uFRM;TYP=F&uSEP;NAM=CMD_RUN&uSEP;WID=8&uSEP;HEI=2&uFRM;
+
+&uFRM;TYP=E&uSEP;NAM=DUMMY.DUMMY&uSEP;WID=101&uSEP;HEI=14&uSEP;HOC=101&uSEP;VOC=14&uFRM; &uFRM;TYP=L&uSEP;NAM=COMPONENT_NAME.DUMMY&uSEP;WID=18&uSEP;HEI=1&uSEP;LAB=Component&uFRM;                 &uFRM;TYP=F&uSEP;NAM=COMPONENT_NAME&uSEP;WID=18&uSEP;HEI=1&uFRM;
+ &uFRM;TYP=L&uSEP;NAM=TEST_NAME.DUMMY&uSEP;WID=15&uSEP;HEI=1&uSEP;LAB=Test&uFRM;                    &uFRM;TYP=F&uSEP;NAM=TEST_NAME&uSEP;WID=32&uSEP;HEI=1&uFRM;
+ &uFRM;TYP=L&uSEP;NAM=DEBUG_FLAG.DUMMY&uSEP;WID=7&uSEP;HEI=1&uSEP;LAB=Debug?&uFRM;                            &uFRM;TYP=F&uSEP;NAM=DEBUG_FLAG&uSEP;WID=6&uSEP;HEI=1&uFRM;
+ &uFRM;TYP=L&uSEP;NAM=RUN_TEST.DUMMY&uSEP;WID=9&uSEP;HEI=1&uSEP;LAB=Run?&uFRM;                          &uFRM;TYP=F&uSEP;NAM=RUN_TEST&uSEP;WID=6&uSEP;HEI=1&uFRM;
+ &uFRM;TYP=L&uSEP;NAM=RESULT.DUMMY&uSEP;WID=15&uSEP;HEI=1&uSEP;LAB=Result&uFRM;                    &uFRM;TYP=F&uSEP;NAM=RESULT&uSEP;WID=10&uSEP;HEI=1&uFRM;
+ &uFRM;TYP=L&uSEP;NAM=MESSAGE.DUMMY&uSEP;WID=19&uSEP;HEI=1&uSEP;LAB=Message&uFRM;                &uFRM;TYP=F&uSEP;NAM=MESSAGE&uSEP;WID=32&uSEP;HEI=1&uFRM;
+
+
+
+
+
+
+
+
+&uFRM;TYP=E&uSEP;NAM=UFORM.DICT&uSEP;WID=1&uSEP;HEI=2&uSEP;HOC=1&uSEP;VOC=2&uFRM; &uFRM;TYP=E&uSEP;NAM=BUTTONS.DUMMY&uSEP;WID=100&uSEP;HEI=3&uSEP;HOC=100&uSEP;VOC=3&uFRM;
+   &uFRM;TYP=F&uSEP;NAM=CHK_XML&uSEP;WID=3&uSEP;HEI=1&uFRM;&uFRM;TYP=L&uSEP;NAM=CHK_XML.BUTTONS&uSEP;WID=10&uSEP;HEI=1&uSEP;LAB=XML Output&uFRM;&uFRM;TYP=F&uSEP;NAM=XMLFILE&uSEP;WID=54&uSEP;HEI=1&uFRM;&uFRM;TYP=F&uSEP;NAM=SUFFIX&uSEP;WID=14&uSEP;HEI=1&uFRM;     &uFRM;TYP=F&uSEP;NAM=CLOSE_BUTTON&uSEP;WID=11&uSEP;HEI=2&uFRM;</DAT>
+<DAT name="PERF">#IDF</DAT>
+<DAT name="TITLE" xml:space='preserve'>Uniface Unit Test Runner</DAT>
+<DAT name="WINPROP" xml:space='preserve'>CAPTION=&uSEP;CANRESIZE=&uSEP;CANICONIZE=&uSEP;CANZOOM=&uSEP;CANCLOSE=&uSEP;SYSMENU=&uSEP;BACKIMAGE=&uSEP;IMAGE=&uSEP;MODAL=F&uSEP;ATTACHED=&uSEP;UTYPE=&uSEP;DIRECTION=&uSEP;SPLIT=(99,16,h,b,h,f,p,(86,3,v,r,h,f,p,p))&uSEP;NOFORMSCROLL=&uSEP;BACKCOLOR=&uSEP;KEEPLAYOUT=F&uSEP;LAYOUTSTORAGE=&uSEP;HALIGN=&uSEP;VALIGN=&uSEP;HSCALE=&uSEP;VSCALE=&uSEP;PRESERVEASPECT=&uSEP;OKBUTTON=</DAT>
+<DAT name="SFUNC" xml:space='preserve'>#include U:zProcError  ; Report an unexpected failure in a proc statement.
+
+operation SetXMLOutputFile
+params
+	string  pXmlOutputFile : in
+endparams
+
+	$XML_OUTPUT_FILE$ = pXmlOutputFile
+	if ($XML_OUTPUT_FILE$ = "")
+		$IS_XML_OUTPUT$ = "F"
+	else
+		$IS_XML_OUTPUT$ = "T"
+	endif
+
+end ; SetOutputFormats
+</DAT>
+<DAT name="HTML_STYLES" xml:space='preserve'>/corporate.css&uSEP;../css/applic.css</DAT>
+</OCC>
+</TABLE>
+<TABLE>
+<DSC name="UXGROUP" model="DICT" system="S" pseudo ="73" level="1" noupdate="0"
+ rbk="0" ffsql="0" transnr="0" segsize="0" ufocc="1000" charset=".U">
+<FLD name="UTIMESTAMP" seqno="1" type="E" level="2" pack="0" scale="0" length="15"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="ULABEL" seqno="2" type="S" level="2" pack="0" scale="0" length="32"
+ pointer="0" inum="1" ufocc="0" mandatory="yes" idxnum="1" idxsnr="101" />
+<FLD name="UBASE" seqno="3" type="S" level="2" pack="0" scale="0" length="32"
+ pointer="0" inum="1" ufocc="0" mandatory="yes" idxnum="1" idxsnr="102" />
+<FLD name="UFORM" seqno="4" type="S" level="2" pack="0" scale="0" length="16"
+ pointer="0" inum="2" ufocc="0" mandatory="yes" idxnum="1,2" idxsnr="103,1" />
+<FLD name="UVERS" seqno="5" type="S" level="2" pack="0" scale="0" length="12"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="UDESCR" seqno="6" type="S" level="2" pack="0" scale="0" length="25"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="U_BORD" seqno="7" type="S" level="2" pack="0" scale="0" length="1"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="U_INDB" seqno="8" type="S" level="2" pack="0" scale="0" length="1"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="U_DBMS" seqno="9" type="S" level="2" pack="0" scale="0" length="3"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="U_UPD" seqno="10" type="S" level="2" pack="0" scale="0" length="1"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="U_MINL" seqno="11" type="N" level="2" pack="0" scale="0" length="6"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="U_MAXL" seqno="12" type="N" level="2" pack="0" scale="0" length="6"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="U_MINR" seqno="13" type="N" level="2" pack="0" scale="0" length="6"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="U_MAXR" seqno="14" type="N" level="2" pack="0" scale="0" length="6"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="TPLGINTF" seqno="15" type="S" level="2" pack="0" scale="0" length="32"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="U_INTF" seqno="16" type="S" level="2" pack="0" scale="0" length="64"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="TEMPLATENAME" seqno="17" type="S" level="2" pack="0" scale="0" length="32"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="UINHERIT" seqno="18" type="B" level="2" pack="0" scale="0" length="1"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="TPLACTUAL" seqno="19" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\E6,0,0,0,,0,0,0,," />
+<FLD name="GETOCC" seqno="20" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\C1,0,0,0,,0,0,0,," />
+<FLD name="PUTOCC" seqno="21" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\C2,0,0,0,,0,0,0,," />
+<FLD name="DELOCC" seqno="22" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\C3,0,0,0,,0,0,0,," />
+<FLD name="LCK" seqno="23" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\C4,0,0,0,,0,0,0,," />
+<FLD name="UNLOCK" seqno="24" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\C5,0,0,0,,0,0,0,," />
+<FLD name="GETSEGM" seqno="25" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\C6,0,0,0,,0,0,0,," />
+<FLD name="ADDOCC" seqno="26" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\C7,0,0,0,,0,0,0,," />
+<FLD name="DELOCCR" seqno="27" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\C8,0,0,0,,0,0,0,," />
+<FLD name="ENDMOD" seqno="28" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\C9,0,0,0,,0,0,0,," />
+<FLD name="DOC" seqno="29" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\CA,0,0,0,,0,0,0,," />
+<FLD name="DETAIL" seqno="30" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\CB,0,0,0,,0,0,0,," />
+<FLD name="CREOCC" seqno="31" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\CC,0,0,0,,0,0,0,," />
+<FLD name="MENU" seqno="32" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\CD,0,0,0,,0,0,0,," />
+<FLD name="FINDOCC" seqno="33" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\CE,0,0,0,,0,0,0,," />
+<FLD name="ERROR" seqno="34" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\CF,0,0,0,,0,0,0,," />
+<FLD name="GENERAL" seqno="35" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\D0,0,0,0,,0,0,0,," />
+<FLD name="STARTMOD" seqno="36" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\D1,0,0,0,,0,0,0,," />
+<FLD name="FLIST" seqno="37" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\E1,0,0,0,,0,0,0,," />
+<FLD name="BREAK" seqno="38" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\E2,0,0,0,,0,0,0,," />
+<FLD name="VLDE" seqno="39" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\D2,0,0,0,,0,0,0,," />
+<FLD name="VLDK" seqno="40" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\D3,0,0,0,,0,0,0,," />
+<FLD name="UPOPUP" seqno="41" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\D4,0,0,0,,0,0,0,," />
+<FLD name="UISBCLASS" seqno="42" type="B" level="2" pack="0" scale="0" length="1"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="UISASSOC" seqno="43" type="B" level="2" pack="0" scale="0" length="1"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="U_OBJSVC" seqno="44" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\DC,0,0,0,,0,0,0,," />
+<FLD name="U_SVCUSE" seqno="45" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\DD,0,0,0,,0,0,0,," />
+<FLD name="HTML_ENTPROP" seqno="46" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\D7,0,0,0,,0,0,0,," />
+<FLD name="HTML_TABTYPE" seqno="47" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\D8,0,0,0,,0,0,0,," />
+<FLD name="HTML_ENTHK_B" seqno="48" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\D9,0,0,0,,0,0,0,," />
+<FLD name="HTML_ENTHK_E" seqno="49" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\DA,0,0,0,,0,0,0,," />
+<FLD name="HTML_OCCHK_B" seqno="50" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\DB,0,0,0,,0,0,0,," />
+<FLD name="HTML_OCCHK_E" seqno="51" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\DE,0,0,0,,0,0,0,," />
+<FLD name="HTML_ENTCLASS" seqno="52" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\DF,0,0,0,,0,0,0,," />
+<FLD name="U_GLAB" seqno="53" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\E0,0,0,0,,0,0,0,," />
+<FLD name="UEOINTERFACE" seqno="54" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\E3,0,0,0,,0,0,0,," />
+<FLD name="UECINTERFACE" seqno="55" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\E4,0,0,0,,0,0,0,," />
+<FLD name="UEOOPERS" seqno="56" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\E5,0,0,0,,0,0,0,," />
+<FLD name="UECOPERS" seqno="57" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\E7,0,0,0,,0,0,0,," />
+<FLD name="UEOTRIGGERS" seqno="58" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\E8,0,0,0,,0,0,0,," />
+<FLD name="UECTRIGGERS" seqno="59" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\E9,0,0,0,,0,0,0,," />
+<FLD name="UGEOMETRY" seqno="60" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\EA,0,0,0,,0,0,0,," />
+<FLD name="UWIDGETTYPE" seqno="61" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\EB,0,0,0,,0,0,0,," />
+<FLD name="UWIDGETCREATE" seqno="62" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\EC,0,0,0,,0,0,0,," />
+<FLD name="PRLO" seqno="63" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\ED,0,0,0,,0,0,0,," />
+<FLD name="PSLO" seqno="64" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\EE,0,0,0,,0,0,0,," />
+<FLD name="PRSO" seqno="65" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\EF,0,0,0,,0,0,0,," />
+<FLD name="PSSO" seqno="66" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\F0,0,0,0,,0,0,0,," />
+<FLD name="UPARENT" seqno="67" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\F1,0,0,0,,0,0,0,," />
+<FLD name="UWEBWIDGETTYPE" seqno="68" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\F2,0,0,0,,0,0,0,," />
+<FLD name="UWEBWIDGETCREATE" seqno="69" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\F3,0,0,0,,0,0,0,," />
+</DSC>
+<OCC>
+<DAT name="UTIMESTAMP">2010-02-12T12:01:17.00</DAT>
+<DAT name="ULABEL">BUTTONS</DAT>
+<DAT name="UBASE">DUMMY</DAT>
+<DAT name="UFORM">VUT_RUNNER</DAT>
+<DAT name="U_BORD">N</DAT>
+<DAT name="U_INDB">N</DAT>
+<DAT name="UINHERIT">F</DAT>
+<DAT name="UISBCLASS">F</DAT>
+<DAT name="UISASSOC">F</DAT>
+<DAT name="HTML_ENTPROP" xml:space='preserve'>U_ATLEASTONE=1&uSEP;U_STARTOCC=1&uSEP;U_MAXOCC=</DAT>
+</OCC>
+<OCC>
+<DAT name="UTIMESTAMP">2010-02-12T12:01:17.00</DAT>
+<DAT name="ULABEL">DUMMY</DAT>
+<DAT name="UBASE">DUMMY</DAT>
+<DAT name="UFORM">VUT_RUNNER</DAT>
+<DAT name="U_BORD">N</DAT>
+<DAT name="U_DBMS">XXX</DAT>
+<DAT name="U_UPD">Y</DAT>
+<DAT name="UINHERIT">F</DAT>
+<DAT name="UISBCLASS">F</DAT>
+<DAT name="UISASSOC">F</DAT>
+<DAT name="U_SVCUSE">N</DAT>
+<DAT name="HTML_ENTPROP" xml:space='preserve'>U_ATLEASTONE=1&uSEP;U_STARTOCC=1&uSEP;U_MAXOCC=</DAT>
+<DAT name="UECTRIGGERS" xml:space='preserve'>; -- start extended triggers for grid widget 
+
+trigger ColumnHeader_LClicked 
+params 
+  string fieldName: in 
+  numeric shiftKey: in 
+endparams 
+
+end ; trigger ColumnHeader_LClicked 
+
+trigger RowHeader_LClicked 
+params 
+  numeric rowNumber : in 
+  numeric shiftKey  : in 
+endparams 
+
+end ; trigger RowHeader_LClicked 
+
+trigger CornerButton_LClicked 
+  params 
+  numeric shiftKey  : in 
+endparams 
+
+end ; trigger CornerButton_LClicked 
+
+trigger VScrollBar_HitEnd 
+
+end ; trigger VScrollBar_HitEnd 
+
+; -- end triggers for grid widget 
+</DAT>
+<DAT name="UWIDGETTYPE">EGRID</DAT>
+<DAT name="UWIDGETCREATE" xml:space='preserve'>ATTACH=BOTTOM,LEFT,RIGHT&uSEP;COLUMNHEADERSVISIBLE=T&uSEP;KEEPLAYOUT=F&uSEP;AUTOSIZEABLECOLUMN=6</DAT>
+</OCC>
+<OCC>
+<DAT name="UTIMESTAMP">2010-02-12T12:01:17.00</DAT>
+<DAT name="ULABEL">TOOLBAR</DAT>
+<DAT name="UBASE">DUMMY</DAT>
+<DAT name="UFORM">VUT_RUNNER</DAT>
+<DAT name="U_BORD">N</DAT>
+<DAT name="U_INDB">N</DAT>
+<DAT name="UINHERIT">F</DAT>
+<DAT name="UISBCLASS">F</DAT>
+<DAT name="UISASSOC">F</DAT>
+<DAT name="HTML_ENTPROP" xml:space='preserve'>U_ATLEASTONE=1&uSEP;U_STARTOCC=1&uSEP;U_MAXOCC=</DAT>
+</OCC>
+<OCC>
+<DAT name="UTIMESTAMP">2010-02-12T12:01:17.00</DAT>
+<DAT name="ULABEL">UFORM</DAT>
+<DAT name="UBASE">DICT</DAT>
+<DAT name="UFORM">VUT_RUNNER</DAT>
+<DAT name="UINHERIT">F</DAT>
+<DAT name="UISBCLASS">F</DAT>
+<DAT name="UISASSOC">F</DAT>
+</OCC>
+</TABLE>
+<TABLE>
+<DSC name="UXFIELD" model="DICT" system="S" pseudo ="73" level="1" noupdate="0"
+ rbk="0" ffsql="0" transnr="0" segsize="0" ufocc="1000" charset=".U">
+<FLD name="UTIMESTAMP" seqno="1" type="E" level="2" pack="0" scale="0" length="15"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="ULABEL" seqno="2" type="S" level="2" pack="0" scale="0" length="32"
+ pointer="0" inum="1" ufocc="0" mandatory="yes" idxnum="1" idxsnr="101" />
+<FLD name="GRP" seqno="3" type="S" level="2" pack="0" scale="0" length="32"
+ pointer="0" inum="2" ufocc="0" mandatory="yes" idxnum="1,2" idxsnr="102,1" />
+<FLD name="UBASE" seqno="4" type="S" level="2" pack="0" scale="0" length="32"
+ pointer="0" inum="2" ufocc="0" mandatory="yes" idxnum="1,2" idxsnr="103,2" />
+<FLD name="UFORM" seqno="5" type="S" level="2" pack="0" scale="0" length="16"
+ pointer="0" inum="3" ufocc="0" mandatory="yes" idxnum="1,2,3" idxsnr="104,3,1" />
+<FLD name="U_TLAB" seqno="6" type="S" level="2" pack="0" scale="0" length="32"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="UVERS" seqno="7" type="S" level="2" pack="0" scale="0" length="12"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="UDESCR" seqno="8" type="S" level="2" pack="0" scale="0" length="25"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="U_DTYP" seqno="9" type="S" level="2" pack="0" scale="0" length="2"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="U_INDB" seqno="10" type="S" level="2" pack="0" scale="0" length="1"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="TPLLAY" seqno="11" type="S" level="2" pack="0" scale="0" length="32"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="LAYOUTMOD" seqno="12" type="S" level="2" pack="0" scale="0" length="128"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="TPLSYN" seqno="13" type="S" level="2" pack="0" scale="0" length="32"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="SYNTAXMOD" seqno="14" type="S" level="2" pack="0" scale="0" length="192"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="TPLINTF" seqno="15" type="S" level="2" pack="0" scale="0" length="32"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="INTERFACEMOD" seqno="16" type="S" level="2" pack="0" scale="0" length="64"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="TABSTOP" seqno="17" type="N" level="2" pack="10" scale="0" length="2"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="WIDGETTYPE" seqno="18" type="S" level="2" pack="0" scale="0" length="16"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="TEMPLATENAME" seqno="19" type="S" level="2" pack="0" scale="0" length="32"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="UINHERIT" seqno="20" type="B" level="2" pack="0" scale="0" length="1"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="STARTMOD" seqno="21" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\C1,0,0,0,,0,0,0,," />
+<FLD name="ENDMOD" seqno="22" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\C2,0,0,0,,0,0,0,," />
+<FLD name="NEXTFLD" seqno="23" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\C3,0,0,0,,0,0,0,," />
+<FLD name="PREVFLD" seqno="24" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\C4,0,0,0,,0,0,0,," />
+<FLD name="ENCRYPT" seqno="25" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\C5,0,0,0,,0,0,0,," />
+<FLD name="DECRYPT" seqno="26" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\C6,0,0,0,,0,0,0,," />
+<FLD name="DOC" seqno="27" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\C7,0,0,0,,0,0,0,," />
+<FLD name="DETAIL" seqno="28" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\C8,0,0,0,,0,0,0,," />
+<FLD name="MENU" seqno="29" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\C9,0,0,0,,0,0,0,," />
+<FLD name="ERROR" seqno="30" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\CA,0,0,0,,0,0,0,," />
+<FLD name="UFORMAT" seqno="31" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\CB,0,0,0,,0,0,0,," />
+<FLD name="DEFORMAT" seqno="32" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\CC,0,0,0,,0,0,0,," />
+<FLD name="GENERAL" seqno="33" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\CD,0,0,0,,0,0,0,," />
+<FLD name="GETFOCUS" seqno="34" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\CE,0,0,0,,0,0,0,," />
+<FLD name="VCHANGED" seqno="35" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\CF,0,0,0,,0,0,0,," />
+<FLD name="WIDGETCREATE" seqno="36" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\DD,0,0,0,,0,0,0,," />
+<FLD name="VALLAB" seqno="37" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\DE,0,0,0,,0,0,0,," />
+<FLD name="INITVALUE" seqno="38" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\DF,0,0,0,,0,0,0,," />
+<FLD name="TPLACTUAL" seqno="39" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\E6,0,0,0,,0,0,0,," />
+<FLD name="VLDF" seqno="40" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\D0,0,0,0,,0,0,0,," />
+<FLD name="UPOPUP" seqno="41" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\D1,0,0,0,,0,0,0,," />
+<FLD name="UISOBJID" seqno="42" type="B" level="2" pack="0" scale="0" length="1"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="HTML_FLDPROP" seqno="43" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\D3,0,0,0,,0,0,0,," />
+<FLD name="HTML_CTRLTYPE" seqno="44" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\D4,0,0,0,,0,0,0,," />
+<FLD name="HTML_HOOK_B" seqno="45" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\D5,0,0,0,,0,0,0,," />
+<FLD name="HTML_HOOK_M" seqno="46" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\D6,0,0,0,,0,0,0,," />
+<FLD name="HTML_HOOK_E" seqno="47" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\D7,0,0,0,,0,0,0,," />
+<FLD name="HTML_LBLHK_B" seqno="48" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\D8,0,0,0,,0,0,0,," />
+<FLD name="HTML_LBLHK_E" seqno="49" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\D9,0,0,0,,0,0,0,," />
+<FLD name="HTML_FLDCLASS" seqno="50" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\DA,0,0,0,,0,0,0,," />
+<FLD name="HTML_LBLCLASS" seqno="51" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\DB,0,0,0,,0,0,0,," />
+<FLD name="UFOPERS" seqno="52" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\DC,0,0,0,,0,0,0,," />
+<FLD name="UFTRIGGERS" seqno="53" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\E0,0,0,0,,0,0,0,," />
+<FLD name="UGEOMETRY" seqno="54" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\E1,0,0,0,,0,0,0,," />
+<FLD name="USCOPE" seqno="55" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\E2,0,0,0,,0,0,0,," />
+<FLD name="UFORMATS" seqno="56" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\E3,0,0,0,,0,0,0,," />
+<FLD name="UHINTERFACE" seqno="57" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\E4,0,0,0,,0,0,0,," />
+<FLD name="WEBWIDGETTYPE" seqno="58" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\E5,0,0,0,,0,0,0,," />
+<FLD name="WEBWIDGETCREATE" seqno="59" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\E6,0,0,0,,0,0,0,," />
+</DSC>
+<OCC>
+<DAT name="UTIMESTAMP">2010-02-17T10:49:40.00</DAT>
+<DAT name="ULABEL">CHK_XML</DAT>
+<DAT name="GRP">BUTTONS</DAT>
+<DAT name="UBASE">DUMMY</DAT>
+<DAT name="UFORM">VUT_RUNNER</DAT>
+<DAT name="U_DTYP">B</DAT>
+<DAT name="U_INDB">N</DAT>
+<DAT name="INTERFACEMOD">B</DAT>
+<DAT name="TABSTOP">0</DAT>
+<DAT name="WIDGETTYPE">CHECKBOX</DAT>
+<DAT name="UINHERIT">F</DAT>
+<DAT name="DETAIL" xml:space='preserve'>chk_xml.buttons = !chk_xml.buttons
+if (chk_xml.buttons)
+	fieldsyntax XMLFILE.BUTTONS, ""
+	fieldsyntax SUFFIX.BUTTONS, ""
+else
+	fieldsyntax XMLFILE.BUTTONS, "HID"
+	fieldsyntax SUFFIX.BUTTONS, "HID"
+endif
+</DAT>
+<DAT name="WIDGETCREATE" xml:space='preserve'>TRISTATE=F&uSEP;V52=T</DAT>
+<DAT name="INITVALUE">0</DAT>
+<DAT name="UISOBJID">F</DAT>
+<DAT name="HTML_CTRLTYPE">U_INPUT</DAT>
+</OCC>
+<OCC>
+<DAT name="UTIMESTAMP">2010-02-12T12:01:17.00</DAT>
+<DAT name="ULABEL">CHK_XML</DAT>
+<DAT name="GRP">TOOLBAR</DAT>
+<DAT name="UBASE">DUMMY</DAT>
+<DAT name="UFORM">VUT_RUNNER</DAT>
+<DAT name="U_DTYP">B</DAT>
+<DAT name="U_INDB">N</DAT>
+<DAT name="TABSTOP">0</DAT>
+<DAT name="WIDGETTYPE">CHECKBOX</DAT>
+<DAT name="UINHERIT">F</DAT>
+<DAT name="UISOBJID">F</DAT>
+<DAT name="HTML_CTRLTYPE">U_INPUT</DAT>
+</OCC>
+<OCC>
+<DAT name="UTIMESTAMP">2010-02-12T12:01:17.00</DAT>
+<DAT name="ULABEL">CLOSE_BUTTON</DAT>
+<DAT name="GRP">BUTTONS</DAT>
+<DAT name="UBASE">DUMMY</DAT>
+<DAT name="UFORM">VUT_RUNNER</DAT>
+<DAT name="U_DTYP">S</DAT>
+<DAT name="U_INDB">X</DAT>
+<DAT name="SYNTAXMOD">NED</DAT>
+<DAT name="INTERFACEMOD">C5</DAT>
+<DAT name="TABSTOP">0</DAT>
+<DAT name="WIDGETTYPE">COMMANDBUTTON</DAT>
+<DAT name="UINHERIT">F</DAT>
+<DAT name="DETAIL">exit(0)</DAT>
+<DAT name="WIDGETCREATE">VSIZE=85</DAT>
+<DAT name="INITVALUE">Close</DAT>
+<DAT name="UISOBJID">F</DAT>
+<DAT name="HTML_CTRLTYPE">U_INPUT</DAT>
+</OCC>
+<OCC>
+<DAT name="UTIMESTAMP">2010-02-12T12:01:17.00</DAT>
+<DAT name="ULABEL">CMD_CLEAR</DAT>
+<DAT name="GRP">TOOLBAR</DAT>
+<DAT name="UBASE">DUMMY</DAT>
+<DAT name="UFORM">VUT_RUNNER</DAT>
+<DAT name="U_DTYP">S</DAT>
+<DAT name="U_INDB">B</DAT>
+<DAT name="SYNTAXMOD">NED</DAT>
+<DAT name="INTERFACEMOD">C5</DAT>
+<DAT name="TABSTOP">0</DAT>
+<DAT name="WIDGETTYPE">COMMANDBUTTON</DAT>
+<DAT name="UINHERIT">F</DAT>
+<DAT name="DETAIL" xml:space='preserve'>call lpClear
+</DAT>
+<DAT name="INITVALUE">C%lear</DAT>
+<DAT name="UISOBJID">F</DAT>
+<DAT name="HTML_CTRLTYPE">U_INPUT</DAT>
+</OCC>
+<OCC>
+<DAT name="UTIMESTAMP">2010-02-12T12:01:17.00</DAT>
+<DAT name="ULABEL">CMD_RETRIEVE</DAT>
+<DAT name="GRP">TOOLBAR</DAT>
+<DAT name="UBASE">DUMMY</DAT>
+<DAT name="UFORM">VUT_RUNNER</DAT>
+<DAT name="U_DTYP">S</DAT>
+<DAT name="U_INDB">B</DAT>
+<DAT name="SYNTAXMOD">NED</DAT>
+<DAT name="INTERFACEMOD">C8</DAT>
+<DAT name="TABSTOP">0</DAT>
+<DAT name="WIDGETTYPE">COMMANDBUTTON</DAT>
+<DAT name="UINHERIT">F</DAT>
+<DAT name="DETAIL" xml:space='preserve'>call lpRetrieve(COMPONENT_NAME.DUMMY)</DAT>
+<DAT name="INITVALUE">Re%trieve</DAT>
+<DAT name="UISOBJID">F</DAT>
+<DAT name="HTML_CTRLTYPE">U_INPUT</DAT>
+</OCC>
+<OCC>
+<DAT name="UTIMESTAMP">2010-02-12T12:01:17.00</DAT>
+<DAT name="ULABEL">CMD_RUN</DAT>
+<DAT name="GRP">TOOLBAR</DAT>
+<DAT name="UBASE">DUMMY</DAT>
+<DAT name="UFORM">VUT_RUNNER</DAT>
+<DAT name="U_DTYP">S</DAT>
+<DAT name="U_INDB">B</DAT>
+<DAT name="SYNTAXMOD">NED</DAT>
+<DAT name="INTERFACEMOD">C3</DAT>
+<DAT name="TABSTOP">0</DAT>
+<DAT name="WIDGETTYPE">COMMANDBUTTON</DAT>
+<DAT name="UINHERIT">F</DAT>
+<DAT name="DETAIL" xml:space='preserve'>if (CHK_XML.BUTTONS)
+	$instancename-&gt;SetXMLOutputFile(XMLFILE.BUTTONS)
+endif
+call lpRun()</DAT>
+<DAT name="INITVALUE">%Run</DAT>
+<DAT name="UISOBJID">F</DAT>
+<DAT name="HTML_CTRLTYPE">U_INPUT</DAT>
+</OCC>
+<OCC>
+<DAT name="UTIMESTAMP">2010-02-12T12:01:17.00</DAT>
+<DAT name="ULABEL">COMPONENT_NAME</DAT>
+<DAT name="GRP">DUMMY</DAT>
+<DAT name="UBASE">DUMMY</DAT>
+<DAT name="UFORM">VUT_RUNNER</DAT>
+<DAT name="U_DTYP">S</DAT>
+<DAT name="U_INDB">N</DAT>
+<DAT name="INTERFACEMOD">C*</DAT>
+<DAT name="WIDGETTYPE">EDITBOX</DAT>
+<DAT name="UINHERIT">F</DAT>
+<DAT name="UISOBJID">F</DAT>
+<DAT name="HTML_CTRLTYPE">U_INPUT</DAT>
+</OCC>
+<OCC>
+<DAT name="UTIMESTAMP">2010-02-12T12:01:17.00</DAT>
+<DAT name="ULABEL">DEBUG_FLAG</DAT>
+<DAT name="GRP">DUMMY</DAT>
+<DAT name="UBASE">DUMMY</DAT>
+<DAT name="UFORM">VUT_RUNNER</DAT>
+<DAT name="U_DTYP">B</DAT>
+<DAT name="U_INDB">N</DAT>
+<DAT name="INTERFACEMOD">B</DAT>
+<DAT name="WIDGETTYPE">CHECKBOX</DAT>
+<DAT name="UINHERIT">F</DAT>
+<DAT name="UISOBJID">F</DAT>
+<DAT name="HTML_CTRLTYPE">U_INPUT</DAT>
+</OCC>
+<OCC>
+<DAT name="UTIMESTAMP">2010-02-12T12:01:17.00</DAT>
+<DAT name="ULABEL">MESSAGE</DAT>
+<DAT name="GRP">DUMMY</DAT>
+<DAT name="UBASE">DUMMY</DAT>
+<DAT name="UFORM">VUT_RUNNER</DAT>
+<DAT name="U_DTYP">S</DAT>
+<DAT name="U_INDB">N</DAT>
+<DAT name="INTERFACEMOD">VC*</DAT>
+<DAT name="WIDGETTYPE">EDITBOX</DAT>
+<DAT name="UINHERIT">F</DAT>
+<DAT name="UISOBJID">F</DAT>
+<DAT name="HTML_CTRLTYPE">U_INPUT</DAT>
+</OCC>
+<OCC>
+<DAT name="UTIMESTAMP">2010-02-12T12:01:17.00</DAT>
+<DAT name="ULABEL">RESULT</DAT>
+<DAT name="GRP">DUMMY</DAT>
+<DAT name="UBASE">DUMMY</DAT>
+<DAT name="UFORM">VUT_RUNNER</DAT>
+<DAT name="U_DTYP">S</DAT>
+<DAT name="U_INDB">N</DAT>
+<DAT name="INTERFACEMOD">C*</DAT>
+<DAT name="WIDGETTYPE">EDITBOX</DAT>
+<DAT name="UINHERIT">F</DAT>
+<DAT name="UISOBJID">F</DAT>
+<DAT name="HTML_CTRLTYPE">U_INPUT</DAT>
+</OCC>
+<OCC>
+<DAT name="UTIMESTAMP">2010-02-12T12:01:17.00</DAT>
+<DAT name="ULABEL">RETRIEVE_BUTTON</DAT>
+<DAT name="GRP">BUTTONS</DAT>
+<DAT name="UBASE">DUMMY</DAT>
+<DAT name="UFORM">VUT_RUNNER</DAT>
+<DAT name="U_DTYP">S</DAT>
+<DAT name="U_INDB">N</DAT>
+<DAT name="SYNTAXMOD">NED</DAT>
+<DAT name="INTERFACEMOD">C8</DAT>
+<DAT name="TABSTOP">0</DAT>
+<DAT name="WIDGETTYPE">COMMANDBUTTON</DAT>
+<DAT name="UINHERIT">F</DAT>
+<DAT name="WIDGETCREATE">VSIZE=85</DAT>
+<DAT name="INITVALUE">Retrieve</DAT>
+<DAT name="UISOBJID">F</DAT>
+<DAT name="HTML_CTRLTYPE">U_INPUT</DAT>
+</OCC>
+<OCC>
+<DAT name="UTIMESTAMP">2010-02-12T12:01:17.00</DAT>
+<DAT name="ULABEL">RUN_BUTTON</DAT>
+<DAT name="GRP">BUTTONS</DAT>
+<DAT name="UBASE">DUMMY</DAT>
+<DAT name="UFORM">VUT_RUNNER</DAT>
+<DAT name="U_DTYP">S</DAT>
+<DAT name="U_INDB">N</DAT>
+<DAT name="INTERFACEMOD">C*</DAT>
+<DAT name="WIDGETTYPE">COMMANDBUTTON</DAT>
+<DAT name="UINHERIT">F</DAT>
+<DAT name="WIDGETCREATE">VSIZE=85</DAT>
+<DAT name="INITVALUE">Run</DAT>
+<DAT name="UISOBJID">F</DAT>
+<DAT name="HTML_CTRLTYPE">U_INPUT</DAT>
+</OCC>
+<OCC>
+<DAT name="UTIMESTAMP">2010-02-12T12:01:17.00</DAT>
+<DAT name="ULABEL">RUN_TEST</DAT>
+<DAT name="GRP">DUMMY</DAT>
+<DAT name="UBASE">DUMMY</DAT>
+<DAT name="UFORM">VUT_RUNNER</DAT>
+<DAT name="U_DTYP">B</DAT>
+<DAT name="U_INDB">N</DAT>
+<DAT name="INTERFACEMOD">B</DAT>
+<DAT name="WIDGETTYPE">CHECKBOX</DAT>
+<DAT name="UINHERIT">F</DAT>
+<DAT name="UISOBJID">F</DAT>
+<DAT name="HTML_CTRLTYPE">U_INPUT</DAT>
+</OCC>
+<OCC>
+<DAT name="UTIMESTAMP">2010-02-17T10:48:25.00</DAT>
+<DAT name="ULABEL">SUFFIX</DAT>
+<DAT name="GRP">BUTTONS</DAT>
+<DAT name="UBASE">DUMMY</DAT>
+<DAT name="UFORM">VUT_RUNNER</DAT>
+<DAT name="U_DTYP">S</DAT>
+<DAT name="U_INDB">B</DAT>
+<DAT name="SYNTAXMOD">NED</DAT>
+<DAT name="INTERFACEMOD">C15</DAT>
+<DAT name="TABSTOP">0</DAT>
+<DAT name="WIDGETTYPE">NOEDITBOX</DAT>
+<DAT name="UINHERIT">F</DAT>
+<DAT name="INITVALUE">[component].xml</DAT>
+<DAT name="UISOBJID">F</DAT>
+<DAT name="HTML_CTRLTYPE">U_INPUT</DAT>
+</OCC>
+<OCC>
+<DAT name="UTIMESTAMP">2010-02-12T12:01:17.00</DAT>
+<DAT name="ULABEL">TEST_NAME</DAT>
+<DAT name="GRP">DUMMY</DAT>
+<DAT name="UBASE">DUMMY</DAT>
+<DAT name="UFORM">VUT_RUNNER</DAT>
+<DAT name="U_DTYP">S</DAT>
+<DAT name="U_INDB">N</DAT>
+<DAT name="SYNTAXMOD">NED</DAT>
+<DAT name="INTERFACEMOD">C*</DAT>
+<DAT name="WIDGETTYPE">EDITBOX</DAT>
+<DAT name="UINHERIT">F</DAT>
+<DAT name="UISOBJID">F</DAT>
+<DAT name="HTML_CTRLTYPE">U_INPUT</DAT>
+</OCC>
+<OCC>
+<DAT name="UTIMESTAMP">2010-02-17T10:44:17.00</DAT>
+<DAT name="ULABEL">XMLFILE</DAT>
+<DAT name="GRP">BUTTONS</DAT>
+<DAT name="UBASE">DUMMY</DAT>
+<DAT name="UFORM">VUT_RUNNER</DAT>
+<DAT name="U_DTYP">S</DAT>
+<DAT name="U_INDB">N</DAT>
+<DAT name="INTERFACEMOD">C256</DAT>
+<DAT name="TABSTOP">0</DAT>
+<DAT name="WIDGETTYPE">EDITBOX</DAT>
+<DAT name="UINHERIT">F</DAT>
+<DAT name="INITVALUE">C:\uunit</DAT>
+<DAT name="UISOBJID">F</DAT>
+<DAT name="HTML_CTRLTYPE">U_INPUT</DAT>
+</OCC>
+<OCC>
+<DAT name="UTIMESTAMP">2010-02-12T12:01:17.00</DAT>
+<DAT name="ULABEL">XMLFILE</DAT>
+<DAT name="GRP">TOOLBAR</DAT>
+<DAT name="UBASE">DUMMY</DAT>
+<DAT name="UFORM">VUT_RUNNER</DAT>
+<DAT name="U_DTYP">S</DAT>
+<DAT name="U_INDB">N</DAT>
+<DAT name="TABSTOP">0</DAT>
+<DAT name="UINHERIT">F</DAT>
+<DAT name="UISOBJID">F</DAT>
+<DAT name="HTML_CTRLTYPE">U_INPUT</DAT>
+</OCC>
+</TABLE>
+<TABLE>
+<DSC name="UXREGS" model="DICT" system="S" pseudo ="73" level="1" noupdate="0"
+ rbk="0" ffsql="0" transnr="0" segsize="0" ufocc="0" charset=".U">
+<FLD name="UTIMESTAMP" seqno="1" type="E" level="2" pack="0" scale="0" length="15"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="U_STAT" seqno="2" type="S" level="2" pack="0" scale="0" length="4"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="U_TYPE" seqno="3" type="S" level="2" pack="0" scale="0" length="2"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="U_FORMLIB" seqno="4" type="S" level="2" pack="0" scale="0" length="16"
+ pointer="0" inum="2" ufocc="0" mandatory="yes" idxnum="1,3" idxsnr="101,1" />
+<FLD name="U_NAME" seqno="5" type="S" level="2" pack="0" scale="0" length="32"
+ pointer="0" inum="2" ufocc="0" mandatory="yes" idxnum="1,2" idxsnr="102,1" />
+<FLD name="UVERS" seqno="6" type="S" level="2" pack="0" scale="0" length="12"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="UDESCR" seqno="7" type="S" level="2" pack="0" scale="0" length="25"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="U_DTYP" seqno="8" type="S" level="2" pack="0" scale="0" length="2"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="U_LAYOUT" seqno="9" type="S" level="2" pack="0" scale="0" length="46"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="U_DOC" seqno="10" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\C1,0,0,0,,0,0,0,," />
+<FLD name="USCOPE" seqno="11" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\C2,0,0,0,,0,0,0,," />
+<FLD name="UHINTERFACE" seqno="12" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\C3,0,0,0,,0,0,0,," />
+</DSC>
+<OCC>
+<DAT name="UTIMESTAMP">2010-02-17T10:33:00.00</DAT>
+<DAT name="U_FORMLIB">VUT_RUNNER</DAT>
+<DAT name="U_NAME">COMPONENT</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Component under test</DAT>
+<DAT name="U_DTYP">S</DAT>
+</OCC>
+<OCC>
+<DAT name="UTIMESTAMP">2010-02-12T12:01:17.00</DAT>
+<DAT name="U_FORMLIB">VUT_RUNNER</DAT>
+<DAT name="U_NAME">ELAPSED_TIME</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Test Elapsed Time</DAT>
+<DAT name="U_DTYP">E</DAT>
+<DAT name="U_LAYOUT" xml:space='preserve'>DIS(dd-MMM-yyyy hh:nn:ss.tt)</DAT>
+</OCC>
+<OCC>
+<DAT name="UTIMESTAMP">2010-02-12T12:01:17.00</DAT>
+<DAT name="U_FORMLIB">VUT_RUNNER</DAT>
+<DAT name="U_NAME">ERRORS</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Count of Test Errors</DAT>
+<DAT name="U_DTYP">N</DAT>
+</OCC>
+<OCC>
+<DAT name="UTIMESTAMP">2010-02-12T12:01:17.00</DAT>
+<DAT name="U_FORMLIB">VUT_RUNNER</DAT>
+<DAT name="U_NAME">FAILURES</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Count of Test Failures</DAT>
+<DAT name="U_DTYP">N</DAT>
+</OCC>
+<OCC>
+<DAT name="UTIMESTAMP">2010-02-22T18:26:43.00</DAT>
+<DAT name="U_FORMLIB">VUT_RUNNER</DAT>
+<DAT name="U_NAME">FORMATTED_DATE</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Formatted Date</DAT>
+<DAT name="U_DTYP">D</DAT>
+<DAT name="U_LAYOUT">DIS(yyyy-mm-dd)</DAT>
+</OCC>
+<OCC>
+<DAT name="UTIMESTAMP">2010-02-22T18:32:55.00</DAT>
+<DAT name="U_FORMLIB">VUT_RUNNER</DAT>
+<DAT name="U_NAME">FORMATTED_TIME</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Formatted Time</DAT>
+<DAT name="U_DTYP">T</DAT>
+<DAT name="U_LAYOUT">DIS(hh:nn:ss.tt)</DAT>
+</OCC>
+<OCC>
+<DAT name="UTIMESTAMP">2010-02-12T12:01:17.00</DAT>
+<DAT name="U_FORMLIB">VUT_RUNNER</DAT>
+<DAT name="U_NAME">IS_TEXT_OUTPUT</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Output Text Flag</DAT>
+<DAT name="U_DTYP">B</DAT>
+</OCC>
+<OCC>
+<DAT name="UTIMESTAMP">2010-02-12T12:01:17.00</DAT>
+<DAT name="U_FORMLIB">VUT_RUNNER</DAT>
+<DAT name="U_NAME">IS_XML_OUTPUT</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Output XML Flag</DAT>
+<DAT name="U_DTYP">S</DAT>
+</OCC>
+<OCC>
+<DAT name="UTIMESTAMP">2010-02-22T18:18:19.00</DAT>
+<DAT name="U_FORMLIB">VUT_RUNNER</DAT>
+<DAT name="U_NAME">START_TIME</DAT>
+<DAT name="U_DTYP">E</DAT>
+<DAT name="U_DOC" xml:space='preserve'>Start time of component tests</DAT>
+</OCC>
+<OCC>
+<DAT name="UTIMESTAMP">2010-02-12T17:22:07.00</DAT>
+<DAT name="U_FORMLIB">VUT_RUNNER</DAT>
+<DAT name="U_NAME">TESTCOMPONENTS</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Components with tests</DAT>
+<DAT name="U_DTYP">N</DAT>
+</OCC>
+<OCC>
+<DAT name="UTIMESTAMP">2010-02-12T12:01:17.00</DAT>
+<DAT name="U_FORMLIB">VUT_RUNNER</DAT>
+<DAT name="U_NAME">TESTS</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Count of Tests</DAT>
+<DAT name="U_DTYP">N</DAT>
+</OCC>
+<OCC>
+<DAT name="UTIMESTAMP">2010-02-12T12:01:17.00</DAT>
+<DAT name="U_FORMLIB">VUT_RUNNER</DAT>
+<DAT name="U_NAME">TESTS_AFTER_LIST</DAT>
+<DAT name="UDESCR" xml:space='preserve'>To run after tests</DAT>
+<DAT name="U_DTYP">S</DAT>
+</OCC>
+<OCC>
+<DAT name="UTIMESTAMP">2010-02-12T12:01:17.00</DAT>
+<DAT name="U_FORMLIB">VUT_RUNNER</DAT>
+<DAT name="U_NAME">TESTS_BEFORE_LIST</DAT>
+<DAT name="UDESCR" xml:space='preserve'>To run before tests</DAT>
+<DAT name="U_DTYP">S</DAT>
+</OCC>
+<OCC>
+<DAT name="UTIMESTAMP">2010-02-12T12:01:17.00</DAT>
+<DAT name="U_FORMLIB">VUT_RUNNER</DAT>
+<DAT name="U_NAME">TEST_RESULTS_LIST</DAT>
+<DAT name="UDESCR" xml:space='preserve'>List of Test Results</DAT>
+<DAT name="U_DTYP">S</DAT>
+</OCC>
+<OCC>
+<DAT name="UTIMESTAMP">2010-02-12T12:01:17.00</DAT>
+<DAT name="U_FORMLIB">VUT_RUNNER</DAT>
+<DAT name="U_NAME">XML_OUTPUT_FILE</DAT>
+<DAT name="UDESCR" xml:space='preserve'>XML Output File</DAT>
+<DAT name="U_DTYP">S</DAT>
+</OCC>
+</TABLE>
+</UNIFACE>

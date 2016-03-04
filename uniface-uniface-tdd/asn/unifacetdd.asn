@@ -1,0 +1,28 @@
+[SETTINGS]
+$putmess_logfile	= .\log\UnifaceTDD_%p.log
+
+$search_resources	= resources_only
+$resources_output	= .\bin
+
+[RESOURCES]
+.\bin
+
+usys:uidf.uar
+usys:usys.uar
+usys:usysicon.uar
+usys:udbg.uar
+
+[LOGICALS]
+;-------------------------------------
+; Uniface Unit
+;-------------------------------------
+RUN_TESTS_ASYNC        = 0
+ASYNC_ASSIGNMENT_FILE  = .\test\repository\adm\unit_test.asn
+ASYNC_INI_FILE         = usys.ini
+UUNIT_SCAN_ENTITIES    = 0
+UUNIT_STARTUP_RETRIEVE = 1
+;UUNIT_SCAN_WARNING    = 0 ; Warn about possible delay when scanning (retrieve) on all components
+;UUNIT_DEFAULT_PROFILE = VUT_SAM*|VUT_TESTS
+;UUNIT_TEST_LIBRARY    = TEST
+
+#file .\asn\dbms.asn

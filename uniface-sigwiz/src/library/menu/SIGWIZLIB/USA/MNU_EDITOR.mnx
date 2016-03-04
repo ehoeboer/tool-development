@@ -1,0 +1,589 @@
+﻿<?xml version='1.0' encoding='UTF-8' ?>
+<!-- Created by Uniface - (C) Uniface B.V. All rights reserved -->
+<!DOCTYPE UNIFACE PUBLIC "UNIFACE.DTD" "UNIFACE.DTD">
+<UNIFACE release="9.7" xmlengine="2.0">
+<TABLE>
+<DSC name="USMENU" model="DICT" system="S" pseudo ="73" level="1" noupdate="0"
+ rbk="0" ffsql="0" transnr="0" segsize="0" ufocc="0" charset=".U">
+<FLD name="UMENU" seqno="1" type="S" level="2" pack="0" scale="0" length="16"
+ pointer="0" inum="1" ufocc="0" mandatory="yes" idxnum="1" idxsnr="101" />
+<FLD name="UVAR" seqno="2" type="S" level="2" pack="0" scale="0" length="16"
+ pointer="0" inum="1" ufocc="0" mandatory="yes" idxnum="1" idxsnr="102" />
+<FLD name="ULAN" seqno="3" type="S" level="2" pack="0" scale="0" length="3"
+ pointer="0" inum="1" ufocc="0" mandatory="yes" idxnum="1" idxsnr="103" />
+<FLD name="MENUTYPE" seqno="4" type="S" level="2" pack="0" scale="0" length="1"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="UTIMESTAMP" seqno="5" type="E" level="2" pack="0" scale="0" length="15"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="UVERS" seqno="6" type="S" level="2" pack="0" scale="0" length="12"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="UDESCR" seqno="7" type="S" level="2" pack="0" scale="0" length="25"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="AUTHORIZ" seqno="8" type="S" level="2" pack="0" scale="0" length="1"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="UCOMMENT" seqno="9" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\C1,0,0,0,,0,0,0,," />
+<FLD name="TITLE" seqno="10" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\C2,0,0,0,,0,0,0,," />
+<FLD name="UCREATE" seqno="11" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\C3,0,0,0,,0,0,0,," />
+</DSC>
+<OCC>
+<DAT name="UMENU">MNU_EDITOR</DAT>
+<DAT name="UVAR">SIGWIZLIB</DAT>
+<DAT name="ULAN">USA</DAT>
+<DAT name="MENUTYPE">O</DAT>
+<DAT name="UTIMESTAMP">2005-11-10T12:23:53.00</DAT>
+</OCC>
+</TABLE>
+<TABLE>
+<DSC name="USITEM" model="DICT" system="S" pseudo ="73" level="1" noupdate="0"
+ rbk="0" ffsql="0" transnr="0" segsize="0" ufocc="300" charset=".U">
+<FLD name="UMENU" seqno="1" type="S" level="2" pack="0" scale="0" length="16"
+ pointer="0" inum="3" ufocc="0" mandatory="yes" idxnum="1,2,3" idxsnr="101,1,1" />
+<FLD name="UVAR" seqno="2" type="S" level="2" pack="0" scale="0" length="16"
+ pointer="0" inum="4" ufocc="0" mandatory="yes" idxnum="1,2,3,4" idxsnr="102,2,2,2" />
+<FLD name="ULAN" seqno="3" type="S" level="2" pack="0" scale="0" length="3"
+ pointer="0" inum="4" ufocc="0" mandatory="yes" idxnum="1,2,3,4" idxsnr="103,3,3,3" />
+<FLD name="UTECHSEQ" seqno="4" type="S" level="2" pack="0" scale="0" length="6"
+ pointer="0" inum="1" ufocc="0" mandatory="yes" idxnum="1" idxsnr="104" />
+<FLD name="USEQ" seqno="5" type="N" level="2" pack="0" scale="0" length="2"
+ pointer="0" inum="1" ufocc="0" idxnum="2" idxsnr="4" />
+<FLD name="UTIMESTAMP" seqno="6" type="E" level="2" pack="0" scale="0" length="15"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="UVERS" seqno="7" type="S" level="2" pack="0" scale="0" length="12"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="UDESCR" seqno="8" type="S" level="2" pack="0" scale="0" length="25"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="UENABLE" seqno="9" type="B" level="2" pack="0" scale="0" length="1"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="UHIDE" seqno="10" type="B" level="2" pack="0" scale="0" length="1"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="UCHECK" seqno="11" type="B" level="2" pack="0" scale="0" length="1"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="REFTYPE" seqno="12" type="S" level="2" pack="0" scale="0" length="1"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="UCASCADE" seqno="13" type="S" level="2" pack="0" scale="0" length="16"
+ pointer="0" inum="1" ufocc="0" idxnum="4" idxsnr="1" />
+<FLD name="UCOMMENT" seqno="14" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\C1,0,0,0,,0,0,0,," />
+<FLD name="TITLE" seqno="15" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" mandatory="yes" varinfo=",1,0,2,\1F\C2,0,0,0,,0,0,0,," />
+<FLD name="UCREATE" seqno="16" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\C3,0,0,0,,0,0,0,," />
+<FLD name="PRETRIG" seqno="17" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\C4,0,0,0,,0,0,0,," />
+<FLD name="UOPTTRIG" seqno="18" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\C5,0,0,0,,0,0,0,," />
+<FLD name="HELPTEXT" seqno="19" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\C6,0,0,0,,0,0,0,," />
+</DSC>
+<OCC>
+<DAT name="UMENU">MNU_EDITOR</DAT>
+<DAT name="UVAR">SIGWIZLIB</DAT>
+<DAT name="ULAN">USA</DAT>
+<DAT name="UTECHSEQ">1</DAT>
+<DAT name="USEQ">3</DAT>
+<DAT name="UTIMESTAMP">2015-10-06T13:37:13.00</DAT>
+<DAT name="UENABLE">T</DAT>
+<DAT name="UHIDE">F</DAT>
+<DAT name="UCHECK">F</DAT>
+<DAT name="TITLE">Copy</DAT>
+<DAT name="UCREATE">xl=</DAT>
+<DAT name="PRETRIG" xml:space='preserve'>if ($instancehandle("SIGWIZ_MAIN")-&gt;CHECK_UPATH("COM&uSEP;S3C") = 0)
+	set $hide
+elseif ($itemnr(2, @$fieldname) = "" &amp; @$fieldname != "")
+	reset $hide
+	reset $disable
+else
+	reset $hide
+	set $disable
+endif
+</DAT>
+<DAT name="UOPTTRIG" xml:space='preserve'>if (@$fieldname != "")
+	activate "SIGWIZ_MAIN".ACTION("COPY")
+endif
+</DAT>
+</OCC>
+<OCC>
+<DAT name="UMENU">MNU_EDITOR</DAT>
+<DAT name="UVAR">SIGWIZLIB</DAT>
+<DAT name="ULAN">USA</DAT>
+<DAT name="UTECHSEQ">10</DAT>
+<DAT name="USEQ">17</DAT>
+<DAT name="UTIMESTAMP">2015-10-01T21:08:10.00</DAT>
+<DAT name="UENABLE">T</DAT>
+<DAT name="UHIDE">F</DAT>
+<DAT name="UCHECK">F</DAT>
+<DAT name="TITLE">Export</DAT>
+<DAT name="UCREATE">xl=</DAT>
+<DAT name="PRETRIG" xml:space='preserve'>if ($fieldname != "USPECNAM")
+	set $hide
+elseif (@$fieldname != "")
+	reset $hide
+	reset $disable
+else
+	reset $hide
+	set $disable
+endif
+</DAT>
+<DAT name="UOPTTRIG" xml:space='preserve'>activate "SIGWIZ_MAIN".ACTION("EXPORT")
+</DAT>
+</OCC>
+<OCC>
+<DAT name="UMENU">MNU_EDITOR</DAT>
+<DAT name="UVAR">SIGWIZLIB</DAT>
+<DAT name="ULAN">USA</DAT>
+<DAT name="UTECHSEQ">11</DAT>
+<DAT name="USEQ">18</DAT>
+<DAT name="UTIMESTAMP">2015-10-01T15:39:48.00</DAT>
+<DAT name="UENABLE">T</DAT>
+<DAT name="UHIDE">F</DAT>
+<DAT name="UCHECK">F</DAT>
+<DAT name="TITLE">Import</DAT>
+<DAT name="UCREATE">xl=</DAT>
+<DAT name="PRETRIG" xml:space='preserve'>;if ($fieldname != "USPECNAM")
+	set $hide
+;else
+;	set $disable
+;	reset $hide
+;endif
+</DAT>
+<DAT name="UOPTTRIG" xml:space='preserve'>activate "SIGWIZ_MAIN".ACTION("IMPORT")</DAT>
+</OCC>
+<OCC>
+<DAT name="UMENU">MNU_EDITOR</DAT>
+<DAT name="UVAR">SIGWIZLIB</DAT>
+<DAT name="ULAN">USA</DAT>
+<DAT name="UTECHSEQ">13</DAT>
+<DAT name="USEQ">8</DAT>
+<DAT name="UTIMESTAMP">2015-10-29T17:48:12.00</DAT>
+<DAT name="UENABLE">F</DAT>
+<DAT name="UHIDE">F</DAT>
+<DAT name="UCHECK">F</DAT>
+<DAT name="TITLE">%</DAT>
+<DAT name="UCREATE">xl=</DAT>
+<DAT name="PRETRIG" xml:space='preserve'>if ($fieldname = "UOPERNAM" | ($fieldname = "UPARAMS" &amp; $instancehandle("SIGWIZ_MAIN")-&gt;CHECK_UPATH("COM&uSEP;S3C") = 0))
+	set $hide
+else
+	reset $hide
+endif
+</DAT>
+</OCC>
+<OCC>
+<DAT name="UMENU">MNU_EDITOR</DAT>
+<DAT name="UVAR">SIGWIZLIB</DAT>
+<DAT name="ULAN">USA</DAT>
+<DAT name="UTECHSEQ">14</DAT>
+<DAT name="USEQ">13</DAT>
+<DAT name="UTIMESTAMP">2015-11-01T13:55:49.00</DAT>
+<DAT name="UENABLE">T</DAT>
+<DAT name="UHIDE">F</DAT>
+<DAT name="UCHECK">F</DAT>
+<DAT name="TITLE" xml:space='preserve'>String &lt;-&gt; Numeric (VT_VARIANT)</DAT>
+<DAT name="UCREATE">xl=</DAT>
+<DAT name="PRETRIG" xml:space='preserve'>variables
+	string U_DTYP_OUT, UIPATTR_OUT
+endvariables
+
+if ($fieldname != "UPARAMS" | @$fieldname = "" | $instancehandle("SIGWIZ_MAIN")-&gt;CHECK_UPATH("COM") = 0)
+	set $hide
+else
+	activate "sigwiz_svc".get_param(uspecnam.dummy, uopernam.dummy, uparams.dummy, "", U_DTYP_OUT, UIPATTR_OUT)
+;	getitem/id UIPATTR_OUT, UIPATTR_OUT, "UIPBASETYP"
+;	if ((U_DTYP_OUT = "N" | U_DTYP_OUT = "S") &amp; UIPATTR_OUT = "VT_VARIANT")
+	if ((U_DTYP_OUT = "N" | U_DTYP_OUT = "S") &amp; $item("UIPBASETYP", UIPATTR_OUT) = "VT_VARIANT")
+		reset $hide
+	else
+		set $hide
+	endif
+endif
+</DAT>
+<DAT name="UOPTTRIG" xml:space='preserve'>activate "SIGWIZ_MAIN".ACTION("CHANGE_PARAM")
+</DAT>
+</OCC>
+<OCC>
+<DAT name="UMENU">MNU_EDITOR</DAT>
+<DAT name="UVAR">SIGWIZLIB</DAT>
+<DAT name="ULAN">USA</DAT>
+<DAT name="UTECHSEQ">15</DAT>
+<DAT name="USEQ">12</DAT>
+<DAT name="UTIMESTAMP">2015-11-01T13:55:49.00</DAT>
+<DAT name="UENABLE">T</DAT>
+<DAT name="UHIDE">F</DAT>
+<DAT name="UCHECK">F</DAT>
+<DAT name="TITLE" xml:space='preserve'>Edit Handle Classification</DAT>
+<DAT name="UCREATE">xl=</DAT>
+<DAT name="PRETRIG" xml:space='preserve'>variables
+	string uparams_value
+endvariables
+
+if ($fieldname != "UPARAMS" | @$fieldname = "" | $instancehandle("SIGWIZ_MAIN")-&gt;CHECK_UPATH("COM") = 0)
+	set $hide
+else
+	getitem/id uparams_value, $valrep(uparams.dummy), uparams.dummy
+	if ($scan(uparams_value, "HANDLE to %%"%%%") &gt; 0)
+		reset $hide
+	else
+		set $hide
+	endif
+endif
+</DAT>
+<DAT name="UOPTTRIG" xml:space='preserve'>activate "SIGWIZ_MAIN".ACTION("CHANGE_UHINTERFACE")
+</DAT>
+</OCC>
+<OCC>
+<DAT name="UMENU">MNU_EDITOR</DAT>
+<DAT name="UVAR">SIGWIZLIB</DAT>
+<DAT name="ULAN">USA</DAT>
+<DAT name="UTECHSEQ">16</DAT>
+<DAT name="USEQ">10</DAT>
+<DAT name="UTIMESTAMP">2015-10-29T17:48:37.00</DAT>
+<DAT name="UENABLE">F</DAT>
+<DAT name="UHIDE">F</DAT>
+<DAT name="UCHECK">F</DAT>
+<DAT name="TITLE">%</DAT>
+<DAT name="UCREATE">xl=</DAT>
+<DAT name="PRETRIG" xml:space='preserve'>if ($fieldname != "USPECNAM" &amp; $fieldname != "UOPERNAM" | $instancehandle("SIGWIZ_MAIN")-&gt;CHECK_UPATH("COM&uSEP;S3C") = 0)
+	set $hide
+;elseif (@$fieldname != "")
+;	reset $hide
+;	reset $disable
+else
+	reset $hide
+;	set $disable
+endif
+</DAT>
+</OCC>
+<OCC>
+<DAT name="UMENU">MNU_EDITOR</DAT>
+<DAT name="UVAR">SIGWIZLIB</DAT>
+<DAT name="ULAN">USA</DAT>
+<DAT name="UTECHSEQ">17</DAT>
+<DAT name="USEQ">9</DAT>
+<DAT name="UTIMESTAMP">2015-10-06T13:37:13.00</DAT>
+<DAT name="UENABLE">T</DAT>
+<DAT name="UHIDE">F</DAT>
+<DAT name="UCHECK">F</DAT>
+<DAT name="TITLE" xml:space='preserve'>Add Prefix</DAT>
+<DAT name="UCREATE">xl=</DAT>
+<DAT name="PRETRIG" xml:space='preserve'>if ($fieldname != "USPECNAM" | $instancehandle("SIGWIZ_MAIN")-&gt;CHECK_UPATH("COM") = 0)
+	set $hide
+elseif (@$fieldname != "")
+	reset $hide
+	reset $disable
+else
+	reset $hide
+	set $disable
+endif
+</DAT>
+<DAT name="UOPTTRIG" xml:space='preserve'>if (@$fieldname != "")
+	selectcase $fieldname
+		case "USPECNAM"
+			activate "SIGWIZ_MAIN".ACTION("ADD_PREFIX")
+		elsecase
+			message/error "Not implemented!"
+	endselectcase
+endif
+</DAT>
+</OCC>
+<OCC>
+<DAT name="UMENU">MNU_EDITOR</DAT>
+<DAT name="UVAR">SIGWIZLIB</DAT>
+<DAT name="ULAN">USA</DAT>
+<DAT name="UTECHSEQ">18</DAT>
+<DAT name="USEQ">2</DAT>
+<DAT name="UTIMESTAMP">2015-10-06T13:37:13.00</DAT>
+<DAT name="UENABLE">F</DAT>
+<DAT name="UHIDE">F</DAT>
+<DAT name="UCHECK">F</DAT>
+<DAT name="TITLE">%</DAT>
+<DAT name="UCREATE">xl=</DAT>
+<DAT name="PRETRIG" xml:space='preserve'>if ($fieldname != "USPECNAM" | $instancehandle("SIGWIZ_MAIN")-&gt;CHECK_UPATH("COM") = 0)
+	set $hide
+elseif (@$fieldname = "")
+	reset $hide
+	set $disable
+else
+	reset $hide
+	reset $disable
+endif
+</DAT>
+</OCC>
+<OCC>
+<DAT name="UMENU">MNU_EDITOR</DAT>
+<DAT name="UVAR">SIGWIZLIB</DAT>
+<DAT name="ULAN">USA</DAT>
+<DAT name="UTECHSEQ">19</DAT>
+<DAT name="USEQ">1</DAT>
+<DAT name="UTIMESTAMP">2015-10-06T13:37:13.00</DAT>
+<DAT name="UENABLE">T</DAT>
+<DAT name="UHIDE">F</DAT>
+<DAT name="UCHECK">F</DAT>
+<DAT name="TITLE">Find...</DAT>
+<DAT name="UCREATE">xl=</DAT>
+<DAT name="PRETRIG" xml:space='preserve'>if ($fieldname != "USPECNAM" | $instancehandle("SIGWIZ_MAIN")-&gt;CHECK_UPATH("COM") = 0)
+	set $hide
+elseif ($itemcount(@$fieldname) != 1)
+	reset $hide
+	set $disable
+else
+	reset $hide
+	reset $disable
+endif
+</DAT>
+<DAT name="UOPTTRIG" xml:space='preserve'>activate "SIGWIZ_MAIN".ACTION("FIND_UHINTERFACE")
+</DAT>
+</OCC>
+<OCC>
+<DAT name="UMENU">MNU_EDITOR</DAT>
+<DAT name="UVAR">SIGWIZLIB</DAT>
+<DAT name="ULAN">USA</DAT>
+<DAT name="UTECHSEQ">2</DAT>
+<DAT name="USEQ">6</DAT>
+<DAT name="UTIMESTAMP">2015-10-07T14:51:58.00</DAT>
+<DAT name="UENABLE">T</DAT>
+<DAT name="UHIDE">F</DAT>
+<DAT name="UCHECK">F</DAT>
+<DAT name="TITLE">Rename</DAT>
+<DAT name="UCREATE">xl=</DAT>
+<DAT name="PRETRIG" xml:space='preserve'>if ($instancehandle("SIGWIZ_MAIN")-&gt;CHECK_UPATH("COM&uSEP;S3C") = 0)
+	set $hide
+elseif (@$fieldname = "" | $instancehandle("SIGWIZ_MAIN")-&gt;CHECK_UPATH("COM") = 0 |($itemnr(2, @$fieldname) != "" &amp; $fieldname != "USPECNAM"))
+	reset $hide
+	set $disable
+else
+	reset $hide
+	reset $disable
+endif
+</DAT>
+<DAT name="UOPTTRIG" xml:space='preserve'>if ($itemnr(2, @$fieldname) = "" &amp; @$fieldname != "")
+	activate "SIGWIZ_MAIN".ACTION("RENAME")
+else
+	activate "SIGWIZ_MAIN".ACTION("RENAME_SIGS")
+endif
+</DAT>
+</OCC>
+<OCC>
+<DAT name="UMENU">MNU_EDITOR</DAT>
+<DAT name="UVAR">SIGWIZLIB</DAT>
+<DAT name="ULAN">USA</DAT>
+<DAT name="UTECHSEQ">20</DAT>
+<DAT name="USEQ">16</DAT>
+<DAT name="UTIMESTAMP">2015-10-29T16:25:05.00</DAT>
+<DAT name="UENABLE">F</DAT>
+<DAT name="UHIDE">F</DAT>
+<DAT name="UCHECK">F</DAT>
+<DAT name="TITLE">%</DAT>
+<DAT name="UCREATE">xl=</DAT>
+<DAT name="PRETRIG" xml:space='preserve'>if ($fieldname != "USPECNAM")
+	set $hide
+;elseif (@$fieldname != "")
+;	reset $hide
+;	reset $disable
+else
+	reset $hide
+;	set $disable
+endif
+</DAT>
+</OCC>
+<OCC>
+<DAT name="UMENU">MNU_EDITOR</DAT>
+<DAT name="UVAR">SIGWIZLIB</DAT>
+<DAT name="ULAN">USA</DAT>
+<DAT name="UTECHSEQ">21</DAT>
+<DAT name="USEQ">19</DAT>
+<DAT name="UTIMESTAMP">2015-10-29T17:48:05.00</DAT>
+<DAT name="UENABLE">F</DAT>
+<DAT name="UHIDE">F</DAT>
+<DAT name="UCHECK">F</DAT>
+<DAT name="TITLE">%</DAT>
+<DAT name="UCREATE">xl=</DAT>
+<DAT name="PRETRIG" xml:space='preserve'>;if ($fieldname != "USPECNAM")
+	set $hide
+;else
+;	reset $hide
+;endif
+</DAT>
+</OCC>
+<OCC>
+<DAT name="UMENU">MNU_EDITOR</DAT>
+<DAT name="UVAR">SIGWIZLIB</DAT>
+<DAT name="ULAN">USA</DAT>
+<DAT name="UTECHSEQ">22</DAT>
+<DAT name="USEQ">20</DAT>
+<DAT name="UTIMESTAMP">2015-09-28T17:16:37.00</DAT>
+<DAT name="UENABLE">T</DAT>
+<DAT name="UHIDE">F</DAT>
+<DAT name="UCHECK">F</DAT>
+<DAT name="TITLE">Print</DAT>
+<DAT name="UCREATE">xl=</DAT>
+<DAT name="PRETRIG" xml:space='preserve'>;if ($fieldname != "USPECNAM")
+	set $hide
+;else
+;	reset $hide
+;endif
+</DAT>
+</OCC>
+<OCC>
+<DAT name="UMENU">MNU_EDITOR</DAT>
+<DAT name="UVAR">SIGWIZLIB</DAT>
+<DAT name="ULAN">USA</DAT>
+<DAT name="UTECHSEQ">3</DAT>
+<DAT name="USEQ">7</DAT>
+<DAT name="UTIMESTAMP">2015-10-06T13:37:13.00</DAT>
+<DAT name="UENABLE">T</DAT>
+<DAT name="UHIDE">F</DAT>
+<DAT name="UCHECK">F</DAT>
+<DAT name="TITLE">Delete</DAT>
+<DAT name="UCREATE">xl=</DAT>
+<DAT name="PRETRIG" xml:space='preserve'>if ($fieldname != "USPECNAM" &amp; $instancehandle("SIGWIZ_MAIN")-&gt;CHECK_UPATH("COM&uSEP;S3C") = 0)
+	set $hide
+elseif (@$fieldname != "")
+	reset $hide
+	reset $disable
+else
+	reset $hide
+	set $disable
+endif
+</DAT>
+<DAT name="UOPTTRIG" xml:space='preserve'>if (@$fieldname != "")
+	activate "SIGWIZ_MAIN".ACTION("DELETE")
+endif
+</DAT>
+</OCC>
+<OCC>
+<DAT name="UMENU">MNU_EDITOR</DAT>
+<DAT name="UVAR">SIGWIZLIB</DAT>
+<DAT name="ULAN">USA</DAT>
+<DAT name="UTECHSEQ">5</DAT>
+<DAT name="USEQ">11</DAT>
+<DAT name="UTIMESTAMP">2015-11-01T13:55:49.00</DAT>
+<DAT name="UENABLE">T</DAT>
+<DAT name="UHIDE">F</DAT>
+<DAT name="UCHECK">F</DAT>
+<DAT name="TITLE">Edit</DAT>
+<DAT name="UCREATE">xl=</DAT>
+<DAT name="PRETRIG" xml:space='preserve'>if ($fieldname != "UOPERNAM" &amp; $fieldname != "UPARAMS" | $instancehandle("SIGWIZ_MAIN")-&gt;CHECK_UPATH("COM&uSEP;S3C") = 0)
+	set $hide
+elseif (@$fieldname = "" | $itemnr(2, @$fieldname) != "" | $instancehandle("SIGWIZ_MAIN")-&gt;CHECK_UPATH("COM") = 0)
+	reset $hide
+	set $disable
+else
+	reset $hide
+	reset $disable
+endif
+</DAT>
+<DAT name="UOPTTRIG" xml:space='preserve'>activate "SIGWIZ_MAIN".ACTION("EDIT")
+</DAT>
+</OCC>
+<OCC>
+<DAT name="UMENU">MNU_EDITOR</DAT>
+<DAT name="UVAR">SIGWIZLIB</DAT>
+<DAT name="ULAN">USA</DAT>
+<DAT name="UTECHSEQ">6</DAT>
+<DAT name="USEQ">4</DAT>
+<DAT name="UTIMESTAMP">2015-10-06T13:37:13.00</DAT>
+<DAT name="UENABLE">T</DAT>
+<DAT name="UHIDE">F</DAT>
+<DAT name="UCHECK">F</DAT>
+<DAT name="TITLE" xml:space='preserve'>Copy to...</DAT>
+<DAT name="UCREATE">xl=</DAT>
+<DAT name="PRETRIG" xml:space='preserve'>if ($fieldname = "USPECNAM" | $instancehandle("SIGWIZ_MAIN")-&gt;CHECK_UPATH("COM&uSEP;S3C") = 0)
+	set $hide
+elseif ($fieldname = "UOPERNAM" &amp;  @$fieldname != "")
+	reset $disable
+	reset $hide
+elseif ($fieldname = "UPARAMS")
+	set $disable
+	reset $hide
+else
+	set $disable
+	reset $hide
+endif
+</DAT>
+<DAT name="UOPTTRIG" xml:space='preserve'>if (@$fieldname != "")
+	activate "SIGWIZ_MAIN".ACTION("COPY_TO")
+endif
+</DAT>
+</OCC>
+<OCC>
+<DAT name="UMENU">MNU_EDITOR</DAT>
+<DAT name="UVAR">SIGWIZLIB</DAT>
+<DAT name="ULAN">USA</DAT>
+<DAT name="UTECHSEQ">7</DAT>
+<DAT name="USEQ">5</DAT>
+<DAT name="UTIMESTAMP">2015-10-06T13:37:13.00</DAT>
+<DAT name="UENABLE">T</DAT>
+<DAT name="UHIDE">F</DAT>
+<DAT name="UCHECK">F</DAT>
+<DAT name="TITLE" xml:space='preserve'>Move to...</DAT>
+<DAT name="UCREATE">xl=</DAT>
+<DAT name="PRETRIG" xml:space='preserve'>if ($fieldname = "USPECNAM" | $instancehandle("SIGWIZ_MAIN")-&gt;CHECK_UPATH("COM&uSEP;S3C") = 0)
+	set $hide
+elseif ($fieldname = "UOPERNAM" &amp;  @$fieldname != "")
+	reset $disable
+	reset $hide
+elseif ($fieldname = "UPARAMS")
+	set $disable
+	reset $hide
+else
+	set $disable
+	reset $hide
+endif
+</DAT>
+<DAT name="UOPTTRIG" xml:space='preserve'>if (@$fieldname != "")
+	activate "SIGWIZ_MAIN".ACTION("MOVE_TO")
+endif
+</DAT>
+</OCC>
+<OCC>
+<DAT name="UMENU">MNU_EDITOR</DAT>
+<DAT name="UVAR">SIGWIZLIB</DAT>
+<DAT name="ULAN">USA</DAT>
+<DAT name="UTECHSEQ">8</DAT>
+<DAT name="USEQ">14</DAT>
+<DAT name="UTIMESTAMP">2015-10-06T13:37:13.00</DAT>
+<DAT name="UENABLE">F</DAT>
+<DAT name="UHIDE">F</DAT>
+<DAT name="UCHECK">F</DAT>
+<DAT name="TITLE">%</DAT>
+<DAT name="UCREATE">xl=</DAT>
+<DAT name="PRETRIG" xml:space='preserve'>if ($fieldname != "USEPCNAM" | $instancehandle("SIGWIZ_MAIN")-&gt;CHECK_UPATH("COM&uSEP;S3C") = 0)
+	set $hide
+;elseif (@$fieldname != "")
+;	reset $hide
+;	reset $disable
+else
+	reset $hide
+;	set $disable
+endif
+</DAT>
+</OCC>
+<OCC>
+<DAT name="UMENU">MNU_EDITOR</DAT>
+<DAT name="UVAR">SIGWIZLIB</DAT>
+<DAT name="ULAN">USA</DAT>
+<DAT name="UTECHSEQ">9</DAT>
+<DAT name="USEQ">15</DAT>
+<DAT name="UTIMESTAMP">2015-10-01T21:12:40.00</DAT>
+<DAT name="UENABLE">T</DAT>
+<DAT name="UHIDE">F</DAT>
+<DAT name="UCHECK">F</DAT>
+<DAT name="TITLE">Compile</DAT>
+<DAT name="UCREATE">xl=</DAT>
+<DAT name="PRETRIG" xml:space='preserve'>if ($fieldname != "USPECNAM")
+	set $hide
+elseif (@$fieldname != "")
+	reset $hide
+	reset $disable
+else
+	reset $hide
+	set $disable
+endif
+</DAT>
+<DAT name="UOPTTRIG" xml:space='preserve'>activate "SIGWIZ_MAIN".ACTION("COMPILE")
+</DAT>
+</OCC>
+</TABLE>
+</UNIFACE>
