@@ -1,0 +1,15 @@
+UDBG.CNF
+bin/
+dbms/
+log/
+lst/
+build/
+src/components/dsp/UDSPDEF.cmx
+src/components/esv/UESVDEF.cmx
+asn/idf.asn
+asn/setup.asn
+src/library/menu/USYS/USA/FILESYNC.mnx
+Project Setup Tool - Build.lnk
+Project Setup Tool - Development.lnk
+Project Setup Tool - Runtime.lnk
+project.setup.xml

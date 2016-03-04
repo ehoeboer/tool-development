@@ -1,0 +1,47 @@
+<setup-config>
+
+	<!--
+		These files will be copied from the "from" location to the "to" location with values
+		substituted in for the local environment
+	-->
+	<templates>
+  	<template from=".\asn\templates\idf.asn.template" to=".\asn\idf.asn" />
+		<template from=".\asn\templates\setup.asn.template" to=".\asn\setup.asn" />
+	</templates>
+
+	<shortcuts>
+        <shortcut name='Project Setup Tool - Development'
+                  target='%USYS97%\common\bin\idf.exe'
+                  args='/adm="%USYS97%\uniface\adm\" /asn=./asn/idf.asn ?' />
+
+        <shortcut name='Project Setup Tool - Build'
+                  target='%USYS97%\common\bin\idf.exe'
+                  args='/adm="%USYS97%\uniface\adm\" /asn=./asn/build.asn /bat /tst SETUP_BUILD_S' />
+
+				<shortcut name='Project Setup Tool - Runtime'
+					        target='%USYS97%\common\bin\uniface.exe'
+					        args='/adm="%USYS97%\uniface\adm\" /asn=./asn/ProjectSetup_dev.asn SETUP' />
+    </shortcuts>
+
+		<!--
+			A list of folders that the setup tool should create. These would usually
+			be folders that the project needs but don't make sense to commit to
+			version control. For example, a log folder.
+		-->
+		<folders>
+			<folder name=".\bin" />
+			<folder name=".\build" />
+			<folder name=".\dbms" />
+			<folder name=".\ext" />
+			<folder name=".\log" />
+	    <folder name=".\lst" />
+		</folders>
+
+	  <build-switches asn=".\asn\setup.asn"
+	                  ini=""
+	                  debug="0" />
+
+    <do-import>1</do-import>
+    <do-compile>1</do-compile>
+
+</setup-config>

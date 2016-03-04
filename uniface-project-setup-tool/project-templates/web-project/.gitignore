@@ -1,0 +1,12 @@
+bin/
+log/
+lst/
+asn/dbms_local.asn
+asn/idf.asn
+asn/setup.asn
+asn/urouter.asn
+dbms/source_repo.db
+web/dspjs/
+web/WEB-INF/web.xml
+project.setup.xml
+UDBG.CNF

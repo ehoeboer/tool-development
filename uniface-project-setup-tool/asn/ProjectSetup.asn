@@ -1,0 +1,16 @@
+[SETTINGS]
+$putmess_logfile	.\log\ProjectSetup_%p.log
+$search_resources	resources_only
+
+
+[RESOURCES]
+.\ext\UnifaceMeta.uar
+
+usys:usys.uar
+usys:usysicon.uar
+usys:udbg.uar
+
+
+[FILES]
+
+*.log			.\log\*.log

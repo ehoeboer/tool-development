@@ -1,0 +1,9 @@
+bin/
+log/
+lst/
+asn/dbms_local.asn
+asn/idf.asn
+asn/setup.asn
+dbms/source_repo.db
+project.setup.xml
+UDBG.CNF
