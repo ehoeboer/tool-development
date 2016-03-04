@@ -1,0 +1,50 @@
+﻿<?xml version='1.0' encoding='UTF-8' ?>
+<!-- Created by UNIFACE - (C) Compuware Corporation -->
+<!DOCTYPE UNIFACE PUBLIC "UNIFACE.DTD" "UNIFACE.DTD">
+<UNIFACE release="9.6" xmlengine="2.0">
+<TABLE>
+<DSC name="UGLYPH" model="DICT" system="S" pseudo ="73" level="1" noupdate="0"
+ rbk="0" ffsql="0" transnr="0" segsize="0" ufocc="500">
+<FLD name="UTIMESTAMP" seqno="1" type="E" level="2" pack="0" scale="0" length="15"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="UCVERS" seqno="2" type="S" level="2" pack="0" scale="0" length="1"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="UCSUB" seqno="3" type="S" level="2" pack="0" scale="0" length="1"
+ pointer="0" inum="1" ufocc="0" mandatory="yes" idxnum="1" idxsnr="101" />
+<FLD name="UCLABEL" seqno="4" type="S" level="2" pack="0" scale="0" length="16"
+ pointer="0" inum="1" ufocc="0" mandatory="yes" idxnum="1" idxsnr="102" />
+<FLD name="UCVAR" seqno="5" type="S" level="2" pack="0" scale="0" length="16"
+ pointer="0" inum="1" ufocc="0" mandatory="yes" idxnum="1" idxsnr="103" />
+<FLD name="UCTYPE" seqno="6" type="S" level="2" pack="0" scale="0" length="3"
+ pointer="0" inum="1" ufocc="0" mandatory="yes" idxnum="1" idxsnr="104" />
+<FLD name="UCLASS" seqno="7" type="S" level="2" pack="0" scale="0" length="8"
+ pointer="0" inum="1" ufocc="0" mandatory="yes" idxnum="1" idxsnr="105" />
+<FLD name="UCOPTION" seqno="8" type="S" level="2" pack="0" scale="0" length="1"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="UVERS" seqno="9" type="S" level="2" pack="0" scale="0" length="12"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="UDESCR" seqno="10" type="S" level="2" pack="0" scale="0" length="25"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="UBITMAP" seqno="11" type="I" level="2" pack="131" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",0,0,0,,0,0,0,,0,0,0,," />
+</DSC>
+<OCC>
+<DAT name="UTIMESTAMP">2010-08-03T11:11:20.00</DAT>
+<DAT name="UCSUB">I</DAT>
+<DAT name="UCLABEL">FILENEEDSLOCK</DAT>
+<DAT name="UCVAR">VC_LIBRARY</DAT>
+<DAT name="UCTYPE">USA</DAT>
+<DAT name="UCLASS" xml:space='preserve'>Iw 8!1!1</DAT>
+<DAT name="UCOPTION">F</DAT>
+<DAT name="UDESCR">FileNeedsLock</DAT>
+<DAT name="UBITMAP">I1VOSSMBAAAQABAYAAAAAAD///////////////////////////////////////////////////////////////////////+ywtiywtiywtiywtiywtiywtiuvtSpuc+ks8nK0t73
+9/f39/f39/f39/f///////+ywtj////////////////////////+//+cq8A2SmSlsL/39/f39/f39/f///////+vv9X////////////////////+/v/7/P6VpLm6xdQ2SmSlsL/3
+9/f39/f///////+ru9H////////////////9/v/7+/74+f2Torc3S2U3S2U3S2X39/f39/f///////+ntsz///8za9gxZ9AuYcQrWrcpU6jz9vzv9PuToreTorc3S2X39/f39/f/
+//////+jssj////////8/f/5+/32+f3y9fzu8vvq7/vm7PmTorc2SmT39/f39/f///////+ersP+/v4za9gxZ9AvYcQsWrcoU6cmTJkjRo7f6PiTorc2SmT39/f39/f///////+9
+vb2BgYGBgYGBgYHw9Pzt8fvo7vrk6vjf5/fa4vaTorc2SmT39/f39/f///+Kioq5ubm5ubmhoaGYmJiBgYEsWrcpU6glTJojRo7T3/WTorc2SmT39/f39/e9vb29vb3Kysq9vb2q
+qqqYmJj+/v5tbW3b5ffX4fbT3vTN2vOTorc2SmT39/f39/eBgYG5ubm9vb29vb2hoaH+/v6BgYF1dXUpUqcmTJojRo7H1fOTorc2SmT39/f39/eBgYH+/v6qqqrg4OD+/v6Kiop5
+eXltbW3Q2/XL2PPG1fLC0fGTorc2SmT39/f39/eBgYHg4OD+/v7+/v6KioqBgYF1dXVmZmbK1/PF1PLB0PG8zfCTorc2SmT39/f39/f///+BgYH39/eKiop5eXl1dXVmZmZtbW2T
+oreToreToreToreTorc2SmT39/f39/f////g4OBtbW1tbW1tbW1mZmZtbW02SmQ2SmQ2SmQ2SmQ2SmQ2SmQ2SmT39/f39/c=</DAT>
+</OCC>
+</TABLE>
+</UNIFACE>

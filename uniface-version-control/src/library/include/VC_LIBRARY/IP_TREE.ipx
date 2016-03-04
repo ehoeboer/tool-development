@@ -1,0 +1,447 @@
+﻿<?xml version='1.0' encoding='UTF-8' ?>
+<!-- Created by UNIFACE - (C) Compuware Corporation -->
+<!DOCTYPE UNIFACE PUBLIC "UNIFACE.DTD" "UNIFACE.DTD">
+<UNIFACE release="9.6" xmlengine="2.0">
+<TABLE>
+<DSC name="USOURCE" model="DICT" system="S" pseudo ="73" level="1" noupdate="0"
+ rbk="0" ffsql="0" transnr="0" segsize="0" ufocc="500" charset=".U">
+<FLD name="UTIMESTAMP" seqno="1" type="E" level="2" pack="0" scale="0" length="15"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="UCOMPSTAMP" seqno="2" type="E" level="2" pack="0" scale="0" length="15"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="USTAT" seqno="3" type="S" level="2" pack="0" scale="0" length="1"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="USUB" seqno="4" type="S" level="2" pack="0" scale="0" length="1"
+ pointer="0" inum="2" ufocc="0" mandatory="yes" idxnum="1,2" idxsnr="101,1" />
+<FLD name="UVAR" seqno="5" type="S" level="2" pack="0" scale="0" length="16"
+ pointer="0" inum="2" ufocc="0" mandatory="yes" idxnum="1,2" idxsnr="102,2" />
+<FLD name="ULABEL" seqno="6" type="S" level="2" pack="0" scale="0" length="16"
+ pointer="0" inum="1" ufocc="0" mandatory="yes" idxnum="1" idxsnr="103" />
+<FLD name="ULAN" seqno="7" type="S" level="2" pack="0" scale="0" length="3"
+ pointer="0" inum="1" ufocc="0" mandatory="yes" idxnum="1" idxsnr="104" />
+<FLD name="MSGTYPE" seqno="8" type="S" level="2" pack="0" scale="0" length="1"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="UVERS" seqno="9" type="S" level="2" pack="0" scale="0" length="12"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="UDESCR" seqno="10" type="S" level="2" pack="0" scale="0" length="25"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="UVPOS" seqno="11" type="S" level="2" pack="0" scale="0" length="6"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="UHPOS" seqno="12" type="S" level="2" pack="0" scale="0" length="6"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="UVSIZ" seqno="13" type="S" level="2" pack="0" scale="0" length="6"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="UHSIZ" seqno="14" type="S" level="2" pack="0" scale="0" length="6"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="AUTHORIZ" seqno="15" type="S" level="2" pack="0" scale="0" length="1"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="UCLASS" seqno="16" type="S" level="2" pack="0" scale="0" length="1"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="LOCREF" seqno="17" type="S" level="2" pack="0" scale="0" length="1"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="UCONFIRM" seqno="18" type="B" level="2" pack="0" scale="0" length="1"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="UAUDIO" seqno="19" type="N" level="2" pack="10" scale="0" length="1"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="UCOMMENT" seqno="20" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",0,0,0,,1,0,1,\1D,0,0,0,," />
+<FLD name="UTEXT" seqno="21" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,1,\1E,0,0,0,,0,0,0,," />
+<FLD name="UWLEVEL" seqno="22" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\C1,0,0,0,,0,0,0,," />
+</DSC>
+<OCC>
+<DAT name="UTIMESTAMP">2010-06-09T11:00:23.00</DAT>
+<DAT name="USUB">I</DAT>
+<DAT name="UVAR">VC_LIBRARY</DAT>
+<DAT name="ULABEL">IP_TREE</DAT>
+<DAT name="ULAN">P</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Local procs for trees</DAT>
+<DAT name="UTEXT" xml:space='preserve'>;-------------------------------------------------------------
+; Returns the first ObjectId of the tree structure.
+; Usage: FirstObjectId = &lt;$fieldname&gt;_getFirstObjectId()
+;-------------------------------------------------------------
+entry &lt;$fieldname&gt;_getFirstObjectId
+;-------------------------------------------------------------
+returns String
+
+	return $idpart($itemnr(1, $fieldvalrep("&lt;$fieldname&gt;.&lt;$entname&gt;")))
+
+end ;&lt;$fieldname&gt;_getFirstObjectId
+
+
+;-------------------------------------------------------------
+; Returns the ObjectId of the parent of tree object pObjectId.
+; Usage: ParentObjectId = &lt;$fieldname&gt;_getParentObjectId(pObjectId)
+;-------------------------------------------------------------
+entry &lt;$fieldname&gt;_getParentObjectId
+;-------------------------------------------------------------
+returns String
+
+params
+	String	pObjectId	: IN
+endparams
+
+	if($itemcount(pObjectId) == 1)
+		return $itemnr(1, $item(pObjectId, $fieldvalrep("&lt;$fieldname&gt;.&lt;$entname&gt;")))
+	else
+		return ""
+	endif
+
+end ;&lt;$fieldname&gt;_getParentObjectId
+
+
+;-------------------------------------------------------------
+; Returns the expand state of tree object pObjectId.
+;	""	=	Not Expandable
+;	"+"	=	Expandable
+;	"-"	=	Expanded
+; Usage: ObjectExpand = &lt;$fieldname&gt;_getObjectExpand(pObjectId)
+;-------------------------------------------------------------
+entry &lt;$fieldname&gt;_getObjectExpand
+;-------------------------------------------------------------
+returns String
+
+params
+	String	pObjectId	: IN
+endparams
+
+	if($itemcount(pObjectId) = 1)
+    	selectcase $itemnr(2, $item(pObjectId, $fieldvalrep("&lt;$fieldname&gt;.&lt;$entname&gt;")))[1:1]
+			case "+"       ; Expandable
+				return "+"
+			case "-"       ; Expanded
+				return "-"
+			elsecase       ; Not expandable
+				return ""
+		endselectcase
+	else
+		return ""
+	endif
+
+end ;&lt;$fieldname&gt;_getObjectExpand
+
+
+;-------------------------------------------------------------
+; Returns the object type of tree object pObjectId.
+; Usage: ObjectType = &lt;$fieldname&gt;_getObjectType(pObjectId)
+;-------------------------------------------------------------
+entry &lt;$fieldname&gt;_getObjectType
+;-------------------------------------------------------------
+returns String
+
+params
+	String	pObjectId	: IN
+endparams
+
+	if($itemcount(pObjectId) = 1)
+		return $ltrim($ltrim($itemnr(2, $item(pObjectId, $fieldvalrep("&lt;$fieldname&gt;.&lt;$entname&gt;"))), "+"), "-")
+	else
+		return ""
+	endif
+
+end ;&lt;$fieldname&gt;_getObjectType
+
+
+;-------------------------------------------------------------
+; Returns the text representation of tree object pObjectId.
+; Usage: ObjectName = &lt;$fieldname&gt;_getObjectName(pObjectId)
+;-------------------------------------------------------------
+entry &lt;$fieldname&gt;_getObjectName
+;-------------------------------------------------------------
+returns String
+
+params
+	String	pObjectId	: IN
+endparams
+
+	if($itemcount(pObjectId) = 1)
+		return $itemnr(3, $item(pObjectId, $fieldvalrep("&lt;$fieldname&gt;.&lt;$entname&gt;")))
+	else
+		return ""
+	endif
+
+end ;&lt;$fieldname&gt;_getObjectName
+
+
+;-------------------------------------------------------------
+entry &lt;$fieldname&gt;_getObjectChildren
+;-------------------------------------------------------------
+returns String
+
+params
+	String	pObjectId		: IN
+endparams
+
+variables
+	Numeric	vCounter
+	String	vItemList, vValueList, vItem, vID
+	String	vObjectChildren
+endvariables
+
+	vCounter			= 1
+	vObjectChildren		= ""
+
+	getitem vItemList, $fieldvalrep("&lt;$fieldname&gt;.&lt;$entname&gt;"), vCounter
+
+	while ($status &gt; 0)
+		vValueList = $valuepart(vItemList)
+		getitem vItem, vValueList, 1
+		if (vItem = pObjectId)
+			vID = $idpart(vItemList) 
+			putitem vObjectChildren, -1, vID    
+		endif
+
+		vCounter = vCounter + 1 
+		getitem vItemList, $fieldvalrep("&lt;$fieldname&gt;.&lt;$entname&gt;"), vCounter
+	endwhile
+
+	return vObjectChildren
+
+end ;&lt;$fieldname&gt;_getObjectChildren
+
+
+;-------------------------------------------------------------
+; Adds/updates object to/in tree structure.
+; IN Params:
+;	pObjectId			-	Unique Id, of the to be added or
+;							updated object, in format "ObjectId"
+;	pParentObjectId		-	Object's parent object, in format ""
+;							| "ObjectId", where:
+;								"" 			defines object as root
+;								"ObjectId"	defines object's parent object
+;	pObjectExpand		-	Object's expand state in format "" |
+;							"+" | "-", where:
+;								""	shows object as not expandable, meaning the object does not have any child objects and therefore cannot be expanded
+;								"+"	shows object as expandable, meaning the object has child objects that are not shown, and the object can be expanded to chow its child objects
+;								"-"	shows object as expanded, meaning the object's child objects are shown
+;	pObjectType			-	Object's type
+;	pObjectName			-	Object's textual representation of
+;							type single line string
+;	pObjectColumnValues	-	Optional indexed list of column
+;							values (as shown in tree's detail
+;							columns view) in format
+;							"{ColumnValue{&uSEP;...}}", where every
+;							item defines one column	
+;-------------------------------------------------------------
+entry &lt;$fieldname&gt;_setObject
+;-------------------------------------------------------------
+params
+	String	pObjectId			: IN
+	String	pParentObjectId		: IN
+	String	pObjectExpand		: IN
+	String	pObjectType			: IN
+	String	pObjectName			: IN
+	String	pObjectColumnValues	: IN
+endparams
+
+variables
+	String	vInstruction
+	String	vObjectData
+endvariables
+
+	putitem vObjectData, 1, pParentObjectId							; Set ParentObjectId
+	putitem vObjectData, 2, $concat(pObjectExpand, pObjectType)		; Set ObjectExpand and ObjectType
+	putitem vObjectData, 3, pObjectName								; Set Name
+	if (pObjectColumnValues != "")
+		vObjectData = "%%vObjectData%%%&uSEP;%%pObjectColumnValues%%%"   	; Add columns values to end of list (not as sub list)
+	endif
+	vInstruction = "0="													; Initialize tree instruction: Add/Update single Object
+	putitem/id vInstruction, pObjectId, vObjectData					; Add Object data to instruction
+	$fieldvalrep("&lt;$fieldname&gt;.&lt;$entname&gt;") = vInstruction			; Assign the instruction to the tree widget
+	show																; Force the tree widget to process the instruction
+
+end ;&lt;$fieldname&gt;_setObject
+
+
+;-------------------------------------------------------------
+; Moves object to another location in the tree structure by
+; changing its parent object where it will be added last.
+; IN Params:
+;	pObjectId			-	Unique Id, of the to be moved object.
+;	pParentObjectId		-	Unique Id of object's new parent
+;							where:
+;								"" 			- Moves object to the root
+;								"ObjectId"	- Moves object under its new parent, where its new parent cannot be one of object's (grand) children or itself	
+;-------------------------------------------------------------
+entry &lt;$fieldname&gt;_setParentObjectId
+;-------------------------------------------------------------
+params
+	String	pObjectId		: IN
+	String	pParentObjectId	: IN
+endparams
+
+variables
+	String	vInstruction, vObjectData
+endvariables
+
+	; Get tree Object information
+	vObjectData = $item(pObjectId, $fieldvalrep("&lt;$fieldname&gt;.&lt;$entname&gt;"))	; Get the current Object data
+	; Update information with new parent id
+	putitem vObjectData, 1, pParentObjectId									; Update ParentObjectId
+	; Delete the Object, making sure the tree is refreshed
+	vInstruction = "-1="														; Initialize tree instruction: Delete single Object
+	putitem vInstruction, -1, pObjectId										; Add Object id to instruction
+	$fieldvalrep("&lt;$fieldname&gt;.&lt;$entname&gt;") = vInstruction					; Assign the instruction to the tree widget
+	show																		; Force the tree widget to process the inst
+	; Insert the Object again, using the new parent id
+	vInstruction = "0="															; Initialize tree instruction: Add/Update single Object
+	putitem/id vInstruction, pObjectId, vObjectData							; Add Object data to instruction
+	$fieldvalrep("&lt;$fieldname&gt;.&lt;$entname&gt;") = vInstruction					; Assign the instruction to the tree widget
+	show																		; Force the tree widget to process the instruction
+end ;&lt;$fieldname&gt;_setParentObjectId
+
+
+;-------------------------------------------------------------
+; Changes textual representation of object.
+;-------------------------------------------------------------
+entry &lt;$fieldname&gt;_setObjectName
+;-------------------------------------------------------------
+params
+	String	pObjectId	: IN   ; Unique Id, of object of which the name is to be changed, in format "ObjectId"
+	String	pObjectName	: IN   ; Object's new textual representation as it is shown in tree, of type single line string
+endparams
+
+variables
+	String vInstruction, vObjectData
+endvariables
+
+	vObjectData = $item(pObjectId, $fieldvalrep("&lt;$fieldname&gt;.&lt;$entname&gt;"))	; Get the current Object data
+	putitem vObjectData, 3, pObjectName										; Update ObjectName
+	vInstruction = "0="															; Initialize tree instruction: Add/Update single Object
+	putitem/id vInstruction, pObjectId, vObjectData							; Add Object data to instruction
+	$fieldvalrep("&lt;$fieldname&gt;.&lt;$entname&gt;") = vInstruction					; Assign the instruction to the tree widget
+	show																		; Force the tree widget to process the instruction
+end ;&lt;$fieldname&gt;_setObjectName
+
+
+;-------------------------------------------------------------
+entry &lt;$fieldname&gt;_setObjectType
+;-------------------------------------------------------------
+params
+	String	pObjectId	: IN   ; Unique Id, of object of which the name is to be changed, in format "ObjectId"
+	String	pObjectType	: IN
+endparams
+
+variables
+	String vInstruction, vObjectData
+	String vExpandState
+endvariables
+
+	vExpandState = &lt;$fieldname&gt;_getObjectExpand(pObjectId)
+
+	vObjectData = $item(pObjectId, $fieldvalrep("&lt;$fieldname&gt;.&lt;$entname&gt;"))	; Get the current Object data
+	putitem vObjectData, 2, "%%vExpandState%%%%%pObjectType%%%"
+	vInstruction = "0="															; Initialize tree instruction: Add/Update single Object
+	putitem/id vInstruction, pObjectId, vObjectData							; Add Object data to instruction
+	$fieldvalrep("&lt;$fieldname&gt;.&lt;$entname&gt;") = vInstruction					; Assign the instruction to the tree widget
+	show																		; Force the tree widget to process the instruction
+end ;&lt;$fieldname&gt;_setObjectType
+
+
+;-------------------------------------------------------------
+entry &lt;$fieldname&gt;_setObjectExpand
+;-------------------------------------------------------------
+params
+	String	pObjectId		: IN   ; Unique Id, of object of which the name is to be changed, in format "ObjectId"
+	String	pObjectExpand	: IN
+endparams
+
+variables
+	String vInstruction, vObjectData
+	String vObjectType
+endvariables
+
+	vObjectType = &lt;$fieldname&gt;_getObjectType(pObjectId)
+
+	vObjectData = $item(pObjectId, $fieldvalrep("&lt;$fieldname&gt;.&lt;$entname&gt;"))	; Get the current Object data
+	putitem vObjectData, 2, "%%pObjectExpand%%%%%vObjectType%%%"
+	vInstruction = "0="															; Initialize tree instruction: Add/Update single Object
+	putitem/id vInstruction, pObjectId, vObjectData							; Add Object data to instruction
+	$fieldvalrep("&lt;$fieldname&gt;.&lt;$entname&gt;") = vInstruction					; Assign the instruction to the tree widget
+	show																		; Force the tree widget to process the instruction
+end ;&lt;$fieldname&gt;_setObjectExpand
+
+;-------------------------------------------------------------
+entry &lt;$fieldname&gt;_setObjectColumns
+;-------------------------------------------------------------
+params
+	String	pObjectId			: IN   ; Unique Id, of object of which the name is to be changed, in format "ObjectId"
+	String	pObjectColumnValues	: IN
+endparams
+
+variables
+	String vInstruction, vObjectData
+endvariables
+
+	vObjectData = $item(pObjectId, $fieldvalrep("&lt;$fieldname&gt;.&lt;$entname&gt;"))	; Get the current Object data
+	if (pObjectColumnValues != "")
+		vObjectData = "%%vObjectData%%%&uSEP;%%pObjectColumnValues%%%"   	; Add columns values to end of list (not as sub list)
+	endif
+	vInstruction = "0="															; Initialize tree instruction: Add/Update single Object
+	putitem/id vInstruction, pObjectId, vObjectData							; Add Object data to instruction
+	$fieldvalrep("&lt;$fieldname&gt;.&lt;$entname&gt;") = vInstruction					; Assign the instruction to the tree widget
+	show																		; Force the tree widget to process the instruction
+end ;&lt;$fieldname&gt;_setObjectColumns
+
+
+;-------------------------------------------------------------
+; Deletes object and all its child objects from tree structure.
+;-------------------------------------------------------------
+entry &lt;$fieldname&gt;_deleteObject
+;-------------------------------------------------------------
+params
+	String	pObjectId	: IN   ; Unique Id, of object to be deleted from the tree structure, in format "ObjectId"
+endparams
+
+variables
+	String	vInstruction, vObjectData
+endvariables
+
+	vInstruction = "-1="										; Initialize tree instruction: Delete Object
+	putitem vInstruction, -1, pObjectId						; Add Object to instruction
+	$fieldvalrep("&lt;$fieldname&gt;.&lt;$entname&gt;") = vInstruction	; Assign the instruction to the tree widget
+	show														; Force the tree widget to process the instruction
+
+end ;&lt;$fieldname&gt;_deleteObject
+
+
+;-------------------------------------------------------------
+; Removes entire tree structure.
+;-------------------------------------------------------------
+entry &lt;$fieldname&gt;_deleteTree
+;-------------------------------------------------------------
+
+  &lt;$fieldname&gt;.&lt;$entname&gt;						= ""
+  $fieldvalrep("&lt;$fieldname&gt;.&lt;$entname&gt;")		= ""	; clear the tree structure
+  $fieldproperties("&lt;$fieldname&gt;.&lt;$entname&gt;")	= ""	; clear the tree definitions
+  show													; Force the tree widget to process the instruction
+
+end ;&lt;$fieldname&gt;_deleteTree
+
+
+;-------------------------------------------------------------
+; Sorts child objects of object using the given sort order.
+;-------------------------------------------------------------
+entry &lt;$fieldname&gt;_sortObject
+;-------------------------------------------------------------
+params
+	String	pObjectId		: IN   ; Unique Id, of object for which its child objects are sorted, in format "ObjectId"
+	String	pChildObjectIds	: IN   ; Indexed list of child objects determining the sort order, in format "ObjectId{&uSEP;...}", where the order of the list determines the sort order
+endparams
+
+variables
+	String	vInstruction
+endvariables
+
+	if (pChildObjectIds != "")
+		vInstruction = "-2="										; Initialize tree instruction: Sort child objects of Object
+		putitem/id vInstruction, pObjectId, pChildObjectIds		; Add Object data to instruction
+		$fieldvalrep("&lt;$fieldname&gt;.&lt;$entname&gt;") = vInstruction	; Assign the instruction to the tree widget
+		show														; Force the tree widget to process the instruction
+	endif
+
+end ;&lt;$fieldname&gt;_sortObject</DAT>
+</OCC>
+</TABLE>
+</UNIFACE>

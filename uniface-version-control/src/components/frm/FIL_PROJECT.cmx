@@ -1,0 +1,3200 @@
+﻿<?xml version='1.0' encoding='UTF-8' ?>
+<!-- Created by Uniface - (C) Uniface B.V. All rights reserved -->
+<!DOCTYPE UNIFACE PUBLIC "UNIFACE.DTD" "UNIFACE.DTD">
+<UNIFACE release="9.6" xmlengine="2.0">
+<TABLE>
+<DSC name="UFORM" model="DICT" system="S" pseudo ="73" level="1" noupdate="0"
+ rbk="0" ffsql="0" transnr="0" segsize="0" ufocc="1000" charset=".U">
+<FLD name="UTIMESTAMP" seqno="1" type="E" level="2" pack="0" scale="0" length="15"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="UCOMPSTAMP" seqno="2" type="E" level="2" pack="0" scale="0" length="15"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="ULABEL" seqno="3" type="S" level="2" pack="0" scale="0" length="16"
+ pointer="0" inum="1" ufocc="0" mandatory="yes" idxnum="1" idxsnr="101" />
+<FLD name="FTYP" seqno="4" type="S" level="2" pack="0" scale="0" length="4"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="UVERS" seqno="5" type="S" level="2" pack="0" scale="0" length="12"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="UDESCR" seqno="6" type="S" level="2" pack="0" scale="0" length="25"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="FHEAD" seqno="7" type="S" level="2" pack="0" scale="0" length="6"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="VMAAT" seqno="8" type="S" level="2" pack="0" scale="0" length="6"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="HMAAT" seqno="9" type="S" level="2" pack="0" scale="0" length="6"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="UCOLOR" seqno="10" type="S" level="2" pack="0" scale="0" length="6"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="WVPOS" seqno="11" type="S" level="2" pack="0" scale="0" length="6"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="WHPOS" seqno="12" type="S" level="2" pack="0" scale="0" length="6"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="WVSIZ" seqno="13" type="S" level="2" pack="0" scale="0" length="6"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="WHSIZ" seqno="14" type="S" level="2" pack="0" scale="0" length="6"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="CLRSCRN" seqno="15" type="S" level="2" pack="0" scale="0" length="1"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="UBORDER" seqno="16" type="S" level="2" pack="0" scale="0" length="1"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="RIBIN" seqno="17" type="S" level="2" pack="0" scale="0" length="16"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="RIBOT" seqno="18" type="S" level="2" pack="0" scale="0" length="16"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="MOVABLE" seqno="19" type="S" level="2" pack="0" scale="0" length="1"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="VIDEOINVERSE" seqno="20" type="S" level="2" pack="0" scale="0" length="1"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="VIDEOBRIGHT" seqno="21" type="S" level="2" pack="0" scale="0" length="1"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="VIDEOUNLINE" seqno="22" type="S" level="2" pack="0" scale="0" length="1"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="VIDEOBLINK" seqno="23" type="S" level="2" pack="0" scale="0" length="1"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="UPANEL" seqno="24" type="S" level="2" pack="0" scale="0" length="16"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="POSPANEL" seqno="25" type="S" level="2" pack="0" scale="0" length="1"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="UPULL" seqno="26" type="S" level="2" pack="0" scale="0" length="16"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="HIDESTACK" seqno="27" type="S" level="2" pack="0" scale="0" length="1"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="TEMPLATENAME" seqno="28" type="S" level="2" pack="0" scale="0" length="16"
+ pointer="0" inum="1" ufocc="0" idxnum="2" idxsnr="1" />
+<FLD name="UINHERIT" seqno="29" type="B" level="2" pack="0" scale="0" length="1"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="LIBRAR" seqno="30" type="S" level="2" pack="0" scale="0" length="16"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="UTRANSACT" seqno="31" type="S" level="2" pack="0" scale="0" length="8"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="TPLACTUAL" seqno="32" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\D3,0,0,0,,0,0,0,," />
+<FLD name="CONSTRAINTS" seqno="33" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\D4,0,0,0,,0,0,0,," />
+<FLD name="INIT" seqno="34" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\C1,0,0,0,,0,0,0,," />
+<FLD name="CLEAR" seqno="35" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\C2,0,0,0,,0,0,0,," />
+<FLD name="RETRIEVE" seqno="36" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\C3,0,0,0,,0,0,0,," />
+<FLD name="RECORD" seqno="37" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\C4,0,0,0,,0,0,0,," />
+<FLD name="STORE" seqno="38" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\C5,0,0,0,,0,0,0,," />
+<FLD name="DELET" seqno="39" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\C6,0,0,0,,0,0,0,," />
+<FLD name="ACCEPT" seqno="40" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\C7,0,0,0,,0,0,0,," />
+<FLD name="QUIT" seqno="41" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\C8,0,0,0,,0,0,0,," />
+<FLD name="MENU" seqno="42" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\C9,0,0,0,,0,0,0,," />
+<FLD name="INTKEY" seqno="43" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\CA,0,0,0,,0,0,0,," />
+<FLD name="SPRINT" seqno="44" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\CB,0,0,0,,0,0,0,," />
+<FLD name="EPRINT" seqno="45" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\CC,0,0,0,,0,0,0,," />
+<FLD name="ASYNC" seqno="46" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\CD,0,0,0,,0,0,0,," />
+<FLD name="GENERAL" seqno="47" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\CE,0,0,0,,0,0,0,," />
+<FLD name="FORMPIC" seqno="48" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\E0,0,0,0,,0,0,0,," />
+<FLD name="HEADER" seqno="49" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\E3,0,0,0,,0,0,0,," />
+<FLD name="LISTING" seqno="50" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\E5,0,0,0,,0,0,0,," />
+<FLD name="PERF" seqno="51" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\E1,0,0,0,,0,0,0,," />
+<FLD name="PROTO" seqno="52" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\E2,0,0,0,,0,0,0,," />
+<FLD name="TITLE" seqno="53" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\E7,0,0,0,,0,0,0,," />
+<FLD name="WINPROP" seqno="54" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\D2,0,0,0,,0,0,0,," />
+<FLD name="FRLF" seqno="55" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\E4,0,0,0,,0,0,0,," />
+<FLD name="FRGF" seqno="56" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\E6,0,0,0,,0,0,0,," />
+<FLD name="SFUNC" seqno="57" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\DC,0,0,0,,0,0,0,," />
+<FLD name="HTMLPROP" seqno="58" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\DD,0,0,0,,0,0,0,," />
+<FLD name="USCONTAINED" seqno="59" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\CF,0,0,0,,0,0,0,," />
+<FLD name="UEXECDEF" seqno="60" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\D0,0,0,0,,0,0,0,," />
+<FLD name="UPOPUP" seqno="61" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\D5,0,0,0,,0,0,0,," />
+<FLD name="UML_DATA" seqno="62" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\D6,0,0,0,,0,0,0,," />
+<FLD name="HTML_CMPPROP" seqno="63" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\D1,0,0,0,,0,0,0,," />
+<FLD name="HTML_FORMAT" seqno="64" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\D7,0,0,0,,0,0,0,," />
+<FLD name="HTML_STYLES" seqno="65" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\D8,0,0,0,,0,0,0,," />
+<FLD name="HTML_HOOK_H" seqno="66" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\D9,0,0,0,,0,0,0,," />
+<FLD name="HTML_HOOK_B" seqno="67" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\DA,0,0,0,,0,0,0,," />
+<FLD name="HTML_HOOK_E" seqno="68" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\DB,0,0,0,,0,0,0,," />
+<FLD name="HTML_BODYHOOK" seqno="69" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\DE,0,0,0,,0,0,0,," />
+<FLD name="HTML_CMPCLASS" seqno="70" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\DF,0,0,0,,0,0,0,," />
+<FLD name="GETSTATE" seqno="71" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\E8,0,0,0,,0,0,0,," />
+<FLD name="SETSTATE" seqno="72" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\E9,0,0,0,,0,0,0,," />
+<FLD name="UNOSTATE" seqno="73" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\EA,0,0,0,,0,0,0,," />
+<FLD name="CMP_EXT" seqno="74" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\EB,0,0,0,,0,0,0,," />
+<FLD name="UCTRIGGERS" seqno="75" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\EC,0,0,0,,0,0,0,," />
+<FLD name="UACCESSPATH" seqno="76" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\ED,0,0,0,,0,0,0,," />
+<FLD name="USPLITPROP" seqno="77" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\EE,0,0,0,,0,0,0,," />
+<FLD name="TPLACTUAL2" seqno="78" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\EF,0,0,0,,0,0,0,," />
+<FLD name="USTATEMANAGEDBY" seqno="79" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\F0,0,0,0,,0,0,0,," />
+<FLD name="HTMLSKELETON" seqno="80" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\F1,0,0,0,,0,0,0,," />
+</DSC>
+<OCC>
+<DAT name="UTIMESTAMP">2016-02-18T16:05:56.00</DAT>
+<DAT name="UCOMPSTAMP">2016-02-18T16:05:56.00</DAT>
+<DAT name="ULABEL">FIL_PROJECT</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Filesync Project Screen</DAT>
+<DAT name="WVPOS">3</DAT>
+<DAT name="WHPOS">1</DAT>
+<DAT name="WVSIZ">29</DAT>
+<DAT name="WHSIZ">126</DAT>
+<DAT name="CLRSCRN">N</DAT>
+<DAT name="UBORDER">N</DAT>
+<DAT name="MOVABLE">Y</DAT>
+<DAT name="HIDESTACK">N</DAT>
+<DAT name="UINHERIT">F</DAT>
+<DAT name="LIBRAR">VC_LIBRARY</DAT>
+<DAT name="UTRANSACT">0</DAT>
+<DAT name="TPLACTUAL" xml:space='preserve'>
+#Comment ----------------------------------------------
+#Comment start_of_references
+#ifdefined TEMPLATENAME
+#info symbol TEMPLATENAME is already or also defined as a global or local constant
+#endif
+#define TEMPLATENAME=
+#Comment 
+
+#Comment end_of_references
+
+
+#Comment ----------------------------------------------
+#Comment start_of_mappings
+#Comment end_of_mappings
+
+
+#Comment ----------------------------------------------
+#Comment start_of_symbols
+#Comment end_of_symbols
+
+
+#Comment ----------------------------------------------
+</DAT>
+<DAT name="INIT" xml:space='preserve'>variables
+	String	 vMessages
+	String	 vStatus
+	Boolean bAutoSync
+endvariables
+
+message/nobeep "Starting UnifaceVC..."
+show
+
+$settingsSvc$-&gt;getFullSyncDefault(CHK_FULLSYNC.BUTTONS, vMessages)
+#include VC_LIBRARY:IP_POSTCALL_PRES
+
+$settingsSvc$-&gt;getAutoSync(bAutoSync, vMessages)
+#include VC_LIBRARY:IP_POSTCALL_PRES
+
+if (bAutoSync)
+
+	;----------------------------------------------------
+	; Export changed objects, sync repository with 
+	; working copy &amp; load screen, selecting the root node
+	;----------------------------------------------------
+	call lpSync("root")
+
+	message/hint "Synchronizing with filesystem. No integrated Version control interface configured."
+
+
+else
+
+	; Sync deferred until Sync button pressed (e.g. Shared repository)
+	call lpShowTree("root") ; Build and show tree
+	if ($status &lt; 0)
+		message/error "An error occurred - please see message frame for details"
+	else
+		call lpDoMessages("Press sync to export Uniface changes prior to updating.")
+		message/clear
+	endif
+
+endif
+
+;----------------------------------------------------
+; Show the screen.
+;----------------------------------------------------
+edit
+</DAT>
+<DAT name="GENERAL" xml:space='preserve'>#include VCOMMON_LIBRARY:IP_ADD_MESSAGE
+#include VCOMMON_LIBRARY:IP_CONCAT_PATHS
+
+#include VC_LIBRARY:IP_EXPORTCHANGED
+;#include VC_LIBRARY:IP_IMPFROMPATH
+#include VC_LIBRARY:IP_SETUP_SVCS
+#include VC_LIBRARY:IP_DESTROY_SVCS
+#include VC_LIBRARY:IP_PATH_TO_ID
+
+;#include VC_LIBRARY:IP_DOMESSAGES
+
+;--------------------------------------
+entry lpDoMessages
+;--------------------------------------
+params
+	String pMessages	: IN
+endparams
+
+variables
+	String	vMessage
+endvariables
+
+	getitem vMessage, pMessages, 1
+	delitem pMessages, 1
+	while($status &gt; 0)
+		OUTPUT.LOG = vMessage
+		putmess vMessage
+		show
+		getitem vMessage, pMessages, 1
+		delitem pMessages, 1
+	endwhile
+
+	return &lt;OK&gt;
+
+end ;lpDoMessages
+
+;--------------------------------------------------------------------
+; Synchronize Uniface repository with working copy folders
+; - export changes
+; - if sandbox, import any updated export files
+; - refresh tree to show updated status
+;--------------------------------------------------------------------
+entry lpSync
+;--------------------------------------------------------------------
+params
+	string pSelectNode : IN ; Node to select after refresh
+endparams
+variables
+	String  vMessages
+	String  vPath
+	String  vStatus
+endvariables
+
+	;Refresh from selected tree position
+	;call lpGetNodePath(FILE_TREE.DUMMY, vPath)
+
+	;call lpDoMessages("Exporting changes to %%vPath%%%...")
+	call lpDoMessages("Exporting changes...")
+
+	$status = $vcMain$-&gt;refreshVCStatus($baseDir$, vMessages)
+	;$status = $vcMain$-&gt;refreshVCStatus(vPath, vMessages)
+	#include VC_LIBRARY:IP_POSTCALL_PRES
+
+	call lpExportChanged(CHK_FULLSYNC.BUTTONS, lpExportUfSig())
+
+	call lpDoMessages("Checking for updates to working copy and performing imports...")
+	$status = $vcMain$-&gt;import($baseDir$, 0, CHK_FULLSYNC.BUTTONS, vMessages)
+	#include VC_LIBRARY:IP_POSTCALL_PRES
+
+	call lpShowTree(pSelectNode) ; Build and show tree
+	if ($status &lt; 0)
+		message/error "An error occurred - please see message frame for details"
+	else
+		call lpDoMessages("Uniface repository synchronised with working copy.")
+	endif
+
+end ; lpSync
+
+;----------------------------------------------------------------------
+; Show tree
+;----------------------------------------------------------------------
+entry lpShowTree
+params
+	string pSelectNode : IN ; Node to select after refresh
+endparams
+
+
+	call lpBuildTree()
+	call lpSetFieldSyntax()
+	if ($status &lt; 0) done
+
+	; If specified, select node and make buttons available
+	if (pSelectNode)
+		call lpApplySelectionPath(pSelectNode)
+		call lpSetFieldSyntax()
+	endif
+
+end ;lpShowTree
+
+;--------------------------------------------------------------------
+entry lpBuildTree
+;--------------------------------------------------------------------
+variables
+	String  vMessages
+	String  vTreeNode
+	String  vType
+	String  vTreeList
+	String  vSelectedNode
+	Numeric vStatus
+	Boolean vConflictFound
+endvariables
+
+	message/nobeep "Building tree..."
+
+	$status = $vcMain$-&gt;refreshVCStatus($baseDir$, vMessages)
+	#include VC_LIBRARY:IP_POSTCALL_PRES
+	$vcMain$-&gt;calculateExtraProperties()	
+
+	$NodesProcessed$ = ""
+	call FILE_TREE_deleteTree()
+
+	call lpGetNodeDetails($baseDir$, "", "", "", vType)
+	call FILE_TREE_setObject("root", "", "-", vType, $baseDir$, "")
+
+	call lpBuildNodesForFolder($baseDir$, $baseDir$, "root")
+
+	return &lt;OK&gt;
+
+end ;lpBuildTree
+
+
+;--------------------------------------------------------------------
+entry lpBuildNodesForFolder
+;--------------------------------------------------------------------
+params
+	String	pBaseDir	: IN
+	String	pDir      : IN
+	String	pParent	: IN
+endparams
+
+variables
+	String		vSubDir
+	String		vContent
+	String		vFilePath
+	String		vID
+	;Numeric	vRevision
+	;String		vAuthor
+	Datetime	vDate
+	String		vType
+	String		vFolderContents
+	String		vNodeState
+	String		vStateCode
+	String		vFileProperties
+	String		vFileAttributes
+endvariables
+
+	;Check that pDir is a directory
+	if($lfileexists(pDir) != 2 | pDir == "")
+		return &lt;OK&gt;
+	endif
+
+	vSubDir = ""
+
+	;----------------------------------------------------
+	; Build nodes for all the folders under pDir
+	;----------------------------------------------------
+	vContent = $ldirlist(pDir, "dir")
+	getitem vFilePath, vContent, 1
+	while ($status &gt; 0)
+		if(vFilePath[1:1] != ".") ; hidden, e.g. .svn folder
+			vSubDir = $concat(pDir, "\", vFilePath)
+			vID = lpPathToID(vSubDir, pBaseDir)
+
+			call lpGetNodeDetails(vSubDir, vDate, vType)
+
+			;Does this folder have any child folders?
+			vFolderContents = $ldirlist(vSubDir, "dir")
+
+			;Should we have this folder expanded?
+			getitem/id vNodeState, $NodeState$, vID
+			if(vNodeState = "OPEN")
+				vStateCode = "-"
+			else
+				if(vFolderContents == "" | vFolderContents == ".svn")
+					vStateCode = ""		
+				else
+					vStateCode = "+"
+				endif
+			endif
+
+			;call FILE_TREE_setObject(vID, pParent, vStateCode, vType, vFilePath, "%%vRevision%%%&uSEP;%%vDate%%%&uSEP;%%vAuthor%%%")
+			call FILE_TREE_setObject(vID, pParent, vStateCode, vType, vFilePath, "%%vDate%%%")
+
+			if(vNodeState = "OPEN")
+				call lpBuildNodesForFolder(pBaseDir, vSubDir, vID)
+			endif
+
+  		endif
+
+  		delitem vContent, 1
+  		getitem vFilePath, vContent, 1
+	endwhile
+
+	;----------------------------------------------------
+	; Build nodes for all the files under pDir
+	;----------------------------------------------------
+	vContent = ""
+	vContent = $ldirlist(pDir, "file")
+	getitem vFilePath, vContent, 1
+	while ($status &gt; 0)
+
+		vSubDir = "%%pDir%%%\%%vFilePath%%%"
+
+		;Check to see if this file is a conflict file.
+		if(	vFilePath != $syntax("*.*.mine") &amp; vFilePath != $syntax("*.*.r*") )
+
+			vFileProperties = $lfileproperties(vSubDir)
+			getitem/id vFileAttributes, vFileProperties, "FILEATTRIBUTES"
+			if( ($scan(vFileAttributes, "H")) = 0 )
+				;R=read-only, H=hidden, S=system, A=archive, C=compressed, E=encypted
+				vID = $replace (vSubDir,	1 , pBaseDir,	"", -1)
+				vID = $replace (vID,		1 , "\",		"", -1)
+				vID = $replace (vID,		1 , ":",		"", -1)
+
+				;call lpGetNodeDetails(vSubDir, vRevision, vAuthor, vDate, vType)
+				;call FILE_TREE_setObject(vID, pParent, "", vType, vFilePath, "%%vRevision%%%&uSEP;%%vDate%%%&uSEP;%%vAuthor%%%")
+				call lpGetNodeDetails(vSubDir, vDate, vType)
+				call FILE_TREE_setObject(vID, pParent, "", vType, vFilePath, "%%vDate%%%")
+
+			endif
+		endif
+
+  		delitem vContent, 1
+  		getitem vFilePath, vContent, 1
+	endwhile
+
+	call FILE_TREE_flush()
+
+	putitem/id $NodesProcessed$, pParent, "1"
+
+	return &lt;OK&gt;
+
+end ;lpBuildNodesForFolder
+
+;--------------------------------------------------------------------
+entry lpRefreshTree
+;--------------------------------------------------------------------
+params
+	string pSelectionPath : IN
+endparams
+
+		;Rebuild the source tree view if it has changed
+		message/nobeep "Rebuilding tree..."
+		call lpBuildTree()
+
+		;Reselect the node we were on before
+		call lpApplySelectionPath(pSelectionPath)
+		message/nobeep "Done"
+
+end ; lpRefreshTree
+
+;--------------------------------------------------------------------
+entry lpSetFieldSyntax
+;--------------------------------------------------------------------
+variables
+	String  vPath
+	String  vReturnedInfo
+	String  vMessages
+	Boolean vIsSVNItem
+	String  vNodeList
+	String  vInterface
+	Numeric vStatus
+endvariables
+
+	$NODETYPE$ = FILE_TREE_getObjectType(FILE_TREE.DUMMY)
+	
+	if(FILE_TREE != "")
+		$fieldsyntax(DELETE_BUTTON.BUTTONS) = ""
+		;$fieldsyntax(UPDATE_BUTTON.BUTTONS) = ""
+		;$fieldsyntax(COMMIT_BUTTON.BUTTONS) = ""
+	
+		;if($NODETYPE$ = "FILEMOD" | $NODETYPE$ = "FLDMOD")
+			;$fieldsyntax(DIFF_BUTTON.BUTTONS)   = ""
+   			;$fieldsyntax(REVERT_BUTTON.BUTTONS) = ""
+		;else
+  			;$fieldsyntax(DIFF_BUTTON.BUTTONS)   = "DIM"
+   			;$fieldsyntax(REVERT_BUTTON.BUTTONS) = "DIM"
+		;endif
+	
+		;if($NODETYPE$ != "FILE" &amp; $NODETYPE$ != "FOLDER")
+  		;	$fieldsyntax(LOG_BUTTON.BUTTONS) = ""
+		;else
+   		;	$fieldsyntax(LOG_BUTTON.BUTTONS) = "DIM"
+		;endif
+	
+		;if( $NODETYPE$ == "FILE" | $NODETYPE$ == "FOLDER" | $NODETYPE$ == $syntax("FLD*") )
+		;	$fieldsyntax(ADD_BUTTON.BUTTONS) = ""
+		;else
+		;	$fieldsyntax(ADD_BUTTON.BUTTONS) = "DIM"
+		;endif
+	
+	else
+		; Nothing selected
+		call lpDimButtons
+	endif
+
+	return &lt;OK&gt;
+
+end ;lpSetFieldSyntax
+
+;--------------------------------------------------------------------
+entry lpDimButtons
+; Dim buttons in the case of no version control implementation
+; or working copy not being versions
+;--------------------------------------------------------------------
+		;#for BUTTON = (ADD&uSEP;DIFF&uSEP;LOG&uSEP;REVERT&uSEP;DELETE&uSEP;UPDATE&uSEP;COMMIT)
+		#for BUTTON = (DELETE)
+		$fieldsyntax(&lt;BUTTON&gt;_BUTTON.BUTTONS) = "DIM"
+		#endfor
+end ; lpDimButtons
+
+;--------------------------------------------------------------------
+entry lpGetNodeDetails
+;--------------------------------------------------------------------
+params
+	String		pNodePath : IN
+	Datetime	pDate     : OUT
+	String		pNodeType : OUT
+endparams
+
+variables
+	String  vItemSvnStatus
+	String  vItemStatus
+	String  vReturnedInfo
+	String  vMessages
+	Boolean vHasModification
+	Boolean vIsUniface
+	String  vDate
+	Numeric vStatus
+endvariables
+
+	$status = $vcMain$-&gt;getWCInfo(pNodePath, vReturnedInfo, vMessages)
+	#include VC_LIBRARY:IP_POSTCALL_PRES
+	vItemStatus      = $item("Status", vReturnedInfo)
+	vHasModification = $item("HasModifications", vReturnedInfo)
+	vIsUniface       = $item("IsUniface", vReturnedInfo)
+	vDate            = $item("Date", vReturnedInfo)
+
+	; modified    - text or props have been modified
+	; none        - does not exist
+	; normal      - exists, but uninteresting
+
+	selectcase $lfileexists(pNodePath) 
+	  case 2 ;this node is a folder
+		selectcase vItemStatus
+			case "modified"
+				pNodeType = "FLDMOD"
+			case "normal"
+				pNodeType = "FLDINSVN"
+			elsecase
+				pNodeType = "FOLDER"
+		endselectcase
+
+	  case 1	;this node is a file
+		selectcase vItemStatus
+			case "modified"
+				pNodeType = "FILEMOD"
+			case "normal"
+				pNodeType = "FILEINSVN"
+			elsecase
+				pNodeType = "FILE"
+		endselectcase
+	endselectcase
+
+	;pRevision = vRevisionNumber
+
+	;Format the date
+	;2010-10-07T12:51:02.957438Z
+	;ccyy mm dd hh nn ss tt
+	pDate = $concat($concat(vDate[1:4],  vDate[6:2],  vDate[9:2]), %\
+	                $concat(vDate[12:2], vDate[15:2],	vDate[18:2], vDate[21:2]))
+	return &lt;OK&gt;
+
+end ;lpGetNodeDetails
+
+
+;--------------------------------------------------------------------
+entry lpGetNodePath
+;--------------------------------------------------------------------
+params
+	String	pNodeID   : IN
+	String	pNodePath : OUT
+endparams
+
+variables
+	String	vNodeList
+	String	vParentNodeID
+	String	vNodeText
+	String	vPath
+	String	vMessages
+	String	vBasePath
+	Numeric	vStatus
+	String	vCurrentParentNodeID
+endvariables
+
+	;Check to see if we have already worked out the path for this node
+	getitem/id pNodePath, $TREE_NODE_PATHS$, pNodeID
+	if($status &gt; 0)
+		$status = $settingsSvc$-&gt;getWorkingCopyPath(vBasePath, vMessages)
+		#include VC_LIBRARY:IP_POSTCALL_PRES
+		pNodePath = lpConcatPaths(vBasePath, pNodePath)
+		return &lt;OK&gt;
+	endif
+
+	vParentNodeID	= FILE_TREE_getParentObjectId(pNodeID)
+	vNodeText		= FILE_TREE_getObjectName(pNodeID)
+
+	if(pNodeID = "root")
+	 	$status = $settingsSvc$-&gt;getWorkingCopyPath(vPath, vMessages)
+		#include VC_LIBRARY:IP_POSTCALL_PRES
+	else
+		vPath = vNodeText
+	endif
+
+	while(vParentNodeID != "")
+		vCurrentParentNodeID	= vParentNodeID
+		vParentNodeID			= FILE_TREE_getParentObjectId(vCurrentParentNodeID)
+		vNodeText				= FILE_TREE_getObjectName(vCurrentParentNodeID)		
+
+		if(vNodeText = "root")
+			;Cache the result before we add the base path
+			putitem/id $TREE_NODE_PATHS$, pNodeID, vPath
+
+			$status = $settingsSvc$-&gt;getWorkingCopyPath(vBasePath, vMessages)
+			#include VC_LIBRARY:IP_POSTCALL_PRES
+			vPath = lpConcatPaths(vBasePath, vPath)
+		else
+			vPath = lpConcatPaths(vNodeText, vPath)
+		endif
+	endwhile
+
+	pNodePath = vPath
+
+	return &lt;OK&gt;
+
+end ;lpGetNodePath
+
+
+;------------------------------------------------
+entry lpUpdateAllNodeTypes
+;------------------------------------------------
+variables
+	String	vMessages
+	String	vStatus
+	String	vPath
+	String	vType
+	String	vChildren
+	String	vChildID
+	String	vChildPath
+	String	vChildType
+	String	vExpandState
+endvariables
+
+	message/nobeep "Rebuilding Tree..."
+	$status = $vcMain$-&gt;refreshVCStatus($baseDir$, vMessages)
+	#include VC_LIBRARY:IP_POSTCALL_PRES
+	
+	call lpGetNodePath("root", vPath)
+	;call lpGetNodeDetails(vPath, "", "", "", vType)
+	call lpGetNodeDetails(vPath, "", vType)
+	call FILE_TREE_setObjectType("root", vType)
+	call lpUpdateChildNodeTypes("root")
+	call FILE_TREE_flush()	
+	message/nobeep "Done."
+
+	return &lt;OK&gt;
+
+end ;lpUpdateAllNodeTypes
+
+
+;------------------------------------------------
+entry lpUpdateChildNodeTypes
+;------------------------------------------------
+params
+	String	pID	: IN
+endparams
+
+variables
+	String    vChildren
+	String    vChildID
+	String    vChildPath
+	String    vChildType
+	String    vExpandState
+	;Numeric   vRevision
+	Datetime  vDate
+	;String    vAuthor
+	String    vUpdateString
+	String    vObjectData
+endvariables
+
+	vChildren = FILE_TREE_getObjectChildren(pID)
+	getitem vChildID, vChildren, 1
+	while($status &gt; 0)
+		;Update the type of this node
+		call lpGetNodePath(vChildID, vChildPath)
+		;call lpGetNodeDetails(vChildPath, vRevision, vAuthor, vDate, vChildType)
+		call lpGetNodeDetails(vChildPath, vDate, vChildType)
+
+		call FILE_TREE_setObjectType(vChildID, vChildType)
+		;call FILE_TREE_setObjectColumns(vChildID, "%%vRevision%%%&uSEP;%%vDate%%%&uSEP;%%vAuthor%%%")
+		call FILE_TREE_setObjectColumns(vChildID, "%%vDate%%%")
+		
+		;If node is not a file
+		if($lfileexists(vChildPath) != 1)
+			call lpUpdateChildNodeTypes(vChildID)
+		endif
+
+		delitem vChildren, 1
+		getitem vChildID, vChildren, 1
+	endwhile
+
+	return &lt;OK&gt;
+
+end ;lpUpdateChildNodeTypes
+
+
+;------------------------------------------------
+entry lpExpandNode
+;------------------------------------------------
+params
+	String	pID	: IN
+endparams
+
+	;Log that this node is open
+	putitem/id $NodeState$, pID, "OPEN"
+
+	call lpPopulateNodeChildren(pID)
+
+	return &lt;OK&gt;
+
+end ;lpExpandNode
+
+
+;------------------------------------------------
+entry lpCollapseNode
+;------------------------------------------------
+params
+	String	pID	: IN
+endparams
+
+	;Log that this node is closed
+	delitem/id $NodeState$, pID
+
+	return &lt;OK&gt;
+
+end ;lpCollapseNode
+
+
+;------------------------------------------------
+entry lpPopulateNodeChildren
+;------------------------------------------------
+params
+	String	pID	: IN
+endparams
+
+variables
+	String	vTmp
+	String	vNodePath
+	String	vBaseDir
+	String	vMessages
+	Numeric	vStatus	
+endvariables
+
+	getitem/id vTmp, $NodesProcessed$, pID
+	if($status &gt; 0)
+		;This node already has its children populated
+		return &lt;OK&gt;
+	endif
+
+	;------------------------------------------------------
+	; Get the children of this node and add them in
+	;------------------------------------------------------
+	call lpGetNodePath(pID, vNodePath)
+
+	$settingsSvc$-&gt;getWorkingCopyPath(vBaseDir, vMessages)
+	#include VC_LIBRARY:IP_POSTCALL_PRES
+
+	call lpBuildNodesForFolder(vBaseDir, vNodePath, pID)
+
+	return &lt;OK&gt;
+
+end ;lpPopulateNodeChildren
+
+
+;--------------------------------------------------------------------
+entry lpBuildSelectionPath
+;--------------------------------------------------------------------
+returns String
+
+params
+	String	pNodeID	: IN
+endparams
+
+variables
+	String	vSelectionPath
+	String	vParentNodeID
+endvariables
+
+	putitem vSelectionPath, -1, pNodeID
+	vParentNodeID	= FILE_TREE_getParentObjectId(pNodeID)
+	while(vParentNodeID != "")
+		putitem vSelectionPath, -1, vParentNodeID
+		vParentNodeID	= FILE_TREE_getParentObjectId(vParentNodeID)
+	endwhile
+
+	$status = &lt;OK&gt;
+	return vSelectionPath
+
+end ;lpBuildSelectionPath
+
+
+;--------------------------------------------------------------------
+entry lpApplySelectionPath
+;--------------------------------------------------------------------
+params
+	String	pSelectionPath	: IN
+endparams
+
+variables
+	String	vNodeID
+	String	vNodeName
+endvariables
+
+	getitem vNodeID, pSelectionPath, 1
+	while($status &gt; 0)
+		vNodeName = FILE_TREE_getObjectName(vNodeID)
+		if(vNodeName != "")
+			FILE_TREE.DUMMY = vNodeID
+			return &lt;OK&gt;
+		endif
+
+		delitem pSelectionPath, 1
+		getitem vNodeID, pSelectionPath, 1
+	endwhile
+
+	return &lt;OK&gt;
+
+end ;lpApplySelectionPath
+
+;--------------------------------------------------------------------
+; Export Uniface Signatures? If false, only non-Uniface signatures
+; are exported
+;--------------------------------------------------------------------
+entry lpExportUfSig
+returns Boolean
+
+variables
+	Boolean vExport
+	String  vMessages
+endvariables
+
+	if ($Export_UF_Sig$ = "")
+		$settingsSvc$-&gt;getExportSignatures($Export_UF_Sig$, vMessages)
+	endif
+
+	return $Export_UF_Sig$
+
+end ; lpExportUfSig
+
+;--------------------------------------------------------------------
+entry lpGetComponentTypeAndPath
+;--------------------------------------------------------------------
+; Return type and working copy path for the specified component
+;--------------------------------------------------------------------
+params
+	string pComponentName : IN
+	string pComponentType : OUT
+	string pPath          : OUT
+	string pMessages      : OUT
+endparams
+variables
+	string  vPath
+	numeric vStatus
+	string  vMessages
+endvariables
+
+	activate "VREPO_COMMON".getComponentTypeByName(pComponentName, pComponentType, pMessages)
+	#include VC_LIBRARY:IP_POSTCALL_PRES
+
+	$status = $settingsSvc$-&gt;getExportPathForObject(pComponentType, vPath, vMessages)
+	#include VC_LIBRARY:IP_POSTCALL_PRES
+
+	pPath = lpConcatPaths($baseDir$, $replace(vPath, 1, "&lt;object&gt;", pComponentName, 1))
+	return &lt;OK&gt;
+
+end ; lpGetComponentType
+</DAT>
+<DAT name="FORMPIC" xml:space='preserve'>&uFRM;TYP=E&uSEP;NAM=DUMMY.DUMMY&uSEP;WID=114&uSEP;HEI=23&uSEP;HOC=114&uSEP;VOC=23&uFRM;&uFRM;TYP=F&uSEP;NAM=FILE_TREE&uSEP;WID=113&uSEP;HEI=23&uFRM; &uFRM;TYP=E&uSEP;NAM=BUTTONS.DUMMY&uSEP;WID=11&uSEP;HEI=29&uSEP;HOC=11&uSEP;VOC=29&uFRM; &uFRM;TYP=F&uSEP;NAM=CHK_FULLSYNC&uSEP;WID=3&uSEP;HEI=1&uFRM;&uFRM;TYP=L&uSEP;NAM=CHK_FULLSYNC.BUTTONS&uSEP;WID=7&uSEP;HEI=1&uSEP;LAB=Full Sync?&uFRM;
+                                                                                                                   &uFRM;TYP=F&uSEP;NAM=REFRESH_BUTTON&uSEP;WID=10&uSEP;HEI=2&uFRM;
+
+                                                                                                                   &uFRM;TYP=F&uSEP;NAM=DELETE_BUTTON&uSEP;WID=10&uSEP;HEI=2&uFRM;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&uFRM;TYP=E&uSEP;NAM=LOG.DUMMY&uSEP;WID=113&uSEP;HEI=6&uSEP;HOC=113&uSEP;VOC=6&uFRM;&uFRM;TYP=F&uSEP;NAM=OUTPUT&uSEP;WID=113&uSEP;HEI=6&uFRM;
+                                                                                                                   &uFRM;TYP=F&uSEP;NAM=ABOUT_BUTTON&uSEP;WID=10&uSEP;HEI=2&uFRM;
+
+                                                                                                                   &uFRM;TYP=F&uSEP;NAM=OK_BUTTON&uSEP;WID=10&uSEP;HEI=2&uFRM;</DAT>
+<DAT name="LISTING" xml:space='preserve'>Modifications:
+
+----------------------------------------------------------------------------------------------------------
+Date		Person	
+----------------------------------------------------------------------------------------------------------
+28.09.2012	Karl Jan.	$logical(SVN_FULLSYNC) introduced
+</DAT>
+<DAT name="TITLE">UnifaceVC</DAT>
+<DAT name="WINPROP" xml:space='preserve'>CAPTION=&uSEP;CANRESIZE=&uSEP;CANICONIZE=&uSEP;CANZOOM=&uSEP;CANCLOSE=&uSEP;SYSMENU=&uSEP;BACKIMAGE=&uSEP;IMAGE=&uSEP;MODAL=&uSEP;ATTACHED=&uSEP;UTYPE=&uSEP;DIRECTION=&uSEP;SPLIT=(114,30,v,r,h,f,(114,23,h,b,s,n,p,p),(13,23,h,b,h,f,p,p))&uSEP;NOFORMSCROLL=T&uSEP;BACKCOLOR=&uSEP;KEEPLAYOUT=F&uSEP;LAYOUTSTORAGE=&uSEP;HALIGN=&uSEP;VALIGN=&uSEP;HSCALE=&uSEP;VSCALE=&uSEP;PRESERVEASPECT=&uSEP;OKBUTTON=</DAT>
+<DAT name="SFUNC" xml:space='preserve'>;--------------------------------------------------------------------
+operation init
+;--------------------------------------------------------------------
+variables
+	String  vMessages
+	Numeric vStatus
+endvariables
+
+	$currentVariation$	= $variation
+	$variation			= "VC_LIBRARY"
+
+	;----------------------------------------------------
+	; Set up our services.
+	;----------------------------------------------------
+	$VCINTERFACE$ = "FIL"
+	call lpSetupServices($VCINTERFACE$);
+	if($status &lt; 0)
+		return &lt;FAILED&gt;
+	endif
+
+	;-----------------------------------------------------
+	; Set version control implementation to filesync
+	;-----------------------------------------------------
+	$status = $vcMain$-&gt;setVcHandler("FIL", $vcWrp$, vMessages)
+	if ($status &lt; 0)
+		message/error vMessages
+	endif
+
+	;----------------------------------------------------
+	; Get the working directory
+	;----------------------------------------------------
+	$settingsSvc$-&gt;getWorkingCopyPath($baseDir$, vMessages)
+	#include VC_LIBRARY:IP_POSTCALL_PRES
+
+end ;init
+
+
+;--------------------------------------------------------------------
+operation cleanup
+;--------------------------------------------------------------------
+
+	call lpDestroyServices();
+
+	$variation = $currentVariation$
+
+end ;cleanup
+
+
+;--------------------------------------------------------------------
+partner operation diff
+;--------------------------------------------------------------------
+variables
+	String	vCommand
+	String	vPath
+	String	vMessages
+	Numeric vStatus
+endvariables
+
+	call lpGetNodePath(FILE_TREE.DUMMY, vPath)
+	$status = $vcMain$-&gt;diff(vPath, vMessages)
+	#include VC_LIBRARY:IP_POSTCALL_PRES
+
+end ;diff
+
+
+;--------------------------------------------------------------------
+partner operation log
+;--------------------------------------------------------------------
+variables
+	String  vCommand
+	String  vPath
+	String  vSelectionPath
+	String  vMessages
+	Numeric vStatus
+endvariables
+
+	call lpGetNodePath(FILE_TREE.DUMMY, vPath)
+
+	;Save the currently selected node
+	vSelectionPath = lpBuildSelectionPath(FILE_TREE.DUMMY)
+
+	;Note: The user could revert etc. from a log, so checks for changes on return
+	vStatus = $vcMain$-&gt;log(vPath, $BaseDir$, CHK_FULLSYNC.BUTTONS, vMessages)
+	#include VC_LIBRARY:IP_POSTCALL_PRES
+
+	if (vStatus &gt; 0)
+		call lpRefreshTree(vSelectionPath)
+		call lpDoMessages("Changes imported")
+	endif
+
+	return &lt;OK&gt;
+
+end ;log
+
+
+;--------------------------------------------------------------------
+partner operation revert
+;--------------------------------------------------------------------
+; Revert invoked with component open in IDE 
+; (USYS-&gt;Additional-&gt;Subversion menu)
+;--------------------------------------------------------------------
+variables
+	String  vPath
+	String  vMessages
+	String  vSelectionPath
+	Numeric vStatus
+endvariables
+
+	call lpGetNodePath(FILE_TREE.DUMMY, vPath)
+
+	;Save the currently selected node
+	vSelectionPath = lpBuildSelectionPath(FILE_TREE.DUMMY)
+
+	vStatus = $vcMain$-&gt;revert(vPath, $BaseDir$, CHK_FULLSYNC.BUTTONS, vMessages)
+	#include VC_LIBRARY:IP_POSTCALL_PRES
+
+	if (vStatus &gt; 0)
+		call lpRefreshTree(vSelectionPath)
+	endif
+
+end ;revert
+
+
+;--------------------------------------------------------------------
+partner operation delete
+; TODO: move version control invocation logic to VC_MAIN
+;--------------------------------------------------------------------
+variables
+   String  vCommand
+   String  vPath
+   String  vMessages
+   Numeric vStatus
+   String  vSelectionPath
+   boolean bIsUnifaceExport, bLib_U
+   string  sUnifaceRelease, sObjects, sObject
+   string  sObjectType, sObjectName, sObjectLang, sObjectLib
+   numeric nCounter, nNotDeleted
+   handle  hDeleteHandle
+endvariables
+   
+   call lpGetNodePath(FILE_TREE.DUMMY, vPath)
+   ; Save the currently selected node
+   vSelectionPath = lpBuildSelectionPath(FILE_TREE.DUMMY)
+   ; Call Tortoise delete screen
+	call lpDoMessages("Calling TortoiseSVN remove...")
+
+   if ($valuepart($lfileproperties(vPath, "FILETYPE")) == "DIR")
+      askmess/warning "Folders cannot be deleted, only single objects", "OK"
+      return
+   endif
+   activate "VREPO_EXPPARSER".parseUnifaceExport( vPath, bIsUnifaceExport, sUnifaceRelease, sObjects, vMessages )
+   if ( $status &lt; 0 )
+      vStatus = $status
+      call lpAddMessage("Failed to instantiate VREPO_EXPPARSER", vMessages)
+      $status = vStatus 
+   endif
+   #include VC_LIBRARY:IP_POSTCALL_PRES
+   
+   nCounter = $itemcount(sObjects)
+   askmess/question "Are you sure you want to delete %%vPath%%% ? %%^%%nCounter%%% object(s) will be removed from Uniface Repository", "Yes, No"   
+   if ($status == 1)  ; Yes
+      newinstance "VREPO_DELETE", hDeleteHandle
+      if ($status &lt; 0)
+         vStatus = $status
+         call lpAddMessage("Failed to instantiate VREPO_DELETE", vMessages)
+         $status = vStatus
+      endif
+      #include VC_LIBRARY:IP_POSTCALL_PRES
+      bLib_U      = 0
+      nCounter    = 1
+      nNotDeleted = 0
+      getitem sObject, sObjects, nCounter
+      while ( $status &gt; 0 &amp; ! bLib_U )
+         getitem/id sObjectType, sObject, "OBJECT_TYPE"
+         getitem/id sObjectName, sObject, "OBJECT_NAME"
+         getitem/id sObjectLang, sObject, "OBJECT_LANG"
+         getitem/id sObjectLib,  sObject, "OBJECT_LIB"
+         if ( sObjectName == "U" | sObjectLib == "U" ) 
+            bLib_U = 1
+            askmess/warning "Objects from library U cannot be deleted ", "OK" 
+            call lpAddMessage("Objects from library U not deleted ", vMessages)
+            nNotDeleted = nNotDeleted + 1
+         else
+            if (sObjectType == 'library')
+             ; do not delete library, other object types may exist
+               call lpaddmessage("library %%sObjectname%%% not deleted ",vMessages) 
+               nNotDeleted = nNotDeleted + 1 
+            else 
+               $status = hDeleteHandle-&gt;DeleteSourceObject(sObjecttype, sObjectname, sObjectlib, sObjectlang, vMessages)
+               if ($status &lt; 0) 
+                  return (-1)
+               endif  
+            endif  
+         endif  
+         nCounter = nCounter + 1 
+         getitem sObject, sObjects, nCounter 
+      endwhile 
+      nCounter = nCounter - 1 - nNotDeleted
+      if (nCounter &gt; 0)
+       ; Commit the delete
+         call lpAddMessage("deleted: %%nCounter%%% objects", vMessages)
+         hDeleteHandle-&gt;commitDelete(vMessages)
+         if ( $status == 0 )
+            call lpAddMessage("committed: %%nCounter%%% objects", vMessages)
+         endif
+         if ( !bLib_U )
+            $status = $vcWrp$-&gt;callremove(vPath, vMessages)
+            if ( $status == 0 )
+               call lpAddMessage("File %%vPath%%% deleted from SVN", vMessages)
+            endif
+            activate $vcMain$-&gt;DeleteOccVCStatus(vPath, vMessages)
+            if ( $status == 0 )
+               call lpAddMessage("Entry %%vPath%%% deleted from table VC_STATUS", vMessages)
+            endif
+         endif
+      else
+       ; Rollback the delete
+         call lpAddMessage("Delete failed: %%nCounter%%% objects $procerror=%%$procerror%%%", vMessages )
+         hDeleteHandle-&gt;rollbackDelete(vMessages)
+      endif
+	   
+      ; Rebuild the source tree view, as it might have changed
+      call lpDoMessages("Delete complete.")
+
+      $status = $vcMain$-&gt;refreshVCStatus($baseDir$, vMessages)
+      #include VC_LIBRARY:IP_POSTCALL_PRES
+      
+    ; Need to rebuild the actual tree structure here, as an item has been removed.
+      call lpRefreshTree(vSelectionPath)
+
+      deleteinstance hDeleteHandle ; "VREPO_DELETE"
+
+   endif
+   
+end ; op. delete
+
+
+;--------------------------------------------------------------------
+partner operation add
+; TODO: move version control invocation logic to VC_MAIN
+;--------------------------------------------------------------------
+variables
+	String  vPath
+	String  vMessages
+	Numeric vStatus
+endvariables
+
+	call lpGetNodePath(FILE_TREE.DUMMY, vPath)
+
+	call lpDoMessages("Calling TortoiseSVN add...")
+
+	$status = $vcWrp$-&gt;callAdd(vPath, vMessages)
+	#include VC_LIBRARY:IP_POSTCALL_PRES
+
+	;Refresh the SVN status as things may have changed
+	$status = $vcMain$-&gt;refreshVCStatus($baseDir$, vMessages)
+	#include VC_LIBRARY:IP_POSTCALL_PRES
+
+	call lpDoMessages("Add complete.")
+	call lpUpdateAllNodeTypes()
+
+end ;add
+
+;--------------------------------------------------------------------
+partner operation lock
+; TODO: move version control invocation logic to VC_MAIN
+;--------------------------------------------------------------------
+variables
+	String  vPath
+	String  vMessages
+	Numeric vStatus
+endvariables
+
+	call lpGetNodePath(FILE_TREE.DUMMY, vPath)
+
+	call lpDoMessages("Calling TortoiseSVN get lock...")
+	; Update from version control and import changes
+	$status = $vcMain$-&gt;lock(vPath, $BaseDir$, vMessages)
+	#include VC_LIBRARY:IP_POSTCALL_PRES
+
+	;Refresh the SVN status as things may have changed
+	$status = $vcMain$-&gt;refreshVCStatus($baseDir$, vMessages)
+	#include VC_LIBRARY:IP_POSTCALL_PRES
+
+	;message/nobeep "Add complete. Rebuilding tree..."
+	;call lpUpdateAllNodeTypes()
+	call lpDoMessages("Lock done")
+
+	return &lt;OK&gt;
+
+end ;lock
+
+;--------------------------------------------------------------------
+partner operation update
+;--------------------------------------------------------------------
+variables
+	String  vCommand
+	String  vPath
+	String  vMessages
+	String  vSelectionPath
+	Numeric vStatus
+endvariables
+
+	$status = $vcMain$-&gt;refreshVCStatus($baseDir$, vMessages)
+	#include VC_LIBRARY:IP_POSTCALL_PRES
+
+	call lpGetNodePath(FILE_TREE.DUMMY, vPath)
+
+	;Save the currently selected node
+	vSelectionPath = lpBuildSelectionPath(FILE_TREE.DUMMY)
+
+	call lpDoMessages("Updating from version control...")
+
+	; Update from version control and import changes
+	$status = $vcMain$-&gt;update(vPath, $BaseDir$, CHK_FULLSYNC.BUTTONS, vMessages)
+	#include VC_LIBRARY:IP_POSTCALL_PRES
+
+	;Rebuild the source tree view, as it might have changed
+	call lpRefreshTree(vSelectionPath)
+
+	call lpDoMessages("Update complete")
+
+end ;update
+
+
+;--------------------------------------------------------------------
+partner operation commit
+;--------------------------------------------------------------------
+; TODO: move version control invocation logic to VC_MAIN
+; TODO: check for reverts on commit
+;--------------------------------------------------------------------
+variables
+	String  vPath
+	String  vMessages
+	String  vNodeList
+	String  vNodeProperties
+	String  vParentNodeID
+	Numeric vStatus
+endvariables
+
+	call lpGetNodePath(FILE_TREE.DUMMY, vPath)
+
+	$status = $vcMain$-&gt;commit(vPath, $baseDir$, CHK_FULLSYNC.BUTTONS, vMessages)
+	#include VC_LIBRARY:IP_POSTCALL_PRES
+
+	call lpBuildTree()
+	call lpSetFieldSyntax()
+
+	message/nobeep "Done"
+	call lpDoMessages("Changes committed to version control.")
+
+end ;commit
+
+
+;--------------------------------------------------------------------
+partner operation editConflicts
+; TODO: move version control invocation logic to VC_MAIN
+;--------------------------------------------------------------------
+variables
+	String  vPath
+	String  vMessages
+	String  vBaseDir
+	Boolean vConflictFound
+	String  vInParams
+	Numeric vStatus
+endvariables
+
+	call lpGetNodePath(FILE_TREE.DUMMY, vPath)
+
+	call lpDoMessages("Calling TortoiseSVN edit conflicts...")
+	$status = $vcWrp$-&gt;callConflictEditor(vPath, vMessages)
+	#include VC_LIBRARY:IP_POSTCALL_PRES
+
+	message/info "Click OK after editing conflicts"
+	call lpDoMessages("Edit conflicts complete.")
+
+	;Reimport all the source under vPath, as it may have changed
+	call lpDoMessages("Reimporting reverted source...")
+
+	putitem/id vInParams, "PATH",			$baseDir$
+	putitem/id vInParams, "LIST",			vPath
+	putitem/id vInParams, "FORCE_IMPORT",	1
+	$status = $sourceImp$-&gt;importFromList(vInParams, vMessages)
+	#include VC_LIBRARY:IP_POSTCALL_PRES
+
+	call lpUpdateAllNodeTypes()
+	message/clear
+	call lpDoMessages("Import of edited conflicts done")
+
+end ;editConflicts
+
+
+;--------------------------------------------------------------------
+partner operation resolve
+; TODO: move version control invocation logic to VC_MAIN
+;--------------------------------------------------------------------
+variables
+	String  vPath
+	String  vMessages
+	Numeric vStatus
+endvariables
+
+	call lpGetNodePath(FILE_TREE.DUMMY, vPath)
+
+	call lpDoMessages("Calling TortoiseSVN resolve...")
+	$status = $vcWrp$-&gt;callResolve(vPath, vMessages)
+	#include VC_LIBRARY:IP_POSTCALL_PRES
+
+	call lpDoMessages("Resolve complete.")
+
+	;Reimport all the source under vPath, as it may have changed
+	message/nobeep "Importing updated source..."
+	$vcMain$-&gt;import(vPath, $BaseDir$, CHK_FULLSYNC.BUTTONS, vMessages)
+
+	call lpUpdateAllNodeTypes()
+	message/nobeep "Done."
+
+end ;resolve
+
+
+;--------------------------------------------------------------------
+; Sync 
+;  export changes &amp; check filesystem for SVN working copy changes
+;	reselecting selected node after refresh
+partner operation refresh
+;--------------------------------------------------------------------
+
+	call lpSync(FILE_TREE.DUMMY)
+
+end ;refresh
+
+
+;;--------------------------------------------------------------------
+;partner operation checkout
+;; Note: Currently unused (CHECKOUT_BUTTON is hidden)
+;; Originally intended to allow checkout with a completely empty
+;; repository. We typically checkout the entire project (inc shortcuts
+;; etc) outside the tool before intitial use &amp; it is more likely that 
+;; the user will update
+;;--------------------------------------------------------------------
+;variables
+;	String  vRepositoryPath
+;	String  vMessages
+;	String  vBaseDir
+;	Numeric vStatus
+;endvariables
+;
+;	$status = $settingsSvc$-&gt;getRepositoryPath(vRepositoryPath, vMessages)
+;	if($status &lt; 0 | vRepositoryPath = "")
+;		message "Error - See message frame for details."
+;		putmess "%%$componentName%%% - SVN repository path not set."
+;		return &lt;FAILED&gt;
+;	endif
+;
+;	$status = $settingsSvc$-&gt;getWorkingCopyPath(vBaseDir, vMessages)
+;	if($status &lt; 0)
+;		message "Error - See message frame for details."
+;		putmess "%%$componentName%%% - Working copy directory not set."
+;		return &lt;FAILED&gt;
+;	endif	
+;
+;	askmess/question "Are you sure you want to checkout from %%vRepositoryPath%%%?%%^This could lead to overwriting items in the current Uniface repository.","Yes,No"
+;	if ($status = 2)  ;No
+;	  return
+;	endif
+;
+;	;Call Tortoise checkout screen
+;	message/nobeep "Calling TortoiseSVN checkout..."
+;
+;	; Update from version control and import changes
+;	$status = $vcMain$-&gt;checkout($BaseDir$, vRepositoryPath, vMessages)
+;	#include VC_LIBRARY:IP_POSTCALL_PRES
+;
+;	call lpRefreshScreen()	
+;
+;end ;checkout
+
+;--------------------------------------------------------------------
+; Force Import of the selected export file
+partner operation import
+;--------------------------------------------------------------------
+variables
+	String vMessages
+	String vPath
+	String vSelectionPath
+	String vStatus
+endvariables
+
+	$status = $vcMain$-&gt;refreshVCStatus($baseDir$, vMessages)
+	#include VC_LIBRARY:IP_POSTCALL_PRES
+
+	call lpGetNodePath(FILE_TREE.DUMMY, vPath)
+
+	;Save the currently selected node
+	vSelectionPath = lpBuildSelectionPath(FILE_TREE.DUMMY)
+
+	call lpDoMessages("performing import...")
+	$vcMain$-&gt;import(vPath, $BaseDir$, CHK_FULLSYNC.BUTTONS, vMessages)
+	
+	call lpBuildTree()
+	call lpSetFieldSyntax()
+	call lpDoMessages("Import done")
+
+end ;import
+
+;--------------------------------------------------------------------
+public operation about
+;--------------------------------------------------------------------
+variables
+	String  vMessages
+	Numeric vStatus
+endvariables
+
+	activate "VC_ABOUT_F"
+	#include VC_LIBRARY:IP_POSTCALL_PRES
+
+end ;about
+
+
+;--------------------------------------------------------------------
+partner operation ok
+;--------------------------------------------------------------------
+
+	MACRO "^QUIT"
+
+end ;ok
+
+
+;--------------------------------------------------------------------
+partner operation optionStatus
+;--------------------------------------------------------------------
+params
+	String  pOption   : IN
+	Boolean pDisabled : OUT
+endparams
+
+variables
+	String	vType
+	String	vFieldSyntaxList
+	String	vFieldSyntaxItem
+endvariables
+
+	selectcase pOption
+		;case "DIFF"
+		;	vFieldSyntaxList = $fieldsyntax(DIFF_BUTTON)
+		;case "LOG"
+		;	vFieldSyntaxList = $fieldsyntax(LOG_BUTTON)
+		;case "REVERT"
+		;	vFieldSyntaxList = $fieldsyntax(REVERT_BUTTON)
+		case "DELETE"
+			vFieldSyntaxList = $fieldsyntax(DELETE_BUTTON)
+		;case "UPDATE"
+		;	vFieldSyntaxList = $fieldsyntax(UPDATE_BUTTON)
+		;case "COMMIT"
+		;	vFieldSyntaxList = $fieldsyntax(COMMIT_BUTTON)
+		;case "ADD"
+		;	vFieldSyntaxList = $fieldsyntax(ADD_BUTTON)
+		case "IMPORT"
+			if ($NODETYPE$ = "FILE")
+				vFieldSyntaxList = ""
+			else
+				vFieldSyntaxList = "DIM"
+			endif
+		;case "EDIT_CONFLICTS", "RESOLVE"
+		;	vType = FILE_TREE_getObjectType(FILE_TREE.DUMMY)
+		;	if(vType == "FILECONFLICT")
+		;		pDisabled = 0
+		;		return &lt;OK&gt;
+		;	endif
+		;	pDisabled = 1
+		;	return &lt;OK&gt;
+		case "LOCK"
+			;debug
+			;vType = FILE_TREE_getObjectType(FILE_TREE.DUMMY)
+			;if(vType[1:3] == "FLD")
+			;	pDisabled = 1
+			;	return &lt;OK&gt;
+			;endif
+			pDisabled = 1
+			return &lt;OK&gt;
+		case "RELEASELOCK"
+			;vType = FILE_TREE_getObjectType(FILE_TREE.DUMMY)
+			;if(vType == "FILECONFLICT")
+			;	pDisabled = 0
+			;	return &lt;OK&gt;
+			;endif
+			pDisabled = 1
+			return &lt;OK&gt;
+		elsecase
+			vFieldSyntaxList = ""
+	endselectcase
+
+	getitem vFieldSyntaxItem, vFieldSyntaxList, 1
+	while($status &gt; 0)
+		
+		vFieldSyntaxItem = $uppercase(vFieldSyntaxItem)
+		if(vFieldSyntaxItem == "DIM")
+			pDisabled = 1
+			return &lt;OK&gt;
+		endif
+
+		delitem vFieldSyntaxList, 1
+		getitem vFieldSyntaxItem, vFieldSyntaxList, 1
+	endwhile
+
+	pDisabled = 0
+	return &lt;OK&gt;
+
+end ;optionStatus
+</DAT>
+<DAT name="HTML_STYLES" xml:space='preserve'>/corporate.css&uSEP;../css/applic.css</DAT>
+<DAT name="TPLACTUAL2" xml:space='preserve'>#include VC_LIBRARY:IP_DEFINES
+#define NO_WC_CHECK
+#define MSG_CALLBACK
+
+</DAT>
+</OCC>
+</TABLE>
+<TABLE>
+<DSC name="UXGROUP" model="DICT" system="S" pseudo ="73" level="1" noupdate="0"
+ rbk="0" ffsql="0" transnr="0" segsize="0" ufocc="1000" charset=".U">
+<FLD name="UTIMESTAMP" seqno="1" type="E" level="2" pack="0" scale="0" length="15"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="ULABEL" seqno="2" type="S" level="2" pack="0" scale="0" length="32"
+ pointer="0" inum="1" ufocc="0" mandatory="yes" idxnum="1" idxsnr="101" />
+<FLD name="UBASE" seqno="3" type="S" level="2" pack="0" scale="0" length="32"
+ pointer="0" inum="1" ufocc="0" mandatory="yes" idxnum="1" idxsnr="102" />
+<FLD name="UFORM" seqno="4" type="S" level="2" pack="0" scale="0" length="16"
+ pointer="0" inum="2" ufocc="0" mandatory="yes" idxnum="1,2" idxsnr="103,1" />
+<FLD name="UVERS" seqno="5" type="S" level="2" pack="0" scale="0" length="12"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="UDESCR" seqno="6" type="S" level="2" pack="0" scale="0" length="25"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="U_BORD" seqno="7" type="S" level="2" pack="0" scale="0" length="1"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="U_INDB" seqno="8" type="S" level="2" pack="0" scale="0" length="1"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="U_DBMS" seqno="9" type="S" level="2" pack="0" scale="0" length="3"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="U_UPD" seqno="10" type="S" level="2" pack="0" scale="0" length="1"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="U_MINL" seqno="11" type="N" level="2" pack="0" scale="0" length="6"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="U_MAXL" seqno="12" type="N" level="2" pack="0" scale="0" length="6"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="U_MINR" seqno="13" type="N" level="2" pack="0" scale="0" length="6"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="U_MAXR" seqno="14" type="N" level="2" pack="0" scale="0" length="6"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="TPLGINTF" seqno="15" type="S" level="2" pack="0" scale="0" length="32"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="U_INTF" seqno="16" type="S" level="2" pack="0" scale="0" length="64"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="TEMPLATENAME" seqno="17" type="S" level="2" pack="0" scale="0" length="32"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="UINHERIT" seqno="18" type="B" level="2" pack="0" scale="0" length="1"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="TPLACTUAL" seqno="19" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\E6,0,0,0,,0,0,0,," />
+<FLD name="GETOCC" seqno="20" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\C1,0,0,0,,0,0,0,," />
+<FLD name="PUTOCC" seqno="21" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\C2,0,0,0,,0,0,0,," />
+<FLD name="DELOCC" seqno="22" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\C3,0,0,0,,0,0,0,," />
+<FLD name="LCK" seqno="23" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\C4,0,0,0,,0,0,0,," />
+<FLD name="UNLOCK" seqno="24" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\C5,0,0,0,,0,0,0,," />
+<FLD name="GETSEGM" seqno="25" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\C6,0,0,0,,0,0,0,," />
+<FLD name="ADDOCC" seqno="26" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\C7,0,0,0,,0,0,0,," />
+<FLD name="DELOCCR" seqno="27" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\C8,0,0,0,,0,0,0,," />
+<FLD name="ENDMOD" seqno="28" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\C9,0,0,0,,0,0,0,," />
+<FLD name="DOC" seqno="29" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\CA,0,0,0,,0,0,0,," />
+<FLD name="DETAIL" seqno="30" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\CB,0,0,0,,0,0,0,," />
+<FLD name="CREOCC" seqno="31" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\CC,0,0,0,,0,0,0,," />
+<FLD name="MENU" seqno="32" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\CD,0,0,0,,0,0,0,," />
+<FLD name="FINDOCC" seqno="33" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\CE,0,0,0,,0,0,0,," />
+<FLD name="ERROR" seqno="34" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\CF,0,0,0,,0,0,0,," />
+<FLD name="GENERAL" seqno="35" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\D0,0,0,0,,0,0,0,," />
+<FLD name="STARTMOD" seqno="36" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\D1,0,0,0,,0,0,0,," />
+<FLD name="FLIST" seqno="37" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\E1,0,0,0,,0,0,0,," />
+<FLD name="BREAK" seqno="38" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\E2,0,0,0,,0,0,0,," />
+<FLD name="VLDE" seqno="39" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\D2,0,0,0,,0,0,0,," />
+<FLD name="VLDK" seqno="40" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\D3,0,0,0,,0,0,0,," />
+<FLD name="UPOPUP" seqno="41" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\D4,0,0,0,,0,0,0,," />
+<FLD name="UISBCLASS" seqno="42" type="B" level="2" pack="0" scale="0" length="1"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="UISASSOC" seqno="43" type="B" level="2" pack="0" scale="0" length="1"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="U_OBJSVC" seqno="44" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\DC,0,0,0,,0,0,0,," />
+<FLD name="U_SVCUSE" seqno="45" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\DD,0,0,0,,0,0,0,," />
+<FLD name="HTML_ENTPROP" seqno="46" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\D7,0,0,0,,0,0,0,," />
+<FLD name="HTML_TABTYPE" seqno="47" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\D8,0,0,0,,0,0,0,," />
+<FLD name="HTML_ENTHK_B" seqno="48" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\D9,0,0,0,,0,0,0,," />
+<FLD name="HTML_ENTHK_E" seqno="49" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\DA,0,0,0,,0,0,0,," />
+<FLD name="HTML_OCCHK_B" seqno="50" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\DB,0,0,0,,0,0,0,," />
+<FLD name="HTML_OCCHK_E" seqno="51" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\DE,0,0,0,,0,0,0,," />
+<FLD name="HTML_ENTCLASS" seqno="52" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\DF,0,0,0,,0,0,0,," />
+<FLD name="U_GLAB" seqno="53" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\E0,0,0,0,,0,0,0,," />
+<FLD name="UEOINTERFACE" seqno="54" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\E3,0,0,0,,0,0,0,," />
+<FLD name="UECINTERFACE" seqno="55" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\E4,0,0,0,,0,0,0,," />
+<FLD name="UEOOPERS" seqno="56" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\E5,0,0,0,,0,0,0,," />
+<FLD name="UECOPERS" seqno="57" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\E7,0,0,0,,0,0,0,," />
+<FLD name="UEOTRIGGERS" seqno="58" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\E8,0,0,0,,0,0,0,," />
+<FLD name="UECTRIGGERS" seqno="59" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\E9,0,0,0,,0,0,0,," />
+<FLD name="UGEOMETRY" seqno="60" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\EA,0,0,0,,0,0,0,," />
+<FLD name="UWIDGETTYPE" seqno="61" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\EB,0,0,0,,0,0,0,," />
+<FLD name="UWIDGETCREATE" seqno="62" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\EC,0,0,0,,0,0,0,," />
+<FLD name="PRLO" seqno="63" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\ED,0,0,0,,0,0,0,," />
+<FLD name="PSLO" seqno="64" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\EE,0,0,0,,0,0,0,," />
+<FLD name="PRSO" seqno="65" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\EF,0,0,0,,0,0,0,," />
+<FLD name="PSSO" seqno="66" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\F0,0,0,0,,0,0,0,," />
+<FLD name="UPARENT" seqno="67" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\F1,0,0,0,,0,0,0,," />
+<FLD name="UWEBWIDGETTYPE" seqno="68" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\F2,0,0,0,,0,0,0,," />
+<FLD name="UWEBWIDGETCREATE" seqno="69" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\F3,0,0,0,,0,0,0,," />
+</DSC>
+<OCC>
+<DAT name="UTIMESTAMP">2015-07-06T10:39:20.00</DAT>
+<DAT name="ULABEL">BUTTONS</DAT>
+<DAT name="UBASE">DUMMY</DAT>
+<DAT name="UFORM">FIL_PROJECT</DAT>
+<DAT name="U_BORD">N</DAT>
+<DAT name="U_DBMS">XXX</DAT>
+<DAT name="U_UPD">Y</DAT>
+<DAT name="UINHERIT">F</DAT>
+<DAT name="UISBCLASS">F</DAT>
+<DAT name="UISASSOC">F</DAT>
+<DAT name="U_SVCUSE">N</DAT>
+<DAT name="HTML_ENTPROP" xml:space='preserve'>U_ATLEASTONE=1&uSEP;U_STARTOCC=1&uSEP;U_MAXOCC=</DAT>
+<DAT name="UWIDGETTYPE">U_NONE</DAT>
+</OCC>
+<OCC>
+<DAT name="UTIMESTAMP">2015-07-06T10:39:20.00</DAT>
+<DAT name="ULABEL">DUMMY</DAT>
+<DAT name="UBASE">DUMMY</DAT>
+<DAT name="UFORM">FIL_PROJECT</DAT>
+<DAT name="U_BORD">N</DAT>
+<DAT name="U_INDB">N</DAT>
+<DAT name="UINHERIT">F</DAT>
+<DAT name="UISBCLASS">F</DAT>
+<DAT name="UISASSOC">F</DAT>
+<DAT name="HTML_ENTPROP" xml:space='preserve'>U_ATLEASTONE=1&uSEP;U_STARTOCC=1&uSEP;U_MAXOCC=</DAT>
+</OCC>
+<OCC>
+<DAT name="UTIMESTAMP">2015-07-06T10:39:20.00</DAT>
+<DAT name="ULABEL">LOG</DAT>
+<DAT name="UBASE">DUMMY</DAT>
+<DAT name="UFORM">FIL_PROJECT</DAT>
+<DAT name="U_BORD">N</DAT>
+<DAT name="U_DBMS">XXX</DAT>
+<DAT name="U_UPD">Y</DAT>
+<DAT name="UINHERIT">F</DAT>
+<DAT name="UISBCLASS">F</DAT>
+<DAT name="UISASSOC">F</DAT>
+<DAT name="U_SVCUSE">N</DAT>
+<DAT name="HTML_ENTPROP" xml:space='preserve'>U_ATLEASTONE=1&uSEP;U_STARTOCC=1&uSEP;U_MAXOCC=</DAT>
+<DAT name="UWIDGETTYPE">U_NONE</DAT>
+</OCC>
+</TABLE>
+<TABLE>
+<DSC name="UXFIELD" model="DICT" system="S" pseudo ="73" level="1" noupdate="0"
+ rbk="0" ffsql="0" transnr="0" segsize="0" ufocc="1000" charset=".U">
+<FLD name="UTIMESTAMP" seqno="1" type="E" level="2" pack="0" scale="0" length="15"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="ULABEL" seqno="2" type="S" level="2" pack="0" scale="0" length="32"
+ pointer="0" inum="1" ufocc="0" mandatory="yes" idxnum="1" idxsnr="101" />
+<FLD name="GRP" seqno="3" type="S" level="2" pack="0" scale="0" length="32"
+ pointer="0" inum="2" ufocc="0" mandatory="yes" idxnum="1,2" idxsnr="102,1" />
+<FLD name="UBASE" seqno="4" type="S" level="2" pack="0" scale="0" length="32"
+ pointer="0" inum="2" ufocc="0" mandatory="yes" idxnum="1,2" idxsnr="103,2" />
+<FLD name="UFORM" seqno="5" type="S" level="2" pack="0" scale="0" length="16"
+ pointer="0" inum="3" ufocc="0" mandatory="yes" idxnum="1,2,3" idxsnr="104,3,1" />
+<FLD name="U_TLAB" seqno="6" type="S" level="2" pack="0" scale="0" length="32"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="UVERS" seqno="7" type="S" level="2" pack="0" scale="0" length="12"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="UDESCR" seqno="8" type="S" level="2" pack="0" scale="0" length="25"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="U_DTYP" seqno="9" type="S" level="2" pack="0" scale="0" length="2"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="U_INDB" seqno="10" type="S" level="2" pack="0" scale="0" length="1"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="TPLLAY" seqno="11" type="S" level="2" pack="0" scale="0" length="32"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="LAYOUTMOD" seqno="12" type="S" level="2" pack="0" scale="0" length="128"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="TPLSYN" seqno="13" type="S" level="2" pack="0" scale="0" length="32"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="SYNTAXMOD" seqno="14" type="S" level="2" pack="0" scale="0" length="192"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="TPLINTF" seqno="15" type="S" level="2" pack="0" scale="0" length="32"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="INTERFACEMOD" seqno="16" type="S" level="2" pack="0" scale="0" length="64"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="TABSTOP" seqno="17" type="N" level="2" pack="10" scale="0" length="2"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="WIDGETTYPE" seqno="18" type="S" level="2" pack="0" scale="0" length="16"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="TEMPLATENAME" seqno="19" type="S" level="2" pack="0" scale="0" length="32"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="UINHERIT" seqno="20" type="B" level="2" pack="0" scale="0" length="1"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="STARTMOD" seqno="21" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\C1,0,0,0,,0,0,0,," />
+<FLD name="ENDMOD" seqno="22" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\C2,0,0,0,,0,0,0,," />
+<FLD name="NEXTFLD" seqno="23" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\C3,0,0,0,,0,0,0,," />
+<FLD name="PREVFLD" seqno="24" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\C4,0,0,0,,0,0,0,," />
+<FLD name="ENCRYPT" seqno="25" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\C5,0,0,0,,0,0,0,," />
+<FLD name="DECRYPT" seqno="26" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\C6,0,0,0,,0,0,0,," />
+<FLD name="DOC" seqno="27" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\C7,0,0,0,,0,0,0,," />
+<FLD name="DETAIL" seqno="28" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\C8,0,0,0,,0,0,0,," />
+<FLD name="MENU" seqno="29" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\C9,0,0,0,,0,0,0,," />
+<FLD name="ERROR" seqno="30" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\CA,0,0,0,,0,0,0,," />
+<FLD name="UFORMAT" seqno="31" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\CB,0,0,0,,0,0,0,," />
+<FLD name="DEFORMAT" seqno="32" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\CC,0,0,0,,0,0,0,," />
+<FLD name="GENERAL" seqno="33" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\CD,0,0,0,,0,0,0,," />
+<FLD name="GETFOCUS" seqno="34" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\CE,0,0,0,,0,0,0,," />
+<FLD name="VCHANGED" seqno="35" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\CF,0,0,0,,0,0,0,," />
+<FLD name="WIDGETCREATE" seqno="36" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\DD,0,0,0,,0,0,0,," />
+<FLD name="VALLAB" seqno="37" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\DE,0,0,0,,0,0,0,," />
+<FLD name="INITVALUE" seqno="38" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\DF,0,0,0,,0,0,0,," />
+<FLD name="TPLACTUAL" seqno="39" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\E6,0,0,0,,0,0,0,," />
+<FLD name="VLDF" seqno="40" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\D0,0,0,0,,0,0,0,," />
+<FLD name="UPOPUP" seqno="41" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\D1,0,0,0,,0,0,0,," />
+<FLD name="UISOBJID" seqno="42" type="B" level="2" pack="0" scale="0" length="1"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="HTML_FLDPROP" seqno="43" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\D3,0,0,0,,0,0,0,," />
+<FLD name="HTML_CTRLTYPE" seqno="44" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\D4,0,0,0,,0,0,0,," />
+<FLD name="HTML_HOOK_B" seqno="45" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\D5,0,0,0,,0,0,0,," />
+<FLD name="HTML_HOOK_M" seqno="46" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\D6,0,0,0,,0,0,0,," />
+<FLD name="HTML_HOOK_E" seqno="47" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\D7,0,0,0,,0,0,0,," />
+<FLD name="HTML_LBLHK_B" seqno="48" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\D8,0,0,0,,0,0,0,," />
+<FLD name="HTML_LBLHK_E" seqno="49" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\D9,0,0,0,,0,0,0,," />
+<FLD name="HTML_FLDCLASS" seqno="50" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\DA,0,0,0,,0,0,0,," />
+<FLD name="HTML_LBLCLASS" seqno="51" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\DB,0,0,0,,0,0,0,," />
+<FLD name="UFOPERS" seqno="52" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\DC,0,0,0,,0,0,0,," />
+<FLD name="UFTRIGGERS" seqno="53" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\E0,0,0,0,,0,0,0,," />
+<FLD name="UGEOMETRY" seqno="54" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\E1,0,0,0,,0,0,0,," />
+<FLD name="USCOPE" seqno="55" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\E2,0,0,0,,0,0,0,," />
+<FLD name="UFORMATS" seqno="56" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\E3,0,0,0,,0,0,0,," />
+<FLD name="UHINTERFACE" seqno="57" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\E4,0,0,0,,0,0,0,," />
+<FLD name="WEBWIDGETTYPE" seqno="58" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\E5,0,0,0,,0,0,0,," />
+<FLD name="WEBWIDGETCREATE" seqno="59" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\E6,0,0,0,,0,0,0,," />
+</DSC>
+<OCC>
+<DAT name="UTIMESTAMP">2015-07-06T10:39:20.00</DAT>
+<DAT name="ULABEL">ABOUT_BUTTON</DAT>
+<DAT name="GRP">BUTTONS</DAT>
+<DAT name="UBASE">DUMMY</DAT>
+<DAT name="UFORM">FIL_PROJECT</DAT>
+<DAT name="U_DTYP">S</DAT>
+<DAT name="U_INDB">Y</DAT>
+<DAT name="INTERFACEMOD">C*</DAT>
+<DAT name="WIDGETTYPE">COMMANDBUTTON</DAT>
+<DAT name="UINHERIT">F</DAT>
+<DAT name="DETAIL" xml:space='preserve'>$instancehandle-&gt;about()
+#include VC_LIBRARY:IP_HANDLE_ERROR
+</DAT>
+<DAT name="WIDGETCREATE" xml:space='preserve'>VSIZE=80&uSEP;TOOLTIPTEXT=UnifaceSVN version information</DAT>
+<DAT name="INITVALUE">About</DAT>
+<DAT name="UISOBJID">F</DAT>
+<DAT name="HTML_FLDPROP">SYNC=1</DAT>
+<DAT name="HTML_CTRLTYPE">U_INPUT</DAT>
+</OCC>
+<OCC>
+<DAT name="UTIMESTAMP">2015-07-06T10:39:20.00</DAT>
+<DAT name="ULABEL">ABOUT_BUTTON</DAT>
+<DAT name="GRP">DUMMY</DAT>
+<DAT name="UBASE">DUMMY</DAT>
+<DAT name="UFORM">FIL_PROJECT</DAT>
+<DAT name="U_DTYP">S</DAT>
+<DAT name="U_INDB">Y</DAT>
+<DAT name="INTERFACEMOD">C*</DAT>
+<DAT name="WIDGETTYPE">COMMANDBUTTON</DAT>
+<DAT name="UINHERIT">F</DAT>
+<DAT name="DETAIL" xml:space='preserve'>$instancehandle-&gt;about()
+if ($status &lt; 0)
+	if($procerror &lt; 0)
+		message/error $procerrorcontext
+	else
+		message/error "UnifaceSVN: An error occurred - please see message frame for details"
+	endif
+endif</DAT>
+<DAT name="WIDGETCREATE" xml:space='preserve'>VSIZE=80&uSEP;TOOLTIPTEXT=UnifaceSVN version information</DAT>
+<DAT name="INITVALUE">About</DAT>
+<DAT name="UISOBJID">F</DAT>
+<DAT name="HTML_FLDPROP">SYNC=1</DAT>
+<DAT name="HTML_CTRLTYPE">U_INPUT</DAT>
+</OCC>
+<OCC>
+<DAT name="UTIMESTAMP">2015-07-06T10:39:20.00</DAT>
+<DAT name="ULABEL">ADD_BUTTON</DAT>
+<DAT name="GRP">BUTTONS</DAT>
+<DAT name="UBASE">DUMMY</DAT>
+<DAT name="UFORM">FIL_PROJECT</DAT>
+<DAT name="U_DTYP">S</DAT>
+<DAT name="U_INDB">B</DAT>
+<DAT name="INTERFACEMOD">C*</DAT>
+<DAT name="WIDGETTYPE">COMMANDBUTTON</DAT>
+<DAT name="UINHERIT">F</DAT>
+<DAT name="DETAIL" xml:space='preserve'>$instancehandle-&gt;add()
+#include VC_LIBRARY:IP_HANDLE_ERROR
+</DAT>
+<DAT name="WIDGETCREATE" xml:space='preserve'>VSIZE=80&uSEP;TOOLTIPTEXT=Add to version control</DAT>
+<DAT name="INITVALUE">Add</DAT>
+<DAT name="UISOBJID">F</DAT>
+<DAT name="HTML_FLDPROP">SYNC=1</DAT>
+<DAT name="HTML_CTRLTYPE">U_INPUT</DAT>
+</OCC>
+<OCC>
+<DAT name="UTIMESTAMP">2015-07-06T10:39:20.00</DAT>
+<DAT name="ULABEL">ADD_BUTTON</DAT>
+<DAT name="GRP">DUMMY</DAT>
+<DAT name="UBASE">DUMMY</DAT>
+<DAT name="UFORM">FIL_PROJECT</DAT>
+<DAT name="U_DTYP">S</DAT>
+<DAT name="U_INDB">B</DAT>
+<DAT name="INTERFACEMOD">C*</DAT>
+<DAT name="WIDGETTYPE">COMMANDBUTTON</DAT>
+<DAT name="UINHERIT">F</DAT>
+<DAT name="DETAIL" xml:space='preserve'>$instancehandle-&gt;add()
+if ($status &lt; 0)
+	if($procerror &lt; 0)
+		message/error $procerrorcontext
+	else
+		message/error "UnifaceSVN: An error occurred - please see message frame for details"
+	endif
+endif</DAT>
+<DAT name="WIDGETCREATE" xml:space='preserve'>VSIZE=80&uSEP;TOOLTIPTEXT=Add to version control</DAT>
+<DAT name="INITVALUE">Add</DAT>
+<DAT name="UISOBJID">F</DAT>
+<DAT name="HTML_FLDPROP">SYNC=1</DAT>
+<DAT name="HTML_CTRLTYPE">U_INPUT</DAT>
+</OCC>
+<OCC>
+<DAT name="UTIMESTAMP">2015-07-06T10:39:20.00</DAT>
+<DAT name="ULABEL">CHECKOUT_BUTTON</DAT>
+<DAT name="GRP">BUTTONS</DAT>
+<DAT name="UBASE">DUMMY</DAT>
+<DAT name="UFORM">FIL_PROJECT</DAT>
+<DAT name="U_DTYP">S</DAT>
+<DAT name="U_INDB">B</DAT>
+<DAT name="SYNTAXMOD">HID</DAT>
+<DAT name="INTERFACEMOD">C*</DAT>
+<DAT name="WIDGETTYPE">COMMANDBUTTON</DAT>
+<DAT name="UINHERIT">F</DAT>
+<DAT name="DETAIL">;$instancehandle-&gt;checkout()</DAT>
+<DAT name="WIDGETCREATE" xml:space='preserve'>VSIZE=80&uSEP;TOOLTIPTEXT=Checkout from version control</DAT>
+<DAT name="INITVALUE">Checkout</DAT>
+<DAT name="UISOBJID">F</DAT>
+<DAT name="HTML_FLDPROP">SYNC=1</DAT>
+<DAT name="HTML_CTRLTYPE">U_INPUT</DAT>
+</OCC>
+<OCC>
+<DAT name="UTIMESTAMP">2015-07-06T10:39:20.00</DAT>
+<DAT name="ULABEL">CHECKOUT_BUTTON</DAT>
+<DAT name="GRP">DUMMY</DAT>
+<DAT name="UBASE">DUMMY</DAT>
+<DAT name="UFORM">FIL_PROJECT</DAT>
+<DAT name="U_DTYP">S</DAT>
+<DAT name="U_INDB">B</DAT>
+<DAT name="SYNTAXMOD">HID</DAT>
+<DAT name="INTERFACEMOD">C*</DAT>
+<DAT name="WIDGETTYPE">COMMANDBUTTON</DAT>
+<DAT name="UINHERIT">F</DAT>
+<DAT name="DETAIL">;$instancehandle-&gt;checkout()</DAT>
+<DAT name="WIDGETCREATE" xml:space='preserve'>VSIZE=80&uSEP;TOOLTIPTEXT=Checkout from version control</DAT>
+<DAT name="INITVALUE">Checkout</DAT>
+<DAT name="UISOBJID">F</DAT>
+<DAT name="HTML_FLDPROP">SYNC=1</DAT>
+<DAT name="HTML_CTRLTYPE">U_INPUT</DAT>
+</OCC>
+<OCC>
+<DAT name="UTIMESTAMP">2015-07-06T10:39:20.00</DAT>
+<DAT name="ULABEL">CHKPARTIAL</DAT>
+<DAT name="GRP">DUMMY</DAT>
+<DAT name="UBASE">DUMMY</DAT>
+<DAT name="UFORM">FIL_PROJECT</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Full sync on refresh</DAT>
+<DAT name="U_DTYP">B</DAT>
+<DAT name="U_INDB">N</DAT>
+<DAT name="INTERFACEMOD">B</DAT>
+<DAT name="WIDGETTYPE">CHECKBOX</DAT>
+<DAT name="UINHERIT">F</DAT>
+<DAT name="INITVALUE">0</DAT>
+<DAT name="UISOBJID">F</DAT>
+<DAT name="HTML_CTRLTYPE">U_INPUT</DAT>
+<DAT name="WEBWIDGETTYPE">EDITBOX</DAT>
+</OCC>
+<OCC>
+<DAT name="UTIMESTAMP">2015-07-06T10:39:20.00</DAT>
+<DAT name="ULABEL">CHK_FULLSYNC</DAT>
+<DAT name="GRP">BUTTONS</DAT>
+<DAT name="UBASE">DUMMY</DAT>
+<DAT name="UFORM">FIL_PROJECT</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Full synchronisation flag</DAT>
+<DAT name="U_DTYP">B</DAT>
+<DAT name="U_INDB">N</DAT>
+<DAT name="INTERFACEMOD">B</DAT>
+<DAT name="WIDGETTYPE">CHECKBOX</DAT>
+<DAT name="UINHERIT">F</DAT>
+<DAT name="WIDGETCREATE" xml:space='preserve'>TOOLTIPTEXT=Force sync for all files</DAT>
+<DAT name="INITVALUE">0</DAT>
+<DAT name="UISOBJID">F</DAT>
+<DAT name="HTML_CTRLTYPE">U_INPUT</DAT>
+<DAT name="WEBWIDGETTYPE">EDITBOX</DAT>
+</OCC>
+<OCC>
+<DAT name="UTIMESTAMP">2015-07-06T10:39:20.00</DAT>
+<DAT name="ULABEL">CHK_FULLSYNC</DAT>
+<DAT name="GRP">DUMMY</DAT>
+<DAT name="UBASE">DUMMY</DAT>
+<DAT name="UFORM">FIL_PROJECT</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Full synchronisation flag</DAT>
+<DAT name="U_DTYP">B</DAT>
+<DAT name="U_INDB">N</DAT>
+<DAT name="INTERFACEMOD">B</DAT>
+<DAT name="WIDGETTYPE">CHECKBOX</DAT>
+<DAT name="UINHERIT">F</DAT>
+<DAT name="WIDGETCREATE" xml:space='preserve'>TOOLTIPTEXT=Force sync for all files</DAT>
+<DAT name="INITVALUE">0</DAT>
+<DAT name="UISOBJID">F</DAT>
+<DAT name="HTML_CTRLTYPE">U_INPUT</DAT>
+<DAT name="WEBWIDGETTYPE">EDITBOX</DAT>
+</OCC>
+<OCC>
+<DAT name="UTIMESTAMP">2015-07-06T10:39:20.00</DAT>
+<DAT name="ULABEL">CMD_ADD</DAT>
+<DAT name="GRP">DUMMY</DAT>
+<DAT name="UBASE">DUMMY</DAT>
+<DAT name="UFORM">FIL_PROJECT</DAT>
+<DAT name="U_DTYP">S</DAT>
+<DAT name="U_INDB">Y</DAT>
+<DAT name="INTERFACEMOD">C*</DAT>
+<DAT name="WIDGETTYPE">COMMANDBUTTON</DAT>
+<DAT name="UINHERIT">F</DAT>
+<DAT name="WIDGETCREATE">VSIZE=80</DAT>
+<DAT name="INITVALUE">Add</DAT>
+<DAT name="UISOBJID">F</DAT>
+<DAT name="HTML_FLDPROP">SYNC=1</DAT>
+<DAT name="HTML_CTRLTYPE">U_INPUT</DAT>
+</OCC>
+<OCC>
+<DAT name="UTIMESTAMP">2015-07-06T10:39:20.00</DAT>
+<DAT name="ULABEL">COMMIT_BUTTON</DAT>
+<DAT name="GRP">BUTTONS</DAT>
+<DAT name="UBASE">DUMMY</DAT>
+<DAT name="UFORM">FIL_PROJECT</DAT>
+<DAT name="U_DTYP">S</DAT>
+<DAT name="U_INDB">B</DAT>
+<DAT name="INTERFACEMOD">C*</DAT>
+<DAT name="WIDGETTYPE">COMMANDBUTTON</DAT>
+<DAT name="UINHERIT">F</DAT>
+<DAT name="DETAIL" xml:space='preserve'>$instancehandle-&gt;commit()
+#include VC_LIBRARY:IP_HANDLE_ERROR
+</DAT>
+<DAT name="WIDGETCREATE" xml:space='preserve'>VSIZE=80&uSEP;TOOLTIPTEXT=Commit changes to version control</DAT>
+<DAT name="INITVALUE">Commit</DAT>
+<DAT name="UISOBJID">F</DAT>
+<DAT name="HTML_FLDPROP">SYNC=1</DAT>
+<DAT name="HTML_CTRLTYPE">U_INPUT</DAT>
+</OCC>
+<OCC>
+<DAT name="UTIMESTAMP">2015-07-06T10:39:20.00</DAT>
+<DAT name="ULABEL">COMMIT_BUTTON</DAT>
+<DAT name="GRP">DUMMY</DAT>
+<DAT name="UBASE">DUMMY</DAT>
+<DAT name="UFORM">FIL_PROJECT</DAT>
+<DAT name="U_DTYP">S</DAT>
+<DAT name="U_INDB">B</DAT>
+<DAT name="INTERFACEMOD">C*</DAT>
+<DAT name="WIDGETTYPE">COMMANDBUTTON</DAT>
+<DAT name="UINHERIT">F</DAT>
+<DAT name="DETAIL" xml:space='preserve'>$instancehandle-&gt;commit()
+if ($status &lt; 0)
+	if($procerror &lt; 0)
+		message/error $procerrorcontext
+	else
+		message/error "UnifaceSVN: An error occurred - please see message frame for details"
+	endif
+endif</DAT>
+<DAT name="WIDGETCREATE" xml:space='preserve'>VSIZE=80&uSEP;TOOLTIPTEXT=Commit changes to version control</DAT>
+<DAT name="INITVALUE">Commit</DAT>
+<DAT name="UISOBJID">F</DAT>
+<DAT name="HTML_FLDPROP">SYNC=1</DAT>
+<DAT name="HTML_CTRLTYPE">U_INPUT</DAT>
+</OCC>
+<OCC>
+<DAT name="UTIMESTAMP">2015-07-06T15:42:48.00</DAT>
+<DAT name="ULABEL">DELETE_BUTTON</DAT>
+<DAT name="GRP">BUTTONS</DAT>
+<DAT name="UBASE">DUMMY</DAT>
+<DAT name="UFORM">FIL_PROJECT</DAT>
+<DAT name="U_DTYP">S</DAT>
+<DAT name="U_INDB">B</DAT>
+<DAT name="INTERFACEMOD">C*</DAT>
+<DAT name="WIDGETTYPE">COMMANDBUTTON</DAT>
+<DAT name="UINHERIT">F</DAT>
+<DAT name="DETAIL" xml:space='preserve'>$instancehandle-&gt;delete()
+#include VC_LIBRARY:IP_HANDLE_ERROR
+</DAT>
+<DAT name="WIDGETCREATE" xml:space='preserve'>VSIZE=80&uSEP;TOOLTIPTEXT=Delete from filesystem</DAT>
+<DAT name="INITVALUE">Delete</DAT>
+<DAT name="UISOBJID">F</DAT>
+<DAT name="HTML_FLDPROP">SYNC=1</DAT>
+<DAT name="HTML_CTRLTYPE">U_INPUT</DAT>
+</OCC>
+<OCC>
+<DAT name="UTIMESTAMP">2015-07-06T10:39:20.00</DAT>
+<DAT name="ULABEL">DELETE_BUTTON</DAT>
+<DAT name="GRP">DUMMY</DAT>
+<DAT name="UBASE">DUMMY</DAT>
+<DAT name="UFORM">FIL_PROJECT</DAT>
+<DAT name="U_DTYP">S</DAT>
+<DAT name="U_INDB">B</DAT>
+<DAT name="INTERFACEMOD">C*</DAT>
+<DAT name="WIDGETTYPE">COMMANDBUTTON</DAT>
+<DAT name="UINHERIT">F</DAT>
+<DAT name="DETAIL" xml:space='preserve'>$instancehandle-&gt;delete()
+if ($status &lt; 0)
+	if($procerror &lt; 0)
+		message/error $procerrorcontext
+	else
+		message/error "UnifaceSVN: An error occurred - please see message frame for details"
+	endif
+endif</DAT>
+<DAT name="WIDGETCREATE" xml:space='preserve'>VSIZE=80&uSEP;TOOLTIPTEXT=Delete from version control</DAT>
+<DAT name="INITVALUE">Delete</DAT>
+<DAT name="UISOBJID">F</DAT>
+<DAT name="HTML_FLDPROP">SYNC=1</DAT>
+<DAT name="HTML_CTRLTYPE">U_INPUT</DAT>
+</OCC>
+<OCC>
+<DAT name="UTIMESTAMP">2015-07-06T10:39:20.00</DAT>
+<DAT name="ULABEL">DIFF_BUTTON</DAT>
+<DAT name="GRP">BUTTONS</DAT>
+<DAT name="UBASE">DUMMY</DAT>
+<DAT name="UFORM">FIL_PROJECT</DAT>
+<DAT name="U_DTYP">S</DAT>
+<DAT name="U_INDB">B</DAT>
+<DAT name="INTERFACEMOD">C*</DAT>
+<DAT name="WIDGETTYPE">COMMANDBUTTON</DAT>
+<DAT name="UINHERIT">F</DAT>
+<DAT name="DETAIL" xml:space='preserve'>$instancehandle-&gt;diff()
+#include VC_LIBRARY:IP_HANDLE_ERROR
+
+</DAT>
+<DAT name="WIDGETCREATE">VSIZE=80</DAT>
+<DAT name="INITVALUE">Diff</DAT>
+<DAT name="UISOBJID">F</DAT>
+<DAT name="HTML_CTRLTYPE">U_INPUT</DAT>
+</OCC>
+<OCC>
+<DAT name="UTIMESTAMP">2015-07-06T10:39:20.00</DAT>
+<DAT name="ULABEL">DIFF_BUTTON</DAT>
+<DAT name="GRP">DUMMY</DAT>
+<DAT name="UBASE">DUMMY</DAT>
+<DAT name="UFORM">FIL_PROJECT</DAT>
+<DAT name="U_DTYP">S</DAT>
+<DAT name="U_INDB">B</DAT>
+<DAT name="INTERFACEMOD">C*</DAT>
+<DAT name="WIDGETTYPE">COMMANDBUTTON</DAT>
+<DAT name="UINHERIT">F</DAT>
+<DAT name="DETAIL" xml:space='preserve'>$instancehandle-&gt;diff()
+if ($status &lt; 0)
+	if($procerror &lt; 0)
+		message/error $procerrorcontext
+	else
+		message/error "UnifaceSVN: An error occurred - please see message frame for details"
+	endif
+endif</DAT>
+<DAT name="INITVALUE">Diff</DAT>
+<DAT name="UISOBJID">F</DAT>
+<DAT name="HTML_CTRLTYPE">U_INPUT</DAT>
+</OCC>
+<OCC>
+<DAT name="UTIMESTAMP">2015-07-06T10:39:20.00</DAT>
+<DAT name="ULABEL">FILE_TREE</DAT>
+<DAT name="GRP">DUMMY</DAT>
+<DAT name="UBASE">DUMMY</DAT>
+<DAT name="UFORM">FIL_PROJECT</DAT>
+<DAT name="U_DTYP">S</DAT>
+<DAT name="U_INDB">N</DAT>
+<DAT name="INTERFACEMOD">C*</DAT>
+<DAT name="WIDGETTYPE">TREE</DAT>
+<DAT name="UINHERIT">F</DAT>
+<DAT name="GENERAL" xml:space='preserve'>;-------------------------------------------------------------
+; Returns the ObjectId of the parent of tree object pObjectId.
+; Usage: ParentObjectId = &lt;$fieldname&gt;_getParentObjectId(pObjectId)
+;-------------------------------------------------------------
+entry &lt;$fieldname&gt;_getParentObjectId
+;-------------------------------------------------------------
+returns String
+
+params
+	String	pObjectId	: IN
+endparams
+
+	if($itemcount(pObjectId) == 1)
+		return $item(pObjectId, $TREE_PARENT_LIST$)
+	else
+		return ""
+	endif
+
+end ;&lt;$fieldname&gt;_getParentObjectId
+
+
+;-------------------------------------------------------------
+; Returns the expand state of tree object pObjectId.
+;	""	=	Not Expandable
+;	"+"	=	Expandable
+;	"-"	=	Expanded
+; Usage: ObjectExpand = &lt;$fieldname&gt;_getObjectExpand(pObjectId)
+;-------------------------------------------------------------
+entry &lt;$fieldname&gt;_getObjectExpand
+;-------------------------------------------------------------
+returns String
+
+params
+	String	pObjectId	: IN
+endparams
+
+	if($itemcount(pObjectId) = 1)
+		selectcase $item(pObjectId, $TREE_EXPAND_LIST$)
+			case "+"       ; Expandable
+				return "+"
+			case "-"       ; Expanded
+				return "-"
+			elsecase       ; Not expandable
+				return ""
+		endselectcase
+	else
+		return ""
+	endif
+
+end ;&lt;$fieldname&gt;_getObjectExpand
+
+
+;-------------------------------------------------------------
+; Returns the object type of tree object pObjectId.
+; Usage: ObjectType = &lt;$fieldname&gt;_getObjectType(pObjectId)
+;-------------------------------------------------------------
+entry &lt;$fieldname&gt;_getObjectType
+;-------------------------------------------------------------
+returns String
+
+params
+	String	pObjectId	: IN
+endparams
+
+	if($itemcount(pObjectId) = 1)
+		return $item(pObjectId, $TREE_TYPE_LIST$)
+	else
+		return ""
+	endif
+
+end ;&lt;$fieldname&gt;_getObjectType
+
+
+;-------------------------------------------------------------
+; Returns the text representation of tree object pObjectId.
+; Usage: ObjectName = &lt;$fieldname&gt;_getObjectName(pObjectId)
+;-------------------------------------------------------------
+entry &lt;$fieldname&gt;_getObjectName
+;-------------------------------------------------------------
+returns String
+
+params
+	String	pObjectId	: IN
+endparams
+
+	if($itemcount(pObjectId) = 1)
+		return $item(pObjectId, $TREE_NAME_LIST$)
+	else
+		return ""
+	endif
+
+end ;&lt;$fieldname&gt;_getObjectName
+
+
+;-------------------------------------------------------------
+entry &lt;$fieldname&gt;_getObjectChildren
+;-------------------------------------------------------------
+returns String
+
+params
+	String	pObjectId		: IN
+endparams
+
+variables
+	Numeric	vCounter
+	String	vItemList, vValueList, vItem, vID
+	String	vObjectChildren
+endvariables
+
+	if($itemcount(pObjectId) = 1)
+		return $item(pObjectId, $TREE_CHILD_LIST$)
+	else
+		return ""
+	endif
+
+end ;&lt;$fieldname&gt;_getObjectChildren
+
+
+;-------------------------------------------------------------
+; Adds/updates object to/in tree structure.
+; IN Params:
+;	pObjectId			-	Unique Id, of the to be added or
+;							updated object, in format "ObjectId"
+;	pParentObjectId		-	Object's parent object, in format ""
+;							| "ObjectId", where:
+;								"" 			defines object as root
+;								"ObjectId"	defines object's parent object
+;	pObjectExpand		-	Object's expand state in format "" |
+;							"+" | "-", where:
+;								""	shows object as not expandable, meaning the object does not have any child objects and therefore cannot be expanded
+;								"+"	shows object as expandable, meaning the object has child objects that are not shown, and the object can be expanded to chow its child objects
+;								"-"	shows object as expanded, meaning the object's child objects are shown
+;	pObjectType			-	Object's type
+;	pObjectName			-	Object's textual representation of
+;							type single line string
+;	pObjectColumnValues	-	Optional indexed list of column
+;							values (as shown in tree's detail
+;							columns view) in format
+;							"{ColumnValue{&uSEP;...}}", where every
+;							item defines one column	
+;-------------------------------------------------------------
+entry &lt;$fieldname&gt;_setObject
+;-------------------------------------------------------------
+params
+	String	pObjectId			: IN
+	String	pParentObjectId		: IN
+	String	pObjectExpand		: IN
+	String	pObjectType			: IN
+	String	pObjectName			: IN
+	String	pObjectColumnValues	: IN
+endparams
+
+variables
+	String	vObjectData
+	String	vParentChildrenList
+endvariables
+
+	putitem vObjectData, 1, pParentObjectId							; Set ParentObjectId
+	putitem vObjectData, 2, $concat(pObjectExpand, pObjectType)		; Set ObjectExpand and ObjectType
+	putitem vObjectData, 3, pObjectName								; Set Name
+	if (pObjectColumnValues != "")
+		vObjectData = "%%vObjectData%%%&uSEP;%%pObjectColumnValues%%%"   	; Add columns values to end of list (not as sub list)
+	endif
+
+	if($TREE_CURRENT_INSTRUCTION$ = "")
+		$TREE_CURRENT_INSTRUCTION$ = "0="
+	endif
+
+	putitem/id $TREE_CURRENT_INSTRUCTION$, pObjectId, vObjectData	
+
+	if($itemcount($TREE_CURRENT_INSTRUCTION$) &gt; 200)
+		call &lt;$fieldname&gt;_flush()
+	endif
+
+	;Add the values to our component variables
+	putitem/id $TREE_PARENT_LIST$,	pObjectId, pParentObjectId
+	putitem/id $TREE_EXPAND_LIST$,	pObjectId, pObjectExpand
+	putitem/id $TREE_TYPE_LIST$,	pObjectId, pObjectType
+	putitem/id $TREE_NAME_LIST$,	pObjectId, pObjectName
+	putitem/id $TREE_COLUMN_LIST$,	pObjectId, pObjectColumnValues
+
+	getitem/id	vParentChildrenList, $TREE_CHILD_LIST$, pParentObjectId
+	delitem/id	vParentChildrenList, pObjectId
+	putitem		vParentChildrenList, -1, pObjectId
+	putitem/id	$TREE_CHILD_LIST$,	pParentObjectId, vParentChildrenList
+
+end ;&lt;$fieldname&gt;_setObject
+
+
+;-------------------------------------------------------------
+entry &lt;$fieldname&gt;_setObjectType
+;-------------------------------------------------------------
+params
+	String	pObjectId	: IN   ; Unique Id, of object of which the name is to be changed, in format "ObjectId"
+	String	pObjectType	: IN
+endparams
+
+variables
+	String	vParentObjectId
+	String	vObjectExpand
+	String	vObjectName
+	String	vObjectColumnValues
+	String	vParentType
+endvariables
+
+	vParentObjectId		= $item(pObjectId, $TREE_PARENT_LIST$)
+	vObjectExpand		= $item(pObjectId, $TREE_EXPAND_LIST$)
+	vObjectName			= $item(pObjectId, $TREE_NAME_LIST$)
+	vObjectColumnValues	= $item(pObjectId, $TREE_COLUMN_LIST$)
+
+	call &lt;$fieldname&gt;_setObject(pObjectId, vParentObjectId, vObjectExpand, pObjectType, vObjectName, vObjectColumnValues)
+
+	return &lt;OK&gt;
+	
+end ;&lt;$fieldname&gt;_setObjectType
+
+
+;-------------------------------------------------------------
+entry &lt;$fieldname&gt;_setObjectExpand
+;-------------------------------------------------------------
+params
+	String	pObjectId		: IN   ; Unique Id, of object of which the name is to be changed, in format "ObjectId"
+	String	pObjectExpand	: IN
+endparams
+
+variables
+	String	vParentObjectId
+	String	vObjectName
+	String	vObjectType
+	String	vObjectColumnValues
+endvariables
+
+	vParentObjectId		= $item(pObjectId, $TREE_PARENT_LIST$)
+	vObjectName			= $item(pObjectId, $TREE_NAME_LIST$)
+	vObjectType			= $item(pObjectId, $TREE_TYPE_LIST$)
+	vObjectColumnValues	= $item(pObjectId, $TREE_COLUMN_LIST$)
+
+	call &lt;$fieldname&gt;_setObject(pObjectId, vParentObjectId, pObjectExpand, vObjectType, vObjectName, vObjectColumnValues)
+
+	return &lt;OK&gt;
+
+end ;&lt;$fieldname&gt;_setObjectExpand
+
+
+;-------------------------------------------------------------
+entry &lt;$fieldname&gt;_setObjectColumns
+;-------------------------------------------------------------
+params
+	String	pObjectId			: IN   ; Unique Id, of object of which the name is to be changed, in format "ObjectId"
+	String	pObjectColumnValues	: IN
+endparams
+
+variables
+	String	vParentObjectId
+	String	vObjectExpand
+	String	vObjectName
+	String	vObjectType
+	String	vInstruction
+	String	vObjectData
+	String	vExpandState
+endvariables
+
+	vParentObjectId		= $item(pObjectId, $TREE_PARENT_LIST$)
+	vObjectExpand		= $item(pObjectId, $TREE_EXPAND_LIST$)
+	vObjectName			= $item(pObjectId, $TREE_NAME_LIST$)
+	vObjectType			= $item(pObjectId, $TREE_TYPE_LIST$)
+
+	call &lt;$fieldname&gt;_setObject(pObjectId, vParentObjectId, vObjectExpand, vObjectType, vObjectName, pObjectColumnValues)
+
+	return &lt;OK&gt;
+
+end ;&lt;$fieldname&gt;_setObjectColumns
+
+
+;-------------------------------------------------------------
+; Deletes object and all its child objects from tree structure.
+;-------------------------------------------------------------
+entry &lt;$fieldname&gt;_deleteObject
+;-------------------------------------------------------------
+params
+	String	pObjectId	: IN   ; Unique Id, of object to be deleted from the tree structure, in format "ObjectId"
+endparams
+
+variables
+	String	vInstruction, vObjectData
+endvariables
+
+	vInstruction = "-1="										; Initialize tree instruction: Delete Object
+	putitem vInstruction, -1, pObjectId						; Add Object to instruction
+	$fieldvalrep("&lt;$fieldname&gt;.&lt;$entname&gt;") = vInstruction	; Assign the instruction to the tree widget
+	show														; Force the tree widget to process the instruction
+
+end ;&lt;$fieldname&gt;_deleteObject
+
+
+;-------------------------------------------------------------
+; Removes entire tree structure.
+;-------------------------------------------------------------
+entry &lt;$fieldname&gt;_deleteTree
+;-------------------------------------------------------------
+
+	$TREE_PARENT_LIST$			= ""
+	$TREE_EXPAND_LIST$			= ""
+	$TREE_TYPE_LIST$			= ""
+	$TREE_NAME_LIST$			= ""
+	$TREE_COLUMN_LIST$			= ""
+	$TREE_CHILD_LIST$			= ""
+	$TREE_CURRENT_INSTRUCTION$	= ""
+	$TREE_NODE_PATHS$			= ""
+
+	&lt;$fieldname&gt;.&lt;$entname&gt;						= ""
+	$fieldvalrep("&lt;$fieldname&gt;.&lt;$entname&gt;")		= ""	; clear the tree structure
+	$fieldproperties("&lt;$fieldname&gt;.&lt;$entname&gt;")	= ""	; clear the tree definitions
+	show													; Force the tree widget to process the instruction
+
+end ;&lt;$fieldname&gt;_deleteTree
+
+
+;-------------------------------------------------------------
+; Sorts child objects of object using the given sort order.
+;-------------------------------------------------------------
+entry &lt;$fieldname&gt;_sortObject
+;-------------------------------------------------------------
+params
+	String	pObjectId		: IN   ; Unique Id, of object for which its child objects are sorted, in format "ObjectId"
+	String	pChildObjectIds	: IN   ; Indexed list of child objects determining the sort order, in format "ObjectId{&uSEP;...}", where the order of the list determines the sort order
+endparams
+
+variables
+	String	vInstruction
+endvariables
+
+	if (pChildObjectIds != "")
+		vInstruction = "-2="										; Initialize tree instruction: Sort child objects of Object
+		putitem/id vInstruction, pObjectId, pChildObjectIds		; Add Object data to instruction
+		$fieldvalrep("&lt;$fieldname&gt;.&lt;$entname&gt;") = vInstruction	; Assign the instruction to the tree widget
+		show														; Force the tree widget to process the instruction
+	endif
+
+end ;&lt;$fieldname&gt;_sortObject
+
+
+;-------------------------------------------------------------
+; Execute any outstanding instructions
+;-------------------------------------------------------------
+entry &lt;$fieldname&gt;_flush
+;-------------------------------------------------------------
+
+	if($TREE_CURRENT_INSTRUCTION$ != "" &amp; $TREE_CURRENT_INSTRUCTION$ != "0=")
+		$fieldvalrep("&lt;$fieldname&gt;.&lt;$entname&gt;") = $TREE_CURRENT_INSTRUCTION$
+		$TREE_CURRENT_INSTRUCTION$ = ""
+		show
+	endif
+
+	return &lt;OK&gt;
+
+end ;&lt;$fieldname&gt;_flush</DAT>
+<DAT name="VCHANGED" xml:space='preserve'>call lpSetFieldSyntax()
+
+return &lt;OK&gt;</DAT>
+<DAT name="WIDGETCREATE" xml:space='preserve'>SPLITBARPOS=40&uSEP;HASROOTLINES=F&uSEP;HASLINES=F&uSEP;HASBUTTONS=T&uSEP;LISTONLY=F&uSEP;LISTVIEW=R&uSEP;LABELS=Name&uNOT;Repo Date&uNOT;File Date&uSEP;FORMATS=CL24&uNOT;TL17&uNOT;TL17&uSEP;HEADER=T&uSEP;SORTHEADER=T&uSEP;AUTOEXPAND=F&uSEP;LISTMULTISELECT=F&uSEP;TYPE1=FILE&uSEP;NODE1=F&uSEP;NORMAL1=^FILE&uSEP;SELECTED1=^FILE&uSEP;TYPE2=FILEIGNORE&uSEP;NODE2=F&uSEP;NORMAL2=^FILEIGNORE&uSEP;SELECTED2=^FILEIGNORE&uSEP;TYPE3=FILEADD&uSEP;NODE3=F&uSEP;NORMAL3=^FILEADD&uSEP;SELECTED3=^FILEADD&uSEP;TYPE4=FILECONFL
+&uBS;ICT&uSEP;NODE4=F&uSEP;NORMAL4=^FILECONFLICT&uSEP;SELECTED4=^FILECONFLICT&uSEP;TYPE5=FILEINSVN&uSEP;NODE5=F&uSEP;NORMAL5=^FILEINSVN&uSEP;SELECTED5=^FILEINSVN&uSEP;TYPE6=FILEMOD&uSEP;NODE6=F&uSEP;NORMAL6=^FILEMOD&uSEP;SELECTED6=^FILEMOD&uSEP;TYPE7=FILENEEDSLOCK&uSEP;NODE7=F&uSEP;NORMAL7=^FILENEEDSLOCK&uSEP;SELECTED7=^FILENEEDSLOCK&uSEP;TYPE8=FLDADD&uSEP;NODE8=T&uSEP;NORMAL8=^FLDCLOSEDADD&uSEP;OPEN8=^FLDOPENADD&uSEP;SELECTED8=^FLDCLOSEDADD&uSEP;OPENSELECT8=^FLDOPENADD&uSEP;TYPE9=FLDIGNORE&uSEP;NODE9=T&uSEP;NORM
+&uBS;AL9=^FLDCLOSEDIGNORE&uSEP;OPEN9=^FLDOPENIGNORE&uSEP;SELECTED9=^FLDCLOSEDIGNORE&uSEP;OPENSELECT9=^FLDOPENIGNORE&uSEP;TYPE10=FLDCONFLICT&uSEP;NODE10=T&uSEP;NORMAL10=^FLDCLSCONFLICT&uSEP;OPEN10=^FLDOPENCONFLICT&uSEP;SELECTED10=^FLDCLSCONFLICT&uSEP;OPENSELECT10=^FLDOPENCONFLICT&uSEP;TYPE11=FLDINSVN&uSEP;NODE11=T&uSEP;NORMAL11=^FLDCLOSEDINSVN&uSEP;OPEN11=^FLDOPENINSVN&uSEP;SELECTED11=^FLDCLOSEDINSVN&uSEP;OPENSELECT11=^FLDOPENINSVN&uSEP;TYPE12=FLDMOD&uSEP;NODE12=T&uSEP;NORMAL12=^FLDCLOSEDMOD&uSEP;OPEN12=^FLDOPENMO
+&uBS;D&uSEP;SELECTED12=^FLDCLOSEDMOD&uSEP;OPENSELECT12=^FLDOPENMOD&uSEP;TYPE13=FLDDELETED&uSEP;NODE13=T&uSEP;NORMAL13=^FLDOPENDELETED&uSEP;OPEN13=^FLDCLOSEDDELETED&uSEP;SELECTED13=^FLDOPENDELETED&uSEP;OPENSELECT13=^FLDCLOSEDDELETED&uSEP;TYPE14=FILEDELETED&uSEP;NODE14=F&uSEP;NORMAL14=^FILEDELETED&uSEP;SELECTED14=^FILEDELETED&uSEP;TYPE15=FLDNEEDSLOCK&uSEP;NODE15=T&uSEP;NORMAL15=^FLDCLSNEEDSLOCK&uSEP;OPEN15=^FLDOPENNEEDSLOCK&uSEP;SELECTED15=^FLDCLSNEEDSLOCK&uSEP;OPENSELECT15=^FLDOPENNEEDSLOCK&uSEP;TYPE16=FOLDER&uSEP;
+&uBS;NODE16=T&uSEP;NORMAL16=^FOLDERCLOSED&uSEP;OPEN16=^FOLDEROPEN&uSEP;SELECTED16=^FOLDERCLOSED&uSEP;OPENSELECT16=^FOLDEROPEN&uSEP;TYPE17=UNKNOWN&uSEP;NODE17=T&uSEP;NORMAL17=^UNKNOWN&uSEP;OPEN17=^UNKNOWN&uSEP;SELECTED17=^UNKNOWN&uSEP;OPENSELECT17=^UNKNOWN&uSEP;ATTACH=TOP,BOTTOM,LEFT,RIGHT</DAT>
+<DAT name="UPOPUP">FIL_WORKINGCOPY</DAT>
+<DAT name="UISOBJID">F</DAT>
+<DAT name="HTML_CTRLTYPE">U_INPUT</DAT>
+<DAT name="UFTRIGGERS" xml:space='preserve'>;-----------------------------------------------
+trigger expand
+;-----------------------------------------------
+params
+	String	pControl	: IN	; TREE | LIST | KEYBOARD
+	String	pItem		: IN
+endparams
+
+	call lpExpandNode(pItem)
+	return &lt;OK&gt;
+
+end ;expand
+
+
+;-----------------------------------------------
+trigger collapse
+;-----------------------------------------------
+params
+	String	pControl	: IN	; TREE | LIST | KEYBOARD
+	String	pItem		: IN
+endparams
+
+	call lpCollapseNode(pItem)
+	return &lt;OK&gt;
+
+end ;collapse
+
+
+;-----------------------------------------------
+trigger open
+;-----------------------------------------------
+params
+ 	String	pControl	: IN	; TREE | LIST | KEYBOARD
+	String	pItem		: IN
+endparams
+
+	call lpExpandNode(pItem)
+	return &lt;OK&gt;
+
+end ;open
+
+
+;-----------------------------------------------
+trigger close
+;-----------------------------------------------
+params
+	String	pControl	: IN	; TREE | LIST | KEYBOARD
+	String	pItem		: IN
+endparams
+
+	call lpCollapseNode(pItem)
+	return &lt;OK&gt;
+
+end ;close
+
+
+trigger doubleClick
+params
+  string control: in ; TREE | LIST | KEYBOARD
+  string item: in
+endparams
+
+end ; trigger doubleClick
+
+trigger columnSorted
+params
+  numeric columnId: in
+  string sortingOrder: in ; ASC | DESC
+endparams
+
+end ; trigger columnSorted
+
+trigger columnWidth
+params
+  numeric id: in
+  numeric pWidth: in
+endparams
+
+end ; trigger columnWidth
+
+trigger representationChanging
+params
+  string itemValue: in
+endparams
+
+end ; trigger representationChanging
+</DAT>
+</OCC>
+<OCC>
+<DAT name="UTIMESTAMP">2015-07-06T10:39:20.00</DAT>
+<DAT name="ULABEL">LOCK_BUTTON</DAT>
+<DAT name="GRP">DUMMY</DAT>
+<DAT name="UBASE">DUMMY</DAT>
+<DAT name="UFORM">FIL_PROJECT</DAT>
+<DAT name="U_DTYP">S</DAT>
+<DAT name="U_INDB">B</DAT>
+<DAT name="SYNTAXMOD">HID</DAT>
+<DAT name="INTERFACEMOD">VC*</DAT>
+<DAT name="WIDGETTYPE">COMMANDBUTTON</DAT>
+<DAT name="UINHERIT">F</DAT>
+<DAT name="DETAIL" xml:space='preserve'>$instancehandle-&gt;lock()
+if($status &lt; 0)
+	message/error $procerrorcontext
+endif</DAT>
+<DAT name="WIDGETCREATE" xml:space='preserve'>VSIZE=80&uSEP;TOOLTIPTEXT=Get a lock</DAT>
+<DAT name="INITVALUE">Lock</DAT>
+<DAT name="UISOBJID">F</DAT>
+<DAT name="HTML_CTRLTYPE">U_INPUT</DAT>
+<DAT name="WEBWIDGETTYPE">EDITBOX</DAT>
+</OCC>
+<OCC>
+<DAT name="UTIMESTAMP">2015-07-06T10:39:20.00</DAT>
+<DAT name="ULABEL">LOG_BUTTON</DAT>
+<DAT name="GRP">BUTTONS</DAT>
+<DAT name="UBASE">DUMMY</DAT>
+<DAT name="UFORM">FIL_PROJECT</DAT>
+<DAT name="U_DTYP">S</DAT>
+<DAT name="U_INDB">B</DAT>
+<DAT name="INTERFACEMOD">C*</DAT>
+<DAT name="WIDGETTYPE">COMMANDBUTTON</DAT>
+<DAT name="UINHERIT">F</DAT>
+<DAT name="DETAIL" xml:space='preserve'>$instancehandle-&gt;log()
+#include VC_LIBRARY:IP_HANDLE_ERROR
+</DAT>
+<DAT name="WIDGETCREATE" xml:space='preserve'>VSIZE=80&uSEP;TOOLTIPTEXT=View change log</DAT>
+<DAT name="INITVALUE">Log</DAT>
+<DAT name="UISOBJID">F</DAT>
+<DAT name="HTML_CTRLTYPE">U_INPUT</DAT>
+</OCC>
+<OCC>
+<DAT name="UTIMESTAMP">2015-07-06T10:39:20.00</DAT>
+<DAT name="ULABEL">LOG_BUTTON</DAT>
+<DAT name="GRP">DUMMY</DAT>
+<DAT name="UBASE">DUMMY</DAT>
+<DAT name="UFORM">FIL_PROJECT</DAT>
+<DAT name="U_DTYP">S</DAT>
+<DAT name="U_INDB">B</DAT>
+<DAT name="INTERFACEMOD">C*</DAT>
+<DAT name="WIDGETTYPE">COMMANDBUTTON</DAT>
+<DAT name="UINHERIT">F</DAT>
+<DAT name="DETAIL" xml:space='preserve'>$instancehandle-&gt;log()
+if ($status &lt; 0)
+	if($procerror &lt; 0)
+		message/error $procerrorcontext
+	else
+		message/error "UnifaceSVN: An error occurred - please see message frame for details"
+	endif
+endif</DAT>
+<DAT name="WIDGETCREATE" xml:space='preserve'>VSIZE=80&uSEP;TOOLTIPTEXT=View change log</DAT>
+<DAT name="INITVALUE">Log</DAT>
+<DAT name="UISOBJID">F</DAT>
+<DAT name="HTML_CTRLTYPE">U_INPUT</DAT>
+</OCC>
+<OCC>
+<DAT name="UTIMESTAMP">2015-07-06T10:39:20.00</DAT>
+<DAT name="ULABEL">OK_BUTTON</DAT>
+<DAT name="GRP">BUTTONS</DAT>
+<DAT name="UBASE">DUMMY</DAT>
+<DAT name="UFORM">FIL_PROJECT</DAT>
+<DAT name="U_DTYP">S</DAT>
+<DAT name="U_INDB">Y</DAT>
+<DAT name="INTERFACEMOD">C*</DAT>
+<DAT name="WIDGETTYPE">COMMANDBUTTON</DAT>
+<DAT name="UINHERIT">F</DAT>
+<DAT name="DETAIL" xml:space='preserve'>$instancehandle-&gt;ok()
+#include VC_LIBRARY:IP_HANDLE_ERROR
+</DAT>
+<DAT name="WIDGETCREATE">VSIZE=80</DAT>
+<DAT name="INITVALUE">OK</DAT>
+<DAT name="UISOBJID">F</DAT>
+<DAT name="HTML_FLDPROP">SYNC=1</DAT>
+<DAT name="HTML_CTRLTYPE">U_INPUT</DAT>
+</OCC>
+<OCC>
+<DAT name="UTIMESTAMP">2015-07-06T10:39:20.00</DAT>
+<DAT name="ULABEL">OK_BUTTON</DAT>
+<DAT name="GRP">DUMMY</DAT>
+<DAT name="UBASE">DUMMY</DAT>
+<DAT name="UFORM">FIL_PROJECT</DAT>
+<DAT name="U_DTYP">S</DAT>
+<DAT name="U_INDB">Y</DAT>
+<DAT name="INTERFACEMOD">C*</DAT>
+<DAT name="WIDGETTYPE">COMMANDBUTTON</DAT>
+<DAT name="UINHERIT">F</DAT>
+<DAT name="DETAIL" xml:space='preserve'>$instancehandle-&gt;ok()
+if ($status &lt; 0)
+	if($procerror &lt; 0)
+		message/error $procerrorcontext
+	else
+		message/error "UnifaceSVN: An error occurred - please see message frame for details"
+	endif
+endif</DAT>
+<DAT name="WIDGETCREATE">VSIZE=80</DAT>
+<DAT name="INITVALUE">OK</DAT>
+<DAT name="UISOBJID">F</DAT>
+<DAT name="HTML_FLDPROP">SYNC=1</DAT>
+<DAT name="HTML_CTRLTYPE">U_INPUT</DAT>
+</OCC>
+<OCC>
+<DAT name="UTIMESTAMP">2015-07-06T10:39:20.00</DAT>
+<DAT name="ULABEL">OUTPUT</DAT>
+<DAT name="GRP">DUMMY</DAT>
+<DAT name="UBASE">DUMMY</DAT>
+<DAT name="UFORM">FIL_PROJECT</DAT>
+<DAT name="U_DTYP">S</DAT>
+<DAT name="U_INDB">B</DAT>
+<DAT name="WIDGETTYPE">OUTPUTBOX</DAT>
+<DAT name="UINHERIT">F</DAT>
+<DAT name="WIDGETCREATE">ATTACH=TOP,BOTTOM,LEFT,RIGHT</DAT>
+<DAT name="UISOBJID">F</DAT>
+<DAT name="HTML_CTRLTYPE">U_INPUT</DAT>
+<DAT name="WEBWIDGETTYPE">EDITBOX</DAT>
+</OCC>
+<OCC>
+<DAT name="UTIMESTAMP">2015-07-06T10:39:20.00</DAT>
+<DAT name="ULABEL">OUTPUT</DAT>
+<DAT name="GRP">LOG</DAT>
+<DAT name="UBASE">DUMMY</DAT>
+<DAT name="UFORM">FIL_PROJECT</DAT>
+<DAT name="U_DTYP">S</DAT>
+<DAT name="U_INDB">N</DAT>
+<DAT name="SYNTAXMOD">NED</DAT>
+<DAT name="INTERFACEMOD">VC*</DAT>
+<DAT name="WIDGETTYPE">OUTPUTBOX</DAT>
+<DAT name="UINHERIT">F</DAT>
+<DAT name="WIDGETCREATE">ATTACH=TOP,BOTTOM,LEFT,RIGHT</DAT>
+<DAT name="UISOBJID">F</DAT>
+<DAT name="HTML_CTRLTYPE">U_INPUT</DAT>
+<DAT name="WEBWIDGETTYPE">EDITBOX</DAT>
+</OCC>
+<OCC>
+<DAT name="UTIMESTAMP">2015-07-06T10:39:20.00</DAT>
+<DAT name="ULABEL">REFRESH_BUTTON</DAT>
+<DAT name="GRP">BUTTONS</DAT>
+<DAT name="UBASE">DUMMY</DAT>
+<DAT name="UFORM">FIL_PROJECT</DAT>
+<DAT name="U_DTYP">S</DAT>
+<DAT name="U_INDB">B</DAT>
+<DAT name="INTERFACEMOD">C*</DAT>
+<DAT name="WIDGETTYPE">COMMANDBUTTON</DAT>
+<DAT name="UINHERIT">F</DAT>
+<DAT name="DETAIL" xml:space='preserve'>$instancehandle-&gt;refresh()
+#include VC_LIBRARY:IP_HANDLE_ERROR
+</DAT>
+<DAT name="WIDGETCREATE" xml:space='preserve'>VSIZE=80&uSEP;TOOLTIPTEXT=Export Uniface changes &amp; import modifications in working copy folders</DAT>
+<DAT name="INITVALUE">Sync</DAT>
+<DAT name="UISOBJID">F</DAT>
+<DAT name="HTML_FLDPROP">SYNC=1</DAT>
+<DAT name="HTML_CTRLTYPE">U_INPUT</DAT>
+</OCC>
+<OCC>
+<DAT name="UTIMESTAMP">2015-07-06T10:39:20.00</DAT>
+<DAT name="ULABEL">REFRESH_BUTTON</DAT>
+<DAT name="GRP">DUMMY</DAT>
+<DAT name="UBASE">DUMMY</DAT>
+<DAT name="UFORM">FIL_PROJECT</DAT>
+<DAT name="U_DTYP">S</DAT>
+<DAT name="U_INDB">B</DAT>
+<DAT name="INTERFACEMOD">C*</DAT>
+<DAT name="WIDGETTYPE">COMMANDBUTTON</DAT>
+<DAT name="UINHERIT">F</DAT>
+<DAT name="DETAIL" xml:space='preserve'>$instancehandle-&gt;refresh()
+if ($status &lt; 0)
+	if($procerror &lt; 0)
+		message/error $procerrorcontext
+	else
+		message/error "UnifaceSVN: An error occurred - please see message frame for details"
+	endif
+endif</DAT>
+<DAT name="WIDGETCREATE" xml:space='preserve'>VSIZE=80&uSEP;TOOLTIPTEXT=Export &amp; import modifications without updating from the SVN server</DAT>
+<DAT name="INITVALUE">Sync</DAT>
+<DAT name="UISOBJID">F</DAT>
+<DAT name="HTML_FLDPROP">SYNC=1</DAT>
+<DAT name="HTML_CTRLTYPE">U_INPUT</DAT>
+</OCC>
+<OCC>
+<DAT name="UTIMESTAMP">2015-07-06T10:39:20.00</DAT>
+<DAT name="ULABEL">REVERT_BUTTON</DAT>
+<DAT name="GRP">BUTTONS</DAT>
+<DAT name="UBASE">DUMMY</DAT>
+<DAT name="UFORM">FIL_PROJECT</DAT>
+<DAT name="U_DTYP">S</DAT>
+<DAT name="U_INDB">B</DAT>
+<DAT name="INTERFACEMOD">C*</DAT>
+<DAT name="WIDGETTYPE">COMMANDBUTTON</DAT>
+<DAT name="UINHERIT">F</DAT>
+<DAT name="DETAIL" xml:space='preserve'>$instancehandle-&gt;revert()
+#include VC_LIBRARY:IP_HANDLE_ERROR
+</DAT>
+<DAT name="WIDGETCREATE" xml:space='preserve'>VSIZE=80&uSEP;TOOLTIPTEXT=Revert to versioned copy</DAT>
+<DAT name="INITVALUE">Revert</DAT>
+<DAT name="UISOBJID">F</DAT>
+<DAT name="HTML_FLDPROP">SYNC=1</DAT>
+<DAT name="HTML_CTRLTYPE">U_INPUT</DAT>
+</OCC>
+<OCC>
+<DAT name="UTIMESTAMP">2015-07-06T10:39:20.00</DAT>
+<DAT name="ULABEL">REVERT_BUTTON</DAT>
+<DAT name="GRP">DUMMY</DAT>
+<DAT name="UBASE">DUMMY</DAT>
+<DAT name="UFORM">FIL_PROJECT</DAT>
+<DAT name="U_DTYP">S</DAT>
+<DAT name="U_INDB">B</DAT>
+<DAT name="INTERFACEMOD">C*</DAT>
+<DAT name="WIDGETTYPE">COMMANDBUTTON</DAT>
+<DAT name="UINHERIT">F</DAT>
+<DAT name="DETAIL" xml:space='preserve'>$instancehandle-&gt;revert()
+if ($status &lt; 0)
+	if($procerror &lt; 0)
+		message/error $procerrorcontext
+	else
+		message/error "UnifaceSVN: An error occurred - please see message frame for details"
+	endif
+endif</DAT>
+<DAT name="WIDGETCREATE" xml:space='preserve'>VSIZE=80&uSEP;TOOLTIPTEXT=Revert to versioned copy</DAT>
+<DAT name="INITVALUE">Revert</DAT>
+<DAT name="UISOBJID">F</DAT>
+<DAT name="HTML_FLDPROP">SYNC=1</DAT>
+<DAT name="HTML_CTRLTYPE">U_INPUT</DAT>
+</OCC>
+<OCC>
+<DAT name="UTIMESTAMP">2015-07-06T10:39:20.00</DAT>
+<DAT name="ULABEL">SETTINGS_BUTTON</DAT>
+<DAT name="GRP">DUMMY</DAT>
+<DAT name="UBASE">DUMMY</DAT>
+<DAT name="UFORM">FIL_PROJECT</DAT>
+<DAT name="U_DTYP">S</DAT>
+<DAT name="U_INDB">Y</DAT>
+<DAT name="INTERFACEMOD">C*</DAT>
+<DAT name="WIDGETTYPE">COMMANDBUTTON</DAT>
+<DAT name="UINHERIT">F</DAT>
+<DAT name="DETAIL">$instancehandle-&gt;setting()</DAT>
+<DAT name="WIDGETCREATE">VSIZE=80</DAT>
+<DAT name="INITVALUE">Settings</DAT>
+<DAT name="UISOBJID">F</DAT>
+<DAT name="HTML_FLDPROP">SYNC=1</DAT>
+<DAT name="HTML_CTRLTYPE">U_INPUT</DAT>
+</OCC>
+<OCC>
+<DAT name="UTIMESTAMP">2015-07-06T10:39:20.00</DAT>
+<DAT name="ULABEL">UPDATE_BUTTON</DAT>
+<DAT name="GRP">BUTTONS</DAT>
+<DAT name="UBASE">DUMMY</DAT>
+<DAT name="UFORM">FIL_PROJECT</DAT>
+<DAT name="U_DTYP">S</DAT>
+<DAT name="U_INDB">B</DAT>
+<DAT name="INTERFACEMOD">C*</DAT>
+<DAT name="WIDGETTYPE">COMMANDBUTTON</DAT>
+<DAT name="UINHERIT">F</DAT>
+<DAT name="DETAIL" xml:space='preserve'>$instancehandle-&gt;update()
+#include VC_LIBRARY:IP_HANDLE_ERROR
+</DAT>
+<DAT name="WIDGETCREATE" xml:space='preserve'>VSIZE=80&uSEP;TOOLTIPTEXT=Get updates from version control and import</DAT>
+<DAT name="INITVALUE">Update</DAT>
+<DAT name="UISOBJID">F</DAT>
+<DAT name="HTML_FLDPROP">SYNC=1</DAT>
+<DAT name="HTML_CTRLTYPE">U_INPUT</DAT>
+</OCC>
+<OCC>
+<DAT name="UTIMESTAMP">2015-07-06T10:39:20.00</DAT>
+<DAT name="ULABEL">UPDATE_BUTTON</DAT>
+<DAT name="GRP">DUMMY</DAT>
+<DAT name="UBASE">DUMMY</DAT>
+<DAT name="UFORM">FIL_PROJECT</DAT>
+<DAT name="U_DTYP">S</DAT>
+<DAT name="U_INDB">B</DAT>
+<DAT name="INTERFACEMOD">C*</DAT>
+<DAT name="WIDGETTYPE">COMMANDBUTTON</DAT>
+<DAT name="UINHERIT">F</DAT>
+<DAT name="DETAIL" xml:space='preserve'>$instancehandle-&gt;update()
+if ($status &lt; 0)
+	if($procerror &lt; 0)
+		message/error $procerrorcontext
+	else
+		message/error "UnifaceSVN: An error occurred - please see message frame for details"
+	endif
+endif</DAT>
+<DAT name="WIDGETCREATE" xml:space='preserve'>VSIZE=80&uSEP;TOOLTIPTEXT=Get updates from version control and import</DAT>
+<DAT name="INITVALUE">Update</DAT>
+<DAT name="UISOBJID">F</DAT>
+<DAT name="HTML_FLDPROP">SYNC=1</DAT>
+<DAT name="HTML_CTRLTYPE">U_INPUT</DAT>
+</OCC>
+</TABLE>
+<TABLE>
+<DSC name="UXREGS" model="DICT" system="S" pseudo ="73" level="1" noupdate="0"
+ rbk="0" ffsql="0" transnr="0" segsize="0" ufocc="0" charset=".U">
+<FLD name="UTIMESTAMP" seqno="1" type="E" level="2" pack="0" scale="0" length="15"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="U_STAT" seqno="2" type="S" level="2" pack="0" scale="0" length="4"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="U_TYPE" seqno="3" type="S" level="2" pack="0" scale="0" length="2"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="U_FORMLIB" seqno="4" type="S" level="2" pack="0" scale="0" length="16"
+ pointer="0" inum="2" ufocc="0" mandatory="yes" idxnum="1,3" idxsnr="101,1" />
+<FLD name="U_NAME" seqno="5" type="S" level="2" pack="0" scale="0" length="32"
+ pointer="0" inum="2" ufocc="0" mandatory="yes" idxnum="1,2" idxsnr="102,1" />
+<FLD name="UVERS" seqno="6" type="S" level="2" pack="0" scale="0" length="12"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="UDESCR" seqno="7" type="S" level="2" pack="0" scale="0" length="25"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="U_DTYP" seqno="8" type="S" level="2" pack="0" scale="0" length="2"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="U_LAYOUT" seqno="9" type="S" level="2" pack="0" scale="0" length="46"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="U_DOC" seqno="10" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\C1,0,0,0,,0,0,0,," />
+<FLD name="USCOPE" seqno="11" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\C2,0,0,0,,0,0,0,," />
+<FLD name="UHINTERFACE" seqno="12" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\C3,0,0,0,,0,0,0,," />
+</DSC>
+<OCC>
+<DAT name="UTIMESTAMP">2015-07-06T10:39:20.00</DAT>
+<DAT name="U_FORMLIB">FIL_PROJECT</DAT>
+<DAT name="U_NAME">BASEDIR</DAT>
+<DAT name="U_DTYP">S</DAT>
+</OCC>
+<OCC>
+<DAT name="UTIMESTAMP">2015-07-06T10:39:20.00</DAT>
+<DAT name="U_FORMLIB">FIL_PROJECT</DAT>
+<DAT name="U_NAME">CURRENTVARIATION</DAT>
+<DAT name="U_DTYP">S</DAT>
+</OCC>
+<OCC>
+<DAT name="UTIMESTAMP">2015-07-06T10:39:20.00</DAT>
+<DAT name="U_FORMLIB">FIL_PROJECT</DAT>
+<DAT name="U_NAME">EXPORT_UF_SIG</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Export Uniface Signatures</DAT>
+<DAT name="U_DTYP">S</DAT>
+</OCC>
+<OCC>
+<DAT name="UTIMESTAMP">2015-07-06T10:39:20.00</DAT>
+<DAT name="U_FORMLIB">FIL_PROJECT</DAT>
+<DAT name="U_NAME">NODESPROCESSED</DAT>
+<DAT name="U_DTYP">S</DAT>
+</OCC>
+<OCC>
+<DAT name="UTIMESTAMP">2015-07-06T10:39:20.00</DAT>
+<DAT name="U_FORMLIB">FIL_PROJECT</DAT>
+<DAT name="U_NAME">NODESTATE</DAT>
+<DAT name="U_DTYP">S</DAT>
+</OCC>
+<OCC>
+<DAT name="UTIMESTAMP">2015-07-06T10:39:20.00</DAT>
+<DAT name="U_FORMLIB">FIL_PROJECT</DAT>
+<DAT name="U_NAME">NODETYPE</DAT>
+<DAT name="U_DTYP">S</DAT>
+</OCC>
+<OCC>
+<DAT name="UTIMESTAMP">2015-07-06T10:39:20.00</DAT>
+<DAT name="U_FORMLIB">FIL_PROJECT</DAT>
+<DAT name="U_NAME">SC_ANALYZE</DAT>
+<DAT name="U_DTYP">S</DAT>
+</OCC>
+<OCC>
+<DAT name="UTIMESTAMP">2015-07-06T10:39:20.00</DAT>
+<DAT name="U_FORMLIB">FIL_PROJECT</DAT>
+<DAT name="U_NAME">SC_CLEANUP</DAT>
+<DAT name="U_DTYP">S</DAT>
+</OCC>
+<OCC>
+<DAT name="UTIMESTAMP">2015-07-06T10:39:20.00</DAT>
+<DAT name="U_FORMLIB">FIL_PROJECT</DAT>
+<DAT name="U_NAME">SC_COMPILE</DAT>
+<DAT name="U_DTYP">S</DAT>
+</OCC>
+<OCC>
+<DAT name="UTIMESTAMP">2015-07-06T10:39:20.00</DAT>
+<DAT name="U_FORMLIB">FIL_PROJECT</DAT>
+<DAT name="U_NAME">SC_SELECT_COUNT</DAT>
+<DAT name="U_DTYP">S</DAT>
+</OCC>
+<OCC>
+<DAT name="UTIMESTAMP">2015-07-06T10:39:20.00</DAT>
+<DAT name="U_FORMLIB">FIL_PROJECT</DAT>
+<DAT name="U_NAME">SC_TEST</DAT>
+<DAT name="U_DTYP">S</DAT>
+</OCC>
+<OCC>
+<DAT name="UTIMESTAMP">2015-07-06T10:39:20.00</DAT>
+<DAT name="U_FORMLIB">FIL_PROJECT</DAT>
+<DAT name="U_NAME">SETTINGSSVC</DAT>
+<DAT name="U_DTYP">H</DAT>
+<DAT name="USCOPE">PUB</DAT>
+</OCC>
+<OCC>
+<DAT name="UTIMESTAMP">2015-07-06T10:39:20.00</DAT>
+<DAT name="U_FORMLIB">FIL_PROJECT</DAT>
+<DAT name="U_NAME">SOURCEEXP</DAT>
+<DAT name="U_DTYP">H</DAT>
+<DAT name="USCOPE">PUB</DAT>
+</OCC>
+<OCC>
+<DAT name="UTIMESTAMP">2015-07-06T10:39:20.00</DAT>
+<DAT name="U_FORMLIB">FIL_PROJECT</DAT>
+<DAT name="U_NAME">SOURCEIMP</DAT>
+<DAT name="U_DTYP">H</DAT>
+<DAT name="USCOPE">PUB</DAT>
+</OCC>
+<OCC>
+<DAT name="UTIMESTAMP">2015-07-06T10:39:20.00</DAT>
+<DAT name="U_FORMLIB">FIL_PROJECT</DAT>
+<DAT name="U_NAME">STOPUPDATENODETYPES</DAT>
+<DAT name="U_DTYP">B</DAT>
+</OCC>
+<OCC>
+<DAT name="UTIMESTAMP">2015-07-06T10:39:20.00</DAT>
+<DAT name="U_FORMLIB">FIL_PROJECT</DAT>
+<DAT name="U_NAME">TREE_CHILD_LIST</DAT>
+<DAT name="U_DTYP">S</DAT>
+</OCC>
+<OCC>
+<DAT name="UTIMESTAMP">2015-07-06T10:39:20.00</DAT>
+<DAT name="U_FORMLIB">FIL_PROJECT</DAT>
+<DAT name="U_NAME">TREE_COLUMN_LIST</DAT>
+<DAT name="U_DTYP">S</DAT>
+</OCC>
+<OCC>
+<DAT name="UTIMESTAMP">2015-07-06T10:39:20.00</DAT>
+<DAT name="U_FORMLIB">FIL_PROJECT</DAT>
+<DAT name="U_NAME">TREE_CURRENT_INSTRUCTION</DAT>
+<DAT name="U_DTYP">S</DAT>
+</OCC>
+<OCC>
+<DAT name="UTIMESTAMP">2015-07-06T10:39:20.00</DAT>
+<DAT name="U_FORMLIB">FIL_PROJECT</DAT>
+<DAT name="U_NAME">TREE_EXPAND_LIST</DAT>
+<DAT name="U_DTYP">S</DAT>
+</OCC>
+<OCC>
+<DAT name="UTIMESTAMP">2015-07-06T10:39:20.00</DAT>
+<DAT name="U_FORMLIB">FIL_PROJECT</DAT>
+<DAT name="U_NAME">TREE_NAME_LIST</DAT>
+<DAT name="U_DTYP">S</DAT>
+</OCC>
+<OCC>
+<DAT name="UTIMESTAMP">2015-07-06T10:39:20.00</DAT>
+<DAT name="U_FORMLIB">FIL_PROJECT</DAT>
+<DAT name="U_NAME">TREE_NODE_PATHS</DAT>
+<DAT name="U_DTYP">S</DAT>
+</OCC>
+<OCC>
+<DAT name="UTIMESTAMP">2015-07-06T10:39:20.00</DAT>
+<DAT name="U_FORMLIB">FIL_PROJECT</DAT>
+<DAT name="U_NAME">TREE_PARENT_LIST</DAT>
+<DAT name="U_DTYP">S</DAT>
+</OCC>
+<OCC>
+<DAT name="UTIMESTAMP">2015-07-06T10:39:20.00</DAT>
+<DAT name="U_FORMLIB">FIL_PROJECT</DAT>
+<DAT name="U_NAME">TREE_TYPE_LIST</DAT>
+<DAT name="U_DTYP">S</DAT>
+</OCC>
+<OCC>
+<DAT name="UTIMESTAMP">2015-07-13T13:48:07.00</DAT>
+<DAT name="U_FORMLIB">FIL_PROJECT</DAT>
+<DAT name="U_NAME">VCINTERFACE</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Version control interface</DAT>
+<DAT name="U_DTYP">S</DAT>
+</OCC>
+<OCC>
+<DAT name="UTIMESTAMP">2015-07-06T10:39:20.00</DAT>
+<DAT name="U_FORMLIB">FIL_PROJECT</DAT>
+<DAT name="U_NAME">VCMAIN</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Version control service</DAT>
+<DAT name="U_DTYP">H</DAT>
+<DAT name="USCOPE">PUB</DAT>
+</OCC>
+<OCC>
+<DAT name="UTIMESTAMP">2015-07-06T10:39:20.00</DAT>
+<DAT name="U_FORMLIB">FIL_PROJECT</DAT>
+<DAT name="U_NAME">VCWRP</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Version control wrapper</DAT>
+<DAT name="U_DTYP">H</DAT>
+<DAT name="U_DOC" xml:space='preserve'>e.g. SVN_WRAPPER component</DAT>
+<DAT name="USCOPE">PUB</DAT>
+</OCC>
+</TABLE>
+</UNIFACE>

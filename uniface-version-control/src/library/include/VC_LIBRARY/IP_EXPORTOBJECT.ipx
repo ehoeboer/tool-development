@@ -1,0 +1,133 @@
+﻿<?xml version='1.0' encoding='UTF-8' ?>
+<!-- Created by Uniface - (C) Uniface B.V. All rights reserved -->
+<!DOCTYPE UNIFACE PUBLIC "UNIFACE.DTD" "UNIFACE.DTD">
+<UNIFACE release="9.6" xmlengine="2.0">
+<TABLE>
+<DSC name="USOURCE" model="DICT" system="S" pseudo ="73" level="1" noupdate="0"
+ rbk="0" ffsql="0" transnr="0" segsize="0" ufocc="500" charset=".U">
+<FLD name="UTIMESTAMP" seqno="1" type="E" level="2" pack="0" scale="0" length="15"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="UCOMPSTAMP" seqno="2" type="E" level="2" pack="0" scale="0" length="15"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="USTAT" seqno="3" type="S" level="2" pack="0" scale="0" length="1"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="USUB" seqno="4" type="S" level="2" pack="0" scale="0" length="1"
+ pointer="0" inum="2" ufocc="0" mandatory="yes" idxnum="1,2" idxsnr="101,1" />
+<FLD name="UVAR" seqno="5" type="S" level="2" pack="0" scale="0" length="16"
+ pointer="0" inum="2" ufocc="0" mandatory="yes" idxnum="1,2" idxsnr="102,2" />
+<FLD name="ULABEL" seqno="6" type="S" level="2" pack="0" scale="0" length="16"
+ pointer="0" inum="1" ufocc="0" mandatory="yes" idxnum="1" idxsnr="103" />
+<FLD name="ULAN" seqno="7" type="S" level="2" pack="0" scale="0" length="3"
+ pointer="0" inum="1" ufocc="0" mandatory="yes" idxnum="1" idxsnr="104" />
+<FLD name="MSGTYPE" seqno="8" type="S" level="2" pack="0" scale="0" length="1"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="UVERS" seqno="9" type="S" level="2" pack="0" scale="0" length="12"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="UDESCR" seqno="10" type="S" level="2" pack="0" scale="0" length="25"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="UVPOS" seqno="11" type="S" level="2" pack="0" scale="0" length="6"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="UHPOS" seqno="12" type="S" level="2" pack="0" scale="0" length="6"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="UVSIZ" seqno="13" type="S" level="2" pack="0" scale="0" length="6"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="UHSIZ" seqno="14" type="S" level="2" pack="0" scale="0" length="6"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="AUTHORIZ" seqno="15" type="S" level="2" pack="0" scale="0" length="1"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="UCLASS" seqno="16" type="S" level="2" pack="0" scale="0" length="1"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="LOCREF" seqno="17" type="S" level="2" pack="0" scale="0" length="1"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="UCONFIRM" seqno="18" type="B" level="2" pack="0" scale="0" length="1"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="UAUDIO" seqno="19" type="N" level="2" pack="10" scale="0" length="1"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="UCOMMENT" seqno="20" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",0,0,0,,1,0,1,\1D,0,0,0,," />
+<FLD name="UTEXT" seqno="21" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,1,\1E,0,0,0,,0,0,0,," />
+<FLD name="UWLEVEL" seqno="22" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\C1,0,0,0,,0,0,0,," />
+</DSC>
+<OCC>
+<DAT name="UTIMESTAMP">2016-02-18T16:19:49.00</DAT>
+<DAT name="USUB">I</DAT>
+<DAT name="UVAR">VC_LIBRARY</DAT>
+<DAT name="ULABEL">IP_EXPORTOBJECT</DAT>
+<DAT name="ULAN">P</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Export Uniface Objects</DAT>
+<DAT name="UTEXT" xml:space='preserve'>;---------------------------------------------------
+entry lpExportObject
+;---------------------------------------------------
+params
+	String  pObjectType       : IN
+	String  pObjectProfile    : IN
+	String  pAdditionalParams : IN
+endparams
+
+variables
+	Boolean vForceExport
+	Boolean vPartialSync
+	Boolean vExportUnifaceSigs
+	String  vRelativePath
+	String  vMessages
+	Boolean vUseClusterPrefs
+	String  vClusteringPrefs
+	String  vGroupingType
+	String  vInParams
+	String  vOutParams
+	Numeric vStatus
+	String  vModdedLocked
+	Boolean vIncludeLib
+endvariables
+
+	vForceExport = $item("FORCE_EXPORT", pAdditionalParams)
+	if(vForceExport == "")
+		vForceExport = 0
+	endif
+
+	vPartialSync = $item("PARTIAL_SYNC", pAdditionalParams)
+	if(vPartialSync == "")
+		vPartialSync = 1
+	endif
+
+	vExportUnifaceSigs = $item("EXPORT_UF_SIG", pAdditionalParams)
+	if(vExportUnifaceSigs == "")
+		vExportUnifaceSigs = 0
+	endif
+
+	$settingsSvc$-&gt;getExportPathForObject(pObjectType, vRelativePath, vMessages)
+	#include VC_LIBRARY:IP_POSTCALL_PRES
+
+	$status = $settingsSvc$-&gt;getIncludeLib(vIncludeLib, vMessages)
+	#include VC_LIBRARY:IP_POSTCALL_PRES
+
+	if(pObjectProfile != "")
+		putitem/id vInParams, "OBJECT_PROFILE",	pObjectProfile
+	endif
+
+	putitem/id vInParams, "INCLUDE_LIB",   vIncludeLib
+	putitem/id vInParams, "OBJECT_TYPE",   pObjectType
+	putitem/id vInParams, "EXPORT_PATH",   vRelativePath
+	putitem/id vInParams, "FORCE_EXPORT",  vForceExport
+	putitem/id vInParams, "PARTIAL_SYNC",  vPartialSync
+	putitem/id vInParams, "EXPORT_UF_SIG", vExportUnifaceSigs
+
+	$status = $sourceExp$-&gt;exportObjects(vInParams, vOutParams, vMessages)
+	#include VC_LIBRARY:IP_POSTCALL_PRES
+
+	;-------------------------------------------
+	; Check vOutParams for any issues
+	;-------------------------------------------
+	getitem/id vModdedLocked, vOutParams, "MODDED_LOCKED" 
+	if(vModdedLocked != "")
+		message/warning "Some locked files have been modified. TODO: Options to sort this out."
+	endif
+
+	return &lt;OK&gt;
+
+end ;lpExportObject</DAT>
+</OCC>
+</TABLE>
+</UNIFACE>
