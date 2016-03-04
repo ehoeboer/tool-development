@@ -1,0 +1,1147 @@
+﻿<?xml version='1.0' encoding='UTF-8' ?>
+<!-- Created by Uniface - (C) Uniface B.V. All rights reserved -->
+<!DOCTYPE UNIFACE PUBLIC "UNIFACE.DTD" "UNIFACE.DTD">
+<UNIFACE release="9.6" xmlengine="2.0">
+<TABLE>
+<DSC name="UFORM" model="DICT" system="S" pseudo ="73" level="1" noupdate="0"
+ rbk="0" ffsql="0" transnr="0" segsize="0" ufocc="1000" charset=".U">
+<FLD name="UTIMESTAMP" seqno="1" type="E" level="2" pack="0" scale="0" length="15"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="UCOMPSTAMP" seqno="2" type="E" level="2" pack="0" scale="0" length="15"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="ULABEL" seqno="3" type="S" level="2" pack="0" scale="0" length="16"
+ pointer="0" inum="1" ufocc="0" mandatory="yes" idxnum="1" idxsnr="101" />
+<FLD name="FTYP" seqno="4" type="S" level="2" pack="0" scale="0" length="4"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="UVERS" seqno="5" type="S" level="2" pack="0" scale="0" length="12"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="UDESCR" seqno="6" type="S" level="2" pack="0" scale="0" length="25"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="FHEAD" seqno="7" type="S" level="2" pack="0" scale="0" length="6"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="VMAAT" seqno="8" type="S" level="2" pack="0" scale="0" length="6"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="HMAAT" seqno="9" type="S" level="2" pack="0" scale="0" length="6"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="UCOLOR" seqno="10" type="S" level="2" pack="0" scale="0" length="6"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="WVPOS" seqno="11" type="S" level="2" pack="0" scale="0" length="6"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="WHPOS" seqno="12" type="S" level="2" pack="0" scale="0" length="6"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="WVSIZ" seqno="13" type="S" level="2" pack="0" scale="0" length="6"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="WHSIZ" seqno="14" type="S" level="2" pack="0" scale="0" length="6"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="CLRSCRN" seqno="15" type="S" level="2" pack="0" scale="0" length="1"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="UBORDER" seqno="16" type="S" level="2" pack="0" scale="0" length="1"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="RIBIN" seqno="17" type="S" level="2" pack="0" scale="0" length="16"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="RIBOT" seqno="18" type="S" level="2" pack="0" scale="0" length="16"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="MOVABLE" seqno="19" type="S" level="2" pack="0" scale="0" length="1"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="VIDEOINVERSE" seqno="20" type="S" level="2" pack="0" scale="0" length="1"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="VIDEOBRIGHT" seqno="21" type="S" level="2" pack="0" scale="0" length="1"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="VIDEOUNLINE" seqno="22" type="S" level="2" pack="0" scale="0" length="1"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="VIDEOBLINK" seqno="23" type="S" level="2" pack="0" scale="0" length="1"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="UPANEL" seqno="24" type="S" level="2" pack="0" scale="0" length="16"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="POSPANEL" seqno="25" type="S" level="2" pack="0" scale="0" length="1"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="UPULL" seqno="26" type="S" level="2" pack="0" scale="0" length="16"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="HIDESTACK" seqno="27" type="S" level="2" pack="0" scale="0" length="1"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="TEMPLATENAME" seqno="28" type="S" level="2" pack="0" scale="0" length="16"
+ pointer="0" inum="1" ufocc="0" idxnum="2" idxsnr="1" />
+<FLD name="UINHERIT" seqno="29" type="B" level="2" pack="0" scale="0" length="1"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="LIBRAR" seqno="30" type="S" level="2" pack="0" scale="0" length="16"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="UTRANSACT" seqno="31" type="S" level="2" pack="0" scale="0" length="8"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="TPLACTUAL" seqno="32" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\D3,0,0,0,,0,0,0,," />
+<FLD name="CONSTRAINTS" seqno="33" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\D4,0,0,0,,0,0,0,," />
+<FLD name="INIT" seqno="34" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\C1,0,0,0,,0,0,0,," />
+<FLD name="CLEAR" seqno="35" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\C2,0,0,0,,0,0,0,," />
+<FLD name="RETRIEVE" seqno="36" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\C3,0,0,0,,0,0,0,," />
+<FLD name="RECORD" seqno="37" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\C4,0,0,0,,0,0,0,," />
+<FLD name="STORE" seqno="38" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\C5,0,0,0,,0,0,0,," />
+<FLD name="DELET" seqno="39" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\C6,0,0,0,,0,0,0,," />
+<FLD name="ACCEPT" seqno="40" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\C7,0,0,0,,0,0,0,," />
+<FLD name="QUIT" seqno="41" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\C8,0,0,0,,0,0,0,," />
+<FLD name="MENU" seqno="42" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\C9,0,0,0,,0,0,0,," />
+<FLD name="INTKEY" seqno="43" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\CA,0,0,0,,0,0,0,," />
+<FLD name="SPRINT" seqno="44" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\CB,0,0,0,,0,0,0,," />
+<FLD name="EPRINT" seqno="45" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\CC,0,0,0,,0,0,0,," />
+<FLD name="ASYNC" seqno="46" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\CD,0,0,0,,0,0,0,," />
+<FLD name="GENERAL" seqno="47" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\CE,0,0,0,,0,0,0,," />
+<FLD name="FORMPIC" seqno="48" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\E0,0,0,0,,0,0,0,," />
+<FLD name="HEADER" seqno="49" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\E3,0,0,0,,0,0,0,," />
+<FLD name="LISTING" seqno="50" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\E5,0,0,0,,0,0,0,," />
+<FLD name="PERF" seqno="51" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\E1,0,0,0,,0,0,0,," />
+<FLD name="PROTO" seqno="52" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\E2,0,0,0,,0,0,0,," />
+<FLD name="TITLE" seqno="53" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\E7,0,0,0,,0,0,0,," />
+<FLD name="WINPROP" seqno="54" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\D2,0,0,0,,0,0,0,," />
+<FLD name="FRLF" seqno="55" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\E4,0,0,0,,0,0,0,," />
+<FLD name="FRGF" seqno="56" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\E6,0,0,0,,0,0,0,," />
+<FLD name="SFUNC" seqno="57" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\DC,0,0,0,,0,0,0,," />
+<FLD name="HTMLPROP" seqno="58" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\DD,0,0,0,,0,0,0,," />
+<FLD name="USCONTAINED" seqno="59" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\CF,0,0,0,,0,0,0,," />
+<FLD name="UEXECDEF" seqno="60" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\D0,0,0,0,,0,0,0,," />
+<FLD name="UPOPUP" seqno="61" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\D5,0,0,0,,0,0,0,," />
+<FLD name="UML_DATA" seqno="62" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\D6,0,0,0,,0,0,0,," />
+<FLD name="HTML_CMPPROP" seqno="63" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\D1,0,0,0,,0,0,0,," />
+<FLD name="HTML_FORMAT" seqno="64" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\D7,0,0,0,,0,0,0,," />
+<FLD name="HTML_STYLES" seqno="65" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\D8,0,0,0,,0,0,0,," />
+<FLD name="HTML_HOOK_H" seqno="66" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\D9,0,0,0,,0,0,0,," />
+<FLD name="HTML_HOOK_B" seqno="67" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\DA,0,0,0,,0,0,0,," />
+<FLD name="HTML_HOOK_E" seqno="68" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\DB,0,0,0,,0,0,0,," />
+<FLD name="HTML_BODYHOOK" seqno="69" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\DE,0,0,0,,0,0,0,," />
+<FLD name="HTML_CMPCLASS" seqno="70" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\DF,0,0,0,,0,0,0,," />
+<FLD name="GETSTATE" seqno="71" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\E8,0,0,0,,0,0,0,," />
+<FLD name="SETSTATE" seqno="72" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\E9,0,0,0,,0,0,0,," />
+<FLD name="UNOSTATE" seqno="73" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\EA,0,0,0,,0,0,0,," />
+<FLD name="CMP_EXT" seqno="74" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\EB,0,0,0,,0,0,0,," />
+<FLD name="UCTRIGGERS" seqno="75" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\EC,0,0,0,,0,0,0,," />
+<FLD name="UACCESSPATH" seqno="76" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\ED,0,0,0,,0,0,0,," />
+<FLD name="USPLITPROP" seqno="77" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\EE,0,0,0,,0,0,0,," />
+<FLD name="TPLACTUAL2" seqno="78" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\EF,0,0,0,,0,0,0,," />
+<FLD name="USTATEMANAGEDBY" seqno="79" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\F0,0,0,0,,0,0,0,," />
+<FLD name="HTMLSKELETON" seqno="80" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\F1,0,0,0,,0,0,0,," />
+</DSC>
+<OCC>
+<DAT name="UTIMESTAMP">2015-11-18T13:53:16.00</DAT>
+<DAT name="UCOMPSTAMP">2015-11-18T13:53:16.00</DAT>
+<DAT name="ULABEL">T_VREPO_EXPORT</DAT>
+<DAT name="WVPOS">0</DAT>
+<DAT name="WHPOS">0</DAT>
+<DAT name="WVSIZ">10</DAT>
+<DAT name="WHSIZ">40</DAT>
+<DAT name="CLRSCRN">N</DAT>
+<DAT name="UBORDER">N</DAT>
+<DAT name="UINHERIT">F</DAT>
+<DAT name="UTRANSACT">1</DAT>
+<DAT name="TPLACTUAL" xml:space='preserve'>
+#Comment ----------------------------------------------
+#Comment start_of_references
+#ifdefined TEMPLATENAME
+#info symbol TEMPLATENAME is already or also defined as a global or local constant
+#endif
+#define TEMPLATENAME=
+#Comment 
+
+#Comment end_of_references
+
+
+#Comment ----------------------------------------------
+#Comment start_of_mappings
+#Comment end_of_mappings
+
+
+#Comment ----------------------------------------------
+#Comment start_of_symbols
+#Comment end_of_symbols
+
+
+#Comment ----------------------------------------------
+</DAT>
+<DAT name="GENERAL" xml:space='preserve'>;---------------------------------------
+entry lpSetupExportTest
+;---------------------------------------
+params
+	Handle pExporter        : IN
+	String pExportDirectory : IN
+	String pImportFile      : IN
+	String pExportFile      : IN
+endparams
+
+variables
+	String vMessages
+endvariables
+
+	call lpImportUnifaceExport(pImportFile)
+
+	if($lfileexists(pExportFile) == 1)
+		lfiledelete pExportFile
+		$instanceparent-&gt;assertEqual($status, 0, "Could not delete %%pExportFile%%% before starting test")		
+		#include VUT:HANDLE_ASSERT
+	endif
+	
+	pExporter-&gt;setBaseDirectory(pExportDirectory, vMessages)
+	$instanceparent-&gt;assertEqual($status, 0, "setBaseDirectory did not return 0. Messages: %%vMessages%%%")
+	#include VUT:HANDLE_ASSERT
+
+	return 0
+
+end ;lpSetupExportTest
+
+
+;---------------------------------------
+entry lpFinishExportTest
+;---------------------------------------
+params
+	String	pExportFile	: IN
+	String	pImportFile	: IN
+endparams
+
+	$instanceparent-&gt;assertFilesEqual(pExportFile, pImportFile, "%%pImportFile%%% should equal %%pExportFile%%%")
+	#include VUT:HANDLE_ASSERT
+
+	;Tidy up
+	if($lfileexists(pExportFile) == 1)
+		lfiledelete pExportFile
+		$instanceparent-&gt;assertEqual($status, 0, "Could not delete %%pExportFile%%% after test")		
+		#include VUT:HANDLE_ASSERT
+	endif
+
+	return 0
+
+end ;lpFinishExportTest
+
+#include VUT:IP_TEST_HELPERS</DAT>
+<DAT name="FORMPIC" xml:space='preserve'>
+ &uFRM;TYP=E&uSEP;NAM=DUMMY.DUMMY&uSEP;WID=20&uSEP;HEI=1&uSEP;HOC=20&uSEP;VOC=1&uFRM;</DAT>
+<DAT name="SFUNC" xml:space='preserve'>;--------------------------------------------------------------------
+; @BEFORE
+;--------------------------------------------------------------------
+operation testSetup
+;--------------------------------------------------------------------
+variables
+	Handle	vHandle
+	String	vMessage
+endvariables
+
+	newinstance "VREPO_DELETE", vHandle
+	$status = vHandle-&gt;deleteAllSource(vMessage)
+	if($status &lt; 0)
+		$instanceparent-&gt;fail($concat("VREPO_DELETE returned ", $status, ": ", vMessage))
+		#include VUT:HANDLE_ASSERT
+	endif
+
+	$status = 0
+	return 0
+
+end ;testSetup
+
+
+;--------------------------------------------------------------------
+; @AFTER
+;--------------------------------------------------------------------
+operation testTearDown
+;--------------------------------------------------------------------
+variables
+	Handle	vHandle
+	String	vMessage
+endvariables
+
+	newinstance "VREPO_DELETE", vHandle
+	$status = vHandle-&gt;deleteAllSource(vMessage)
+	if($status &lt; 0)
+		$instanceparent-&gt;fail($concat("VREPO_DELETE returned ", $status, ": ", vMessage))
+		#include VUT:HANDLE_ASSERT	
+	endif
+
+	$status = 0
+	return 0
+
+end ;testTearDown
+
+
+;--------------------------------------------------------------------
+; @TEST
+;--------------------------------------------------------------------
+operation testExportComponent
+;--------------------------------------------------------------------
+variables
+	Handle vExporter
+	String vWorkingDirectory
+	String vExportDirectory
+	String vImportFile
+	String vExportFile
+	String vInParams
+	String vMessages
+endvariables
+
+	newinstance "VREPO_EXPORT", vExporter
+
+	vWorkingDirectory = $ldir()
+	vExportDirectory  = "%%vWorkingDirectory%%%test\fixtures\&lt;$componentname&gt;"
+	vImportFile       = "%%vExportDirectory%%%\test_component1_expected.xml"
+	vExportFile       = "%%vExportDirectory%%%\TEST_COMPONENT1.xml"
+
+	call lpSetupExportTest(vExporter, vExportDirectory, vImportFile, vExportFile)
+	call lpImportUnifaceExport("%%vExportDirectory%%%\test_library1_expected.xml")
+
+	putitem/id vInParams, "OBJECT_PROFILE", "NAME=test_component1"
+	putitem/id vInParams, "OBJECT_TYPE", "form"
+	putitem/id vInParams, "FORCE_EXPORT"	, 1
+	vExporter-&gt;exportObjects(vInParams, "", vMessages)
+	$instanceparent-&gt;assertEqual($status, 0, "exportObjects did not return 0. Messages: %%vMessages%%%")
+	#include VUT:HANDLE_ASSERT
+
+	call lpFinishExportTest(vExportFile, vImportFile)
+
+	return 0
+
+end ;testExportComponent
+
+
+;--------------------------------------------------------------------
+; @TEST
+;--------------------------------------------------------------------
+operation testExportLibrary
+;--------------------------------------------------------------------
+variables
+	Handle vExporter
+	String vWorkingDirectory
+	String vExportDirectory
+	String vImportFile
+	String vExportFile
+	String vInParams
+	String vMessages
+endvariables
+
+	newinstance "VREPO_EXPORT", vExporter
+
+	vWorkingDirectory = $ldir()
+	vExportDirectory  = "%%vWorkingDirectory%%%test\fixtures\&lt;$componentname&gt;"
+	vImportFile       = "%%vExportDirectory%%%\test_library1_expected.xml"
+	vExportFile       = "%%vExportDirectory%%%\TEST_LIBRARY1.xml"
+
+	call lpSetupExportTest(vExporter, vExportDirectory, vImportFile, vExportFile)
+
+	putitem/id vInParams, "OBJECT_PROFILE", "NAME=TEST_LIBRARY1"
+	putitem/id vInParams, "OBJECT_TYPE"	, "library"
+	putitem/id vInParams, "FORCE_EXPORT"	, 1
+	vExporter-&gt;exportObjects(vInParams, "", vMessages)
+	$instanceparent-&gt;assertEqual($status, 0, "exportObjects did not return 0. Messages: %%vMessages%%%")
+	#include VUT:HANDLE_ASSERT
+
+	call lpFinishExportTest(vExportFile, vImportFile)
+
+	return 0
+
+end ;testExportLibrary
+
+
+;--------------------------------------------------------------------
+; @TEST
+;--------------------------------------------------------------------
+operation testExportLibraryWithIncLibSet
+;--------------------------------------------------------------------
+variables
+	Handle vExporter
+	String vWorkingDirectory
+	String vExportDirectory
+	String vImportFile
+	String vExportFile
+	String vInParams
+	String vMessages
+endvariables
+
+	newinstance "VREPO_EXPORT", vExporter
+
+	vWorkingDirectory = $ldir()
+	vExportDirectory  = "%%vWorkingDirectory%%%test\fixtures\&lt;$componentname&gt;"
+	vImportFile       = "%%vExportDirectory%%%\test_library1_expected.xml"
+	vExportFile       = "%%vExportDirectory%%%\TEST_LIBRARY1.xml"
+
+	call lpSetupExportTest(vExporter, vExportDirectory, vImportFile, vExportFile)
+
+	putitem/id vInParams, "OBJECT_PROFILE", "NAME=TEST_LIBRARY1"
+	putitem/id vInParams, "OBJECT_TYPE", "library"
+	putitem/id vInParams, "INCLUDE_LIB", 1	
+	putitem/id vInParams, "FORCE_EXPORT", 1
+	vExporter-&gt;exportObjects(vInParams, "", vMessages)
+	$instanceparent-&gt;assertEqual($status, 0, "exportObjects did not return 0. Messages: %%vMessages%%%")
+	#include VUT:HANDLE_ASSERT
+
+	;We expect nothing to be exported
+	if($lfileexists(vExportFile) == 1)
+		lfiledelete vExportFile
+		$instanceparent-&gt;assertEqual(0, 1, "lfileexists found %%vExportFile%%%, it shouldn't be there")		
+		#include VUT:HANDLE_ASSERT
+	endif
+
+	return 0
+
+end ;testExportLibraryWithIncLibSet
+
+
+;--------------------------------------------------------------------
+; @TEST
+;--------------------------------------------------------------------
+operation testExpIncludeProc
+;--------------------------------------------------------------------
+variables
+	Handle vExporter
+	String vWorkingDirectory
+	String vExportDirectory
+	String vImportFile
+	String vExportFile
+	String vInParams
+	String vMessages
+endvariables
+
+	newinstance "VREPO_EXPORT", vExporter
+
+	vWorkingDirectory = $ldir()
+	vExportDirectory  = "%%vWorkingDirectory%%%test\fixtures\&lt;$componentname&gt;"
+	vImportFile       = "%%vExportDirectory%%%\test_ip1_expected.xml"
+	vExportFile       = "%%vExportDirectory%%%\TEST_IP1.xml"
+
+	call lpSetupExportTest(vExporter, vExportDirectory, vImportFile, vExportFile)
+	call lpImportUnifaceExport("%%vExportDirectory%%%\test_library1_expected.xml")
+
+
+	putitem/id vInParams, "OBJECT_PROFILE", "NAME=TEST_IP1"
+	putitem/id vInParams, "OBJECT_TYPE", "include"
+	putitem/id vInParams, "FORCE_EXPORT", 1
+	vExporter-&gt;exportObjects(vInParams, "", vMessages)
+	$instanceparent-&gt;assertEqual($status, 0, "exportObjects did not return 0. Messages: %%vMessages%%%")
+	#include VUT:HANDLE_ASSERT
+
+	call lpFinishExportTest(vExportFile, vImportFile)
+
+	return 0
+
+end ;testExpIncludeProc
+
+
+;--------------------------------------------------------------------
+; @TEST
+;--------------------------------------------------------------------
+operation testExpIPWithIncLibSet
+;--------------------------------------------------------------------
+variables
+	Handle vExporter
+	String vWorkingDirectory
+	String vExportDirectory
+	String vImportFile
+	String vExportFile
+	String vInParams
+	String vMessages
+endvariables
+
+	newinstance "VREPO_EXPORT", vExporter
+
+	vWorkingDirectory = $ldir()
+	vExportDirectory  = "%%vWorkingDirectory%%%test\fixtures\&lt;$componentname&gt;"
+	vImportFile       = "%%vExportDirectory%%%\test_ip1_with_lib_expected.xml"
+	vExportFile       = "%%vExportDirectory%%%\TEST_IP1.xml"
+
+	call lpSetupExportTest(vExporter, vExportDirectory, vImportFile, vExportFile)
+	call lpImportUnifaceExport("%%vExportDirectory%%%\test_library1_expected.xml")
+
+
+	putitem/id vInParams, "OBJECT_PROFILE", "NAME=TEST_IP1"
+	putitem/id vInParams, "OBJECT_TYPE", "include"
+	putitem/id vInParams, "INCLUDE_LIB", 1	
+	putitem/id vInParams, "FORCE_EXPORT", 1
+	vExporter-&gt;exportObjects(vInParams, "", vMessages)
+	$instanceparent-&gt;assertEqual($status, 0, "exportObjects did not return 0. Messages: %%vMessages%%%")
+	#include VUT:HANDLE_ASSERT
+
+	call lpFinishExportTest(vExportFile, vImportFile)
+
+	return 0
+
+end ;testExpIPWithIncLibSet
+
+
+;--------------------------------------------------------------------
+; @TEST
+;--------------------------------------------------------------------
+operation testExpGlyph
+;--------------------------------------------------------------------
+variables
+	Handle vExporter
+	String vWorkingDirectory
+	String vExportDirectory
+	String vImportFile
+	String vExportFile
+	String vInParams
+	String vMessages
+endvariables
+
+	newinstance "VREPO_EXPORT", vExporter
+
+	vWorkingDirectory = $ldir()
+	vExportDirectory  = "%%vWorkingDirectory%%%test\fixtures\&lt;$componentname&gt;"
+	vImportFile       = "%%vExportDirectory%%%\test_glyph1_expected.xml"
+	vExportFile       = "%%vExportDirectory%%%\TEST_GLYPH1.xml"
+
+	call lpSetupExportTest(vExporter, vExportDirectory, vImportFile, vExportFile)
+	call lpImportUnifaceExport("%%vExportDirectory%%%\test_library1_expected.xml")
+
+
+	;Export with INCLUDE_LIB set
+	vInParams = ""
+	putitem/id vInParams, "OBJECT_PROFILE", "NAME=TEST_GLYPH1"
+	putitem/id vInParams, "OBJECT_TYPE"	, "glyph"
+	putitem/id vInParams, "FORCE_EXPORT"	, 1
+	vExporter-&gt;exportObjects(vInParams, "", vMessages)
+	$instanceparent-&gt;assertEqual($status, 0, "exportObjects did not return 0. Messages: %%vMessages%%%")
+	#include VUT:HANDLE_ASSERT
+
+	call lpFinishExportTest(vExportFile, vImportFile)
+
+	return 0
+
+end ;testExpGlyph
+
+
+;--------------------------------------------------------------------
+; @TEST
+;--------------------------------------------------------------------
+operation testExpGlyphWithIncLibSet
+;--------------------------------------------------------------------
+variables
+	Handle vExporter
+	String vWorkingDirectory
+	String vExportDirectory
+	String vImportFile
+	String vExportFile
+	String vInParams
+	String vMessages
+endvariables
+
+	newinstance "VREPO_EXPORT", vExporter
+
+	vWorkingDirectory = $ldir()
+	vExportDirectory  = "%%vWorkingDirectory%%%test\fixtures\&lt;$componentname&gt;"
+	vImportFile       = "%%vExportDirectory%%%\test_glyph1_with_lib_expected.xml"
+	vExportFile       = "%%vExportDirectory%%%\TEST_GLYPH1.xml"
+
+	call lpSetupExportTest(vExporter, vExportDirectory, vImportFile, vExportFile)
+	call lpImportUnifaceExport("%%vExportDirectory%%%\test_library1_expected.xml")
+
+
+	vInParams = ""
+	putitem/id vInParams, "OBJECT_PROFILE", "NAME=TEST_GLYPH1"
+	putitem/id vInParams, "OBJECT_TYPE", "glyph"
+	putitem/id vInParams, "INCLUDE_LIB", 1	
+	putitem/id vInParams, "FORCE_EXPORT", 1
+	vExporter-&gt;exportObjects(vInParams, "", vMessages)
+	$instanceparent-&gt;assertEqual($status, 0, "exportObjects did not return 0. Messages: %%vMessages%%%")
+	#include VUT:HANDLE_ASSERT
+
+	call lpFinishExportTest(vExportFile, vImportFile)
+
+	return 0
+
+end ;testExpGlyphWithIncLibSet
+
+
+;--------------------------------------------------------------------
+; @TEST
+;--------------------------------------------------------------------
+operation testExportConstant
+;--------------------------------------------------------------------
+variables
+	Handle vExporter
+	String vWorkingDirectory
+	String vExportDirectory
+	String vImportFile
+	String vExportFile
+	String vInParams
+	String vMessages
+endvariables
+
+	newinstance "VREPO_EXPORT", vExporter
+
+	vWorkingDirectory = $ldir()
+	vExportDirectory  = "%%vWorkingDirectory%%%test\fixtures\&lt;$componentname&gt;"
+	vImportFile       = "%%vExportDirectory%%%\test_library1_constants_expected.xml"
+	vExportFile       = "%%vExportDirectory%%%\TEST_LIBRARY1_CONSTANTS.xml"
+
+	call lpSetupExportTest(vExporter, vExportDirectory, vImportFile, vExportFile)
+	call lpImportUnifaceExport("%%vExportDirectory%%%\test_library1_expected.xml")
+
+
+	putitem/id vInParams, "OBJECT_TYPE", "constants"
+	putitem/id vInParams, "FORCE_EXPORT", 1
+	putitem/id vInParams, "EXPORT_PATH", "TEST_LIBRARY1_CONSTANTS.xml"
+	vExporter-&gt;exportObjects(vInParams, "", vMessages)
+	$instanceparent-&gt;assertEqual($status, 0, "exportObjects did not return 0. Messages: %%vMessages%%%")
+	#include VUT:HANDLE_ASSERT
+	
+	call lpFinishExportTest(vExportFile, vImportFile)
+
+	return 0
+
+end ;testExportConstant
+
+
+;--------------------------------------------------------------------
+; @TEST
+;--------------------------------------------------------------------
+operation testExportComponentWithInclSig
+;--------------------------------------------------------------------
+variables
+	Handle vExporter
+	String vWorkingDirectory
+	String vExportDirectory
+	String vImportFile
+	String vExportFile
+	String vInParams
+	String vMessages
+endvariables
+
+	newinstance "VREPO_EXPORT", vExporter
+
+	vWorkingDirectory = $ldir()
+	vExportDirectory  = "%%vWorkingDirectory%%%test\fixtures\&lt;$componentname&gt;"
+	vImportFile       = "%%vExportDirectory%%%\test_component2_with_sig_expected.xml"
+	vExportFile       = "%%vExportDirectory%%%\TEST_COMPONENT2.xml"
+
+	call lpSetupExportTest(vExporter, vExportDirectory, vImportFile, vExportFile)
+
+	putitem/id vInParams, "OBJECT_PROFILE", "NAME=TEST_COMPONENT2"
+	putitem/id vInParams, "OBJECT_TYPE", "service"
+	putitem/id vInParams, "FORCE_EXPORT", 1
+	putitem/id vInParams, "INCLUDE_SIG", 1	
+	vExporter-&gt;exportObjects(vInParams, "", vMessages)
+	$instanceparent-&gt;assertEqual($status, 0, "exportObjects did not return 0. Messages: %%vMessages%%%")
+	#include VUT:HANDLE_ASSERT
+
+	call lpFinishExportTest(vExportFile, vImportFile)
+
+	return 0
+
+end ;testExportComponentWithInclSig
+
+
+;--------------------------------------------------------------------
+; @TEST
+;--------------------------------------------------------------------
+operation testExportMessage
+;--------------------------------------------------------------------
+variables
+	Handle vExporter
+	String vWorkingDirectory
+	String vExportDirectory
+	String vImportFile
+	String vExportFile
+	String vInParams
+	String vMessages
+endvariables
+
+	newinstance "VREPO_EXPORT", vExporter
+
+	vWorkingDirectory = $ldir()
+	vExportDirectory  = "%%vWorkingDirectory%%%test\fixtures\&lt;$componentname&gt;"
+	vImportFile       = "%%vExportDirectory%%%\test_message1_expected.xml"
+	vExportFile       = "%%vExportDirectory%%%\TEST_MESSAGE1.xml"
+
+	call lpSetupExportTest(vExporter, vExportDirectory, vImportFile, vExportFile)
+
+	putitem/id vInParams, "OBJECT_PROFILE", "NAME=TEST_MESSAGE1&uSEP;LANG=USA&uSEP;LIB=TEST_LIBRARY1"
+	putitem/id vInParams, "OBJECT_TYPE", "message"
+	putitem/id vInParams, "FORCE_EXPORT", 1
+	vExporter-&gt;exportObjects(vInParams, "", vMessages)
+	$instanceparent-&gt;assertEqual($status, 0, "exportObjects did not return 0. Messages: %%vMessages%%%")
+	#include VUT:HANDLE_ASSERT
+	
+	call lpFinishExportTest(vExportFile, vImportFile)
+
+	return 0
+
+end ;testExportMessage
+
+
+;--------------------------------------------------------------------
+; @TEST
+;--------------------------------------------------------------------
+operation testExportVariable
+;--------------------------------------------------------------------
+variables
+	Handle vExporter
+	String vWorkingDirectory
+	String vExportDirectory
+	String vExpectedFile
+	String vImportFile
+	String vExportFile
+	String vInParams
+	String vMessages
+endvariables
+
+	newinstance "VREPO_EXPORT", vExporter
+
+	vWorkingDirectory = $ldir()
+	vExportDirectory  = "%%vWorkingDirectory%%%test\fixtures\&lt;$componentname&gt;"
+	vExpectedFile     = "%%vExportDirectory%%%\testExportVariable_expected.xml"
+	vImportFile       = "%%vExportDirectory%%%\testExportVariable_import.xml"
+	vExportFile       = "%%vExportDirectory%%%\testExportVariable_exported.xml"
+
+	call lpSetupExportTest(vExporter, vExportDirectory, vImportFile, vExportFile)
+
+	putitem/id vInParams, "OBJECT_PROFILE", "NAME=TEST_VAR1&uSEP;LIB=TEST_LIBRARY1"
+	putitem/id vInParams, "OBJECT_TYPE", "variables"
+	putitem/id vInParams, "FORCE_EXPORT", 1
+	putitem/id vInParams, "EXPORT_PATH", "testExportVariable_exported.xml"
+	vExporter-&gt;exportObjects(vInParams, "", vMessages)
+	$instanceparent-&gt;assertEqual($status, 0, "exportObjects did not return 0. Messages: %%vMessages%%%")
+	#include VUT:HANDLE_ASSERT
+	
+	call lpFinishExportTest(vExportFile, vExpectedFile)
+
+	return 0
+
+end ;testExportVariable
+
+
+;--------------------------------------------------------------------
+; @TEST
+;
+; Test exporting of a non-Uniface signature
+;--------------------------------------------------------------------
+operation testExportNonUnifaceSignature
+;--------------------------------------------------------------------
+variables
+	Handle vExporter
+	String vWorkingDirectory
+	String vExportDirectory
+	String vExpectedFile
+	String vImportFile
+	String vExportFile
+	String vInParams
+	String vMessages
+endvariables
+
+	newinstance "VREPO_EXPORT", vExporter
+
+	vWorkingDirectory = $ldir()
+	vExportDirectory  = "%%vWorkingDirectory%%%test\fixtures\&lt;$componentname&gt;"
+	vExpectedFile     = "%%vExportDirectory%%%\testNonUnifaceSignature_expected.xml"
+	vImportFile       = "%%vExportDirectory%%%\testNonUnifaceSignature_expected.xml"
+	vExportFile       = "%%vExportDirectory%%%\testNonUnifaceSignature_exported.xml"
+
+	call lpSetupExportTest(vExporter, vExportDirectory, vImportFile, vExportFile)
+
+
+	putitem/id vInParams, "OBJECT_PROFILE", "NAME=OS"
+	putitem/id vInParams, "OBJECT_TYPE",    "signature"
+	putitem/id vInParams, "FORCE_EXPORT",   "F"
+	putitem/id vInParams, "EXPORT_PATH",    "testNonUnifaceSignature_exported.xml"
+	putitem/id vInParams, "EXPORT_UF_SIG",  "0"
+	putitem/id vInParams, "INCLUDE_LIB",    "F"
+	vExporter-&gt;exportObjects(vInParams, "", vMessages)
+	$instanceparent-&gt;assertEqual($status, 0, "exportObjects did not return 0. Messages: %%vMessages%%%")
+	#include VUT:HANDLE_ASSERT
+	
+	call lpFinishExportTest(vExportFile, vExpectedFile)
+
+	return 0
+
+end ;testExportVariable
+
+
+;--------------------------------------------------------------------
+; @TEST
+;--------------------------------------------------------------------
+operation testExpMessagesGroupByLib
+;--------------------------------------------------------------------
+variables
+	Handle vExporter
+	String vWorkingDirectory
+	String vExportDirectory
+	String vImportFile
+	String vExportFile
+	String vInParams
+	String vMessages
+endvariables
+
+	newinstance "VREPO_EXPORT", vExporter
+
+	vWorkingDirectory = $ldir()
+	vExportDirectory  = "%%vWorkingDirectory%%%test\fixtures\&lt;$componentname&gt;"
+	vImportFile       = "%%vExportDirectory%%%\test_library1_messages_expected.xml"
+	vExportFile       = "%%vExportDirectory%%%\TEST_LIBRARY1.xml"
+
+	call lpSetupExportTest(vExporter, vExportDirectory, vImportFile, vExportFile)
+
+	putitem/id vInParams, "OBJECT_PROFILE", "LIB=TEST_LIBRARY1"
+	putitem/id vInParams, "OBJECT_TYPE", "message"
+	putitem/id vInParams, "FORCE_EXPORT", 1
+	putitem/id vInParams, "GROUP_BY", "LIB"
+	vExporter-&gt;exportObjects(vInParams, "", vMessages)
+	$instanceparent-&gt;assertEqual($status, 0, "exportObjects did not return 0. Messages: %%vMessages%%%")
+	#include VUT:HANDLE_ASSERT
+	
+	call lpFinishExportTest(vExportFile, vImportFile)
+
+	return 0
+
+end ;testExpMessagesGroupByLib
+
+
+;--------------------------------------------------------------------
+; @TEST
+;--------------------------------------------------------------------
+operation testExpMessagesGroupByLang
+;--------------------------------------------------------------------
+variables
+	Handle vExporter
+	String vWorkingDirectory
+	String vExportDirectory
+	String vImportFile
+	String vExportFile
+	String vInParams
+	String vMessages
+endvariables
+
+	newinstance "VREPO_EXPORT", vExporter
+
+	vWorkingDirectory = $ldir()
+	vExportDirectory  = "%%vWorkingDirectory%%%test\fixtures\&lt;$componentname&gt;"
+	vImportFile       = "%%vExportDirectory%%%\usa_messages_expected.xml"
+	vExportFile       = "%%vExportDirectory%%%\USA.xml"
+
+	call lpSetupExportTest(vExporter, vExportDirectory, vImportFile, vExportFile)
+
+	putitem/id vInParams, "OBJECT_PROFILE", "LANG=USA"
+	putitem/id vInParams, "OBJECT_TYPE", "message"
+	putitem/id vInParams, "FORCE_EXPORT", 1
+	putitem/id vInParams, "GROUP_BY", "LANG"
+	vExporter-&gt;exportObjects(vInParams, "", vMessages)
+	$instanceparent-&gt;assertEqual($status, 0, "exportObjects did not return 0. Messages: %%vMessages%%%")
+	#include VUT:HANDLE_ASSERT
+	
+	call lpFinishExportTest(vExportFile, vImportFile)
+
+	return 0
+
+end ;testExpMessagesGroupByLib
+
+
+;--------------------------------------------------------------------
+; @TEST
+;--------------------------------------------------------------------
+operation testExpMessagesGroupByLibAndLang
+;--------------------------------------------------------------------
+variables
+	Handle vExporter
+	String vWorkingDirectory
+	String vExportDirectory
+	String vImportFile
+	String vExportFile
+	String vInParams
+	String vMessages
+endvariables
+
+	newinstance "VREPO_EXPORT", vExporter
+
+	vWorkingDirectory = $ldir()
+	vExportDirectory  = "%%vWorkingDirectory%%%test\fixtures\&lt;$componentname&gt;"
+	vImportFile       = "%%vExportDirectory%%%\test_library1_usa_messages_expected.xml"
+	vExportFile       = "%%vExportDirectory%%%\TEST_LIBRARY1_USA.xml"
+
+	call lpSetupExportTest(vExporter, vExportDirectory, vImportFile, vExportFile)
+
+	putitem/id vInParams, "OBJECT_PROFILE", "LANG=USA&uSEP;LIB=TEST_LIBRARY1"
+	putitem/id vInParams, "OBJECT_TYPE", "message"
+	putitem/id vInParams, "FORCE_EXPORT", 1
+	putitem/id vInParams, "GROUP_BY", "LIB_AND_LANG"
+	vExporter-&gt;exportObjects(vInParams, "", vMessages)
+	$instanceparent-&gt;assertEqual($status, 0, "exportObjects did not return 0. Messages: %%vMessages%%%")
+	#include VUT:HANDLE_ASSERT
+	
+	call lpFinishExportTest(vExportFile, vImportFile)
+
+	return 0
+
+end ;testExpMessagesGroupByLibAndLang
+
+
+;--------------------------------------------------------------------
+; @TEST
+;--------------------------------------------------------------------
+operation testExpMessagesGroupByAllInOne
+;--------------------------------------------------------------------
+variables
+	Handle vExporter
+	String vWorkingDirectory
+	String vExportDirectory
+	String vImportFile
+	String vExportFile
+	String vInParams
+	String vMessages
+endvariables
+
+	newinstance "VREPO_EXPORT", vExporter
+
+	vWorkingDirectory = $ldir()
+	vExportDirectory  = "%%vWorkingDirectory%%%test\fixtures\&lt;$componentname&gt;"
+	vImportFile       = "%%vExportDirectory%%%\all_messages_expected.xml"
+	vExportFile       = "%%vExportDirectory%%%\all.xml"
+
+	call lpSetupExportTest(vExporter, vExportDirectory, vImportFile, vExportFile)
+
+	putitem/id vInParams, "OBJECT_TYPE", "message"
+	putitem/id vInParams, "FORCE_EXPORT", 1
+	putitem/id vInParams, "GROUP_BY", "ALL_IN_ONE"
+	vExporter-&gt;exportObjects(vInParams, "", vMessages)
+	$instanceparent-&gt;assertEqual($status, 0, "exportObjects did not return 0. Messages: %%vMessages%%%")
+	#include VUT:HANDLE_ASSERT
+	
+	call lpFinishExportTest(vExportFile, vImportFile)
+
+	return 0
+
+end ;testExpMessagesGroupByAllInOne
+
+
+;--------------------------------------------------------------------
+; @TEST
+; @IGNORE
+;--------------------------------------------------------------------
+operation testExpLibraryIncAll
+;--------------------------------------------------------------------
+variables
+	Handle vExporter
+	String vWorkingDirectory
+	String vExportDirectory
+	String vImportFile
+	String vExportFile
+	String vInParams
+	String vMessages
+endvariables
+
+	newinstance "VREPO_EXPORT", vExporter
+
+	vWorkingDirectory = $ldir()
+	vExportDirectory  = "%%vWorkingDirectory%%%test\fixtures\&lt;$componentname&gt;"
+	vImportFile       = "%%vExportDirectory%%%\test_library1_inc_all_expected.xml"
+	vExportFile       = "%%vExportDirectory%%%\TEST_LIBRARY1.xml"
+
+	call lpSetupExportTest(vExporter, vExportDirectory, vImportFile, vExportFile)
+
+	putitem/id vInParams, "OBJECT_PROFILE", "NAME=TEST_LIBRARY1"	
+	putitem/id vInParams, "OBJECT_TYPE", "library"
+	putitem/id vInParams, "FORCE_EXPORT", 1
+	putitem/id vInParams, "GROUP_BY", "INC_ALL"
+	vExporter-&gt;exportObjects(vInParams, "", vMessages)
+	$instanceparent-&gt;assertEqual($status, 0, "exportObjects did not return 0. Messages: %%vMessages%%%")
+	#include VUT:HANDLE_ASSERT
+	
+	call lpFinishExportTest(vExportFile, vImportFile)
+
+	return 0
+
+end ;testExpLibraryIncAll</DAT>
+</OCC>
+</TABLE>
+<TABLE>
+<DSC name="UXGROUP" model="DICT" system="S" pseudo ="73" level="1" noupdate="0"
+ rbk="0" ffsql="0" transnr="0" segsize="0" ufocc="1000" charset=".U">
+<FLD name="UTIMESTAMP" seqno="1" type="E" level="2" pack="0" scale="0" length="15"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="ULABEL" seqno="2" type="S" level="2" pack="0" scale="0" length="32"
+ pointer="0" inum="1" ufocc="0" mandatory="yes" idxnum="1" idxsnr="101" />
+<FLD name="UBASE" seqno="3" type="S" level="2" pack="0" scale="0" length="32"
+ pointer="0" inum="1" ufocc="0" mandatory="yes" idxnum="1" idxsnr="102" />
+<FLD name="UFORM" seqno="4" type="S" level="2" pack="0" scale="0" length="16"
+ pointer="0" inum="2" ufocc="0" mandatory="yes" idxnum="1,2" idxsnr="103,1" />
+<FLD name="UVERS" seqno="5" type="S" level="2" pack="0" scale="0" length="12"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="UDESCR" seqno="6" type="S" level="2" pack="0" scale="0" length="25"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="U_BORD" seqno="7" type="S" level="2" pack="0" scale="0" length="1"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="U_INDB" seqno="8" type="S" level="2" pack="0" scale="0" length="1"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="U_DBMS" seqno="9" type="S" level="2" pack="0" scale="0" length="3"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="U_UPD" seqno="10" type="S" level="2" pack="0" scale="0" length="1"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="U_MINL" seqno="11" type="N" level="2" pack="0" scale="0" length="6"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="U_MAXL" seqno="12" type="N" level="2" pack="0" scale="0" length="6"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="U_MINR" seqno="13" type="N" level="2" pack="0" scale="0" length="6"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="U_MAXR" seqno="14" type="N" level="2" pack="0" scale="0" length="6"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="TPLGINTF" seqno="15" type="S" level="2" pack="0" scale="0" length="32"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="U_INTF" seqno="16" type="S" level="2" pack="0" scale="0" length="64"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="TEMPLATENAME" seqno="17" type="S" level="2" pack="0" scale="0" length="32"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="UINHERIT" seqno="18" type="B" level="2" pack="0" scale="0" length="1"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="TPLACTUAL" seqno="19" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\E6,0,0,0,,0,0,0,," />
+<FLD name="GETOCC" seqno="20" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\C1,0,0,0,,0,0,0,," />
+<FLD name="PUTOCC" seqno="21" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\C2,0,0,0,,0,0,0,," />
+<FLD name="DELOCC" seqno="22" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\C3,0,0,0,,0,0,0,," />
+<FLD name="LCK" seqno="23" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\C4,0,0,0,,0,0,0,," />
+<FLD name="UNLOCK" seqno="24" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\C5,0,0,0,,0,0,0,," />
+<FLD name="GETSEGM" seqno="25" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\C6,0,0,0,,0,0,0,," />
+<FLD name="ADDOCC" seqno="26" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\C7,0,0,0,,0,0,0,," />
+<FLD name="DELOCCR" seqno="27" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\C8,0,0,0,,0,0,0,," />
+<FLD name="ENDMOD" seqno="28" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\C9,0,0,0,,0,0,0,," />
+<FLD name="DOC" seqno="29" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\CA,0,0,0,,0,0,0,," />
+<FLD name="DETAIL" seqno="30" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\CB,0,0,0,,0,0,0,," />
+<FLD name="CREOCC" seqno="31" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\CC,0,0,0,,0,0,0,," />
+<FLD name="MENU" seqno="32" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\CD,0,0,0,,0,0,0,," />
+<FLD name="FINDOCC" seqno="33" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\CE,0,0,0,,0,0,0,," />
+<FLD name="ERROR" seqno="34" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\CF,0,0,0,,0,0,0,," />
+<FLD name="GENERAL" seqno="35" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\D0,0,0,0,,0,0,0,," />
+<FLD name="STARTMOD" seqno="36" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\D1,0,0,0,,0,0,0,," />
+<FLD name="FLIST" seqno="37" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\E1,0,0,0,,0,0,0,," />
+<FLD name="BREAK" seqno="38" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\E2,0,0,0,,0,0,0,," />
+<FLD name="VLDE" seqno="39" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\D2,0,0,0,,0,0,0,," />
+<FLD name="VLDK" seqno="40" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\D3,0,0,0,,0,0,0,," />
+<FLD name="UPOPUP" seqno="41" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\D4,0,0,0,,0,0,0,," />
+<FLD name="UISBCLASS" seqno="42" type="B" level="2" pack="0" scale="0" length="1"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="UISASSOC" seqno="43" type="B" level="2" pack="0" scale="0" length="1"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="U_OBJSVC" seqno="44" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\DC,0,0,0,,0,0,0,," />
+<FLD name="U_SVCUSE" seqno="45" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\DD,0,0,0,,0,0,0,," />
+<FLD name="HTML_ENTPROP" seqno="46" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\D7,0,0,0,,0,0,0,," />
+<FLD name="HTML_TABTYPE" seqno="47" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\D8,0,0,0,,0,0,0,," />
+<FLD name="HTML_ENTHK_B" seqno="48" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\D9,0,0,0,,0,0,0,," />
+<FLD name="HTML_ENTHK_E" seqno="49" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\DA,0,0,0,,0,0,0,," />
+<FLD name="HTML_OCCHK_B" seqno="50" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\DB,0,0,0,,0,0,0,," />
+<FLD name="HTML_OCCHK_E" seqno="51" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\DE,0,0,0,,0,0,0,," />
+<FLD name="HTML_ENTCLASS" seqno="52" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\DF,0,0,0,,0,0,0,," />
+<FLD name="U_GLAB" seqno="53" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\E0,0,0,0,,0,0,0,," />
+<FLD name="UEOINTERFACE" seqno="54" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\E3,0,0,0,,0,0,0,," />
+<FLD name="UECINTERFACE" seqno="55" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\E4,0,0,0,,0,0,0,," />
+<FLD name="UEOOPERS" seqno="56" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\E5,0,0,0,,0,0,0,," />
+<FLD name="UECOPERS" seqno="57" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\E7,0,0,0,,0,0,0,," />
+<FLD name="UEOTRIGGERS" seqno="58" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\E8,0,0,0,,0,0,0,," />
+<FLD name="UECTRIGGERS" seqno="59" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\E9,0,0,0,,0,0,0,," />
+<FLD name="UGEOMETRY" seqno="60" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\EA,0,0,0,,0,0,0,," />
+<FLD name="UWIDGETTYPE" seqno="61" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\EB,0,0,0,,0,0,0,," />
+<FLD name="UWIDGETCREATE" seqno="62" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\EC,0,0,0,,0,0,0,," />
+<FLD name="PRLO" seqno="63" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\ED,0,0,0,,0,0,0,," />
+<FLD name="PSLO" seqno="64" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\EE,0,0,0,,0,0,0,," />
+<FLD name="PRSO" seqno="65" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\EF,0,0,0,,0,0,0,," />
+<FLD name="PSSO" seqno="66" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\F0,0,0,0,,0,0,0,," />
+<FLD name="UPARENT" seqno="67" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\F1,0,0,0,,0,0,0,," />
+<FLD name="UWEBWIDGETTYPE" seqno="68" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\F2,0,0,0,,0,0,0,," />
+<FLD name="UWEBWIDGETCREATE" seqno="69" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\F3,0,0,0,,0,0,0,," />
+</DSC>
+<OCC>
+<DAT name="UTIMESTAMP">2015-11-13T16:25:17.00</DAT>
+<DAT name="ULABEL">DUMMY</DAT>
+<DAT name="UBASE">DUMMY</DAT>
+<DAT name="UFORM">T_VREPO_EXPORT</DAT>
+<DAT name="U_BORD">N</DAT>
+<DAT name="U_INDB">N</DAT>
+<DAT name="UINHERIT">F</DAT>
+<DAT name="UISBCLASS">F</DAT>
+<DAT name="UISASSOC">F</DAT>
+<DAT name="HTML_ENTPROP" xml:space='preserve'>U_ATLEASTONE=1&uSEP;U_STARTOCC=1&uSEP;U_MAXOCC=</DAT>
+</OCC>
+</TABLE>
+</UNIFACE>

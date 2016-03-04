@@ -1,0 +1,523 @@
+﻿<?xml version='1.0' encoding='UTF-8' ?>
+<!-- Created by UNIFACE - (C) Compuware Corporation -->
+<!DOCTYPE UNIFACE PUBLIC "UNIFACE.DTD" "UNIFACE.DTD">
+<UNIFACE release="9.3" xmlengine="2.0">
+<TABLE>
+<DSC name="ULIBR" model="DICT" system="S" pseudo ="73" level="1" noupdate="0"
+ rbk="0" ffsql="0" transnr="0" segsize="0" ufocc="0" charset=".U">
+<FLD name="ULIBRARY" seqno="1" type="S" level="2" pack="0" scale="0" length="16"
+ pointer="0" inum="1" ufocc="0" mandatory="yes" idxnum="1" idxsnr="101" />
+<FLD name="UDESCR" seqno="2" type="S" level="2" pack="0" scale="0" length="25"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="UTIMESTAMP" seqno="3" type="E" level="2" pack="0" scale="0" length="15"
+ pointer="0" inum="0" ufocc="0" />
+</DSC>
+<OCC>
+<DAT name="ULIBRARY">USYS</DAT>
+<DAT name="UTIMESTAMP">1995-01-25T15:42:02.00</DAT>
+</OCC>
+</TABLE>
+<TABLE>
+<DSC name="USOURCE" model="DICT" system="S" pseudo ="73" level="1" noupdate="0"
+ rbk="0" ffsql="0" transnr="0" segsize="0" ufocc="500" charset=".U">
+<FLD name="UTIMESTAMP" seqno="1" type="E" level="2" pack="0" scale="0" length="15"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="UCOMPSTAMP" seqno="2" type="E" level="2" pack="0" scale="0" length="15"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="USTAT" seqno="3" type="S" level="2" pack="0" scale="0" length="1"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="USUB" seqno="4" type="S" level="2" pack="0" scale="0" length="1"
+ pointer="0" inum="2" ufocc="0" mandatory="yes" idxnum="1,2" idxsnr="101,1" />
+<FLD name="UVAR" seqno="5" type="S" level="2" pack="0" scale="0" length="16"
+ pointer="0" inum="2" ufocc="0" mandatory="yes" idxnum="1,2" idxsnr="102,2" />
+<FLD name="ULABEL" seqno="6" type="S" level="2" pack="0" scale="0" length="16"
+ pointer="0" inum="1" ufocc="0" mandatory="yes" idxnum="1" idxsnr="103" />
+<FLD name="ULAN" seqno="7" type="S" level="2" pack="0" scale="0" length="3"
+ pointer="0" inum="1" ufocc="0" mandatory="yes" idxnum="1" idxsnr="104" />
+<FLD name="MSGTYPE" seqno="8" type="S" level="2" pack="0" scale="0" length="1"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="UVERS" seqno="9" type="S" level="2" pack="0" scale="0" length="12"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="UDESCR" seqno="10" type="S" level="2" pack="0" scale="0" length="25"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="UVPOS" seqno="11" type="S" level="2" pack="0" scale="0" length="6"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="UHPOS" seqno="12" type="S" level="2" pack="0" scale="0" length="6"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="UVSIZ" seqno="13" type="S" level="2" pack="0" scale="0" length="6"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="UHSIZ" seqno="14" type="S" level="2" pack="0" scale="0" length="6"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="AUTHORIZ" seqno="15" type="S" level="2" pack="0" scale="0" length="1"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="UCLASS" seqno="16" type="S" level="2" pack="0" scale="0" length="1"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="LOCREF" seqno="17" type="S" level="2" pack="0" scale="0" length="1"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="UCONFIRM" seqno="18" type="B" level="2" pack="0" scale="0" length="1"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="UAUDIO" seqno="19" type="N" level="2" pack="10" scale="0" length="1"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="UCOMMENT" seqno="20" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",0,0,0,,1,0,1,\1D,0,0,0,," />
+<FLD name="UTEXT" seqno="21" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,1,\1E,0,0,0,,0,0,0,," />
+<FLD name="UWLEVEL" seqno="22" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\C1,0,0,0,,0,0,0,," />
+</DSC>
+<OCC>
+<DAT name="UTIMESTAMP">2005-02-21T10:52:28.00</DAT>
+<DAT name="USUB">T</DAT>
+<DAT name="UVAR">USYS</DAT>
+<DAT name="ULABEL">MSWINX_GB</DAT>
+<DAT name="ULAN">T</DAT>
+<DAT name="UCONFIRM">F</DAT>
+<DAT name="UAUDIO">0</DAT>
+<DAT name="UTEXT" xml:space='preserve'>Meta_Simplified_chinese     ^Keyboard
+
+^^ Keyboard translation table: MSWINX_GB
+
+^^ Characterset
+^^	Chinese GB, DBCS
+
+^^ Prefixes
+^^	None	GB Character
+^^	^128	Function
+^^	^129	Function, Shift
+^^	^130	Function, Ctrl
+^^	^131	Function, Shift+Ctrl
+^^	^132	Function, Alt
+^^	^133	Function, Shift+Alt
+^^	^134	Function, Ctrl+Alt
+^^	^135	Function, Shift+Ctrl+Alt    (Not used)
+^^	^136	Keypad
+^^	^137	Keypad, Shift
+^^	^138	Keypad, Ctrl
+^^	^139	Keypad, Shift+Ctrl
+^^	^140	Keypad, Alt
+^^	^141	Keypad, Shift+Alt
+^^	^142	Keypad, Ctrl+Alt
+^^	^143	Keypad, Shift+Ctrl+Alt	    (Not used)
+
+^^ Special keys (all prefixed)
+^^	^BS	Backspace	\
+^^	^HT	Tab		|
+^^	^CR	Return/Enter	|
+^^	^ESC	Escape		|
+^^	^42	*		|
+^^	^43	+		| These keys are represented by
+^^	^45	-		| their prefixed ASCII/GB code.
+^^	^46	.		|
+^^	^47	/		|
+^^	^48	0		|
+^^	 :	:		|
+^^	^57	9		/
+
+^^	^101	F1		\
+^^	 :	:		| Function key number plus 100
+^^	^124	F24		/
+
+^^	^146	Delete		\
+^^	^148	Insert		|
+^^	^149	End		|
+^^	^150	Down		|
+^^	^151	PgDn		| These keys are represented by
+^^	^152	Left		| the ASCII/GB code for the keypad
+^^	^153	Center		| digit plus 100.
+^^	^154	Right		|
+^^	^155	Home		|
+^^	^156	Up		|
+^^	^157	PgUp		/
+
+^^ Mouse clicks and double clicks (all prefixed with ^128 thru ^135)
+^^	^161	L click 	\
+^^	^162	R click 	|
+^^	^163	L+R click	|
+^^	^164	M click 	|
+^^	^165	L+M click	|
+^^	^166	R+M click	| L=left, R=right, M=middle button.
+^^	^167	L+R+M click	| Prefix indicates state of shift keys.
+^^	^171	L dbl click	| E.g. ^129^162 is Right shift-click.
+^^	^172	R dbl click	|
+^^	^173	L+R dbl click	|
+^^	^174	M dbl click	|
+^^	^175	L+M dbl click	|
+^^	^176	R+M dbl click	|
+^^	^177	L+R+M dbl click /
+
+^^ Base definitions: Gold is Gray +
+
+^136+^SP		^SUPER
+^136+			^GOLD
+^CHR			GOLD_BASE_SET
+
+^^ Printable characters
+
+^CHR			FONT_0		32-126 ASCII/GB SBCS
+^GB			FONT_33 	GB DBCS
+^^ almost common in mswin3/mswinx to map the 0x80 - 0xA0 control range
+
+^144^128	^u20AC     ^^EURO SIGN
+^144^129	^u0403     ^^CYRILLIC CAPITAL LETTER GJE
+^144^130	^u201A     ^^SINGLE LOW-9 QUOTATION MARK
+^144^131	^u0192     ^^LATIN SMALL LETTER F WITH HOOK
+^144^132	^u201E     ^^DOUBLE LOW-9 QUOTATION MARK
+^144^133	^u2026     ^^HORIZONTAL ELLIPSIS
+^144^134	^u2020     ^^DAGGER
+^144^135	^u2021     ^^DOUBLE DAGGER
+^144^136	^u02C6     ^^MODIFIER LETTER CIRCUMFLEX ACCENT
+^144^137	^u2030     ^^PER MILLE SIGN
+^144^138	^u0160     ^^LATIN CAPITAL LETTER S WITH CARON
+^144^139	^u2039     ^^SINGLE LEFT-POINTING ANGLE QUOTATION MARK
+^144^140	^u0152     ^^LATIN CAPITAL LIGATURE OE
+^144^141	^u0164     ^^LATIN CAPITAL LETTER T WITH CARON
+^144^142	^u017D     ^^LATIN CAPITAL LETTER Z WITH CARON
+^144^143	^u0179     ^^LATIN CAPITAL LETTER Z WITH ACUTE
+^144^144	^u0452     ^^CYRILLIC SMALL LETTER DJE
+^144^145	^u2018     ^^LEFT SINGLE QUOTATION MARK
+^144^146	^u2019     ^^RIGHT SINGLE QUOTATION MARK
+^144^147	^u201C     ^^LEFT DOUBLE QUOTATION MARK
+^144^148	^u201D     ^^RIGHT DOUBLE QUOTATION MARK
+^144^149	^u2022     ^^BULLET
+^144^150	^u2013     ^^EN DASH
+^144^151	^u2014     ^^EM DASH
+^144^152	^u02DC     ^^SMALL TILDE
+^144^153	^u2122     ^^TRADE MARK SIGN
+^144^154	^u0161     ^^LATIN SMALL LETTER S WITH CARON
+^144^155	^u203A     ^^SINGLE RIGHT-POINTING ANGLE QUOTATION MARK
+^144^156	^u0153     ^^LATIN SMALL LIGATURE OE
+^144^157	^u0165     ^^LATIN SMALL LETTER T WITH CARON
+^144^158	^u017E     ^^LATIN SMALL LETTER Z WITH CARON
+^144^159	^u0178     ^^LATIN CAPITAL LETTER Y WITH DIAERESIS
+
+
+
+^^ Basic editing functions
+
+	^^ Backspace
+^128^BS 		^RUB_SEL_CHAR
+^130^BS 		^REM_SEL_CHAR	Ctl-Backspace usually maps to DEL
+^132^BS 		^NUL		Alt-Backspace reserved for Undo
+
+	^^ Tab
+^128^HT 		^NEXT^FIELD
+^129^HT 		^PREV^FIELD
+^132^HT 		^NUL		Alt-Tab shouldn't occur
+
+	^^ Return/Enter
+^128^CR 		^CR		Normal Enter breaks line
+^129^CR 		^CR		Shf-Enter breaks line
+^130^CR 		^FF		Ctl-Enter breaks page
+^136^CR 		^DETAIL 	Keypad Enter is Detail
+^138^CR 		^SUPER		Ctl-Enter is Super
+
+	^^ Esc
+^128^ESC		^QUIT		Dangerous but CUA/Windows compliant
+^130^ESC		^NUL		Ctl-Esc shouldn't occur
+^132^ESC		^NUL		Alt-Esc shouldn't occur
+
+	^^ Delete
+^128^146		^REM_SEL_CHAR
+^129^146		^REM_SELECT	Shf-Del = Cut
+^131^146		^REM_FILE	Ctl-Shf-Del = Remove to file
+^132^146		^REM_OCC	Alt-Del = Remove occurrence
+^134^146		^NUL		Ctl-Alt-Del = Kill process!
+
+	^^ Insert
+^128^148		^INS_OVER
+^129^148		^INS_SELECT	Shf-Ins = Paste
+^130^148		^SAVE		Ctl-Ins = Copy
+^131^148		^INS_FILE	Ctl-Shf-Ins = Insert from file
+^132^148		^ADD_OCC	Alt-Ins = Add occurrence
+
+
+^^ Extended navigation keys
+
+	^^ End
+^128^149		^QRESET_SELECT^END_LINE
+^129^149		^QSELECT^END_LINE
+^130^149		^QRESET_SELECT^LAST^TEXT		Ctl-End = Ctl-PgDn
+^131^149		^QSELECT^LAST^TEXT
+
+	^^ Down
+^128^150		^QRESET_SELECT^CURSOR_DOWN
+^129^150		^QSELECT^CURSOR_DOWN
+^130^150		^QRESET_SELECT^CURSOR_FAST_DOWN
+^131^150		^QSELECT^CURSOR_FAST_DOWN
+
+	^^ PgDn
+^128^151		^QRESET_SELECT^PAGE_DOWN
+^129^151		^QSELECT^PAGE_DOWN
+^130^151		^QRESET_SELECT^LAST^TEXT
+^131^151		^QSELECT^LAST^TEXT
+^132^151		^NEXT^OCCURRENCE	Alt-PgDn = Next occurrence
+^133^151		^NEXT^OCC_WINDOW	Shf-Alt-PgDn = Next occ window
+^134^151		^LAST^OCCURRENCE	Ctl-Alt-PgDn = Last occurrence
+
+	^^ Left
+^128^152		^QRESET_SELECT^CURSOR_LEFT
+^129^152		^QSELECT^CURSOR_LEFT
+^130^152		^QRESET_SELECT^PREV^WORD
+^131^152		^QSELECT^PREV^WORD
+
+	^^ Right
+^128^154		^QRESET_SELECT^CURSOR_RIGHT
+^129^154		^QSELECT^CURSOR_RIGHT
+^130^154		^QRESET_SELECT^NEXT^WORD
+^131^154		^QSELECT^NEXT^WORD
+
+	^^ Home
+^128^155		^QRESET_SELECT^BEGIN_LINE
+^129^155		^QSELECT^BEGIN_LINE
+^130^155		^QRESET_SELECT^FIRST^TEXT	Ctl-Home = Ctl-PgUp
+^131^155		^QSELECT^FIRST^TEXT
+
+	^^ Up
+^128^156		^QRESET_SELECT^CURSOR_UP
+^129^156		^QSELECT^CURSOR_UP
+^130^156		^QRESET_SELECT^CURSOR_FAST_UP
+^131^156		^QSELECT^CURSOR_FAST_UP
+
+	^^ PgUp
+^128^157		^QRESET_SELECT^PAGE_UP
+^129^157		^QSELECT^PAGE_UP
+^130^157		^QRESET_SELECT^FIRST^TEXT
+^131^157		^QSELECT^FIRST^TEXT
+^132^157		^PREV^OCCURRENCE	Alt-PgUp = Previous occurrence
+^133^157		^PREV^OCC_WINDOW	Shf-Alt-PgUp = Previous occ window
+^134^157		^FIRST_OCC		Ctl-Alt-PgUp = First occurrence
+
+^^ Keypad editing keys
+
+	^^ Delete
+^136^146		^REM_SEL_CHAR
+^137^146		^REM_SELECT	Shf-Del = Cut
+^139^146		^REM_FILE	Ctl-Shf-Del = Remove to file
+^140^146		^REM_OCC	Alt-Del = Remove occurrence
+^142^146		^NUL		Ctl-Alt-Del = Kill process!
+
+	^^ Insert
+^136^148		^INS_OVER
+^137^148		^INS_SELECT	Shf-Ins = Paste
+^138^148		^SAVE		Ctl-Ins = Copy
+^139^148		^INS_FILE	Ctl-Shf-Ins = Insert from file
+^140^148		^ADD_OCC	Alt-Ins = Add occurrence
+
+^^ Keypad navigation keys
+
+	^^ End
+^136^149		^QRESET_SELECT^END_LINE
+^137^149		^QSELECT^END_LINE
+^138^149		^QRESET_SELECT^LAST^TEXT		Ctl-End = Ctl-PgDn
+^139^149		^QSELECT^LAST^TEXT
+
+	^^ Down
+^136^150		^QRESET_SELECT^CURSOR_DOWN
+^137^150		^QSELECT^CURSOR_DOWN
+^138^150		^QRESET_SELECT^CURSOR_FAST_DOWN
+^139^150		^QSELECT^CURSOR_FAST_DOWN
+
+	^^ PgDn
+^136^151		^QRESET_SELECT^PAGE_DOWN
+^137^151		^QSELECT^PAGE_DOWN
+^138^151		^QRESET_SELECT^LAST^TEXT
+^139^151		^QSELECT^LAST^TEXT
+^140^151		^NEXT^OCCURRENCE	Alt-PgDn = Next occurrence
+^141^151		^NEXT^OCC_WINDOW	Shf-Alt-PgDn = Next occ window
+^142^151		^LAST^OCCURRENCE	Ctl-Alt-PgDn = Last occurrence
+
+	^^ Left
+^136^152		^QRESET_SELECT^CURSOR_LEFT
+^137^152		^QSELECT^CURSOR_LEFT
+^138^152		^QRESET_SELECT^PREV^WORD
+^139^152		^QSELECT^PREV^WORD
+
+	^^ Center
+
+^^	Not assigned
+
+	^^ Right
+^136^154		^QRESET_SELECT^CURSOR_RIGHT
+^137^154		^QSELECT^CURSOR_RIGHT
+^138^154		^QRESET_SELECT^NEXT^WORD
+^139^154		^QSELECT^NEXT^WORD
+
+	^^ Home
+^136^155		^QRESET_SELECT^BEGIN_LINE
+^137^155		^QSELECT^BEGIN_LINE
+^138^155		^QRESET_SELECT^FIRST^TEXT	Ctl-Home = Ctl-PgUp
+^139^155		^QSELECT^FIRST^TEXT
+
+	^^ Up
+^136^156		^QRESET_SELECT^CURSOR_UP
+^137^156		^QSELECT^CURSOR_UP
+^138^156		^QRESET_SELECT^CURSOR_FAST_UP
+^139^156		^QSELECT^CURSOR_FAST_UP
+
+	^^ PgUp
+^136^157		^QRESET_SELECT^PAGE_UP
+^137^157		^QSELECT^PAGE_UP
+^138^157		^QRESET_SELECT^FIRST^TEXT
+^139^157		^QSELECT^FIRST^TEXT
+^140^157		^PREV^OCCURRENCE	Alt-PgUp = Previous occurrence
+^141^157		^PREV^OCC_WINDOW	Shf-Alt-PgUp = Previous occ window
+^142^157		^FIRST_OCC		Ctl-Alt-PgUp = First occurrence
+
+^^ Other keypad keys
+
+^136*			^VIEW
+^136+			^GOLD		(Also defined above)
+^136-			-
+^136.			.
+^136/			/
+
+	^^ Keypad Digits
+^136^48 		0
+^136^49 		1
+^136^50 		2
+^136^51 		3
+^136^52 		4
+^136^53 		5
+^136^54 		6
+^136^55 		7
+^136^56 		8
+^136^57 		9
+
+^^ Function Keys
+
+	^^ F1
+^128^101		^HELP		CUA/Windows convention
+^129^101		^COMPOSE
+	^^ F2
+^128^102		^ACCEPT
+^129^102		^CLEAR
+	^^ F3
+^128^103		^STORE
+^129^103		^ERASE
+	^^ F4
+^128^104		^RETRIEVE
+^129^104		^RETRIEVE_SEQ
+	^^ F5
+^128^105		^ZOOM
+^129^105		^QUICK_ZOOM
+	^^ F6
+^128^106		^PRINT
+^129^106		^PRINT_ATTRIBUTES
+	^^ F7
+^128^107		^RULER
+^129^107		^FRAME
+	^^ F8
+^128^108		^PROFILE
+^129^108		^FIND_TEXT
+	^^ F9
+^128^109		^KEY_HELP	CUA convention
+	^^ F10
+^128^110		^PULLDOWN	CUA/Windows convention
+	^^ F11
+^128^111		^MESSAGE
+	^^ F12
+^128^112		^SWITCH_KEY	Usually invokes 4GL debugger
+	^^ F13 thru F24 unassigned
+
+^^ Control Key Shortcuts (Alternatives for Gold)
+
+	^^ Ctrl-A thru Ctrl-Z
+
+^130A			^ACCEPT
+^130B			^BOLD
+^130C			^MENU
+^130D			^DETAIL
+^130E			^ERASE
+^130F			^FRAME
+^130G			^CLEAR
+^130H			^HELP
+^130I			^ITALIC
+^130J			^COMPOSE
+^130K			^KEY_HELP
+^130L			^PULLDOWN
+^130M			^MESSAGE
+^130N			^RETRIEVE_SEQ
+^130O			^INS_OVER
+^130P			^PRINT
+^130Q			^QUIT
+^130R			^RETRIEVE
+^130S			^STORE
+^130T			^RULER
+^130U			^UNDERLINE
+^130V			^VIEW
+^130W			^SQL
+^130X			^ATTRIBUTE
+^130Y			^SWITCH_KEY
+^130Z			^ZOOM
+
+	^^ Remaining (rare) Ctrl sequences
+
+^130[			^NUL
+^130\			^NUL
+^130]			^NUL
+^130^094		^NUL
+^130_			^NUL
+
+	^^ Ctrl-F1 to Ctrl-F3
+^130^101		^NUL
+^130^102		^NUL
+^130^103		^NUL
+
+	^^ Ctrl-F5
+^130^105		^NUL
+
+	^^ Ctrl-F7 to Ctrl-F12
+^130^107		^NUL
+^130^108		^NUL
+^130^109		^NUL
+^130^110		^NUL
+^130^111		^NUL
+^130^112		^NUL
+
+	^^ Alt-F1 to Alt-F3
+^132^101		^NUL
+^132^102		^NUL
+^132^103		^NUL
+
+	^^ Alt-F5
+^132^105		^NUL
+
+	^^ Alt-F7 to Alt-F12
+^132^107		^NUL
+^132^108		^NUL
+^132^109		^NUL
+^132^110		^NUL
+^132^111		^NUL
+^132^112		^NUL
+	 
+
+^^ Mouse buttons
+
+	^^ These are handled internally and cannot be redefined
+^^128^161		(set cursor)	Left click
+^^129^161		(extend)	Left shift-click
+^^128^162		(popup menu)	Right click
+
+	^^ Left double click is Select Word
+^128^171		^QRESET_SELECT^NEXT_CHAR^PREV_WORD^QSELECT^NEXT_WORD
+
+	^^ Right shift-click is Select All
+^129^162		^QRESET_SELECT^FIRST_TEXT^QSELECT^LAST_TEXT
+
+	^^ Right double click is Select line
+^128^172		^QRESET_SELECT^BEGIN_LINE^QSELECT^END_LINE
+
+	^^ Left+Right click is Detail
+^128^163		^DETAIL
+
+	^^ Other mouse buttons unassigned
+^128^164		^NUL		M click
+^128^173		^NUL		L+R dblclk
+^128^174		^NUL		M dblclk
+^129^163		^NUL		L+R shift-click
+^129^164		^NUL		M shift-click
+
+^^ END</DAT>
+</OCC>
+</TABLE>
+</UNIFACE>

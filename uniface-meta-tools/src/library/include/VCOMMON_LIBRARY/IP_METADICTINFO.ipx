@@ -1,0 +1,339 @@
+﻿<?xml version='1.0' encoding='UTF-8' ?>
+<!-- Created by UNIFACE - (C) Compuware Corporation -->
+<!DOCTYPE UNIFACE PUBLIC "UNIFACE.DTD" "UNIFACE.DTD">
+<UNIFACE release="9.6" xmlengine="2.0">
+<TABLE>
+<DSC name="USOURCE" model="DICT" system="S" pseudo ="73" level="1" noupdate="0"
+ rbk="0" ffsql="0" transnr="0" segsize="0" ufocc="500" charset=".U">
+<FLD name="UTIMESTAMP" seqno="1" type="E" level="2" pack="0" scale="0" length="15"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="UCOMPSTAMP" seqno="2" type="E" level="2" pack="0" scale="0" length="15"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="USTAT" seqno="3" type="S" level="2" pack="0" scale="0" length="1"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="USUB" seqno="4" type="S" level="2" pack="0" scale="0" length="1"
+ pointer="0" inum="2" ufocc="0" mandatory="yes" idxnum="1,2" idxsnr="101,1" />
+<FLD name="UVAR" seqno="5" type="S" level="2" pack="0" scale="0" length="16"
+ pointer="0" inum="2" ufocc="0" mandatory="yes" idxnum="1,2" idxsnr="102,2" />
+<FLD name="ULABEL" seqno="6" type="S" level="2" pack="0" scale="0" length="16"
+ pointer="0" inum="1" ufocc="0" mandatory="yes" idxnum="1" idxsnr="103" />
+<FLD name="ULAN" seqno="7" type="S" level="2" pack="0" scale="0" length="3"
+ pointer="0" inum="1" ufocc="0" mandatory="yes" idxnum="1" idxsnr="104" />
+<FLD name="MSGTYPE" seqno="8" type="S" level="2" pack="0" scale="0" length="1"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="UVERS" seqno="9" type="S" level="2" pack="0" scale="0" length="12"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="UDESCR" seqno="10" type="S" level="2" pack="0" scale="0" length="25"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="UVPOS" seqno="11" type="S" level="2" pack="0" scale="0" length="6"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="UHPOS" seqno="12" type="S" level="2" pack="0" scale="0" length="6"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="UVSIZ" seqno="13" type="S" level="2" pack="0" scale="0" length="6"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="UHSIZ" seqno="14" type="S" level="2" pack="0" scale="0" length="6"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="AUTHORIZ" seqno="15" type="S" level="2" pack="0" scale="0" length="1"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="UCLASS" seqno="16" type="S" level="2" pack="0" scale="0" length="1"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="LOCREF" seqno="17" type="S" level="2" pack="0" scale="0" length="1"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="UCONFIRM" seqno="18" type="B" level="2" pack="0" scale="0" length="1"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="UAUDIO" seqno="19" type="N" level="2" pack="10" scale="0" length="1"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="UCOMMENT" seqno="20" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",0,0,0,,1,0,1,\1D,0,0,0,," />
+<FLD name="UTEXT" seqno="21" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,1,\1E,0,0,0,,0,0,0,," />
+<FLD name="UWLEVEL" seqno="22" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\C1,0,0,0,,0,0,0,," />
+</DSC>
+<OCC>
+<DAT name="UTIMESTAMP">2014-07-25T10:35:04.00</DAT>
+<DAT name="USUB">I</DAT>
+<DAT name="UVAR">VCOMMON_LIBRARY</DAT>
+<DAT name="ULABEL">IP_METADICTINFO</DAT>
+<DAT name="ULAN">P</DAT>
+<DAT name="UTEXT" xml:space='preserve'>;-----------------------------------------
+entry lpGetMetaDictInfoForObjectType
+;-----------------------------------------
+returns String
+
+params
+	String pObjectType : IN
+	String pMessages   : INOUT
+endparams
+
+variables
+	String vEntName
+	String vLabelFieldName
+	String vProfiles
+	String vUDEType
+	String vSubTypeField
+	String vLanguageField
+	String vLibraryField
+	String vTimeStampField
+	String vChildTimeStampEntity
+	String vChildTimeStampField
+	String vChildEntities
+	String vOutList
+	String vChildTimeStampRelationships
+endvariables
+	
+	selectcase pObjectType
+		case "&lt;FORM&gt;"
+			vEntName                     = "UFORM"
+			vLabelFieldName              = "ULABEL.UFORM"
+			vUDEType                     = "component"
+			vTimeStampField              = "UTIMESTAMP.UFORM"
+			vChildEntities               = "UXREGS&uSEP;UXGROUP&uSEP;UXFIELD"
+			putitem/id vProfiles, "UTRANSACT.UFORM", 0
+		case "&lt;SERVICE&gt;"
+			vEntName                     = "UFORM"
+			vLabelFieldName              = "ULABEL.UFORM"
+			vUDEType                     = "component"
+			vTimeStampField              = "UTIMESTAMP.UFORM"
+			vChildEntities               = "UXREGS&uSEP;UXGROUP&uSEP;UXFIELD"
+			putitem/id vProfiles, "UTRANSACT.UFORM", 1
+		case "&lt;REPORT&gt;"
+			vEntName                     = "UFORM"
+			vLabelFieldName              = "ULABEL.UFORM"
+			vUDEType                     = "component"
+			vTimeStampField              = "UTIMESTAMP.UFORM"
+			vChildEntities               = "UXREGS&uSEP;UXGROUP&uSEP;UXFIELD"
+			putitem/id vProfiles, "UTRANSACT.UFORM", 2
+		case "&lt;ENT_SVC&gt;"
+			vEntName                     = "UFORM"
+			vLabelFieldName              = "ULABEL.UFORM"
+			vUDEType                     = "component"
+			vTimeStampField              = "UTIMESTAMP.UFORM"
+			vChildEntities               = "UXREGS&uSEP;UXGROUP&uSEP;UXFIELD"
+			putitem/id vProfiles, "UTRANSACT.UFORM", 3
+		case "&lt;SESSION_SVC&gt;"
+			vEntName                     = "UFORM"
+			vLabelFieldName              = "ULABEL.UFORM"
+			vUDEType                     = "component"
+			vTimeStampField              = "UTIMESTAMP.UFORM"
+			vChildEntities               = "UXREGS&uSEP;UXGROUP&uSEP;UXFIELD"
+			putitem/id vProfiles, "UTRANSACT.UFORM", 4
+		case "&lt;USP&gt;"
+			vEntName                     = "UFORM"
+			vLabelFieldName              = "ULABEL.UFORM"
+			vUDEType                     = "component"
+			vTimeStampField              = "UTIMESTAMP.UFORM"
+			vChildEntities               = "UXREGS&uSEP;UXGROUP&uSEP;UXFIELD"
+			putitem/id vProfiles, "UTRANSACT.UFORM", 6
+		case "&lt;DSP&gt;"
+			vEntName                     = "UFORM"
+			vLabelFieldName              = "ULABEL.UFORM"
+			vUDEType                     = "component"
+			vTimeStampField              = "UTIMESTAMP.UFORM"
+			vChildEntities               = "UXREGS&uSEP;UXGROUP&uSEP;UXFIELD"
+			putitem/id vProfiles, "UTRANSACT.UFORM", 7
+		case "&lt;PROC&gt;"
+			vEntName                     = "USOURCE"
+			vLabelFieldName              = "ULABEL.USOURCE"
+			vUDEType                     = "library&uSEP;proc"
+			vTimeStampField              = "UTIMESTAMP.USOURCE"
+			vLanguageField               = "ULAN.USOURCE"
+			vLibraryField                = "UVAR.USOURCE"
+			putitem/id vProfiles, "USUB.USOURCE", "P"
+		case "&lt;CONSTANT&gt;"
+			vEntName                     = "USOURCE"
+			vLabelFieldName              = "ULABEL.USOURCE"
+			vUDEType                     = "library&uSEP;constants"
+			vTimeStampField              = "UTIMESTAMP.USOURCE"
+			vLanguageField               = "ULAN.USOURCE"
+			vLibraryField                = "UVAR.USOURCE"
+			putitem/id vProfiles, "USUB.USOURCE",   "I"
+			putitem/id vProfiles, "ULABEL.USOURCE", "DEFPARAM"
+		case "&lt;INCLUDE&gt;"
+			vEntName                     = "USOURCE"
+			vLabelFieldName              = "ULABEL.USOURCE"
+			vUDEType                     = "library&uSEP;include"
+			vTimeStampField              = "UTIMESTAMP.USOURCE"
+			vLanguageField               = "ULAN.USOURCE"
+			vLibraryField                = "UVAR.USOURCE"
+			putitem/id vProfiles, "USUB.USOURCE", "I"
+			putitem/id vProfiles, "ULABEL.USOURCE", "&uNOT;&uEQ;DEFPARAM"
+		case "&lt;MESSAGE&gt;"
+			vEntName                     = "USOURCE"
+			vLabelFieldName              = "ULABEL.USOURCE"
+			vUDEType                     = "library&uSEP;message"
+			vTimeStampField              = "UTIMESTAMP.USOURCE"
+			vLanguageField               = "ULAN.USOURCE"
+			vLibraryField                = "UVAR.USOURCE"
+			putitem/id vProfiles, "USUB.USOURCE", "M"
+		case "&lt;MENU&gt;"
+			vEntName                     = "USMENU"
+			vLabelFieldName              = "UMENU.USMENU"
+			vUDEType                     = "library&uSEP;menu"
+			vTimeStampField              = "UTIMESTAMP.USMENU"
+			vChildTimeStampEntity        = "USITEM"
+			vChildTimeStampField         = "UTIMESTAMP.USITEM"
+			vChildTimeStampRelationships = "USITEM=USMENU"
+			vLanguageField               = "ULAN.USMENU"
+			vLibraryField                = "UVAR.USMENU"
+			vChildEntities               = "USITEM"
+		case "&lt;GLYPH&gt;"
+			vEntName				         = "UGLYPH"
+			vLabelFieldName              = "UCLABEL.UGLYPH"
+			vUDEType                     = "library&uSEP;glyph"
+			vTimeStampField              = "UTIMESTAMP.UGLYPH"
+			vLanguageField               = "UCTYPE.UGLYPH"
+			vLibraryField                = "UCVAR.UGLYPH"
+		case "&lt;LIBRARY&gt;"
+			vEntName                     = "ULIBR"
+			vLabelFieldName              = "ULIBRARY.ULIBR"
+			vUDEType                     = "library"
+			vTimeStampField              = "UTIMESTAMP.ULIBR"
+		case "&lt;MODEL&gt;"
+			vEntName                     = "UCSCH"
+			vLabelFieldName              = "U_VLAB.UCSCH"
+			vUDEType                     = "model"
+			vTimeStampField              = "UTIMESTAMP.UCSCH"
+
+			; KJAN 29.06.2012	UDIAGRAM added
+;			vChildTimeStampEntity        = "UCTABLE&uSEP;UCDTYP&uSEP;UCGROUP&uSEP;UCFIELD&uSEP;UCKEY&uSEP;UCRELSH"
+			vChildTimeStampEntity        = "UCTABLE&uSEP;UCDTYP&uSEP;UCGROUP&uSEP;UCFIELD&uSEP;UCKEY&uSEP;UCRELSH&uSEP;UDIAGRAM"
+
+			; KJAN 29.06.2012	UTIMESTAMP.UDIAGRAM added
+;			vChildTimeStampField         = "UTIMESTAMP.UCTABLE&uSEP;UTIMESTAMP.UCDTYP&uSEP;UTIMESTAMP.UCGROUP&uSEP;UTIMESTAMP.UCFIELD&uSEP;UTIMESTAMP.UCKEY&uSEP;UTIMESTAMP.UCRELSH"
+			vChildTimeStampField         = "UTIMESTAMP.UCTABLE&uSEP;UTIMESTAMP.UCDTYP&uSEP;UTIMESTAMP.UCGROUP&uSEP;UTIMESTAMP.UCFIELD&uSEP;UTIMESTAMP.UCKEY&uSEP;UTIMESTAMP.UCRELSH&uSEP;UTIMESTAMP.UDIAGRAM"
+
+			; KJAN 20.06.2012 UCGROUP=U_VLAB;UCFIELD=U_VLAB;UCKEY=U_VLAB;UCRELSH=U_VLAB;UDIAGRAM=UMODEL added
+;			vChildTimeStampRelationships = "UCTABLE=U_VLAB&uSEP;UCDTYP=UMODELNAME"
+			vChildTimeStampRelationships = "UCTABLE=U_VLAB&uSEP;UCDTYP=UMODELNAME&uSEP;UCGROUP=U_VLAB&uSEP;UCFIELD=U_VLAB&uSEP;UCKEY=U_VLAB&uSEP;UCRELSH=U_VLAB&uSEP;UDIAGRAM=UMODEL"
+
+			vChildEntities               = "UCDTYP&uSEP;UCRELSH&uSEP;UCKEY"
+
+		case "&lt;SIGNATURE&gt;"
+			vEntName                     = "USSPEC"
+			vLabelFieldName              = "USPECNAM.USSPEC"
+			vUDEType                     = "signature"
+			vTimeStampField              = "UTIMESTAMP.USSPEC"
+			vChildEntities               = "USIPARM&uSEP;USIOPER&uSEP;USIMPL&uSEP;USLINK&uSEP;USILINK"
+			; DJA 25/06/2014 Export where there are multiple implementations (e.g. SOP, JAV, C etc.)
+			; Uniface signatures will be discarded later, but we don't want to profile on the default implementation
+			;putitem/id vProfiles, "UDEFPATH.USSPEC", "&uNOT;&uEQ;SVC&uNOT;&uEQ;FRM&uNOT;&uEQ;RPT&uNOT;&uEQ;SSV&uNOT;&uEQ;USP&uNOT;&uEQ;DSP"
+		case "&lt;STARTUPSHELL&gt;"
+			vEntName                     = "UAPPL"
+			vLabelFieldName              = "ULABEL.UAPPL"
+			vUDEType                     = "application"
+			vTimeStampField              = "UTIMESTAMP.UAPPL"
+		case "&lt;FIELD_TEMPLATE&gt;"
+			vEntName                     = "UTPLFLD"
+			vLabelFieldName              = "TEMPLATENAME.UTPLFLD"
+			vUDEType                     = "field&uSEP;template"
+			vTimeStampField              = "UTIMESTAMP.UTPLFLD"
+		case "&lt;VARIABLES&gt;"
+			vEntName                     = "UGREGS"
+			vLabelFieldName              = "U_NAME.UGREGS"
+			vUDEType                     = "library&uSEP;variables"
+			vTimeStampField              = "UTIMESTAMP.UGREGS"
+			vLibraryField                = "U_FORMLIB.UGREGS"
+		case "&lt;TRANSLATION_TABLE&gt;"
+			vEntName                     = "USOURCE"
+			vLabelFieldName              = "ULABEL.USOURCE"
+			vUDEType                     = "library&uSEP;translation_table"
+			vTimeStampField              = "UTIMESTAMP.USOURCE"
+			vLibraryField                = "UVAR.USOURCE"
+			putitem/id vProfiles, "USUB.USOURCE", "T"
+		case "&lt;PANEL&gt;"
+			vEntName                     = "USOURCE"
+			vLabelFieldName              = "ULABEL.USOURCE"
+			vUDEType                     = "library&uSEP;panel"
+			vTimeStampField              = "UTIMESTAMP.USOURCE"
+			vLibraryField                = "UVAR.USOURCE"
+			putitem/id vProfiles, "USUB.USOURCE", "C"
+		case "&lt;FORMAT&gt;"
+			vEntName                     = "UFORMAT"
+			vLabelFieldName              = "ULABEL.UFORMAT"
+			vUDEType                     = "library&uSEP;format"
+			vTimeStampField              = "UTIMESTAMP.UFORMAT"
+			vLanguageField               = "ULAN.UFORMAT"
+			vLibraryField                = "UVAR.UFORMAT"		
+		case "&lt;FIELD_SYNTAX&gt;"
+			vEntName                     = "UGFSYN"
+			vLabelFieldName              = "U_MLAB.UGFSYN"
+			vUDEType                     = "field&uSEP;syntax"
+			vTimeStampField              = "UTIMESTAMP.UGFSYN"
+		case "&lt;FIELD_INTERFACE&gt;"
+			vEntName                     = "UGFIF"
+			vLabelFieldName              = "U_MLAB.UGFIF"
+			vUDEType                     = "field&uSEP;interface"
+			vTimeStampField              = "UTIMESTAMP.UGFIF"
+		case "&lt;FIELD_LAYOUT&gt;"
+			vEntName                     = "UGFLAY"
+			vLabelFieldName              = "U_MLAB.UGFLAY"
+			vUDEType                     = "field&uSEP;layout"
+			vTimeStampField              = "UTIMESTAMP.UGFLAY"
+		case "&lt;ENTITY_INTERFACE&gt;"
+			vEntName                     = "UGGIF"
+			vLabelFieldName              = "U_MLAB.UGGIF"
+			vUDEType                     = "entity&uSEP;interface"
+			vTimeStampField              = "UTIMESTAMP.UGGIF"
+		case "&lt;DEVICE_TABLE&gt;"
+			vEntName                     = "USOURCE"
+			vLabelFieldName              = "ULABEL.USOURCE"
+			vUDEType                     = "library&uSEP;device_table"
+			vTimeStampField              = "UTIMESTAMP.USOURCE"
+			vLibraryField                = "UVAR.USOURCE"
+			putitem/id vProfiles, "USUB.USOURCE", "D"
+		case "&lt;DEPLOYMENT_ARCHIVE&gt;"
+			vEntName                    = "UARCHIVE"
+			vLabelFieldName             = "U_ARCHNAME.UARCHIVE"
+			vTimeStampField             = "UTIMESTAMP.UARCHIVE"
+		case "&lt;SUBSYSTEM&gt;"
+			vEntName                    = "USUBS"
+			vLabelFieldName             = "USUBSYSTEM.USUBS"
+			vTimeStampField             = "UTIMESTAMP.USUBS"
+		elsecase 
+			call lpAddMessage("OBJECT_TYPE not valid", pMessages)
+			return &lt;FAILED&gt;
+	endselectcase
+
+	if(vEntName != "")
+		putitem/id vOutList, "ENTNAME", vEntName
+	endif
+	if(vLabelFieldName != "")
+		putitem/id vOutList, "LABELFIELD", vLabelFieldName
+	endif
+	if(vProfiles != "")
+		putitem/id vOutList, "PROFILES", vProfiles
+	endif
+	if(vUDEType != "")
+		putitem/id vOutList, "UDETYPE", vUDEType
+	endif
+	if(vLanguageField != "")
+		putitem/id vOutList, "LANGFIELD", vLanguageField
+	endif
+	if(vLibraryField != "")
+		putitem/id vOutList, "LIBFIELD", vLibraryField
+	endif
+	if(vTimeStampField != "")
+		putitem/id vOutList, "TIMESTAMPFIELD", vTimeStampField
+	endif
+	if(vChildTimeStampEntity != "")
+		putitem/id vOutList, "CHILDTIMESTAMPENTITY", vChildTimeStampEntity
+	endif
+	if(vChildTimeStampField != "")
+		putitem/id vOutList, "CHILDTIMESTAMPFIELD", vChildTimeStampField
+	endif
+	if(vChildEntities != "")
+		putitem/id vOutList, "CHILD_ENTITIES", vChildEntities
+	endif
+	if(vChildTimeStampRelationships != "")
+		putitem/id vOutList, "CHILD_ENTITY_RELATIONSHIPS", vChildTimeStampRelationships
+	endif
+
+	$status = &lt;OK&gt;
+	return vOutList
+
+end ;lpGetMetaDictInfoForObjectType
+</DAT>
+</OCC>
+</TABLE>
+</UNIFACE>

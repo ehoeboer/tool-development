@@ -1,0 +1,96 @@
+﻿<?xml version='1.0' encoding='UTF-8' ?>
+<!-- Created by UNIFACE - (C) Compuware Corporation -->
+<!DOCTYPE UNIFACE PUBLIC "UNIFACE.DTD" "UNIFACE.DTD">
+<UNIFACE release="9.3" xmlengine="2.0">
+<TABLE>
+<DSC name="UARCHIVE" model="DICT" system="S" pseudo ="73" level="1" noupdate="0"
+ rbk="0" ffsql="0" transnr="0" segsize="0" ufocc="0" charset=".U">
+<FLD name="U_ARCHNAME" seqno="1" type="S" level="2" pack="0" scale="0" length="64"
+ pointer="0" inum="1" ufocc="0" mandatory="yes" idxnum="1" idxsnr="101" />
+<FLD name="UTIMESTAMP" seqno="2" type="E" level="2" pack="0" scale="0" length="15"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="UVERS" seqno="3" type="S" level="2" pack="0" scale="0" length="12"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="UDESCR" seqno="4" type="S" level="2" pack="0" scale="0" length="25"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="U_SIG" seqno="5" type="B" level="2" pack="0" scale="0" length="1"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="U_HTS" seqno="6" type="B" level="2" pack="0" scale="0" length="1"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="U_FILENAME" seqno="7" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\C1,0,0,0,,0,0,0,," />
+<FLD name="U_README" seqno="8" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\C2,0,0,0,,0,0,0,," />
+</DSC>
+<OCC>
+<DAT name="U_ARCHNAME">TEST_ARCHIVE1</DAT>
+<DAT name="UTIMESTAMP">2010-07-19T16:53:32.60</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Test Archive 1</DAT>
+<DAT name="U_SIG">T</DAT>
+<DAT name="U_FILENAME">test_archive1.uar</DAT>
+</OCC>
+</TABLE>
+<TABLE>
+<DSC name="UARCHITEM" model="DICT" system="S" pseudo ="73" level="1" noupdate="0"
+ rbk="0" ffsql="0" transnr="0" segsize="0" ufocc="0" charset=".U">
+<FLD name="U_OBJNAME" seqno="1" type="S" level="2" pack="0" scale="0" length="255"
+ pointer="0" inum="1" ufocc="0" mandatory="yes" idxnum="1" idxsnr="101" />
+<FLD name="U_OBJTYPE" seqno="2" type="S" level="2" pack="0" scale="0" length="3"
+ pointer="0" inum="1" ufocc="0" mandatory="yes" idxnum="1" idxsnr="102" />
+<FLD name="U_OBJLAN" seqno="3" type="S" level="2" pack="0" scale="0" length="3"
+ pointer="0" inum="1" ufocc="0" mandatory="yes" idxnum="1" idxsnr="103" />
+<FLD name="U_ARCHNAME" seqno="4" type="S" level="2" pack="0" scale="0" length="64"
+ pointer="0" inum="1" ufocc="0" mandatory="yes" idxnum="1" idxsnr="104" />
+<FLD name="U_OBJMODLIB" seqno="5" type="S" level="2" pack="0" scale="0" length="64"
+ pointer="0" inum="1" ufocc="0" mandatory="yes" idxnum="1" idxsnr="105" />
+<FLD name="U_GLYPHCLASS" seqno="6" type="S" level="2" pack="0" scale="0" length="8"
+ pointer="0" inum="1" ufocc="0" mandatory="yes" idxnum="1" idxsnr="106" />
+<FLD name="UTIMESTAMP" seqno="7" type="E" level="2" pack="0" scale="0" length="15"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="UVERS" seqno="8" type="S" level="2" pack="0" scale="0" length="12"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="UDESCR" seqno="9" type="S" level="2" pack="0" scale="0" length="25"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="U_BINASC" seqno="10" type="S" level="2" pack="0" scale="0" length="1"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="U_DESTINATION" seqno="11" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\C1,0,0,0,,0,0,0,," />
+</DSC>
+<OCC>
+<DAT name="U_OBJNAME">USVCDEF</DAT>
+<DAT name="U_OBJTYPE">SVC</DAT>
+<DAT name="U_OBJLAN">0</DAT>
+<DAT name="U_ARCHNAME">TEST_ARCHIVE1</DAT>
+<DAT name="U_OBJMODLIB">0</DAT>
+<DAT name="U_GLYPHCLASS">0</DAT>
+<DAT name="UTIMESTAMP">2010-07-19T16:53:11.89</DAT>
+</OCC>
+<OCC>
+<DAT name="U_OBJNAME">UUSPDEF</DAT>
+<DAT name="U_OBJTYPE">USP</DAT>
+<DAT name="U_OBJLAN">0</DAT>
+<DAT name="U_ARCHNAME">TEST_ARCHIVE1</DAT>
+<DAT name="U_OBJMODLIB">0</DAT>
+<DAT name="U_GLYPHCLASS">0</DAT>
+<DAT name="UTIMESTAMP">2010-07-19T16:53:26.59</DAT>
+</OCC>
+<OCC>
+<DAT name="U_OBJNAME">UUSPDEFBUTTONS</DAT>
+<DAT name="U_OBJTYPE">USP</DAT>
+<DAT name="U_OBJLAN">0</DAT>
+<DAT name="U_ARCHNAME">TEST_ARCHIVE1</DAT>
+<DAT name="U_OBJMODLIB">0</DAT>
+<DAT name="U_GLYPHCLASS">0</DAT>
+<DAT name="UTIMESTAMP">2010-07-19T16:53:26.59</DAT>
+</OCC>
+<OCC>
+<DAT name="U_OBJNAME">UUSPDEFMENU</DAT>
+<DAT name="U_OBJTYPE">USP</DAT>
+<DAT name="U_OBJLAN">0</DAT>
+<DAT name="U_ARCHNAME">TEST_ARCHIVE1</DAT>
+<DAT name="U_OBJMODLIB">0</DAT>
+<DAT name="U_GLYPHCLASS">0</DAT>
+<DAT name="UTIMESTAMP">2010-07-19T16:53:26.59</DAT>
+</OCC>
+</TABLE>
+</UNIFACE>

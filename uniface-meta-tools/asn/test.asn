@@ -1,0 +1,5 @@
+#file .\asn\idf.asn
+
+[PATHS]
+$DBMS        SLE:.\dbms\test_repo.db
+$DBMS_DEF    SLE:.\dbms\test_data.db
