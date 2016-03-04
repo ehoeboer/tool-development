@@ -7,7 +7,7 @@ Version Control has been written and tested with:
 
  * Uniface 9.6.07
  * SQLite
- * Meta Tools (0.1-9.6)  - https://bitbucket.org/uniface/meta-tools
+ * Meta Tools (0.1-9.6)  - https://github.com/uniface/Development-Tooling/tree/master/uniface-meta-tools
 
 ## Setup ##
 

@@ -17,7 +17,7 @@ The Project Setup Tool has been written and tested with:
 
  * Uniface 9.7.01
  * SQLite
- * Meta Tools (0.2-9.7)  - https://bitbucket.org/uniface/meta-tools
+ * Meta Tools (0.2-9.7)  - https://github.com/uniface/Development-Tooling/tree/master/uniface-meta-tools
 
 Information about the developer's local environment is detected from the Uniface installation. The tool assumes that this is correct but it can be overridden during the setup steps if necessary.
 
