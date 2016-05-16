@@ -1,7 +1,7 @@
 ﻿<?xml version='1.0' encoding='UTF-8' ?>
 <!-- Created by Uniface - (C) Uniface B.V. All rights reserved -->
 <!DOCTYPE UNIFACE PUBLIC "UNIFACE.DTD" "UNIFACE.DTD">
-<UNIFACE release="9.6" xmlengine="2.0">
+<UNIFACE release="9.7" xmlengine="2.0">
 <TABLE>
 <DSC name="UFORM" model="DICT" system="S" pseudo ="73" level="1" noupdate="0"
  rbk="0" ffsql="0" transnr="0" segsize="0" ufocc="1000" charset=".U">
@@ -167,8 +167,8 @@
  pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\F1,0,0,0,,0,0,0,," />
 </DSC>
 <OCC>
-<DAT name="UTIMESTAMP">2016-02-12T15:24:15.00</DAT>
-<DAT name="UCOMPSTAMP">2016-02-12T15:48:49.00</DAT>
+<DAT name="UTIMESTAMP">2016-05-10T16:51:08.00</DAT>
+<DAT name="UCOMPSTAMP">2016-05-12T17:41:25.00</DAT>
 <DAT name="ULABEL">VC_SETTINGS_S</DAT>
 <DAT name="UDESCR" xml:space='preserve'>Version Control Settings</DAT>
 <DAT name="WVPOS">0</DAT>
@@ -220,7 +220,26 @@ endparams
 	pValue = $logical(pSetting)
 	return &lt;OK&gt;
 
-end ;lpGetSetting</DAT>
+end ;lpGetSetting
+
+
+;----------------------------------------------
+entry lpGetBooleanSetting
+;----------------------------------------------
+params
+	string  psSetting  : IN
+	boolean pbValue    : OUT
+	string  psMessages : INOUT
+endparams
+
+	call lpGetSetting(psSetting, pbValue, psMessages)
+	if (pbValue = "")	; Default to true if not set
+		pbValue = 1
+	endif
+    return (0)
+
+end ; lpGetBooleanSetting
+</DAT>
 <DAT name="FORMPIC" xml:space='preserve'>
  &uFRM;TYP=E&uSEP;NAM=DUMMY.DUMMY&uSEP;WID=20&uSEP;HEI=1&uSEP;HOC=20&uSEP;VOC=1&uFRM;</DAT>
 <DAT name="SFUNC" xml:space='preserve'>;--------------------------------------------------------------------
@@ -321,7 +340,7 @@ params
 	String  pMessages : INOUT
 endparams
 
-	call lpGetSetting("FULL_SYNC_DEFAULT", pFullSync, pMessages)
+	return lpGetBooleanSetting("FULL_SYNC_DEFAULT", pFullSync, pMessages)
 
 end ;getFullSyncDefault
 
@@ -418,14 +437,38 @@ params
    boolean pbAutoSync : OUT
    string  psMessages : INOUT
 endparams
+
+	return lpGetBooleanSetting("AUTO_SYNC", pbAutoSync, psMessages)
    
-	call lpGetSetting("AUTO_SYNC", pbAutoSync, psMessages)
-	if (pbAutoSync = "")	; Default to true if not set
-		pbAutoSync = 1
-	endif
-   return (0)
+end ; getAutoSync
+
+
+;----------------------------------------------
+operation getValidateFilename
+;----------------------------------------------
+params
+   boolean pbValidateFilename : OUT
+   string  psMessages         : INOUT
+endparams
+
+	return lpGetBooleanSetting("VALIDATE_FILENAME", pbValidateFilename, psMessages)
+
+end ; getValidateFilename
+
+
+;----------------------------------------------
+operation getValidateImportStamp
+;----------------------------------------------
+params
+   boolean pbValidateImportStamp : OUT
+   string  psMessages            : INOUT
+endparams
    
-end ; getAutoSync</DAT>
+	return lpGetBooleanSetting("VALIDATE_IMPORT_STAMP", pbValidateImportStamp, psMessages)
+   
+end ; getValidateFilename
+
+</DAT>
 <DAT name="HTML_STYLES" xml:space='preserve'>/corporate.css&uSEP;../css/applic.css</DAT>
 <DAT name="TPLACTUAL2" xml:space='preserve'>#include VC_LIBRARY:IP_DEFINES
 </DAT>

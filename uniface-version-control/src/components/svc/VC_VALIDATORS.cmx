@@ -1,7 +1,7 @@
 ﻿<?xml version='1.0' encoding='UTF-8' ?>
 <!-- Created by Uniface - (C) Uniface B.V. All rights reserved -->
 <!DOCTYPE UNIFACE PUBLIC "UNIFACE.DTD" "UNIFACE.DTD">
-<UNIFACE release="9.6" xmlengine="2.0">
+<UNIFACE release="9.7" xmlengine="2.0">
 <TABLE>
 <DSC name="UFORM" model="DICT" system="S" pseudo ="73" level="1" noupdate="0"
  rbk="0" ffsql="0" transnr="0" segsize="0" ufocc="1000" charset=".U">
@@ -167,10 +167,10 @@
  pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\F1,0,0,0,,0,0,0,," />
 </DSC>
 <OCC>
-<DAT name="UTIMESTAMP">2015-11-18T14:53:08.00</DAT>
-<DAT name="UCOMPSTAMP">2015-11-18T14:53:08.00</DAT>
+<DAT name="UTIMESTAMP">2016-05-12T00:47:21.00</DAT>
+<DAT name="UCOMPSTAMP">2016-05-12T17:41:26.00</DAT>
 <DAT name="ULABEL">VC_VALIDATORS</DAT>
-<DAT name="UDESCR" xml:space='preserve'>SVN Validators</DAT>
+<DAT name="UDESCR">Validators</DAT>
 <DAT name="WVPOS">0</DAT>
 <DAT name="WHPOS">0</DAT>
 <DAT name="WVSIZ">10</DAT>
@@ -227,9 +227,33 @@ end ;lpAddMessage
 </DAT>
 <DAT name="FORMPIC" xml:space='preserve'>
  &uFRM;TYP=E&uSEP;NAM=VC_STATUS.VC&uSEP;WID=20&uSEP;HEI=1&uSEP;HOC=20&uSEP;VOC=1&uFRM;</DAT>
-<DAT name="LISTING" xml:space='preserve'>Subversion Validators</DAT>
+<DAT name="LISTING">Validators</DAT>
 <DAT name="PERF">#IDF</DAT>
-<DAT name="SFUNC" xml:space='preserve'>;--------------------------------------------------------------------
+<DAT name="SFUNC" xml:space='preserve'>operation INIT
+
+	$VALIDATE_FILENAME$ = $logical("VALIDATE_FILENAME")
+	if ($VALIDATE_FILENAME$ = "")
+		$VALIDATE_FILENAME$ = 1
+	endif
+
+	;$settingsSvc$-&gt;getValidateImportStamp(vValidateTS, vMessages)
+	;#include VC_LIBRARY:IP_POSTCALL_PRES
+	$VALIDATE_REPO_TS$ = $logical("VALIDATE_IMPORT_STAMP")
+	if ($VALIDATE_REPO_TS$ = "")
+		$VALIDATE_REPO_TS$ = 0
+	endif
+
+	if ($VALIDATE_REPO_TS$)
+		newinstance "VCOM_VALIDATORS", $VALIDATE_HANDLE$
+		if($status &lt; 0)
+			message/error "Failed to instantiate VCOM_VALIDATORS"
+			return &lt;FAILED&gt;
+		endif	
+	endif
+
+end ; INIT
+
+;--------------------------------------------------------------------
 ; Only export if the timestamp is newer than the last exported
 ; timestamp. If object is a signature, only export if it contains
 ; a non-Uniface implementation (otherwise it will be recreated)
@@ -240,15 +264,15 @@ end ;lpAddMessage
 operation validateExport
 ;--------------------------------------------------------------------
 params
-	String    pObjectType     : IN
-	Boolean   pExportUfSig    : IN
-	String		pExportFilePath : IN
-	DateTime 	pLastModified   : IN
-	String		pLibrary        : IN
-	String		pLanguage       : IN
-	String		pName           : IN
-	Boolean  	pIsChanged      : OUT
-	String		pMessages       : INOUT
+	String   pObjectType     : IN
+	Boolean  pExportUfSig    : IN
+	String   pExportFilePath : IN
+	DateTime pLastModified   : IN
+	String   pLibrary        : IN
+	String   pLanguage       : IN
+	String   pName           : IN
+	Boolean  pIsChanged      : OUT
+	String   pMessages       : INOUT
 endparams
 
 variables
@@ -371,21 +395,6 @@ end ;validateExport
 
 
 ;-----------------------------------------------------------------------------
-; Set callback to display messages as they occur
-;-----------------------------------------------------------------------------
-operation setMessageCallback
-;-----------------------------------------------------------------------------
-params
-	$MSG_HANDLE$ : IN
-	$MSG_OP$     : IN
-endparams
-
-	return &lt;OK&gt;
-
-end ; setMessageCallback
-
-
-;-----------------------------------------------------------------------------
 ; Log export
 ;
 ; Post-conditions: VC_STATUS record created or updated with supplied timestamp
@@ -394,9 +403,9 @@ operation logExport
 ;-----------------------------------------------------------------------------
 params
 	;String		pExportID		: IN ; DJA 22/08/2012 No longer needed
-	String		pFilePath		: IN
+	String		pFilePath	: IN
 	DateTime	pTimeStamp	: IN
-	String		pMessages		: INOUT
+	String		pMessages	: INOUT
 endparams
 
 	clear/e "VC_STATUS"
@@ -424,7 +433,95 @@ endparams
 	call lpAddMessage($concat(pFilePath, " exported"), pMessages)
 	return &lt;OK&gt;
 
-end ;logExport</DAT>
+end ;logExport
+
+
+;-----------------------------------------------------------------------------
+; Set flag determining whether validateImport() validates the filename
+;-----------------------------------------------------------------------------
+operation setValidateFilename
+;-----------------------------------------------------------------------------
+params
+	$validate_filename$ : IN
+endparams
+
+end ; setValidateFilename
+
+
+;-----------------------------------------------------------------------------
+; Set flag determining whether validateImport() validates 
+; the repository timestamp
+;-----------------------------------------------------------------------------
+operation setValidateRepoTS
+;-----------------------------------------------------------------------------
+params
+	$validate_repo_ts$ : IN
+endparams
+
+end ; setValidateFilename
+
+
+;-----------------------------------------------------------------------------
+; Validate an import file
+; - tests determined by prior calls 
+;   to setValidateFilename and setValidateTimestamp
+;-----------------------------------------------------------------------------
+operation validateImport
+params
+	string  pFile     : IN
+	string  pObject   : IN
+	Numeric pDoImport : OUT
+	Boolean pDoLog    : OUT
+	String  pMessages : INOUT
+endparams
+
+variables
+	string vObjectName
+	string vObjectType
+endvariables
+
+	; Assume we want to import and log
+	pDoImport = 1
+	pDoLog  = 1
+
+	; Validate assumptions
+	if ($VALIDATE_FILENAME$)
+		vObjectName = $item("OBJECT_NAME", pObject)
+		if ($scan(pFile, $concat(vObjectName, ".")) &lt;= 0)
+			pDoImport = 0
+			pDoLog    = 0
+			vObjectType = $item("OBJECT_NAME", pObject)
+			call lpAddMessage("%%pFile%%% not imported as export copy assumed - contains %%vObjectName%%% (%%vObjectType%%%).")
+			return (0)
+		endif
+	endif
+
+	if ($VALIDATE_REPO_TS$)
+		$status = $VALIDATE_HANDLE$-&gt;validateTimestamp(pFile, pObject, pDoImport, pDoLog, pMessages)
+		if ($status &lt; 0)
+			call lpAddMessage("VCOM_VALIDATORS.validateTimestamp failed with status %%$status%%%", pMessages)
+			return (-1)
+		endif
+	endif
+
+	return (0)
+
+end ; validateImport
+
+;-----------------------------------------------------------------------------
+; Set callback to display messages as they occur
+;-----------------------------------------------------------------------------
+operation setMessageCallback
+;-----------------------------------------------------------------------------
+params
+	$MSG_HANDLE$ : IN
+	$MSG_OP$     : IN
+endparams
+
+	return &lt;OK&gt;
+
+end ; setMessageCallback
+</DAT>
 <DAT name="HTML_STYLES" xml:space='preserve'>/corporate.css&uSEP;../css/applic.css</DAT>
 <DAT name="TPLACTUAL2" xml:space='preserve'>#include VC_LIBRARY:IP_DEFINES</DAT>
 </OCC>
@@ -623,6 +720,31 @@ end ;logExport</DAT>
 <DAT name="U_NAME">MSG_OP</DAT>
 <DAT name="UDESCR" xml:space='preserve'>Msg callback operation</DAT>
 <DAT name="U_DTYP">S</DAT>
+</OCC>
+<OCC>
+<DAT name="UTIMESTAMP">2016-05-10T17:37:58.00</DAT>
+<DAT name="U_FORMLIB">VC_VALIDATORS</DAT>
+<DAT name="U_NAME">VALIDATE_FILENAME</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Validate filename flag</DAT>
+<DAT name="U_DTYP">S</DAT>
+<DAT name="U_DOC" xml:space='preserve'>Used by import validation</DAT>
+</OCC>
+<OCC>
+<DAT name="UTIMESTAMP">2016-05-11T11:08:09.00</DAT>
+<DAT name="U_FORMLIB">VC_VALIDATORS</DAT>
+<DAT name="U_NAME">VALIDATE_HANDLE</DAT>
+<DAT name="UDESCR" xml:space='preserve'>VCOM_VALIDATE handle</DAT>
+<DAT name="U_DTYP">H</DAT>
+<DAT name="U_DOC" xml:space='preserve'>Used to validate timestamp</DAT>
+<DAT name="USCOPE">PUB</DAT>
+</OCC>
+<OCC>
+<DAT name="UTIMESTAMP">2016-05-10T17:37:58.00</DAT>
+<DAT name="U_FORMLIB">VC_VALIDATORS</DAT>
+<DAT name="U_NAME">VALIDATE_REPO_TS</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Validate timestamp flag</DAT>
+<DAT name="U_DTYP">S</DAT>
+<DAT name="U_DOC" xml:space='preserve'>Used by import validation - validates repository timestamp</DAT>
 </OCC>
 </TABLE>
 </UNIFACE>

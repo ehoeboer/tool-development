@@ -1,7 +1,7 @@
 ﻿<?xml version='1.0' encoding='UTF-8' ?>
 <!-- Created by Uniface - (C) Uniface B.V. All rights reserved -->
 <!DOCTYPE UNIFACE PUBLIC "UNIFACE.DTD" "UNIFACE.DTD">
-<UNIFACE release="9.6" xmlengine="2.0">
+<UNIFACE release="9.7" xmlengine="2.0">
 <TABLE>
 <DSC name="UFORM" model="DICT" system="S" pseudo ="73" level="1" noupdate="0"
  rbk="0" ffsql="0" transnr="0" segsize="0" ufocc="1000" charset=".U">
@@ -167,8 +167,8 @@
  pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\F1,0,0,0,,0,0,0,," />
 </DSC>
 <OCC>
-<DAT name="UTIMESTAMP">2016-02-12T17:00:47.00</DAT>
-<DAT name="UCOMPSTAMP">2016-02-12T17:00:47.00</DAT>
+<DAT name="UTIMESTAMP">2016-05-10T16:24:27.00</DAT>
+<DAT name="UCOMPSTAMP">2016-05-12T17:41:25.00</DAT>
 <DAT name="ULABEL">VC_MAIN</DAT>
 <DAT name="UDESCR" xml:space='preserve'>VC services to UI</DAT>
 <DAT name="WVPOS">0</DAT>
@@ -221,8 +221,9 @@ endparams
 
 end ;lpEscapePathForList
 
-
+;-----------------------------------
 entry lpDeleteOccVCStatus
+;-----------------------------------
 params
    string  psKey      : IN
    string  psMessages : INOUT
@@ -678,8 +679,8 @@ end ;validateExportFile
 ;--------------------------------------------------------------------
 ; Check if the file is versioned, and if so, if timestamp is newer
 ; than the last version we imported.
-; Pre-conditions:
-;   $WcCheck_I$ is set to indicate whether to perform a SVN working copy check
+; Pre-conditions for SVN implementation do no apply in this fork:
+;   $WcCheck_I$ is set to indicate whether to perform a working copy check
 ;	File is versioned
 ;--------------------------------------------------------------------
 operation validateImportStamp
@@ -2746,12 +2747,6 @@ end ;postLoadProcess
 <DAT name="U_FORMLIB">VC_MAIN</DAT>
 <DAT name="U_NAME">LOGGER_OP</DAT>
 <DAT name="UDESCR" xml:space='preserve'>Logger Operation</DAT>
-<DAT name="U_DTYP">S</DAT>
-</OCC>
-<OCC>
-<DAT name="UTIMESTAMP">2012-10-18T16:14:43.00</DAT>
-<DAT name="U_FORMLIB">VC_MAIN</DAT>
-<DAT name="U_NAME">SVN_LIST</DAT>
 <DAT name="U_DTYP">S</DAT>
 </OCC>
 <OCC>
