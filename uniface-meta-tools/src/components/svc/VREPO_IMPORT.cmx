@@ -1,7 +1,7 @@
 ﻿<?xml version='1.0' encoding='UTF-8' ?>
 <!-- Created by Uniface - (C) Uniface B.V. All rights reserved -->
 <!DOCTYPE UNIFACE PUBLIC "UNIFACE.DTD" "UNIFACE.DTD">
-<UNIFACE release="9.6" xmlengine="2.0">
+<UNIFACE release="9.7" xmlengine="2.0">
 <TABLE>
 <DSC name="UFORM" model="DICT" system="S" pseudo ="73" level="1" noupdate="0"
  rbk="0" ffsql="0" transnr="0" segsize="0" ufocc="1000" charset=".U">
@@ -167,8 +167,8 @@
  pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\F1,0,0,0,,0,0,0,," />
 </DSC>
 <OCC>
-<DAT name="UTIMESTAMP">2016-02-15T10:55:40.00</DAT>
-<DAT name="UCOMPSTAMP">2016-02-15T10:55:40.00</DAT>
+<DAT name="UTIMESTAMP">2016-05-12T16:40:22.00</DAT>
+<DAT name="UCOMPSTAMP">2016-05-12T17:40:30.00</DAT>
 <DAT name="ULABEL">VREPO_IMPORT</DAT>
 <DAT name="UDESCR" xml:space='preserve'>Wrapper of $ude import</DAT>
 <DAT name="WVPOS">0</DAT>
@@ -222,7 +222,7 @@ endparams
 		
 		call lpImportFile(pPath, FILE_NAME.FILES, pForce, pMessages)
 		if($status = &lt;FAILED&gt;)
-			return &lt;FAILED&gt;		
+			return &lt;FAILED&gt;	
 		endif
 		
 		setocc "FILES", $curocc(FILES) + 1
@@ -258,95 +258,90 @@ variables
 	String   vObject
 	String   vObjectName
 	String   vObjectType
-	Boolean  vOptional
 	DateTime vTimestamp
 endvariables
 
 	$LATEST_TIMESTAMP$ = ""
 
 	;Assume it is an Export file and parse it
-	;TODO: Use structs instead of SAX parser when migrated to Uniface 9.5 to improve performance
 	activate "VREPO_EXPPARSER".parseUnifaceExport(pFile, vIsUnifaceExport, vUnifaceRelease, vObjects, pMessages)
 	if ($status &lt; 0)
 		return &lt;FAILED&gt;
 	endif
 
 	vObject = $itemnr(1, vObjects)
+	vObjectName = $item("OBJECT_NAME", vObject)
+	vObjectType = $item("OBJECT_TYPE", vObject)
 	if (!vIsUnifaceExport                   | %\
 	    vObject = ""                        | %\
-	    $item("OBJECT_NAME", vObject) == "" | %\
-	    $item("OBJECT_TYPE", vObject) == "")
+	    vObjectName == "" | %\
+	    vObjectType == "")
 
 		;This isn't a Uniface export, don't try and import it
 		call lpAddMessage("%%pFile%%% isn't a valid Uniface export", pMessages)
+		return &lt;OK&gt;
+	endif
+
+	; It is a Uniface export
+
+	if (pForce | $PRE_IMPORT_OP$ = "")
+		;assume we want to import it
+		vDoImport = 1
+		vDoLog = 1
+	else
+		;validate before deciding
 		vDoImport = 0
 		vDoLog    = 0
-	else
-		; It is a Uniface export, import it
-		vDoImport = 1
-		vDoLog    = 1
 	endif
 		
-	if (vDoImport)
-		;Check that we won't be overwriting anything. This is important as if an export
-		;were to fail it's possible an older version could get imported (Only where a
-		;new version had been recently committed though).
-		vCounter = 1
-		while (vObject != "" &amp; vDoImport)
+	;Check that we won't be overwriting anything. This is important as if an export
+	;were to fail it's possible an older version could get imported (Only where a
+	;new version had been recently committed though).
+	vCounter = 1
+	while (vObject != "")
 
-			if (!pForce) ; Validate import
-				vReturnedImportCode = -1
-				vOptional           = 1
-				
-				;-------------------------------------------------
-				; Fire object level pre-import validators
-				;-------------------------------------------------
-				setocc "VALIDATOR", 1
-				while ($status &gt; 0 &amp; vDoImport)
-				
-					if (ACTIVE.VALIDATOR &amp; TYPE.VALIDATOR == "PRE_IMPORT_OBJECT")
-						$status = VALIDATOR_HANDLE.VALIDATOR-&gt;"%%VALIDATION_OPERATION.VALIDATOR%%%"(pFile, vObject, vReturnedImportCode, vDoLog, pMessages)
-						if ($status &lt; 0)
-							call lpAddMessage("Validator failed with status %%$status%%%", pMessages)
-							return &lt;FAILED&gt;
-						endif
-						selectcase vReturnedImportCode
-						case -1
-							;Can't import this file because something will get overwritten
-							vDoImport = 0
-							vObjectName = $item("OBJECT_NAME", vObject)
-							vObjectType = $item("OBJECT_TYPE", vObject)
-							call lpAddMessage("%%pFile%%% - %%vObjectName%%% (%%vObjectType%%%) not imported as newer version found in Uniface repository.", pMessages)
-						;case 0
-							;We can import this object, but it won't change anything. Try and avoid.
-						case 1
-							;If nothing else in the file is going to overwrite something we want to do this import
-							vOptional = 0
-							vDoImport = 1
-						endselectcase
-					endif
+		if (!pForce)
 
-					setocc "VALIDATOR", $curocc("VALIDATOR") + 1
-				endwhile
+			;-------------------------------------------------
+			; Fire object level pre-import validators
+			;-------------------------------------------------
+			if ($PRE_IMPORT_HANDLE$ != "" &amp; $PRE_IMPORT_OP$ != "")
+
+				$status = $PRE_IMPORT_HANDLE$-&gt;"%%$PRE_IMPORT_OP$%%%"(pFile, vObject, vReturnedImportCode, vDoLog, pMessages)
+				if ($status &lt; 0)
+					call lpAddMessage("Validator %%$PRE_IMPORT_OP$%%% failed with status %%$status%%%", pMessages)
+					vDoImport = 0
+					return &lt;FAILED&gt;
+				endif
+
+				selectcase vReturnedImportCode
+				case -1 ; Can't import (messages will explain why)
+					vDoImport = 0
+					vDoLog    = 1
+					break
+				case 0
+					;We can import this object, but it won't change anything. Try and avoid.
+				case 1
+					;If nothing else in the file is going to overwrite something we want to do this import
+					vDoImport = 1
+					vDoLog    = 1
+				endselectcase
+
 			endif
 
-			; Save latest timestamp for getLatestTimestamp() operation
-			; so it can be queried post-import
-			vTimestamp = $item("LATEST_TIMESTAMP", vObject)
-			if ($LATEST_TIMESTAMP$ = "" | vTimestamp &gt; $LATEST_TIMESTAMP$)
-				$LATEST_TIMESTAMP$ = vTimestamp
-			endif
-				
-			vCounter += 1
-			vObject = $itemnr(vCounter, vObjects)
-		endwhile
-			
-		if (vOptional)
-			vDoImport = 0
 		endif
-			
-	endif
-	
+
+		; Save latest timestamp for getLatestTimestamp() operation
+		; so it can be queried post-import
+		vTimestamp = $item("LATEST_TIMESTAMP", vObject)
+		if ($LATEST_TIMESTAMP$ = "" | vTimestamp &gt; $LATEST_TIMESTAMP$)
+			$LATEST_TIMESTAMP$ = vTimestamp
+		endif
+
+		vCounter += 1
+		vObject = $itemnr(vCounter, vObjects)
+	endwhile
+
 	if (vDoImport)
 		call lpDoImport(pFile, vObjects, pMessages)
 		if($status &lt; 0)
@@ -431,14 +426,7 @@ end ;lpDoImport</DAT>
 <DAT name="FORMPIC" xml:space='preserve'>
  &uFRM;TYP=E&uSEP;NAM=FILES.DUM&uSEP;WID=25&uSEP;HEI=4&uSEP;HOC=25&uSEP;VOC=4&uFRM;
   &uFRM;TYP=F&uSEP;NAM=FILE_NAME&uSEP;WID=20&uSEP;HEI=1&uFRM;
-  &uFRM;TYP=F&uSEP;NAM=MODIFICATION_STAMP&uSEP;WID=20&uSEP;HEI=1&uFRM;
-
-
- &uFRM;TYP=E&uSEP;NAM=VALIDATOR.DUMMY&uSEP;WID=25&uSEP;HEI=6&uSEP;HOC=25&uSEP;VOC=6&uFRM;
-  &uFRM;TYP=F&uSEP;NAM=ACTIVE&uSEP;WID=20&uSEP;HEI=1&uFRM;
-  &uFRM;TYP=F&uSEP;NAM=VALIDATOR_HANDLE&uSEP;WID=20&uSEP;HEI=1&uFRM;
-  &uFRM;TYP=F&uSEP;NAM=VALIDATION_OPERATION&uSEP;WID=20&uSEP;HEI=1&uFRM;
-  &uFRM;TYP=F&uSEP;NAM=TYPE&uSEP;WID=20&uSEP;HEI=1&uFRM;</DAT>
+  &uFRM;TYP=F&uSEP;NAM=MODIFICATION_STAMP&uSEP;WID=20&uSEP;HEI=1&uFRM;</DAT>
 <DAT name="LISTING" xml:space='preserve'>Date		Person	Modification
 ---------------------------------------------------------------------------------------------------------
 10.10.2012	KJAN		lpImportFile
@@ -493,39 +481,26 @@ endparams
 end ;setBaseDirectory
 
 
+
 ;--------------------------------------------------------------------
-; Register a component that will be called to validate if an object
-; should be imported.
+; Set Pre-Import Validator
 ;--------------------------------------------------------------------
-operation addValidator
+operation setPreImportValidator
 ;--------------------------------------------------------------------
 params
-	Handle	pValidator : IN
-	String	pOperation : IN
-	String	pType      : IN
-	String	pMessages  : INOUT
+	$PRE_IMPORT_HANDLE$ : IN ; Handle for pre-import validator instance
+	$PRE_IMPORT_OP$     : IN ; Operation to invoke
+	String pMessage : OUT
 endparams
 
-	if(VALIDATOR_HANDLE.VALIDATOR != "")
-		creocc "VALIDATOR", -1 
+	if (!$PRE_IMPORT_HANDLE$ | $PRE_IMPORT_OP$ = "")
+		pMessage = "Pre-import validator instance handle or operation [%%$PRE_IMPORT_OP$%%%] not supplied to VREPO_EXPORT"
+		return -1
 	endif
+	return 0
 
-	VALIDATOR_HANDLE.VALIDATOR     = pValidator
-	VALIDATION_OPERATION.VALIDATOR = pOperation
-	TYPE.VALIDATOR                 = pType
+end ; setPreImportValidator
 
-	selectcase pType
-		case "PRE_IMPORT_OBJECT"
-			$PRE_IMPORT_HANDLE$ = pValidator
-			$PRE_IMPORT_OP$     = pOperation
-		case "LOGGER"
-			$instanceHandle-&gt;setLogger(pValidator, pOperation)
-		elsecase
-			pMessages = "Validator type %%pType not currently supported in &lt;$componentname&gt;"
-	endselectcase
-	return &lt;OK&gt;
-
-end ;addValidator
 
 
 ;--------------------------------------------------------------------
@@ -546,32 +521,6 @@ endparams
 	return 0
 
 end ; setLogger
-
-
-;--------------------------------------------------------------------
-; Enable or disable a validator
-;--------------------------------------------------------------------
-operation setValidatorActive
-;--------------------------------------------------------------------
-params
-	String  pOperation : IN
-	Boolean pActive    : IN
-	Boolean pStatus    : OUT
-endparams
-
-	pStatus = -1
-	setocc "VALIDATOR", 1
-	while ($status &gt;= 0)
-		if (VALIDATION_OPERATION.VALIDATOR = pOperation)
-			ACTIVE.VALIDATOR = pActive
-			pStatus = 1
-		endif
-		setocc "VALIDATOR", $curocc(VALIDATOR) + 1
-	endwhile
-
-	return &lt;OK&gt;
-
-end ;addValidator
 
 
 ;--------------------------------------------------------------------
@@ -658,19 +607,15 @@ params
 	String  pMessages : INOUT
 endparams
 
-	if (!pForce) ; If forcing, assume we know it is a file
-		if ($lfileproperties(pFile, "FILETYPE") != "FILETYPE=FILE")
-			return &lt;OK&gt;
-		endif
-	endif
+;	Defer resposibility to calling code for performance 
+;	(If not, parsing will fail and we'll get an error)
+;	if (!pForce) ; If forcing, assume we know it is a file
+;		if ($lfileproperties(pFile, "FILETYPE") != "FILETYPE=FILE")
+;			return &lt;OK&gt;
+;		endif
+;	endif
 
-	call lpImportFile("", pFile, pForce, pMessages)
-	if($status &lt; 0)
-		return &lt;FAILED&gt;
-	endif
-
-	;Return the status returned by lpImportFile
-	done
+	return lpImportFile("", pFile, pForce, pMessages)
 
 end ;importFile
 

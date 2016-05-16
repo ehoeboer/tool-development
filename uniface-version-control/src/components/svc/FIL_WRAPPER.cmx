@@ -1,7 +1,7 @@
 ﻿<?xml version='1.0' encoding='UTF-8' ?>
 <!-- Created by Uniface - (C) Uniface B.V. All rights reserved -->
 <!DOCTYPE UNIFACE PUBLIC "UNIFACE.DTD" "UNIFACE.DTD">
-<UNIFACE release="9.6" xmlengine="2.0">
+<UNIFACE release="9.7" xmlengine="2.0">
 <TABLE>
 <DSC name="UFORM" model="DICT" system="S" pseudo ="73" level="1" noupdate="0"
  rbk="0" ffsql="0" transnr="0" segsize="0" ufocc="1000" charset=".U">
@@ -167,8 +167,8 @@
  pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\F1,0,0,0,,0,0,0,," />
 </DSC>
 <OCC>
-<DAT name="UTIMESTAMP">2016-02-12T16:05:09.00</DAT>
-<DAT name="UCOMPSTAMP">2016-02-12T16:05:09.00</DAT>
+<DAT name="UTIMESTAMP">2016-05-10T09:55:02.00</DAT>
+<DAT name="UCOMPSTAMP">2016-05-12T17:41:31.00</DAT>
 <DAT name="ULABEL">FIL_WRAPPER</DAT>
 <DAT name="UDESCR" xml:space='preserve'>Wrapper for file sync</DAT>
 <DAT name="WVPOS">0</DAT>
@@ -245,21 +245,22 @@ end ; lpGetParentFolder
 entry lpImportFolder
 ;--------------------------------------------------------------------
 params
-	String	pBaseDir	: IN
-	String	pDir      : IN
+	String  pBaseDir : IN
+	String  pDir     : IN
+    Boolean pForce   : IN
 endparams
 
 variables
-	String		vSubDir
-	String		vContent
-	String		vFilePath
-	Datetime	vFileStamp
-	Datetime  vRepoStamp
-	String		vType
-	String		vFolderContents
-	Boolean   vDoImport
-	String    vMessage
-	numeric   vStatus
+	String   vSubDir
+	String   vContent
+	String   vFilePath
+	Datetime vFileStamp
+	Datetime vRepoStamp
+	String   vType
+	String   vFolderContents
+	Boolean  vDoImport
+	String   vMessage
+	numeric  vStatus
 endvariables
 
 	;Check that pDir is a directory
@@ -281,7 +282,7 @@ endvariables
 			;Does this folder have any child folders?
 			vFolderContents = $ldirlist(vSubDir, "dir")
 
-			call lpImportFolder(pBaseDir, vSubDir)
+			call lpImportFolder(pBaseDir, vSubDir, pForce)
 
   		endif
 
@@ -308,7 +309,7 @@ endvariables
 			; but still needs to parse the XML so we can get the latest timestamp
 			; (could alternatively be read from repository after import, but 
 			;  using this method as it might perform faster in case of remote database)
-			vStatus = $Importer$-&gt;importFile(vFilePath, 1, vMessage)
+			vStatus = $Importer$-&gt;importFile(vFilePath, pForce, vMessage)
 			if (vStatus = &lt;OK&gt;)
 				$IMPORT_COUNT$ += 1
 				$status = $importer$-&gt;getLatestTimestamp(vRepoStamp)
@@ -632,7 +633,7 @@ end ;validateExportFile
 ;------------------------------------------------------------------------------
 operation import
 params
-	$IMPORTER$			: IN    ; Importer handle
+	$IMPORTER$          : IN    ; Importer handle
 	Boolean pForce      : IN    ; Force import flag
 	Boolean pFullSync   : IN    ; Full sync flag
 	Boolean pIsConflict : OUT   ; True returned if conflict
@@ -652,7 +653,7 @@ endvariables
 	$IMPORT_COUNT$ = 0
 
 	; Process folder tree recursively
-	call lpImportFolder($BASEDIR$, $BASEDIR$)
+	call lpImportFolder($BASEDIR$, $BASEDIR$, pForce)
 
 	return $IMPORT_COUNT$
 
