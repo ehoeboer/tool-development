@@ -1,7 +1,7 @@
 ﻿<?xml version='1.0' encoding='UTF-8' ?>
-<!-- Created by UNIFACE - (C) Compuware Corporation -->
+<!-- Created by Uniface - (C) Uniface B.V. All rights reserved -->
 <!DOCTYPE UNIFACE PUBLIC "UNIFACE.DTD" "UNIFACE.DTD">
-<UNIFACE release="9.6" xmlengine="2.0">
+<UNIFACE release="9.7" xmlengine="2.0">
 <TABLE>
 <DSC name="UFORM" model="DICT" system="S" pseudo ="73" level="1" noupdate="0"
  rbk="0" ffsql="0" transnr="0" segsize="0" ufocc="1000" charset=".U">
@@ -167,8 +167,8 @@
  pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\F1,0,0,0,,0,0,0,," />
 </DSC>
 <OCC>
-<DAT name="UTIMESTAMP">2009-12-29T10:54:58.21</DAT>
-<DAT name="UCOMPSTAMP">2011-06-15T13:25:42.82</DAT>
+<DAT name="UTIMESTAMP">2016-05-10T10:40:04.00</DAT>
+<DAT name="UCOMPSTAMP">2016-05-12T02:06:56.00</DAT>
 <DAT name="ULABEL">UDSPDEF</DAT>
 <DAT name="WVPOS">3</DAT>
 <DAT name="WHPOS">1</DAT>
@@ -263,7 +263,7 @@ endif
 <DAT name="PERF">#DEF</DAT>
 <DAT name="SFUNC" xml:space='preserve'>#include U:zProcError  ; Report an unexpected failure in a proc statement.
 </DAT>
-<DAT name="HTMLPROP" xml:space='preserve'>MODIFIED_BY=9.4.01&uSEP;EDITOR=GRAPHICAL</DAT>
+<DAT name="HTMLPROP" xml:space='preserve'>MODIFIED_BY=9.7.01&uSEP;EDITOR=GRAPHICAL</DAT>
 <DAT name="USCONTAINED">1</DAT>
 <DAT name="GETSTATE" xml:space='preserve'>variables
   string  WebServerContext, Cookie, Session, UserContext, sOuter
@@ -582,7 +582,7 @@ return (0)
  pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\F3,0,0,0,,0,0,0,," />
 </DSC>
 <OCC>
-<DAT name="UTIMESTAMP">2008-10-07T17:00:58.46</DAT>
+<DAT name="UTIMESTAMP">2008-10-07T17:00:58.00</DAT>
 <DAT name="ULABEL">UCOMPONENTSUBTYPEDEFDSP</DAT>
 <DAT name="UBASE">U</DAT>
 <DAT name="UFORM">UDSPDEF</DAT>
@@ -591,7 +591,7 @@ return (0)
 <DAT name="UISASSOC">F</DAT>
 </OCC>
 <OCC>
-<DAT name="UTIMESTAMP">2008-07-24T10:44:54.38</DAT>
+<DAT name="UTIMESTAMP">2008-07-24T10:44:54.00</DAT>
 <DAT name="ULABEL">UCOMPONENTSUBTYPEDEFUSP</DAT>
 <DAT name="UBASE">U</DAT>
 <DAT name="UFORM">UDSPDEF</DAT>
@@ -602,7 +602,7 @@ return (0)
 <DAT name="HTML_ENTPROP" xml:space='preserve'>U_ATLEASTONE=1&uSEP;U_STARTOCC=1</DAT>
 </OCC>
 <OCC>
-<DAT name="UTIMESTAMP">2008-07-24T10:44:54.38</DAT>
+<DAT name="UTIMESTAMP">2008-07-24T10:44:54.00</DAT>
 <DAT name="ULABEL">UFUNCTIONALSUBTYPEDEF</DAT>
 <DAT name="UBASE">U</DAT>
 <DAT name="UFORM">UDSPDEF</DAT>
@@ -612,7 +612,7 @@ return (0)
 <DAT name="HTML_ENTPROP" xml:space='preserve'>U_ATLEASTONE=1&uSEP;U_STARTOCC=1</DAT>
 </OCC>
 <OCC>
-<DAT name="UTIMESTAMP">2008-08-08T09:40:16.50</DAT>
+<DAT name="UTIMESTAMP">2008-08-08T09:40:16.00</DAT>
 <DAT name="ULABEL">UNONMODELENTITYDEF</DAT>
 <DAT name="UBASE">U</DAT>
 <DAT name="UFORM">UDSPDEF</DAT>
@@ -629,7 +629,7 @@ return (0)
 <DAT name="UWEBWIDGETTYPE">U_NONE</DAT>
 </OCC>
 <OCC>
-<DAT name="UTIMESTAMP">2008-07-24T10:44:54.38</DAT>
+<DAT name="UTIMESTAMP">2008-07-24T10:44:54.00</DAT>
 <DAT name="ULABEL">USUPERTYPEDEF</DAT>
 <DAT name="UBASE">U</DAT>
 <DAT name="UFORM">UDSPDEF</DAT>
@@ -762,7 +762,7 @@ return (0)
  pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\E6,0,0,0,,0,0,0,," />
 </DSC>
 <OCC>
-<DAT name="UTIMESTAMP">2008-10-08T13:23:37.18</DAT>
+<DAT name="UTIMESTAMP">2008-10-08T13:23:37.00</DAT>
 <DAT name="ULABEL">UFIELDDEF</DAT>
 <DAT name="GRP">UCOMPONENTSUBTYPEDEFDSP</DAT>
 <DAT name="UBASE">U</DAT>
@@ -771,7 +771,7 @@ return (0)
 <DAT name="UISOBJID">F</DAT>
 </OCC>
 <OCC>
-<DAT name="UTIMESTAMP">2008-07-24T11:31:45.61</DAT>
+<DAT name="UTIMESTAMP">2008-07-24T11:31:45.00</DAT>
 <DAT name="ULABEL">UFIELDDEF</DAT>
 <DAT name="GRP">UCOMPONENTSUBTYPEDEFUSP</DAT>
 <DAT name="UBASE">U</DAT>
@@ -780,7 +780,7 @@ return (0)
 <DAT name="UISOBJID">F</DAT>
 </OCC>
 <OCC>
-<DAT name="UTIMESTAMP">2008-07-24T11:31:43.18</DAT>
+<DAT name="UTIMESTAMP">2008-07-24T11:31:43.00</DAT>
 <DAT name="ULABEL">UFIELDDEF</DAT>
 <DAT name="GRP">UFUNCTIONALSUBTYPEDEF</DAT>
 <DAT name="UBASE">U</DAT>
@@ -789,7 +789,7 @@ return (0)
 <DAT name="UISOBJID">F</DAT>
 </OCC>
 <OCC>
-<DAT name="UTIMESTAMP">2009-10-13T16:47:10.58</DAT>
+<DAT name="UTIMESTAMP">2009-10-13T16:47:10.00</DAT>
 <DAT name="ULABEL">UFIELDDEF</DAT>
 <DAT name="GRP">UNONMODELENTITYDEF</DAT>
 <DAT name="UBASE">U</DAT>
@@ -803,7 +803,7 @@ return (0)
 <DAT name="WEBWIDGETTYPE">EDITBOX</DAT>
 </OCC>
 <OCC>
-<DAT name="UTIMESTAMP">2008-07-24T11:31:40.58</DAT>
+<DAT name="UTIMESTAMP">2008-07-24T11:31:40.00</DAT>
 <DAT name="ULABEL">UFIELDDEF</DAT>
 <DAT name="GRP">USUPERTYPEDEF</DAT>
 <DAT name="UBASE">U</DAT>
