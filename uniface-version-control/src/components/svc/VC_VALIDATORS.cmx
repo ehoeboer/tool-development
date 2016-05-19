@@ -167,8 +167,8 @@
  pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\F1,0,0,0,,0,0,0,," />
 </DSC>
 <OCC>
-<DAT name="UTIMESTAMP">2016-05-12T00:47:21.00</DAT>
-<DAT name="UCOMPSTAMP">2016-05-12T17:41:26.00</DAT>
+<DAT name="UTIMESTAMP">2016-05-18T10:39:07.00</DAT>
+<DAT name="UCOMPSTAMP">2016-05-18T11:58:18.00</DAT>
 <DAT name="ULABEL">VC_VALIDATORS</DAT>
 <DAT name="UDESCR">Validators</DAT>
 <DAT name="WVPOS">0</DAT>
@@ -289,6 +289,7 @@ variables
 	DateTime vLatestTimeStamp
 	Boolean  vIsExported
 	Numeric  vNonUfImplCount
+	Numeric  vStatus
 endvariables
 
 	; If signature, we can choose whether to export them if they 
@@ -307,7 +308,8 @@ endvariables
 	;ID.VC_STATUS/init = pExportID
 	FILEPATH.VC_STATUS/init = pExportFilePath
 	retrieve/e "VC_STATUS"
-	if ($status &gt;= 0)
+	vStatus = $status
+	if (vStatus &gt;= 0)
 		; We've found a VC_STATUS record, check if it has been exported
 		if (REPOSITORY_DT.VC_STATUS != "")
 			; We've found a record of a previous export, set vLatestTimestamp to last export date
@@ -316,14 +318,14 @@ endvariables
 		else
 			vIsExported = 0
 		endif
-	elseif($status = -2 | $status = -4)
+	elseif(vStatus = -2 | vStatus = -4)
 		;There's no VC_STATUS record, so this object hasn't been exported yet
 		vIsExported = 0
-	elseif($status &lt; 0)
+	elseif(vStatus &lt; 0)
 		;Something is wrong. Don't export.
 		call lpAddMessage("Tried to retrieve on VC_STATUS got %%$status%%% - halting export of object", pMessages)
 		pIsChanged = 0
-		return &lt;OK&gt;		
+		return vStatus
 	endif
 
 	;See if the file exists already
