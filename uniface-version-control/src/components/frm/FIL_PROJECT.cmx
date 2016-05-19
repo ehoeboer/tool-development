@@ -167,8 +167,8 @@
  pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\F1,0,0,0,,0,0,0,," />
 </DSC>
 <OCC>
-<DAT name="UTIMESTAMP">2016-05-10T16:32:17.00</DAT>
-<DAT name="UCOMPSTAMP">2016-05-12T17:41:31.00</DAT>
+<DAT name="UTIMESTAMP">2016-05-18T10:57:29.00</DAT>
+<DAT name="UCOMPSTAMP">2016-05-18T11:58:18.00</DAT>
 <DAT name="ULABEL">FIL_PROJECT</DAT>
 <DAT name="UDESCR" xml:space='preserve'>Filesync Project Screen</DAT>
 <DAT name="WVPOS">3</DAT>
@@ -1592,7 +1592,20 @@ endvariables
 	return &lt;OK&gt;
 
 end ;optionStatus
-</DAT>
+
+;-------------------------------------------------------------------------------
+; Show message in output box
+;-------------------------------------------------------------------------------
+operation showMessage
+params
+	string pMessage : IN
+endparams
+
+	putmess pMessage
+	OUTPUT.LOG = pMessage
+	show
+
+end ; showMessage</DAT>
 <DAT name="HTML_STYLES" xml:space='preserve'>/corporate.css&uSEP;../css/applic.css</DAT>
 <DAT name="TPLACTUAL2" xml:space='preserve'>#include VC_LIBRARY:IP_DEFINES
 #define NO_WC_CHECK
