@@ -1,7 +1,7 @@
 ﻿<?xml version='1.0' encoding='UTF-8' ?>
 <!-- Created by Uniface - (C) Uniface B.V. All rights reserved -->
 <!DOCTYPE UNIFACE PUBLIC "UNIFACE.DTD" "UNIFACE.DTD">
-<UNIFACE release="9.6" xmlengine="2.0">
+<UNIFACE release="9.7" xmlengine="2.0">
 <TABLE>
 <DSC name="UFORM" model="DICT" system="S" pseudo ="73" level="1" noupdate="0"
  rbk="0" ffsql="0" transnr="0" segsize="0" ufocc="1000" charset=".U">
@@ -167,8 +167,8 @@
  pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\F1,0,0,0,,0,0,0,," />
 </DSC>
 <OCC>
-<DAT name="UTIMESTAMP">2016-02-15T10:48:46.00</DAT>
-<DAT name="UCOMPSTAMP">2016-02-15T10:48:47.00</DAT>
+<DAT name="UTIMESTAMP">2016-05-18T09:45:17.00</DAT>
+<DAT name="UCOMPSTAMP">2016-05-18T11:16:20.00</DAT>
 <DAT name="ULABEL">VREPO_EXPORT</DAT>
 <DAT name="UDESCR" xml:space='preserve'>Wrapper of $ude export</DAT>
 <DAT name="WVPOS">0</DAT>
@@ -288,9 +288,9 @@ endvariables
 		vProfileField	= $idpart(vProfile)
 		vProfileValue	= $valuepart(vProfile)
 		if(@vProfileField == "")
-			@vProfileField = vProfileValue		
+			@vProfileField/init = vProfileValue		
 		else
-			@vProfileField = "%%@vProfileField%%%&uAND;%%vProfileValue%%%"
+			@vProfileField/init = "%%@vProfileField%%%&uAND;%%vProfileValue%%%"
 		endif
 
 		delitem vProfiles, -1
