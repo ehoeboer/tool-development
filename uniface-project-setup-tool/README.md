@@ -23,7 +23,7 @@ Information about the developer's local environment is detected from the Uniface
 
 ## Setup ##
 
- * Download the latest zip from the downloads page
+ * Download the latest zip from the downloads folder
  * Unzip the download into your local Uniface packages directory. This is where you'll keep all your Uniface tooling. These instructions assume this folder is C:\\UnifacePackages\\
  * You should now have a batch file called ProjectSetup.bat in C:\\UnifacePackages\\ along with a folder called ProjectSetup.
  * So that we can invoke the batch file from any where add C:\\UnifacePackages\\ to your path
