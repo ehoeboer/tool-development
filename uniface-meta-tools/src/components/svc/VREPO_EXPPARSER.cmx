@@ -1,7 +1,7 @@
 ﻿<?xml version='1.0' encoding='UTF-8' ?>
 <!-- Created by Uniface - (C) Uniface B.V. All rights reserved -->
 <!DOCTYPE UNIFACE PUBLIC "UNIFACE.DTD" "UNIFACE.DTD">
-<UNIFACE release="9.6" xmlengine="2.0">
+<UNIFACE release="9.7" xmlengine="2.0">
 <TABLE>
 <DSC name="UFORM" model="DICT" system="S" pseudo ="73" level="1" noupdate="0"
  rbk="0" ffsql="0" transnr="0" segsize="0" ufocc="1000" charset=".U">
@@ -167,8 +167,8 @@
  pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\F1,0,0,0,,0,0,0,," />
 </DSC>
 <OCC>
-<DAT name="UTIMESTAMP">2015-07-16T14:35:15.00</DAT>
-<DAT name="UCOMPSTAMP">2015-07-16T15:35:15.00</DAT>
+<DAT name="UTIMESTAMP">2017-01-05T17:31:20.00</DAT>
+<DAT name="UCOMPSTAMP">2017-01-05T17:32:19.00</DAT>
 <DAT name="ULABEL">VREPO_EXPPARSER</DAT>
 <DAT name="UDESCR" xml:space='preserve'>Export Parser</DAT>
 <DAT name="WVPOS">0</DAT>
@@ -204,6 +204,21 @@
 
 #Comment ----------------------------------------------
 </DAT>
+<DAT name="INIT" xml:space='preserve'>params
+	string pExportFilePath : IN
+endparams
+
+variables
+;	String        pExportFilePath
+	Boolean    pIsUnifaceExport
+	String        pUnifaceRelease    
+	String        pObjects
+	String        pMessages
+endvariables
+
+;pExportFilePath = ".\src\components\svc\VREPO_EXPPARSER.cmx"
+$instancehandle-&gt;parseUnifaceExport(pExportFilePath, pIsUnifaceExport, pUnifaceRelease, pObjects, pMessages)
+</DAT>
 <DAT name="GENERAL" xml:space='preserve'>#include VCOMMON_LIBRARY:IP_ADD_MESSAGE
 #include VCOMMON_LIBRARY:IP_METADICTINFO
 
@@ -216,11 +231,15 @@ entry lpProcessDsc
 ;---------------------------------------------------
 returns String
 
+params
+	string pName_DSC : IN
+endparams
+
 variables
-	String	vObjectType
+	String vObjectType
 endvariables
 
-	selectcase NAME.DSC
+	selectcase pName_DSC
 		case "UFORM"
 			vObjectType = "component"
 		case "USOURCE"
@@ -269,10 +288,10 @@ end ;lpProcessDsc
 entry lpGetObjectTypeAndName
 ;---------------------------------------------------
 params
-	String	pDatList		: IN
-	String	pDSCObjectType	: IN
-	String	pObjectType		: OUT
-	String	pObjectName		: OUT
+	Struct pDatList       : IN
+	String pDSCObjectType : IN
+	String pObjectType    : OUT
+	String pObjectName    : OUT
 endparams
 
 variables
@@ -280,6 +299,7 @@ variables
 	String	vMetaInfo
 	String	vLabelFieldName
 	Numeric	vStatus
+	String vDatNames, vTemp
 endvariables
 
 	pObjectType = pDSCObjectType
@@ -289,9 +309,11 @@ endvariables
 		return &lt;OK&gt;
 	endif	
 
+	vDatNames = $replace(pDatList-&gt;"name"-&gt;$scalar-&gt;$dbgstring, 1, "%%^", "&uSEP;", -1)
+
 	;Work out the type of this export if we couldn't from the table name alone.
 	if(pObjectType == "" | pObjectType == "component" | pObjectType == "usource_object")
-		pObjectType = lpSetObjectType(pObjectType, pDatList)
+		pObjectType = lpSetObjectType(pObjectType, pDatList, vDatNames)
 	endif
 
 	if(pObjectType = "")
@@ -303,7 +325,8 @@ endvariables
 	vStatus = $split(vLabelFieldName,	1, ".", vLabelFieldName)
 
 	;Get the name of this object
-	pObjectName = $item(vLabelFieldName, pDatList)
+	getitem/id vTemp, vDatNames, "%%"%%vLabelFieldName%%%%%""
+	pObjectName = pDatList{$status}-&gt;$scalar
 
 	return &lt;OK&gt;
 
@@ -314,32 +337,37 @@ end ;lpGetObjectTypeAndName
 entry lpProcessDat
 ;---------------------------------------------------
 params
-	String	pDatList	: IN
+	Struct pDatList : IN
+	Struct pTable   : IN
 endparams
 
 variables
-	String		vObjectType
-	String		vDateTimeString
-	String		vBuiltDateTime
-	DateTime	vDateTime
-	String		vMessages
-	String		vMetaInfo
-	String		vLabelFieldName
-	String		vLanguageField
-	String		vLibraryField
-	String		vTimeStampField
-	Numeric	vStatus
-	String		vChildTimeStampEntity
-	String		vCurrentTableOcc
-	String		vCurrentDscOcc
-	String		vCurrentOccOcc
-	String		vCurrentDatOcc
-	Boolean	vIsAChildTimeStampEntity
-	String		vChildTimeStampEntitiesTemp
-	String		vChildTimeStampEntityTemp
-	String		vDatList
-	String		vRelationValue
-	String		vChildEntityRelationships
+	numeric  vTableCollSize, vTableNode, vOccCollSize, vOccNode
+	struct   vOcc
+	String   vObjectType
+	String   vDateTimeString
+	String   vBuiltDateTime
+	DateTime vDateTime
+	String   vMessages
+	String   vMetaInfo
+	String   vLabelFieldName
+	String   vLanguageField
+	String   vLibraryField
+	String   vTimeStampField
+	Numeric  vStatus
+	String   vChildTimeStampEntity
+	String   vCurrentTableOcc
+	String   vCurrentDscOcc
+	String   vCurrentOccOcc
+	String   vCurrentDatOcc
+	Boolean  vIsAChildTimeStampEntity
+	String   vChildTimeStampEntitiesTemp
+	String   vChildTimeStampEntityTemp
+	String   vDatList
+	String   vRelationValue
+	String   vChildEntityRelationships
+	String   vDatNames
+	String   vTemp
 endvariables
 
 	vMetaInfo = lpGetMetaDictInfoForObjectType(OBJECT_TYPE.OBJECT, vMessages)
@@ -350,8 +378,11 @@ endvariables
 	vStatus = $split(vLibraryField,	1, ".", vLibraryField)
 	vStatus = $split(vTimeStampField,	1, ".", vTimeStampField)
 
+	vDatNames = $replace(pDatList-&gt;"name"-&gt;$scalar-&gt;$dbgstring, 1, "%%^", "&uSEP;", -1)
+
 	;Log the latest timestamp
-	vDateTimeString = $item(vTimeStampField, pDatList)
+	getitem/id vTemp, vDatNames, "%%"%%vTimeStampField%%%%%""
+	vDateTimeString = pDatList{$status}-&gt;$scalar
 
 	vBuiltDateTime = vDateTimeString[1:4]
 	vBuiltDateTime = $concat(vBuiltDateTime, vDateTimeString[6: 2])
@@ -374,20 +405,14 @@ endvariables
 	getitem/id vChildTimeStampEntity,	vMetaInfo, "CHILDTIMESTAMPENTITY"
 	if(vChildTimeStampEntity != "")
 
-		vCurrentTableOcc	= $curocc("TABLE")
-		vCurrentDscOcc	= $curocc("DSC")
-		vCurrentOccOcc	= $curocc("OCC")
-		vCurrentDatOcc	= $curocc("DAT")
-
-		setocc "TABLE", 1
-		while($status &gt; 0)
-			setocc "DSC", 1
+		vTableCollSize = pTable-&gt;$collSize
+		for vTableNode =  1 to vTableCollSize
 
 			vIsAChildTimeStampEntity = 0
 			vChildTimeStampEntitiesTemp = vChildTimeStampEntity
 			getitem vChildTimeStampEntityTemp, vChildTimeStampEntitiesTemp, 1
 			while($status &gt; 0 &amp; !vIsAChildTimeStampEntity)
-				if(NAME.DSC == vChildTimeStampEntityTemp)
+				if(pTable{vTableNode}-&gt;"DSC"-&gt;"name"-&gt;$scalar == vChildTimeStampEntityTemp)
 					vIsAChildTimeStampEntity = 1
 				else
 					delitem vChildTimeStampEntitiesTemp, 1
@@ -396,17 +421,17 @@ endvariables
 			endwhile
 
 			if(vIsAChildTimeStampEntity)
-				setocc "OCC", 1
-				while($status &gt; 0)
-					setocc "DAT", 1
-
-					putlistitems/id vDatList, NAME.DAT, CONTENTS.DAT
-
+				vOcc = pTable{vTableNode}-&gt;"OCC"
+				vOccCollSize = vOcc-&gt;$collSize
+				for vOccNode = 1 to vOccCollSize
 					getitem/id vChildEntityRelationships, vMetaInfo, "CHILD_ENTITY_RELATIONSHIPS"
-					vRelationValue = $item($item(vChildTimeStampEntityTemp, vChildEntityRelationships), vDatList)
+					vDatNames = $replace(vOcc{vOccNode}-&gt;"DAT"-&gt;"name"-&gt;$scalar-&gt;$dbgstring, 1, "%%^", "&uSEP;", -1)
+					getitem/id vTemp, vDatNames, "%%"%%$item(VCHILDTIMESTAMPENTITYTEMP,VCHILDENTITYRELATIONSHIPS)%%%%%""
+					vRelationValue = vOcc{vOccNode}-&gt;"DAT"{$status}-&gt;$scalar
 					if(OBJECT_NAME.OBJECT == vRelationValue)
 
-						vDateTimeString = $item("UTIMESTAMP", vDatList)
+						getitem/id vTemp, vDatNames, "%%"%%vTimeStampField%%%%%""
+						vDateTimeString = vOcc{vOccNode}-&gt;"DAT"{$status}-&gt;$scalar
 
 						vBuiltDateTime = vDateTimeString[1:4]
 						vBuiltDateTime = $concat(vBuiltDateTime, vDateTimeString[6: 2])
@@ -425,25 +450,20 @@ endvariables
 						endif	
 					endif
 					
-					setocc "OCC", $curocc("OCC") + 1
-				endwhile
+				endfor
 			endif
 
-			setocc "TABLE", $curocc("TABLE") + 1
-		endwhile
-
-		setocc "TABLE",	vCurrentTableOcc
-		setocc "DSC",		vCurrentDscOcc
-		setocc "OCC",		vCurrentOccOcc
-		setocc "DAT",		vCurrentDatOcc
+		endfor
 
 	endif
 
 	;Get the language of this object if applicable
-	OBJECT_LANG.OBJECT = $item(vLanguageField, pDatList)
+	getitem/id vTemp, vDatNames, "%%"%%vLanguageField%%%%%""
+	OBJECT_LANG.OBJECT = pDatList{$status}-&gt;$scalar
 
 	;Get the library of this object if applicable
-	OBJECT_LIB.OBJECT = $item(vLibraryField, pDatList)
+	getitem/id vTemp, vDatNames, "%%"%%vLibraryField%%%%%""
+	OBJECT_LIB.OBJECT = pDatList{$status}-&gt;$scalar
 
 	return &lt;OK&gt;	
 
@@ -456,19 +476,22 @@ entry lpSetObjectType
 returns String
 
 params
-	String	pDSCObjectType	: IN
-	String	pDatList		: IN
+	String pDSCObjectType : IN
+	Struct pDatList       : IN
+	String pDatNames      : IN
 endparams
 
 variables
-	String	vUTransact
-	String	vObjectType
+	String vDatNames, vTemp
+	String vUTransact
+	String vObjectType
 endvariables
 
 	vObjectType = ""
 
 	if(pDSCObjectType == "component")
-		vUTransact = $item("UTRANSACT", pDatList)
+		getitem/id vTemp, pDatNames, "%%"UTRANSACT%%""
+		vUTransact = pDatList{$status}-&gt;$scalar
 		selectcase vUTransact
 			case "0"
 				vObjectType = "&lt;FORM&gt;"
@@ -493,12 +516,13 @@ endvariables
 	endif
 
 	if(pDSCObjectType == "usource_object")
-		selectcase $item("USUB", pDatList)
+		getitem/id vTemp, pDatNames, "%%"USUB%%""
+		selectcase pDatList{$status}-&gt;$scalar
 			case "P"
 				vObjectType = "&lt;PROC&gt;"
 			case "I"
 				;Could be an include proc or constant
-				if($item("ULABEL", pDatList) == "DEFPARAM")
+				if(pDatList-&gt;"ULABEL" == "DEFPARAM")
 					vObjectType = "&lt;CONSTANT&gt;"
 				else
 					vObjectType = "&lt;INCLUDE&gt;"
@@ -521,29 +545,6 @@ endvariables
 
 end ;lpSetObjectType</DAT>
 <DAT name="FORMPIC" xml:space='preserve'>
- &uFRM;TYP=E&uSEP;NAM=UNIFACE.SVN&uSEP;WID=40&uSEP;HEI=22&uSEP;HOC=40&uSEP;VOC=22&uFRM;
-  &uFRM;TYP=F&uSEP;NAM=RELEASE&uSEP;WID=20&uSEP;HEI=1&uFRM;
-  &uFRM;TYP=F&uSEP;NAM=XMLENGINE&uSEP;WID=20&uSEP;HEI=1&uFRM;
-
-  &uFRM;TYP=E&uSEP;NAM=TABLE.SVN&uSEP;WID=35&uSEP;HEI=17&uSEP;HOC=35&uSEP;VOC=17&uFRM;
-   &uFRM;TYP=E&uSEP;NAM=DSC.SVN&uSEP;WID=30&uSEP;HEI=8&uSEP;HOC=30&uSEP;VOC=8&uFRM;
-    &uFRM;TYP=F&uSEP;NAM=NAME&uSEP;WID=20&uSEP;HEI=1&uFRM;
-    &uFRM;TYP=F&uSEP;NAM=MODEL&uSEP;WID=20&uSEP;HEI=1&uFRM;
-
-    &uFRM;TYP=E&uSEP;NAM=FLD.SVN&uSEP;WID=25&uSEP;HEI=3&uSEP;HOC=25&uSEP;VOC=3&uFRM;
-     &uFRM;TYP=F&uSEP;NAM=NAME&uSEP;WID=20&uSEP;HEI=1&uFRM;
-
-
-
-   &uFRM;TYP=E&uSEP;NAM=OCC.SVN&uSEP;WID=30&uSEP;HEI=6&uSEP;HOC=30&uSEP;VOC=6&uFRM;
-    &uFRM;TYP=E&uSEP;NAM=DAT.SVN&uSEP;WID=25&uSEP;HEI=4&uSEP;HOC=25&uSEP;VOC=4&uFRM;
-     &uFRM;TYP=F&uSEP;NAM=NAME&uSEP;WID=20&uSEP;HEI=1&uFRM;
-     &uFRM;TYP=F&uSEP;NAM=CONTENTS&uSEP;WID=20&uSEP;HEI=1&uFRM;
-
-
-
-
-
  &uFRM;TYP=E&uSEP;NAM=DUMMY.SVN&uSEP;WID=30&uSEP;HEI=12&uSEP;HOC=30&uSEP;VOC=12&uFRM;
   &uFRM;TYP=F&uSEP;NAM=ISUNIFACEEXPORT&uSEP;WID=20&uSEP;HEI=1&uFRM;
   &uFRM;TYP=F&uSEP;NAM=UNIFACE_RELEASE&uSEP;WID=20&uSEP;HEI=1&uFRM;
@@ -558,99 +559,96 @@ end ;lpSetObjectType</DAT>
 operation parseUnifaceExport
 ;--------------------------------------
 params
-	String		pExportFilePath 	: IN
-	Boolean	pIsUnifaceExport	: OUT
-	String		pUnifaceRelease	: OUT
-	String		pObjects			: OUT
-	String		pMessages			: INOUT
+	String  pExportFilePath  : IN
+	Boolean pIsUnifaceExport : OUT
+	String  pUnifaceRelease  : OUT
+	String  pObjects         : OUT
+	String  pMessages        : INOUT
 endparams
-
+	
 variables
-	Handle	 vXMLReader
-	String	 vData
-	String	 vObjectName
-	String	 vObjectType
+	;    Handle     vXMLReader
+	Struct  vStruct
+	
+	String  vData
+	String  vObjectName
+	String  vObjectType
 	Numeric vPos
 	String  vSuffix
+	;    datetime t_start, t_end
+	;    float t_duration,t_duration2
 endvariables
-
+	
+	;#define SECS_PER_DAY 86400 
+	
+	;t_start = $datim
+	
 	;Load this file up so we can learn some things about it:
-	;	- Is it a Uniface export?
-	;	- What Uniface release exported it?
-	;	- What type of object is it?
-	;	- What's the timestamp on it?
-	;	- What's it's name?
-	;	- What's it's language?
-	;	- What's it's library?
-
+	;    - Is it a Uniface export?
+	;    - What Uniface release exported it?
+	;    - What type of object is it?
+	;    - What's the timestamp on it?
+	;    - What's it's name?
+	;    - What's it's language?
+	;    - What's it's library?
+	
 	; First determine whether contents are worth scanning from filename
 	vPos = $rscan(pExportFilePath, ".")
 	if (vPos &gt; 0)
 		vSuffix = $lowercase(pExportFilePath[vPos+1])
 	endif
 	selectcase vSuffix
-	case "dtd", "svn", "txt", "csv", "doc", "docx", "xsl", "xslx"
-
-		pIsUnifaceExport = 0
-		return &lt;OK&gt;
-
-	elsecase
-
-		; vc_path_settings.xml (was svn_path_settings.xml) is used by unifaceVC
-		if ($rscan(pExportFilePath, "path_settings.xml") &gt; 0)
+		case "dtd", "svn", "txt", "csv", "doc", "docx", "xsl", "xslx"
+			
 			pIsUnifaceExport = 0
 			return &lt;OK&gt;
-		endif
+			
+		elsecase
 
+			; Removed test, as this should no longer be used, and message will be a prompt to delete it			
+			; vc_path_settings.xml (was svn_path_settings.xml) is used by unifaceVC
+			;if ($rscan(pExportFilePath, "path_settings.xml") &gt; 0)
+			;	pIsUnifaceExport = 0
+			;	return &lt;OK&gt;
+			;endif
+			
 	endselectcase
-
-	; Don't recognise it, try and XML parse the file
-	newinstance "UXMLREADER",	vXMLReader
-	if($status &lt; 0)
-		call lpAddMessage("Failed to instantiate UXMLREADER", pMessages)
-		return &lt;FAILED&gt;
-	endif
-
-	vXMLReader-&gt;setHandler($instancehandle)
-	if($status &lt; 0)
-		call lpAddMessage("Failed to set handler. Status: %%$status%%%", pMessages)
-		return &lt;FAILED&gt;
-	endif
-
-	vXMLReader-&gt;parseFile(pExportFilePath, 0)
-	if($status &lt; 0)
-		if($status == -151)
-			;A fatal error has occurred. This usually means that we have tried to parse
-			;a non-XML file such as a DTD.
-			pIsUnifaceExport	= 0
-
-			; If suffix has an x in it (e.g. .xml, .cmx etc) then return a message as well
-			if ($scan(vSuffix, "X") &gt; 0)
-				call lpAddMessage("%%pExportFilePath%%% is not valid XML.", pMessages)	
-			endif
-			return &lt;OK&gt;
-		else
-			call lpAddMessage("Failed to parse %%pExportFilePath%%%. Status: %%$status%%%. %%$procerrorcontext%%%", pMessages)
-			return &lt;FAILED&gt;
-		endif
-	endif
-		$instancehandle-&gt;getParseData(vData)
-		deleteinstance vXMLReader
 	
-		pIsUnifaceExport	= $item("ISUNIFACEEXPORT", vData)
-		pUnifaceRelease	= $item("UNIFACE_RELEASE", vData)
-		pObjects			= $item("OBJECTS",			vData)
-
-		vObjectName = $item("OBJECT_NAME", $itemnr(1, pObjects))
-		vObjectType = $item("OBJECT_TYPE", $itemnr(1, pObjects))
-		if( pIsUnifaceExport &amp; (vObjectName == "" | vObjectType == "") )
-			call lpAddMessage("%%pExportFilePath%%% is a Uniface export, but couldn't determine the contents.", pMessages)
-			return &lt;OK&gt;
+	clear
+	ISUNIFACEEXPORT.DUMMY    =    0
+	
+	xmlToStruct vStruct, pExportFilePath
+	if($status &lt; 0)
+		;A fatal error has occurred. This usually means that we have tried to parse
+		;a non-XML file such as a DTD.
+		pIsUnifaceExport    = 0
+		if ($scan(vSuffix, "X") &gt; 0)
+			call lpAddMessage("%%pExportFilePath%%% is not valid XML.", pMessages)    
 		endif
-;	endif
-
+		return &lt;OK&gt;
+	endif
+	
+	if (vStruct-&gt;*{1}-&gt;$name = "UNIFACE") isUnifaceExport.DUMMY = 1
+	
+	$instancehandle-&gt;getParseData(vStruct, vData)
+	
+	pIsUnifaceExport    = $item("ISUNIFACEEXPORT", vData)
+	pUnifaceRelease    = $item("UNIFACE_RELEASE", vData)
+	pObjects            = $item("OBJECTS",            vData)
+	
+	vObjectName = $item("OBJECT_NAME", $itemnr(1, pObjects))
+	vObjectType = $item("OBJECT_TYPE", $itemnr(1, pObjects))
+	if( pIsUnifaceExport &amp; (vObjectName == "" | vObjectType == "") )
+		call lpAddMessage("%%pExportFilePath%%% is a Uniface export, but couldn't determine the contents.", pMessages)
+		return &lt;OK&gt;
+	endif
+	
+	;t_end = $datim
+	;t_duration = (t_end - t_start) * &lt;SECS_PER_DAY&gt;
+	;putmess "  parseUnifaceExport: Time (s) = %%t_duration[round,4]"
+	
 	return &lt;OK&gt;
-
+	
 end  ;parseUnifaceExport
 
 
@@ -660,337 +658,66 @@ end  ;parseUnifaceExport
 operation getParseData
 ;-----------------------------------------------------------
 params
-	String	pData	: OUT
+	Struct pStruct : IN
+	String pData   : OUT
 endparams
-
+	
 variables
-	String	vDSCObjectType
-	String	vDatList
-	String	vObjectType
-	String	vObjectName
-	String	vObjectData
-	String	vObjectList
+	numeric vTableCollSize, vTableNode, vOccCollSize, vOccNode
+	struct  vTable, vOcc
+	String  vDSCObjectType
+	String  vDatList
+	String  vObjectType
+	String  vObjectName
+	String  vObjectData
+	String  vObjectList
 endvariables
-
+	
 	;Add UNIFACE data to output entity
-	setocc "UNIFACE", 1
-	UNIFACE_RELEASE.DUMMY = RELEASE.UNIFACE
+	UNIFACE_RELEASE.DUMMY = pStruct-&gt;"UNIFACE"-&gt;"release"
 	
 	;Add TABLE data to output entity
-	setocc "TABLE", 1
-	while($status &gt; 0)
+	vTable = pStruct-&gt;"UNIFACE"-&gt;"TABLE"
+	vTableCollSize = vTable-&gt;$collSize
+	for vTableNode =  1 to vTableCollSize
 		;Add DSC data to output entity
-		setocc "DSC", 1
-		vDSCObjectType = lpProcessDsc()
+		vDSCObjectType = lpProcessDsc(vTable{vTableNode}-&gt;"DSC"-&gt;"name")
 		
 		;Add OCC data to output entity
-		setocc "OCC", 1
-		while($status &gt; 0)
-			setocc "DAT", 1
-			putlistitems/id vDatList, NAME.DAT, CONTENTS.DAT
-
-			call lpGetObjectTypeAndName(vDatList, vDSCObjectType, vObjectType, vObjectName)
+		vOcc = vTable{vTableNode}-&gt;"OCC"
+		vOccCollSize = vOcc-&gt;$collSize
+		for vOccNode = 1 to vOccCollSize
+			
+			call lpGetObjectTypeAndName(vOcc{vOccNode}-&gt;"DAT", vDSCObjectType, vObjectType, vObjectName)
 			if(vObjectType != "" &amp; vObjectType != "unknown" &amp; vObjectName != "")
 				creocc "OBJECT", -1
 				OBJECT_TYPE.OBJECT = vObjectType
 				OBJECT_NAME.OBJECT = vObjectName
-				call lpProcessDat(vDatList)
-			endif		
-
-			setocc "OCC", $curocc("OCC") + 1
-		endwhile
+				call lpProcessDat(vOcc{vOccNode}-&gt;"DAT", vTable)
+			endif        
+			
+		endfor
 		
-		setocc "TABLE", $curocc("TABLE") + 1
-	endwhile
-
+	endfor
+	
 	;Load the data into lists ready to return it
-	setocc "DUMMY",	 1
-	setocc "OBJECT", 1	
+	setocc "DUMMY",     1
+	setocc "OBJECT", 1    
 	while($status &gt; 0)
 		putlistitems/occ vObjectData, "OBJECT" 
 		putitem vObjectList, -1, vObjectData
-
+		
 		setocc "OBJECT", $curocc("OBJECT") + 1
 	endwhile
-
-	putitem/id pData, "ISUNIFACEEXPORT",	ISUNIFACEEXPORT.DUMMY
-	putitem/id pData, "UNIFACE_RELEASE",	UNIFACE_RELEASE.DUMMY
-	putitem/id pData, "OBJECTS",			vObjectList
-
-	return &lt;OK&gt;
-
-end ;getParseData
-
-
-;-----------------------------------------------------------
-; Activated when the parser starts reading the document.
-;-----------------------------------------------------------
-operation startDocument
-;-----------------------------------------------------------
-
-	clear
-	ISUNIFACEEXPORT.DUMMY	=	0
-
-	return &lt;OK&gt;
-
-end ;startDocument
-
-
-;-----------------------------------------------------------
-; Activated when the end of the document is reached.
-;-----------------------------------------------------------
-operation endDocument
-;-----------------------------------------------------------
-
-end ;endDocument
-
-
-;-----------------------------------------------------------
-; Activated when the parser encounters a start tag, for
-; example &lt;tagA&gt;.
-;-----------------------------------------------------------
-operation startElement
-;-----------------------------------------------------------
-params
-	String	pName		: IN 
-	String	pAttributes	: IN 
-endparams
-
-variables
-	String	vTableName
-	String	vModel
-endvariables
-
-	;----------------------------------------------
-	; &lt;UNIFACE&gt;
-	;----------------------------------------------
-	if(pName == "UNIFACE")
-		;The first element is UNIFACE - assume this is a Uniface export
-		isUnifaceExport.DUMMY = 1
-
-		setocc "UNIFACE", 1
-		getlistitems/id/field pAttributes
-	endif
-
-	;----------------------------------------------
-	; &lt;TABLE&gt;
-	;----------------------------------------------
-	if(pName == "TABLE")
-		if(!$empty("TABLE"))
-			creocc "TABLE", -1
-		endif
-	endif
-
-	;----------------------------------------------
-	; &lt;DSC&gt;
-	;----------------------------------------------	
-	if(pName == "DSC")
-		setocc "DSC", 1
-		getlistitems/id/field pAttributes
-		;$instancehandle-&gt;processDscAtts()
-	endif
-
-	;----------------------------------------------
-	; &lt;OCC&gt;
-	;----------------------------------------------		
-	if(pName == "OCC")
-		if(!$empty("OCC"))
-			creocc "OCC", -1
-		else
-			setocc "OCC", 1
-		endif
-		getlistitems/id/field pAttributes
-	endif
-
-	;----------------------------------------------
-	; &lt;DAT&gt;
-	;----------------------------------------------		
-	if(pName == "DAT")
-		if(!$empty("DAT"))
-			creocc "DAT", -1
-		else
-			setocc "DAT", 1
-		endif
-		getlistitems/id/field pAttributes
-	endif
-
-	return &lt;OK&gt;
-
-end ;startElement
-
-
-;-----------------------------------------------------------
-; Activated when the parser encounters an end-tag such as
-; &lt;/tagA&gt;.
-;-----------------------------------------------------------
-operation endElement
-;-----------------------------------------------------------
-params
-	String	pName	: IN 
-endparams
-
-	if(!isUnifaceExport.DUMMY)
-		;This isn't a Uniface Export, so stop
-		return &lt;OK&gt;
-	endif
-
-	;----------------------------------------------
-	; &lt;TABLE&gt;
-	;----------------------------------------------
-	if(pName == "TABLE")
-		setocc "UNIFACE", $curocc("UNIFACE")
-	endif
-
-	;----------------------------------------------
-	; &lt;DSC&gt;
-	;----------------------------------------------	
-	if(pName == "DSC")
-		setocc "TABLE", $curocc("TABLE")
-	endif
-
-	;----------------------------------------------
-	; &lt;OCC&gt;
-	;----------------------------------------------		
-	if(pName == "OCC")
-		setocc "TABLE", $curocc("TABLE")
-	endif
-
-	;----------------------------------------------
-	; &lt;DAT&gt;
-	;----------------------------------------------		
-	if(pName == "DAT")
-		setocc "OCC", $curocc("OCC")
-	endif
+	
+	putitem/id pData, "ISUNIFACEEXPORT",    ISUNIFACEEXPORT.DUMMY
+	putitem/id pData, "UNIFACE_RELEASE",    UNIFACE_RELEASE.DUMMY
+	putitem/id pData, "OBJECTS",            vObjectList
 	
 	return &lt;OK&gt;
-
-end ;endElement
-
-
-;-----------------------------------------------------------
-; Activated when character data is encountered between a tag
-; and its end tag. 
-;-----------------------------------------------------------
-operation characters
-;-----------------------------------------------------------
-params 
-	String	vChars	: IN 
-endparams 
-
-	if($entname == "DAT")
-		CONTENTS.DAT = "%%CONTENTS.DAT%%%%%vChars%%%"
-	endif
-
-end ;characters
-
-
-;-----------------------------------------------------------
-; Activated when the parser encounters character data that
-; it considers to be ignorable whitespace
-;-----------------------------------------------------------
-operation whitespace
-;-----------------------------------------------------------
-params 
-	String	vChars	: IN 
-endparams
-
-end ;whitespace
-
-
-;-----------------------------------------------------------
-; Activated when the parser encounters a notation
-; declaration in a DTD 
-;-----------------------------------------------------------
-operation notationDecl
-;-----------------------------------------------------------
-params 
-	String	pName		: IN 
-	String	pPublicID	: IN 
-	String	pSystemID	: IN 
-endparams
-
-end ;notationDecl
-
-
-;-----------------------------------------------------------
-; Activated when the parser encounters external DTD
-; declarations and unrecognized XML entity references. 
-;-----------------------------------------------------------
-operation resolveEntity
-;-----------------------------------------------------------
-params 
-	String	pPublicID			: IN
-	String	pSystemID			: IN
-	String	pResolveIdentity	: OUT 
-endparams
-
-end ;resolveEntity
-
-
-;-----------------------------------------------------------
-; Activated when the parser encounters entity declarations
-; in a DTD that contain the NDATA keyword. 
-;-----------------------------------------------------------
-operation unparsedEntity
-;-----------------------------------------------------------
-params 
-	String	pName		: IN 
-	String	pPublicID	: IN 
-	String	pSystemID	: IN 
-	String	pNotation	: IN 
-endparams
-
-end ;unparsedEntity
-
-
-;-----------------------------------------------------------
-; Activated when the parser encounters a processing
-; instruction.
-;-----------------------------------------------------------
-operation processingInst
-;-----------------------------------------------------------
-params
-	String	pTarget	: IN 
-	String	pData	: IN 
-endparams
-
-end ;processingInst
-
-
-;-----------------------------------------------------------
-; Activated when the parser issues a recoverable error. 
-;-----------------------------------------------------------
-operation error
-;-----------------------------------------------------------
-params 
-	String	pList	: IN
-endparams
-
-end ;error
-
-
-;-----------------------------------------------------------
-; Activated when the parser issues a non-recoverable error. 
-;-----------------------------------------------------------
-operation fatalError
-;-----------------------------------------------------------
-params 
-	String	pList	: IN
-endparams
-
-end ;fatalError
-
-
-;-----------------------------------------------------------
-; Activated when the parser issues a warning.
-;-----------------------------------------------------------
-operation warning
-;-----------------------------------------------------------
-params 
-	String	pList	: IN
-endparams
-
-end ;warning</DAT>
+	
+end ;getParseData
+</DAT>
 <DAT name="HTML_STYLES" xml:space='preserve'>/corporate.css&uSEP;../css/applic.css</DAT>
 <DAT name="TPLACTUAL2" xml:space='preserve'>#include VCOMMON_LIBRARY:IP_DEFINES</DAT>
 </OCC>
@@ -1138,7 +865,7 @@ end ;warning</DAT>
  pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\F3,0,0,0,,0,0,0,," />
 </DSC>
 <OCC>
-<DAT name="UTIMESTAMP">2010-10-25T15:48:34.00</DAT>
+<DAT name="UTIMESTAMP">2016-12-12T17:45:53.00</DAT>
 <DAT name="ULABEL">DAT</DAT>
 <DAT name="UBASE">SVN</DAT>
 <DAT name="UFORM">VREPO_EXPPARSER</DAT>
@@ -1150,7 +877,7 @@ end ;warning</DAT>
 <DAT name="HTML_ENTPROP" xml:space='preserve'>U_ATLEASTONE=1&uSEP;U_STARTOCC=1&uSEP;U_MAXOCC=</DAT>
 </OCC>
 <OCC>
-<DAT name="UTIMESTAMP">2010-10-25T15:48:34.00</DAT>
+<DAT name="UTIMESTAMP">2016-12-12T17:45:53.00</DAT>
 <DAT name="ULABEL">DSC</DAT>
 <DAT name="UBASE">SVN</DAT>
 <DAT name="UFORM">VREPO_EXPPARSER</DAT>
@@ -1162,7 +889,7 @@ end ;warning</DAT>
 <DAT name="HTML_ENTPROP" xml:space='preserve'>U_ATLEASTONE=1&uSEP;U_STARTOCC=1&uSEP;U_MAXOCC=</DAT>
 </OCC>
 <OCC>
-<DAT name="UTIMESTAMP">2010-10-25T15:48:34.00</DAT>
+<DAT name="UTIMESTAMP">2016-12-12T17:45:53.00</DAT>
 <DAT name="ULABEL">DUMMY</DAT>
 <DAT name="UBASE">SVN</DAT>
 <DAT name="UFORM">VREPO_EXPPARSER</DAT>
@@ -1174,7 +901,7 @@ end ;warning</DAT>
 <DAT name="HTML_ENTPROP" xml:space='preserve'>U_ATLEASTONE=1&uSEP;U_STARTOCC=1&uSEP;U_MAXOCC=</DAT>
 </OCC>
 <OCC>
-<DAT name="UTIMESTAMP">2010-10-25T15:48:34.00</DAT>
+<DAT name="UTIMESTAMP">2016-12-12T17:45:53.00</DAT>
 <DAT name="ULABEL">FLD</DAT>
 <DAT name="UBASE">SVN</DAT>
 <DAT name="UFORM">VREPO_EXPPARSER</DAT>
@@ -1186,7 +913,7 @@ end ;warning</DAT>
 <DAT name="HTML_ENTPROP" xml:space='preserve'>U_ATLEASTONE=1&uSEP;U_STARTOCC=1&uSEP;U_MAXOCC=</DAT>
 </OCC>
 <OCC>
-<DAT name="UTIMESTAMP">2010-10-25T15:48:34.00</DAT>
+<DAT name="UTIMESTAMP">2016-12-12T17:45:53.00</DAT>
 <DAT name="ULABEL">OBJECT</DAT>
 <DAT name="UBASE">SVN</DAT>
 <DAT name="UFORM">VREPO_EXPPARSER</DAT>
@@ -1198,7 +925,7 @@ end ;warning</DAT>
 <DAT name="HTML_ENTPROP" xml:space='preserve'>U_ATLEASTONE=1&uSEP;U_STARTOCC=1&uSEP;U_MAXOCC=</DAT>
 </OCC>
 <OCC>
-<DAT name="UTIMESTAMP">2010-10-25T15:48:34.00</DAT>
+<DAT name="UTIMESTAMP">2016-12-12T17:45:53.00</DAT>
 <DAT name="ULABEL">OCC</DAT>
 <DAT name="UBASE">SVN</DAT>
 <DAT name="UFORM">VREPO_EXPPARSER</DAT>
@@ -1210,7 +937,7 @@ end ;warning</DAT>
 <DAT name="HTML_ENTPROP" xml:space='preserve'>U_ATLEASTONE=1&uSEP;U_STARTOCC=1&uSEP;U_MAXOCC=</DAT>
 </OCC>
 <OCC>
-<DAT name="UTIMESTAMP">2010-10-25T15:48:34.00</DAT>
+<DAT name="UTIMESTAMP">2016-12-12T17:45:53.00</DAT>
 <DAT name="ULABEL">TABLE</DAT>
 <DAT name="UBASE">SVN</DAT>
 <DAT name="UFORM">VREPO_EXPPARSER</DAT>
@@ -1222,7 +949,7 @@ end ;warning</DAT>
 <DAT name="HTML_ENTPROP" xml:space='preserve'>U_ATLEASTONE=1&uSEP;U_STARTOCC=1&uSEP;U_MAXOCC=</DAT>
 </OCC>
 <OCC>
-<DAT name="UTIMESTAMP">2010-10-25T15:48:34.00</DAT>
+<DAT name="UTIMESTAMP">2016-12-12T17:45:53.00</DAT>
 <DAT name="ULABEL">UNIFACE</DAT>
 <DAT name="UBASE">SVN</DAT>
 <DAT name="UFORM">VREPO_EXPPARSER</DAT>
@@ -1357,7 +1084,7 @@ end ;warning</DAT>
  pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\E6,0,0,0,,0,0,0,," />
 </DSC>
 <OCC>
-<DAT name="UTIMESTAMP">2010-10-25T15:48:34.00</DAT>
+<DAT name="UTIMESTAMP">2016-12-12T17:45:53.00</DAT>
 <DAT name="ULABEL">?FIELD_11</DAT>
 <DAT name="GRP">DSC</DAT>
 <DAT name="UBASE">SVN</DAT>
@@ -1369,7 +1096,7 @@ end ;warning</DAT>
 <DAT name="HTML_CTRLTYPE">U_INPUT</DAT>
 </OCC>
 <OCC>
-<DAT name="UTIMESTAMP">2010-10-25T15:48:34.00</DAT>
+<DAT name="UTIMESTAMP">2016-12-12T17:45:53.00</DAT>
 <DAT name="ULABEL">?FIELD_13</DAT>
 <DAT name="GRP">FLD</DAT>
 <DAT name="UBASE">SVN</DAT>
@@ -1381,7 +1108,7 @@ end ;warning</DAT>
 <DAT name="HTML_CTRLTYPE">U_INPUT</DAT>
 </OCC>
 <OCC>
-<DAT name="UTIMESTAMP">2010-10-25T15:48:34.00</DAT>
+<DAT name="UTIMESTAMP">2016-12-12T17:45:53.00</DAT>
 <DAT name="ULABEL">?FIELD_14</DAT>
 <DAT name="GRP">DAT</DAT>
 <DAT name="UBASE">SVN</DAT>
@@ -1393,7 +1120,7 @@ end ;warning</DAT>
 <DAT name="HTML_CTRLTYPE">U_INPUT</DAT>
 </OCC>
 <OCC>
-<DAT name="UTIMESTAMP">2010-10-25T15:48:34.00</DAT>
+<DAT name="UTIMESTAMP">2016-12-12T17:45:53.00</DAT>
 <DAT name="ULABEL">CONTENTS</DAT>
 <DAT name="GRP">DAT</DAT>
 <DAT name="UBASE">SVN</DAT>
@@ -1406,7 +1133,7 @@ end ;warning</DAT>
 <DAT name="HTML_CTRLTYPE">U_INPUT</DAT>
 </OCC>
 <OCC>
-<DAT name="UTIMESTAMP">2010-10-25T15:48:34.00</DAT>
+<DAT name="UTIMESTAMP">2016-12-12T17:45:53.00</DAT>
 <DAT name="ULABEL">CURRENTDAT</DAT>
 <DAT name="GRP">DUMMY</DAT>
 <DAT name="UBASE">SVN</DAT>
@@ -1419,7 +1146,7 @@ end ;warning</DAT>
 <DAT name="HTML_CTRLTYPE">U_INPUT</DAT>
 </OCC>
 <OCC>
-<DAT name="UTIMESTAMP">2010-10-25T15:48:34.00</DAT>
+<DAT name="UTIMESTAMP">2016-12-12T17:45:53.00</DAT>
 <DAT name="ULABEL">DONEFIRSTELEMENT</DAT>
 <DAT name="GRP">DUMMY</DAT>
 <DAT name="UBASE">SVN</DAT>
@@ -1432,7 +1159,7 @@ end ;warning</DAT>
 <DAT name="HTML_CTRLTYPE">U_INPUT</DAT>
 </OCC>
 <OCC>
-<DAT name="UTIMESTAMP">2010-10-25T15:48:34.00</DAT>
+<DAT name="UTIMESTAMP">2016-12-12T17:45:53.00</DAT>
 <DAT name="ULABEL">INDSC</DAT>
 <DAT name="GRP">DUMMY</DAT>
 <DAT name="UBASE">SVN</DAT>
@@ -1445,7 +1172,7 @@ end ;warning</DAT>
 <DAT name="HTML_CTRLTYPE">U_INPUT</DAT>
 </OCC>
 <OCC>
-<DAT name="UTIMESTAMP">2010-10-25T15:48:34.00</DAT>
+<DAT name="UTIMESTAMP">2016-12-12T17:45:53.00</DAT>
 <DAT name="ULABEL">INOCC</DAT>
 <DAT name="GRP">DUMMY</DAT>
 <DAT name="UBASE">SVN</DAT>
@@ -1458,7 +1185,7 @@ end ;warning</DAT>
 <DAT name="HTML_CTRLTYPE">U_INPUT</DAT>
 </OCC>
 <OCC>
-<DAT name="UTIMESTAMP">2010-10-25T15:48:34.00</DAT>
+<DAT name="UTIMESTAMP">2016-12-12T17:45:53.00</DAT>
 <DAT name="ULABEL">INTABLE</DAT>
 <DAT name="GRP">DUMMY</DAT>
 <DAT name="UBASE">SVN</DAT>
@@ -1471,7 +1198,7 @@ end ;warning</DAT>
 <DAT name="HTML_CTRLTYPE">U_INPUT</DAT>
 </OCC>
 <OCC>
-<DAT name="UTIMESTAMP">2010-10-25T15:48:34.00</DAT>
+<DAT name="UTIMESTAMP">2016-12-12T17:45:53.00</DAT>
 <DAT name="ULABEL">ISUNIFACEEXPORT</DAT>
 <DAT name="GRP">DUMMY</DAT>
 <DAT name="UBASE">SVN</DAT>
@@ -1484,7 +1211,7 @@ end ;warning</DAT>
 <DAT name="HTML_CTRLTYPE">U_INPUT</DAT>
 </OCC>
 <OCC>
-<DAT name="UTIMESTAMP">2010-10-25T15:48:34.00</DAT>
+<DAT name="UTIMESTAMP">2016-12-12T17:45:53.00</DAT>
 <DAT name="ULABEL">LATEST_TIMESTAMP</DAT>
 <DAT name="GRP">DUMMY</DAT>
 <DAT name="UBASE">SVN</DAT>
@@ -1497,7 +1224,7 @@ end ;warning</DAT>
 <DAT name="HTML_CTRLTYPE">U_INPUT</DAT>
 </OCC>
 <OCC>
-<DAT name="UTIMESTAMP">2010-10-25T15:48:34.00</DAT>
+<DAT name="UTIMESTAMP">2016-12-12T17:45:53.00</DAT>
 <DAT name="ULABEL">LATEST_TIMESTAMP</DAT>
 <DAT name="GRP">OBJECT</DAT>
 <DAT name="UBASE">SVN</DAT>
@@ -1510,7 +1237,7 @@ end ;warning</DAT>
 <DAT name="HTML_CTRLTYPE">U_INPUT</DAT>
 </OCC>
 <OCC>
-<DAT name="UTIMESTAMP">2010-10-25T15:48:34.00</DAT>
+<DAT name="UTIMESTAMP">2016-12-12T17:45:53.00</DAT>
 <DAT name="ULABEL">MODEL</DAT>
 <DAT name="GRP">DSC</DAT>
 <DAT name="UBASE">SVN</DAT>
@@ -1523,7 +1250,7 @@ end ;warning</DAT>
 <DAT name="HTML_CTRLTYPE">U_INPUT</DAT>
 </OCC>
 <OCC>
-<DAT name="UTIMESTAMP">2010-10-25T15:48:34.00</DAT>
+<DAT name="UTIMESTAMP">2016-12-12T17:45:53.00</DAT>
 <DAT name="ULABEL">NAME</DAT>
 <DAT name="GRP">DAT</DAT>
 <DAT name="UBASE">SVN</DAT>
@@ -1536,7 +1263,7 @@ end ;warning</DAT>
 <DAT name="HTML_CTRLTYPE">U_INPUT</DAT>
 </OCC>
 <OCC>
-<DAT name="UTIMESTAMP">2010-10-25T15:48:34.00</DAT>
+<DAT name="UTIMESTAMP">2016-12-12T17:45:53.00</DAT>
 <DAT name="ULABEL">NAME</DAT>
 <DAT name="GRP">DSC</DAT>
 <DAT name="UBASE">SVN</DAT>
@@ -1549,7 +1276,7 @@ end ;warning</DAT>
 <DAT name="HTML_CTRLTYPE">U_INPUT</DAT>
 </OCC>
 <OCC>
-<DAT name="UTIMESTAMP">2010-10-25T15:48:34.00</DAT>
+<DAT name="UTIMESTAMP">2016-12-12T17:45:53.00</DAT>
 <DAT name="ULABEL">NAME</DAT>
 <DAT name="GRP">FLD</DAT>
 <DAT name="UBASE">SVN</DAT>
@@ -1562,7 +1289,7 @@ end ;warning</DAT>
 <DAT name="HTML_CTRLTYPE">U_INPUT</DAT>
 </OCC>
 <OCC>
-<DAT name="UTIMESTAMP">2010-10-25T15:48:34.00</DAT>
+<DAT name="UTIMESTAMP">2016-12-12T17:45:53.00</DAT>
 <DAT name="ULABEL">OBJECT_LANG</DAT>
 <DAT name="GRP">DUMMY</DAT>
 <DAT name="UBASE">SVN</DAT>
@@ -1575,7 +1302,7 @@ end ;warning</DAT>
 <DAT name="HTML_CTRLTYPE">U_INPUT</DAT>
 </OCC>
 <OCC>
-<DAT name="UTIMESTAMP">2010-10-25T15:48:34.00</DAT>
+<DAT name="UTIMESTAMP">2016-12-12T17:45:53.00</DAT>
 <DAT name="ULABEL">OBJECT_LANG</DAT>
 <DAT name="GRP">OBJECT</DAT>
 <DAT name="UBASE">SVN</DAT>
@@ -1588,7 +1315,7 @@ end ;warning</DAT>
 <DAT name="HTML_CTRLTYPE">U_INPUT</DAT>
 </OCC>
 <OCC>
-<DAT name="UTIMESTAMP">2010-10-25T15:48:34.00</DAT>
+<DAT name="UTIMESTAMP">2016-12-12T17:45:53.00</DAT>
 <DAT name="ULABEL">OBJECT_LIB</DAT>
 <DAT name="GRP">DUMMY</DAT>
 <DAT name="UBASE">SVN</DAT>
@@ -1601,7 +1328,7 @@ end ;warning</DAT>
 <DAT name="HTML_CTRLTYPE">U_INPUT</DAT>
 </OCC>
 <OCC>
-<DAT name="UTIMESTAMP">2010-10-25T15:48:34.00</DAT>
+<DAT name="UTIMESTAMP">2016-12-12T17:45:53.00</DAT>
 <DAT name="ULABEL">OBJECT_LIB</DAT>
 <DAT name="GRP">OBJECT</DAT>
 <DAT name="UBASE">SVN</DAT>
@@ -1614,7 +1341,7 @@ end ;warning</DAT>
 <DAT name="HTML_CTRLTYPE">U_INPUT</DAT>
 </OCC>
 <OCC>
-<DAT name="UTIMESTAMP">2010-10-25T15:48:34.00</DAT>
+<DAT name="UTIMESTAMP">2016-12-12T17:45:53.00</DAT>
 <DAT name="ULABEL">OBJECT_NAME</DAT>
 <DAT name="GRP">DUMMY</DAT>
 <DAT name="UBASE">SVN</DAT>
@@ -1627,7 +1354,7 @@ end ;warning</DAT>
 <DAT name="HTML_CTRLTYPE">U_INPUT</DAT>
 </OCC>
 <OCC>
-<DAT name="UTIMESTAMP">2010-10-25T15:48:34.00</DAT>
+<DAT name="UTIMESTAMP">2016-12-12T17:45:53.00</DAT>
 <DAT name="ULABEL">OBJECT_NAME</DAT>
 <DAT name="GRP">OBJECT</DAT>
 <DAT name="UBASE">SVN</DAT>
@@ -1640,7 +1367,7 @@ end ;warning</DAT>
 <DAT name="HTML_CTRLTYPE">U_INPUT</DAT>
 </OCC>
 <OCC>
-<DAT name="UTIMESTAMP">2010-10-25T15:48:34.00</DAT>
+<DAT name="UTIMESTAMP">2016-12-12T17:45:53.00</DAT>
 <DAT name="ULABEL">OBJECT_TYPE</DAT>
 <DAT name="GRP">DUMMY</DAT>
 <DAT name="UBASE">SVN</DAT>
@@ -1653,7 +1380,7 @@ end ;warning</DAT>
 <DAT name="HTML_CTRLTYPE">U_INPUT</DAT>
 </OCC>
 <OCC>
-<DAT name="UTIMESTAMP">2010-10-25T15:48:34.00</DAT>
+<DAT name="UTIMESTAMP">2016-12-12T17:45:53.00</DAT>
 <DAT name="ULABEL">OBJECT_TYPE</DAT>
 <DAT name="GRP">OBJECT</DAT>
 <DAT name="UBASE">SVN</DAT>
@@ -1666,7 +1393,7 @@ end ;warning</DAT>
 <DAT name="HTML_CTRLTYPE">U_INPUT</DAT>
 </OCC>
 <OCC>
-<DAT name="UTIMESTAMP">2010-10-25T15:48:34.00</DAT>
+<DAT name="UTIMESTAMP">2016-12-12T17:45:53.00</DAT>
 <DAT name="ULABEL">RELEASE</DAT>
 <DAT name="GRP">DUMMY</DAT>
 <DAT name="UBASE">SVN</DAT>
@@ -1679,7 +1406,7 @@ end ;warning</DAT>
 <DAT name="HTML_CTRLTYPE">U_INPUT</DAT>
 </OCC>
 <OCC>
-<DAT name="UTIMESTAMP">2010-10-25T15:48:34.00</DAT>
+<DAT name="UTIMESTAMP">2016-12-12T17:45:53.00</DAT>
 <DAT name="ULABEL">RELEASE</DAT>
 <DAT name="GRP">UNIFACE</DAT>
 <DAT name="UBASE">SVN</DAT>
@@ -1692,7 +1419,7 @@ end ;warning</DAT>
 <DAT name="HTML_CTRLTYPE">U_INPUT</DAT>
 </OCC>
 <OCC>
-<DAT name="UTIMESTAMP">2010-10-25T15:48:34.00</DAT>
+<DAT name="UTIMESTAMP">2016-12-12T17:45:53.00</DAT>
 <DAT name="ULABEL">TABLE_LIST</DAT>
 <DAT name="GRP">DUMMY</DAT>
 <DAT name="UBASE">SVN</DAT>
@@ -1705,7 +1432,7 @@ end ;warning</DAT>
 <DAT name="HTML_CTRLTYPE">U_INPUT</DAT>
 </OCC>
 <OCC>
-<DAT name="UTIMESTAMP">2010-10-25T15:48:34.00</DAT>
+<DAT name="UTIMESTAMP">2016-12-12T17:45:53.00</DAT>
 <DAT name="ULABEL">UNIFACE_RELEASE</DAT>
 <DAT name="GRP">DUMMY</DAT>
 <DAT name="UBASE">SVN</DAT>
@@ -1718,7 +1445,7 @@ end ;warning</DAT>
 <DAT name="HTML_CTRLTYPE">U_INPUT</DAT>
 </OCC>
 <OCC>
-<DAT name="UTIMESTAMP">2010-10-25T15:48:34.00</DAT>
+<DAT name="UTIMESTAMP">2016-12-12T17:45:53.00</DAT>
 <DAT name="ULABEL">XMLENGINE</DAT>
 <DAT name="GRP">UNIFACE</DAT>
 <DAT name="UBASE">SVN</DAT>
