@@ -167,8 +167,8 @@
  pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\F1,0,0,0,,0,0,0,," />
 </DSC>
 <OCC>
-<DAT name="UTIMESTAMP">2016-05-10T16:51:08.00</DAT>
-<DAT name="UCOMPSTAMP">2016-05-12T17:41:25.00</DAT>
+<DAT name="UTIMESTAMP">2017-01-05T15:50:57.00</DAT>
+<DAT name="UCOMPSTAMP">2017-01-05T16:12:24.00</DAT>
 <DAT name="ULABEL">VC_SETTINGS_S</DAT>
 <DAT name="UDESCR" xml:space='preserve'>Version Control Settings</DAT>
 <DAT name="WVPOS">0</DAT>
@@ -248,21 +248,95 @@ end ; lpGetBooleanSetting
 operation getWorkingCopyPath
 ;--------------------------------------------------------------------
 params
-	String pWorkingCopyPath	: OUT
-	String pMessages			: INOUT
+	String pWorkingCopyPath : OUT
+	String pMessages        : INOUT
 endparams
 
 variables
 	String vWorkingDir
+	String vAsnFile
 endvariables
 
 	call lpGetSetting("SOURCE_DIR", pWorkingCopyPath, pMessages)
+
+	if (pWorkingCopyPath = "") ; Logical Not configured
+		putitem pMessages, -1, "Not configured (via .asn file logicals) - export synchronization will not be performed"
+		putitem pMessages, -1, "Auto-migration of settings from previous versions (VC_SETTINGS table &amp; vc_path_settings.xml) is not currently available"
+
+		; Create a template include .asn if one doesn't already exist
+		if ($lfileexists("asn") = 2)
+			vAsnFile = "asn\vc.asn"
+		elseif ($lfileexists("adm") = 2)
+			vAsnFile = "adm\vc.asn"
+		else
+			vAsnFile = "vc.asn"
+		endif
+		if ($lfileexists(vAsnFile) = 0)
+			lfiledump /text $defaultLogicals, vAsnFile
+			if ($status &gt;= 0)
+				putitem pMessages, -1, "Default settings have been written to %%vAsnFile%%% for review &amp; inclusion in your idf.asn"
+			endif
+		else
+			putitem pMessages, -1, "Please include %%vAsnFile%%% in your idf.asn, e.g. #file %%vAsnFile%%%, and restart"
+		endif
+		return &lt;FAILED&gt;
+	endif
 
 	;The source directory is relative to the working directory
 	vWorkingDir = $ldir()
 
 	pWorkingCopyPath = lpConcatPaths(vWorkingDir, pWorkingCopyPath)
 	return &lt;OK&gt;
+
+defaultLogicals:blockdata ~
+;Version Control Sync Tool Default Configuration - please modify and include in your .asn
+[LOGICALS]
+;The root folder to export source files to (relative to working directory)
+SOURCE_DIR              src
+;Run sync automatically when opening tool (Project menu option)
+AUTO_SYNC               1
+;Include signatures in the component export files
+INCLUDE_COMPONENT_SIGS  0
+;Force synchronization of all objects
+;When enabled a number of performance optimisations are disabled
+FULL_SYNC_DEFAULT       0
+;Include library definition in library object exports
+INCLUDE_LIB             0
+;Enable exporting of signatures that only have a Uniface implementation
+EXPORT_UF_SIG           0
+
+;Source Export Paths - relative to SOURCE_DIR above
+FORM_PATH            components\frm\&lt;object&gt;.cmx
+USP_PATH             components\usp\&lt;object&gt;.cmx
+DSP_PATH             components\dsp\&lt;object&gt;.cmx
+REPORT_PATH          components\rpt\&lt;object&gt;.cmx
+SVC_PATH             components\svc\&lt;object&gt;.cmx
+SESSION_SVC_PATH     components\ssv\&lt;object&gt;.cmx
+ENT_SVC_PATH         components\esv\&lt;object&gt;.cmx
+
+MODEL_PATH           models\&lt;object&gt;.amx
+SIGNATURE_PATH       signatures\&lt;object&gt;.sgx
+STARTUP_SHELL_PATH   startupshells\&lt;object&gt;.shx
+
+CONSTANT_PATH        library\constants\&lt;lib&gt;.cnx
+DEVICE_PATH          library\device table\&lt;lib&gt;\&lt;object&gt;.ktx
+FORMAT_PATH          library\format\&lt;lib&gt;\&lt;object&gt;.fmx
+GLOBAL_PROC_PATH     library\proc\&lt;lib&gt;\&lt;object&gt;.prx
+GLYPH_PATH           library\glyph\&lt;lib&gt;\&lt;lang&gt;\&lt;object&gt;.glx
+INCLUDE_PATH         library\include\&lt;lib&gt;\&lt;object&gt;.ipx
+LIBRARY_DEF_PATH     library\&lt;object&gt;.lbx
+MENU_PATH            library\menu\&lt;lib&gt;\&lt;lang&gt;\&lt;object&gt;.mnx
+MESSAGE_PATH         library\message\&lt;lib&gt;\&lt;lang&gt;\&lt;object&gt;.msx
+PANEL_PATH           library\panel\&lt;lib&gt;\&lt;object&gt;.pnx
+TRANSLATION_PATH     library\translation table\&lt;lib&gt;\&lt;object&gt;.dtx
+VARIABLES_PATH       library\variables\&lt;lib&gt;\&lt;object&gt;.vrx
+
+ENT_INTERFACE_PATH   templates\entity\interface\&lt;object&gt;.eix
+FIELD_TEMPLATE_PATH  templates\field\template\&lt;object&gt;.ftx
+FLD_INTERFACE_PATH   templates\field\interface\&lt;object&gt;.fix
+FLD_LAYOUT_PATH      templates\field\layout\&lt;object&gt;.flx
+FLD_SYNTAX_PATH      templates\field\syntax\&lt;object&gt;.fsx
+~
 
 end ;getWorkingCopyPath
 
@@ -288,7 +362,10 @@ endvariables
 	$status = $instancehandle-&gt;getWorkingCopyPath(pBaseExportPath, pMessages)
 	if($status &lt; 0)
 		return &lt;FAILED&gt;
-	endif		
+	endif
+	if ($lfileexists(pBaseExportPath) = 0)
+		ldircreate pBaseExportPath
+	endif
 
 	return &lt;OK&gt;
 
