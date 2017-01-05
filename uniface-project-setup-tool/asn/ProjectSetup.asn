@@ -4,7 +4,7 @@ $search_resources	resources_only
 
 
 [RESOURCES]
-.\ext\UnifaceMeta.uar
+.\ext\MetaTools.uar
 
 usys:usys.uar
 usys:usysicon.uar
