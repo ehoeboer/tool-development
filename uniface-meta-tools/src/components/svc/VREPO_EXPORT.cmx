@@ -167,8 +167,8 @@
  pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\F1,0,0,0,,0,0,0,," />
 </DSC>
 <OCC>
-<DAT name="UTIMESTAMP">2016-05-18T09:45:17.00</DAT>
-<DAT name="UCOMPSTAMP">2016-05-18T11:16:20.00</DAT>
+<DAT name="UTIMESTAMP">2017-01-05T15:43:44.00</DAT>
+<DAT name="UCOMPSTAMP">2017-01-05T15:44:00.00</DAT>
 <DAT name="ULABEL">VREPO_EXPORT</DAT>
 <DAT name="UDESCR" xml:space='preserve'>Wrapper of $ude export</DAT>
 <DAT name="WVPOS">0</DAT>
@@ -842,7 +842,7 @@ endparams
 	endif
 
 	if($lfileexists(pBaseDirectory) != 2)
-		call lpAddMessage("Base directory does not exist", pMessages)
+		call lpAddMessage("Base directory %%pBaseDirectory%%% does not exist", pMessages)
 		return &lt;FAILED&gt;
 	endif
 
