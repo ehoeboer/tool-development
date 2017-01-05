@@ -26,7 +26,9 @@ Version Control has been written and tested with:
 	C:\\UnifacePackages\\VersionControl\\VersionControl.uar
 	C:\\UnifacePackages\\VersionControl\\MetaTools.uar
 	
- * Configure logicals to tell the tool where source is stored and how to behave.  Note that the contents of this md file contains double backslashes instead of single backslashes for markup reasons - you can copy these out of the idf.asn provided in the tool development environment & modify if you prefer.
+ * Configure logicals to tell the tool where source is stored and how to behave. 
+   If you start the tool without configuring, it will create a default vc.asn which you can include in your idf.asn, e.g. #file .\asn\vc.asn
+   
 	[LOGICALS]
 	;The file to export source files to (in this case a relative path from the working folder)
 	SOURCE_DIR              src
