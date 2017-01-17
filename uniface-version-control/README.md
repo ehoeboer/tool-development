@@ -1,4 +1,4 @@
- # Version Control #
+# Version Control #
 
 The Version Control project is a tool that can be run from the Uniface IDE's additional menu. 
 It synchronises your repository database with the file system so that your source code can be versioned with your preferred version control tools (such as git or subversion).
@@ -20,14 +20,17 @@ Version Control has been written and tested with:
 
 ## Configure your projects to use Version Control ##
 
- * Configure the .asn for your repository to include the packaged resources, e.g.
+
+* Configure the .asn for your repository to include the packaged resources, e.g.
 	[RESOURCES]
 	.\\resources
 	C:\\UnifacePackages\\VersionControl\\VersionControl.uar
 	C:\\UnifacePackages\\VersionControl\\MetaTools.uar
 	
  * Configure logicals to tell the tool where source is stored and how to behave. 
-   If you start the tool without configuring, it will create a default vc.asn which you can include in your idf.asn, e.g. #file .\asn\vc.asn
+   If you start the tool without configuring, it will create a default vc.asn which you can include in your idf.asn, e.g.
+   ```
+   #file .\asn\vc.asn
    
 	[LOGICALS]  
 	;The file to export source files to (in this case a relative path from the working folder)  
@@ -70,7 +73,7 @@ Version Control has been written and tested with:
 	FLD_INTERFACE_PATH   templates\\field\\interface\\<object>.fix  
 	FLD_LAYOUT_PATH      templates\\field\\layout\\<object>.flx  
 	FLD_SYNTAX_PATH      templates\\field\\syntax\\<object>.fsx  
-	
+	```
  * Configure a folder to contain the exported source code as per the SRC_DIR logical, with suitable write permissions, e.g. src
  * Run the appropriate SQL script on your database to create the VC_STATUS table, which is used to track import and export times for each component (see the SQL folder). If using Sqlite, a tools such as sqliteman can be used.
  * Import the additional menu (if you don't already have one), and filesync menu from the supplied "imports" in the zip. 
