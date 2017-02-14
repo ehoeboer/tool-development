@@ -167,8 +167,8 @@
  pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\F1,0,0,0,,0,0,0,," />
 </DSC>
 <OCC>
-<DAT name="UTIMESTAMP">2017-01-05T15:43:44.00</DAT>
-<DAT name="UCOMPSTAMP">2017-01-05T15:44:00.00</DAT>
+<DAT name="UTIMESTAMP">2017-02-14T07:59:06.00</DAT>
+<DAT name="UCOMPSTAMP">2017-02-14T09:01:38.00</DAT>
 <DAT name="ULABEL">VREPO_EXPORT</DAT>
 <DAT name="UDESCR" xml:space='preserve'>Wrapper of $ude export</DAT>
 <DAT name="WVPOS">0</DAT>
@@ -319,12 +319,24 @@ endvariables
 	  case "UCSCH"
 		setocc "UCSCH", 1
 		while ($status &gt; 0 &amp; U_VLAB.UCSCH != "")
-			#for SUBENTITY = (UCFIELD,UCTABLE,UCRELSH,UCKEY,UCGROUP,UCTABLE)
+			#for SUBENTITY = (UCFIELD,UCTABLE,UCKEY,UCGROUP,UCTABLE)
 			selectdb max(UTIMESTAMP) from "&lt;SUBENTITY&gt;" u_where (U_VLAB.&lt;SUBENTITY&gt; = U_VLAB.UCSCH) to ($1)
 			if ($1 &gt; UTIMESTAMP.UCSCH)
 				UTIMESTAMP.UCSCH = $1
 			endif
 			#endfor
+
+			if (U_VLAB.UCRELSH = U_VLAB.UCSCH &amp; U_RVLAB.UCRELSH = U_VLAB.UCSCH)
+				selectdb max(UTIMESTAMP) from "UCRELSH" u_where (U_VLAB.UCRELSH = U_VLAB.UCSCH) to ($1)
+				if ($1 &gt; UTIMESTAMP.UCSCH)
+					UTIMESTAMP.UCSCH = $1
+				endif
+			else
+				selectdb max(UTIMESTAMP) from "UCRELSH" u_where (U_RVLAB.UCRELSH = U_VLAB.UCSCH) to ($1)
+				if ($1 &gt; UTIMESTAMP.UCSCH)
+					UTIMESTAMP.UCSCH = $1
+				endif
+			endif
 
 			selectdb max(UTIMESTAMP) from "UCDTYP" u_where (UMODELNAME.UCDTYP = U_VLAB.UCSCH) to ($1)
 			if ($1 &gt; UTIMESTAMP.UCSCH)
