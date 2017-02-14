@@ -1,7 +1,7 @@
 ﻿<?xml version='1.0' encoding='UTF-8' ?>
 <!-- Created by Uniface - (C) Uniface B.V. All rights reserved -->
 <!DOCTYPE UNIFACE PUBLIC "UNIFACE.DTD" "UNIFACE.DTD">
-<UNIFACE release="9.6" xmlengine="2.0">
+<UNIFACE release="9.7" xmlengine="2.0">
 <TABLE>
 <DSC name="UFORM" model="DICT" system="S" pseudo ="73" level="1" noupdate="0"
  rbk="0" ffsql="0" transnr="0" segsize="0" ufocc="1000" charset=".U">
@@ -167,8 +167,8 @@
  pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\F1,0,0,0,,0,0,0,," />
 </DSC>
 <OCC>
-<DAT name="UTIMESTAMP">2016-02-18T16:09:23.00</DAT>
-<DAT name="UCOMPSTAMP">2016-02-18T16:09:23.00</DAT>
+<DAT name="UTIMESTAMP">2017-02-14T09:05:36.00</DAT>
+<DAT name="UCOMPSTAMP">2017-02-14T09:13:29.00</DAT>
 <DAT name="ULABEL">VC_DEBUG</DAT>
 <DAT name="UDESCR" xml:space='preserve'>Debug Commands</DAT>
 <DAT name="WVPOS">3</DAT>
@@ -226,6 +226,14 @@ $variation        = "VC_LIBRARY"
 call lpSetupServices($VCINTERFACE$)
 if($status &lt; 0)
 	return &lt;FAILED&gt;
+endif
+
+;-----------------------------------------------------
+; Set version control implementation to filesync
+;-----------------------------------------------------
+$status = $vcMain$-&gt;setVcHandler("FIL", $vcWrp$, vMessages)
+if ($status &lt; 0)
+	message/error vMessages
 endif
 
 ;----------------------------------------------------
@@ -301,7 +309,7 @@ end ;lpSetFieldSyntax</DAT>
  &uFRM;TYP=L&uSEP;NAM=HEADING_2.DUMMY&uSEP;WID=33&uSEP;HEI=2&uSEP;CAR=SerifHuge&uSEP;LAB=Export Changed&uFRM; &uFRM;TYP=F&uSEP;NAM=EXPORT_CHANGED_BUTTON&uSEP;WID=9&uSEP;HEI=2&uFRM;&uFRM;TYP=L&uSEP;NAM=EXPORT_CHANGED_BUTTON.DUMMY&uSEP;WID=1&uSEP;HEI=2&uSEP;LAB=$text(Export)&uFRM;
 
  &uFRM;TYP=D&uSEP;WID=44&uSEP;HEI=1&uSEP;HOC=1&uSEP;VOC=1&uSEP;BOR=F&uFRM;
- &uFRM;TYP=L&uSEP;NAM=HEADING_3.DUMMY&uSEP;WID=33&uSEP;HEI=2&uSEP;CAR=SerifHuge&uSEP;LAB=Import All&uFRM; &uFRM;TYP=F&uSEP;NAM=IMPORT_BUTTON&uSEP;WID=9&uSEP;HEI=2&uFRM;&uFRM;TYP=L&uSEP;NAM=IMPORT_BUTTON.DUMMY&uSEP;WID=1&uSEP;HEI=2&uSEP;LAB=$text(Import)&uFRM;
+ &uFRM;TYP=L&uSEP;NAM=HEADING_3.DUMMY&uSEP;WID=16&uSEP;HEI=2&uSEP;CAR=SerifHuge&uSEP;LAB=Import All&uFRM; &uFRM;TYP=L&uSEP;NAM=DO_FORCE.DUMMY&uSEP;WID=13&uSEP;HEI=2&uSEP;ALN=R&uSEP;ALV=C&uSEP;LAB=$text(FORCE_IMPORT)&uFRM;&uFRM;TYP=F&uSEP;NAM=DO_FORCE&uSEP;WID=2&uSEP;HEI=2&uFRM;  &uFRM;TYP=F&uSEP;NAM=IMPORT_BUTTON&uSEP;WID=9&uSEP;HEI=2&uFRM;&uFRM;TYP=L&uSEP;NAM=IMPORT_BUTTON.DUMMY&uSEP;WID=1&uSEP;HEI=2&uSEP;LAB=$text(Import)&uFRM;
 
  &uFRM;TYP=D&uSEP;WID=44&uSEP;HEI=1&uSEP;HOC=1&uSEP;VOC=1&uSEP;BOR=F&uFRM;
  &uFRM;TYP=L&uSEP;NAM=LABEL_1&uSEP;WID=33&uSEP;HEI=2&uSEP;CAR=SerifHuge&uSEP;LAB=File Status&uFRM; &uFRM;TYP=F&uSEP;NAM=FILESTATUS_BUTTON&uSEP;WID=9&uSEP;HEI=2&uFRM;&uFRM;TYP=L&uSEP;NAM=FILESTATUS_BUTTON.DUMMY&uSEP;WID=1&uSEP;HEI=2&uSEP;LAB=$text(FILESTATUS)&uFRM;
@@ -801,6 +809,21 @@ DO_ALL.DUMMY = ""</DAT>
 <DAT name="HTML_CTRLTYPE">U_INPUT</DAT>
 </OCC>
 <OCC>
+<DAT name="UTIMESTAMP">2017-02-13T17:20:53.00</DAT>
+<DAT name="ULABEL">DO_FORCE</DAT>
+<DAT name="GRP">DUMMY</DAT>
+<DAT name="UBASE">DUMMY</DAT>
+<DAT name="UFORM">VC_DEBUG</DAT>
+<DAT name="U_DTYP">B</DAT>
+<DAT name="U_INDB">N</DAT>
+<DAT name="INTERFACEMOD">B1</DAT>
+<DAT name="WIDGETTYPE">CHECKBOX</DAT>
+<DAT name="UINHERIT">F</DAT>
+<DAT name="UISOBJID">F</DAT>
+<DAT name="HTML_CTRLTYPE">U_INPUT</DAT>
+<DAT name="WEBWIDGETTYPE">EDITBOX</DAT>
+</OCC>
+<OCC>
 <DAT name="UTIMESTAMP">2014-07-28T10:23:10.00</DAT>
 <DAT name="ULABEL">DO_FORMATS</DAT>
 <DAT name="GRP">DUMMY</DAT>
@@ -1228,7 +1251,7 @@ vcStatus-&gt;exec()
 <DAT name="WEBWIDGETTYPE">EDITBOX</DAT>
 </OCC>
 <OCC>
-<DAT name="UTIMESTAMP">2014-07-28T10:23:10.00</DAT>
+<DAT name="UTIMESTAMP">2017-02-13T17:21:26.00</DAT>
 <DAT name="ULABEL">IMPORT_BUTTON</DAT>
 <DAT name="GRP">DUMMY</DAT>
 <DAT name="UBASE">DUMMY</DAT>
@@ -1254,7 +1277,7 @@ if ($status = 1)
 	$status = $sourceImp$-&gt;setBaseDirectory(vExportPath, vMessages)
 	#include VC_LIBRARY:IP_POSTCALL_PRES
 
-	$status = $sourceImp$-&gt;importAll(vMessages)
+	$status = $sourceImp$-&gt;importAll(DO_FORCE, vMessages)
 	#include VC_LIBRARY:IP_POSTCALL_PRES
 endif
 </DAT>

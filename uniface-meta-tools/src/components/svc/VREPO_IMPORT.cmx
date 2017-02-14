@@ -167,8 +167,8 @@
  pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\F1,0,0,0,,0,0,0,," />
 </DSC>
 <OCC>
-<DAT name="UTIMESTAMP">2016-05-12T16:40:22.00</DAT>
-<DAT name="UCOMPSTAMP">2016-05-12T17:40:30.00</DAT>
+<DAT name="UTIMESTAMP">2017-02-14T08:00:58.00</DAT>
+<DAT name="UCOMPSTAMP">2017-02-14T09:01:38.00</DAT>
 <DAT name="ULABEL">VREPO_IMPORT</DAT>
 <DAT name="UDESCR" xml:space='preserve'>Wrapper of $ude import</DAT>
 <DAT name="WVPOS">0</DAT>
@@ -530,7 +530,8 @@ end ; setLogger
 operation importAll
 ;--------------------------------------------------------------------
 params
-	String	pMessages	: INOUT
+	Boolean	pForceImport	: IN
+	String	pMessages		: INOUT
 endparams
 
 variables
@@ -538,6 +539,8 @@ variables
 endvariables
 
 	putitem/id vInParams, "PATH", $baseDir$	
+	putitem/id vInParams, "FORCE_IMPORT", pForceImport
+
 	$instancehandle-&gt;importFromPath(vInParams, pMessages)
 	return &lt;OK&gt;
 
