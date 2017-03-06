@@ -1,7 +1,7 @@
 ﻿<?xml version='1.0' encoding='UTF-8' ?>
 <!-- Created by Uniface - (C) Uniface B.V. All rights reserved -->
 <!DOCTYPE UNIFACE PUBLIC "UNIFACE.DTD" "UNIFACE.DTD">
-<UNIFACE release="9.6" xmlengine="2.0">
+<UNIFACE release="9.7" xmlengine="2.0">
 <TABLE>
 <DSC name="UFORM" model="DICT" system="S" pseudo ="73" level="1" noupdate="0"
  rbk="0" ffsql="0" transnr="0" segsize="0" ufocc="1000" charset=".U">
@@ -167,8 +167,8 @@
  pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\F1,0,0,0,,0,0,0,," />
 </DSC>
 <OCC>
-<DAT name="UTIMESTAMP">2016-02-19T10:33:45.00</DAT>
-<DAT name="UCOMPSTAMP">2016-02-19T10:33:46.00</DAT>
+<DAT name="UTIMESTAMP">2017-02-24T09:57:27.00</DAT>
+<DAT name="UCOMPSTAMP">2017-02-24T10:58:13.00</DAT>
 <DAT name="ULABEL">VREPO_DELETE</DAT>
 <DAT name="FTYP">Q</DAT>
 <DAT name="UDESCR" xml:space='preserve'>Source Deletion Service</DAT>
@@ -1067,12 +1067,14 @@ if ($status = -10) reload</DAT>
 <DAT name="UISASSOC">F</DAT>
 </OCC>
 <OCC>
-<DAT name="UTIMESTAMP">2012-06-29T08:33:12.00</DAT>
+<DAT name="UTIMESTAMP">2017-02-24T09:57:27.00</DAT>
 <DAT name="ULABEL">UCRELSH</DAT>
 <DAT name="UBASE">DICT</DAT>
 <DAT name="UFORM">VREPO_DELETE</DAT>
 <DAT name="UINHERIT">F</DAT>
-<DAT name="GETOCC" xml:space='preserve'>read u_where (U_VLAB.UCRELSH = U_VLAB.UCSCH)</DAT>
+<DAT name="GETOCC" xml:space='preserve'>;read u_where (U_VLAB.UCRELSH = U_VLAB.UCSCH)
+read u_where (U_RVLAB.UCRELSH = U_VLAB.UCSCH)
+</DAT>
 <DAT name="DELOCC">delete</DAT>
 <DAT name="LCK" xml:space='preserve'>lock
 if ($status = -10) reload</DAT>
