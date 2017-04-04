@@ -167,8 +167,8 @@
  pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\F1,0,0,0,,0,0,0,," />
 </DSC>
 <OCC>
-<DAT name="UTIMESTAMP">2016-02-22T14:14:29.00</DAT>
-<DAT name="UCOMPSTAMP">2016-02-22T14:13:05.00</DAT>
+<DAT name="UTIMESTAMP">2017-03-30T06:07:11.00</DAT>
+<DAT name="UCOMPSTAMP">2017-03-30T16:12:10.00</DAT>
 <DAT name="ULABEL">VC_BUILD_S</DAT>
 <DAT name="UDESCR" xml:space='preserve'>Build Service</DAT>
 <DAT name="WVPOS">0</DAT>
@@ -219,6 +219,8 @@
 	$1 = $ude("compile",	"signature", "FIL_&uALL;",            "prcadditional=true")
 	$1 = $ude("compile",	"model",     "VC",                "prcadditional=true")
 	$1 = $ude("compile",	"dtd",       "VC_PATH_SETTINGS",  "prcadditional=true")
+	$1 = $ude("compile", 	"menu",      "FIL_&uALL;",            "prcadditional=true&uSEP;library=VC_LIBRARY")
+	;$1 = $ude("compile", 	"menu",      "FILE&uALL;",            "prcadditional=true&uSEP;library=USYS")
 	$1 = $ude("compile", 	"message",   "&uALL;",                "prcadditional=true&uSEP;library=VC_LIBRARY")
 	$1 = $ude("compile", 	"glyph",     "&uALL;",                "prcadditional=true&uSEP;library=VC_LIBRARY")
 
@@ -244,6 +246,7 @@
 	$1 = $ude("export", "field&uSEP;template",  "COMMAND_BUTTON", ".\build\source\UnifaceVC_Source.xml", "prcadditional=true&uSEP;keepopen=True&uSEP;append=True")
 	$1 = $ude("export", "library",          "VCOMMON_LIBRARY",".\build\source\UnifaceVC_Source.xml", "prcadditional=true&uSEP;keepopen=True&uSEP;append=True")
 	$1 = $ude("export", "library&uSEP;include", "&uALL;",             ".\build\source\UnifaceVC_Source.xml", "prcadditional=true&uSEP;keepopen=True&uSEP;append=True&uSEP;library=VCOMMON_LIBRARY")
+	$1 = $ude("export", "menu",             "FIL_&uALL;",         ".\build\source\UnifaceVC_Source.xml", "prcadditional=true&uSEP;keepopen=True&uSEP;append=True")
 	$1 = $ude("export", "menu",             "FILESYNC",       ".\build\source\UnifaceVC_Source.xml", "prcadditional=true&uSEP;keepopen=True&uSEP;append=True")
 
 	return 0</DAT>
