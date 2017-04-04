@@ -167,8 +167,8 @@
  pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\F1,0,0,0,,0,0,0,," />
 </DSC>
 <OCC>
-<DAT name="UTIMESTAMP">2017-01-05T15:50:57.00</DAT>
-<DAT name="UCOMPSTAMP">2017-01-05T16:12:24.00</DAT>
+<DAT name="UTIMESTAMP">2017-03-30T14:12:04.00</DAT>
+<DAT name="UCOMPSTAMP">2017-03-30T16:12:10.00</DAT>
 <DAT name="ULABEL">VC_SETTINGS_S</DAT>
 <DAT name="UDESCR" xml:space='preserve'>Version Control Settings</DAT>
 <DAT name="WVPOS">0</DAT>
@@ -255,6 +255,7 @@ endparams
 variables
 	String vWorkingDir
 	String vAsnFile
+	String vUsysPathLogical, vSourceDir
 endvariables
 
 	call lpGetSetting("SOURCE_DIR", pWorkingCopyPath, pMessages)
@@ -282,10 +283,20 @@ endvariables
 		return &lt;FAILED&gt;
 	endif
 
-	;The source directory is relative to the working directory
-	vWorkingDir = $ldir()
-
-	pWorkingCopyPath = lpConcatPaths(vWorkingDir, pWorkingCopyPath)
+	if ($lowercase(pWorkingCopyPath[1:4]) = "usys" &amp; $split(pWorkingCopyPath, 1, ":", vUsysPathLogical, vSourceDir) &gt; 0)
+		if ($fileexists($concat(vUsysPathLogical, ":")) = 0)
+			putitem pMessages, -1, $concat("The directory specified by the USYS path logical ", vUsysPathLogical, " does not exist!")
+			putitem pMessages, -1, "Please map the USYS path logical to an existing directory."
+			return &lt;FAILED&gt;
+		else
+			if (vSourceDir[1:1] = "\") vSourceDir = vSourceDir[2]
+			pWorkingCopyPath = $concat($item("FULLPATH", $fileproperties($concat(vUsysPathLogical, ":"))), vSourceDir)
+		endif
+	elseif (pWorkingCopyPath[1:2] != "\\" &amp; $scan(pWorkingCopyPath, ":") = 0)
+		;The source directory is relative to the working directory
+		vWorkingDir = $ldir()
+		pWorkingCopyPath = lpConcatPaths(vWorkingDir, pWorkingCopyPath)
+	endif
 	return &lt;OK&gt;
 
 defaultLogicals:blockdata ~
@@ -356,7 +367,7 @@ endparams
 
 variables
 	Boolean	vUseClusteringPrefs
-	String	vClusterPrefs
+	String	vClusterPrefs;, vUsysPathLogical, vSourceDir
 endvariables
 
 	$status = $instancehandle-&gt;getWorkingCopyPath(pBaseExportPath, pMessages)
@@ -365,6 +376,11 @@ endvariables
 	endif
 	if ($lfileexists(pBaseExportPath) = 0)
 		ldircreate pBaseExportPath
+		if($status &lt; 0)
+			putitem pMessages, -1, "Error creating/setting SOURCE_DIR directory!"
+			putitem pMessages, -1, $concat("SOURCE_DIR = ", pBaseExportPath)
+			return &lt;FAILED&gt;
+		endif
 	endif
 
 	return &lt;OK&gt;

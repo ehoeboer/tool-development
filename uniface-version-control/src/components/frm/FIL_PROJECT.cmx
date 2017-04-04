@@ -167,8 +167,8 @@
  pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\F1,0,0,0,,0,0,0,," />
 </DSC>
 <OCC>
-<DAT name="UTIMESTAMP">2016-05-18T10:57:29.00</DAT>
-<DAT name="UCOMPSTAMP">2016-05-18T11:58:18.00</DAT>
+<DAT name="UTIMESTAMP">2017-03-28T13:06:36.00</DAT>
+<DAT name="UCOMPSTAMP">2017-03-28T15:06:36.00</DAT>
 <DAT name="ULABEL">FIL_PROJECT</DAT>
 <DAT name="UDESCR" xml:space='preserve'>Filesync Project Screen</DAT>
 <DAT name="WVPOS">3</DAT>
@@ -207,49 +207,57 @@
 #Comment ----------------------------------------------
 </DAT>
 <DAT name="INIT" xml:space='preserve'>variables
-	String	 vMessages
-	String	 vStatus
+	String     vMessages
+	String     vStatus
 	Boolean bAutoSync
 endvariables
 
 message/nobeep "Starting UnifaceVC..."
 show
 
-$settingsSvc$-&gt;getFullSyncDefault(CHK_FULLSYNC.BUTTONS, vMessages)
-#include VC_LIBRARY:IP_POSTCALL_PRES
-
-$settingsSvc$-&gt;getAutoSync(bAutoSync, vMessages)
-#include VC_LIBRARY:IP_POSTCALL_PRES
-
-if (bAutoSync)
-
-	;----------------------------------------------------
-	; Export changed objects, sync repository with 
-	; working copy &amp; load screen, selecting the root node
-	;----------------------------------------------------
-	call lpSync("root")
-
-	message/hint "Synchronizing with filesystem. No integrated Version control interface configured."
-
-
-else
-
-	; Sync deferred until Sync button pressed (e.g. Shared repository)
-	call lpShowTree("root") ; Build and show tree
-	if ($status &lt; 0)
-		message/error "An error occurred - please see message frame for details"
+if ($baseDir$ != "")
+	
+	$settingsSvc$-&gt;getFullSyncDefault(CHK_FULLSYNC.BUTTONS, vMessages)
+	#include VC_LIBRARY:IP_POSTCALL_PRES
+	
+	$settingsSvc$-&gt;getAutoSync(bAutoSync, vMessages)
+	#include VC_LIBRARY:IP_POSTCALL_PRES
+	
+	if (bAutoSync)
+		
+		;----------------------------------------------------
+		; Export changed objects, sync repository with 
+		; working copy &amp; load screen, selecting the root node
+		;----------------------------------------------------
+		call lpSync("root")
+		
+		message/hint "Synchronizing with filesystem. No integrated Version control interface configured."
+		
+		
 	else
-		call lpDoMessages("Press sync to export Uniface changes prior to updating.")
-		message/clear
+		
+		; Sync deferred until Sync button pressed (e.g. Shared repository)
+		call lpShowTree("root") ; Build and show tree
+		if ($status &lt; 0)
+			message/error "An error occurred - please see message frame for details"
+		else
+			call lpDoMessages("Press sync to export Uniface changes prior to updating.")
+			message/clear
+		endif
+		
 	endif
-
-endif
-
-;----------------------------------------------------
-; Show the screen.
-;----------------------------------------------------
-edit
-</DAT>
+	
+	;----------------------------------------------------
+	; Show the screen.
+	;----------------------------------------------------
+	edit
+	
+else
+	
+	message/error "Configuration error!"
+	exit(&lt;FAILED&gt;)
+	
+endif</DAT>
 <DAT name="GENERAL" xml:space='preserve'>#include VCOMMON_LIBRARY:IP_ADD_MESSAGE
 #include VCOMMON_LIBRARY:IP_CONCAT_PATHS
 
