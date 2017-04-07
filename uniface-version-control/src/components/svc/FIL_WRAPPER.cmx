@@ -167,8 +167,8 @@
  pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\F1,0,0,0,,0,0,0,," />
 </DSC>
 <OCC>
-<DAT name="UTIMESTAMP">2016-05-10T09:55:02.00</DAT>
-<DAT name="UCOMPSTAMP">2016-05-12T17:41:31.00</DAT>
+<DAT name="UTIMESTAMP">2017-04-07T13:30:30.00</DAT>
+<DAT name="UCOMPSTAMP">2017-04-07T15:55:12.00</DAT>
 <DAT name="ULABEL">FIL_WRAPPER</DAT>
 <DAT name="UDESCR" xml:space='preserve'>Wrapper for file sync</DAT>
 <DAT name="WVPOS">0</DAT>
@@ -248,19 +248,18 @@ params
 	String  pBaseDir : IN
 	String  pDir     : IN
     Boolean pForce   : IN
+    String pProgress : IN
 endparams
 
 variables
 	String   vSubDir
 	String   vContent
 	String   vFilePath
-	Datetime vFileStamp
-	Datetime vRepoStamp
 	String   vType
 	String   vFolderContents
-	Boolean  vDoImport
-	String   vMessage
 	numeric  vStatus
+	numeric vSteps, vProgress, vFolderCount, vFolderIndex, vFileCount, vFileIndex
+	string vProgressFolders, vProgressFiles
 endvariables
 
 	;Check that pDir is a directory
@@ -274,7 +273,9 @@ endvariables
 	; Build nodes for all the folders under pDir
 	;----------------------------------------------------
 	vContent = $ldirlist(pDir, "dir")
-	forlist vFilePath in vContent
+    vFolderCount = $itemcount(vContent)
+    if (vFolderCount &gt; 0) vSteps = $number($itemnr(1, pProgress)) / vFolderCount
+	forlist vFilePath, vFolderIndex in vContent
 
 		if(vFilePath[1:1] != ".")
 			vSubDir = $concat(pDir, "\", vFilePath)
@@ -282,8 +283,10 @@ endvariables
 			;Does this folder have any child folders?
 			vFolderContents = $ldirlist(vSubDir, "dir")
 
-			call lpImportFolder(pBaseDir, vSubDir, pForce)
-
+			call lpImportFolder(pBaseDir, vSubDir, pForce, $concat(vSteps, "&uSEP;", ($number($itemnr(2, pProgress)) + (vFolderIndex-1)*vSteps)))
+			vProgress = (vFolderIndex*vSteps + $number($itemnr(2, pProgress)))[round]
+			vProgressFolders = "&gt;&gt;&gt; [Importing] Processed %%vProgress%%% %"
+			message/hint vProgressFolders
   		endif
 
 	endfor
@@ -291,43 +294,87 @@ endvariables
 	;----------------------------------------------------
 	; Build nodes for all the files under pDir
 	;----------------------------------------------------
-	vContent = ""
+
+	vProgressFolders = "&gt;&gt;&gt; [Importing] Processed %%$number($itemnr(2, pProgress))[round]%%% % - [%%pDir]"
 	vContent = $ldirlist(pDir, "file")
-	forlist vFilePath in vContent
+	vFileCount = $itemcount(vContent)
+	forlist vFilePath, vFileIndex in vContent
 
 		vFilePath = $concat(pDir, "\", vFilePath)
 
-		vFileStamp = $item("MODIFICATIONDATE", $lfileproperties(vFilePath))
-		$instanceparent-&gt;ValidateImportStamp(vFilePath, vFileStamp, vDoImport, vMessage)
-		if (vMessage != "")
-			call lpAddMessage(vMessage, $MESSAGES$)
-			vMessage = ""
-		endif
-	
-		if (vDoImport)
-			; Note: Forced import will not validate that XML timestamp is newer
-			; but still needs to parse the XML so we can get the latest timestamp
-			; (could alternatively be read from repository after import, but 
-			;  using this method as it might perform faster in case of remote database)
-			vStatus = $Importer$-&gt;importFile(vFilePath, pForce, vMessage)
-			if (vStatus = &lt;OK&gt;)
-				$IMPORT_COUNT$ += 1
-				$status = $importer$-&gt;getLatestTimestamp(vRepoStamp)
-				$instanceparent-&gt;LogImport(vFilePath, vRepoStamp, vFileStamp, vMessage)
-			endif
-			if (vMessage != "")
-				call lpAddMessage(vMessage, $MESSAGES$)
-				vMessage = ""
-			endif
+		call lpImportFile(vFilePath, pForce)
 
+		if (vFileIndex % 1000 = 0)
+			vProgressFiles = " - [Processed %%vFileIndex%%% of %%vFileCount%%% files]"
+			message/hint $concat(vProgressFolders, vProgressFiles)
 		endif
-	
+
 	endfor
+
+	message/hint vProgressFolders
 
 	return &lt;OK&gt;
 
 end ;lpImportFolder
 
+;--------------------------------------------------------------------
+entry lpImportFile
+;--------------------------------------------------------------------
+params
+	String  pFilePath : IN
+    Boolean pForce   : IN
+endparams
+
+variables
+	Datetime vFileStamp
+	Datetime vRepoStamp
+	String   vType
+	Boolean  vDoImport
+	String   vMessage
+	numeric  vStatus
+    numeric vSteps, vItemCount, vItemIndex
+endvariables
+
+	if (!$nocheck$)
+		vFileStamp = $item("MODIFICATIONDATE", $lfileproperties(pFilePath))
+		$instanceparent-&gt;ValidateImportStamp(pFilePath, vFileStamp, vDoImport, vMessage)
+		if (vMessage != "")
+			call lpAddMessage(vMessage, $MESSAGES$)
+			vMessage = ""
+		endif
+
+		if (pForce &amp; !vDoImport)
+			askmess/question "Object in repository is newer than object in export %%pFilePath%%%. Do you want to import it anyway?", $ASKMESS_ANSWERS$
+			if ($status = 3 | $status = 4)
+				$nocheck$ = 1
+			endif
+			vDoImport = 1
+		endif
+	else
+		vDoImport = 1
+	endif
+	
+	if (vDoImport)
+		; Note: Forced import will not validate that XML timestamp is newer
+		; but still needs to parse the XML so we can get the latest timestamp
+		; (could alternatively be read from repository after import, but 
+		;  using this method as it might perform faster in case of remote database)
+		vStatus = $Importer$-&gt;importFile(pFilePath, pForce, vMessage)
+		if (vStatus = &lt;OK&gt;)
+			$IMPORT_COUNT$ += 1
+			$status = $importer$-&gt;getLatestTimestamp(vRepoStamp)
+			$instanceparent-&gt;LogImport(pFilePath, vRepoStamp, vFileStamp, vMessage)
+		endif
+		if (vMessage != "")
+			call lpAddMessage(vMessage, $MESSAGES$)
+			vMessage = ""
+		endif
+
+	endif
+
+	return &lt;OK&gt;
+
+end ;lpImportFile
 </DAT>
 <DAT name="FORMPIC" xml:space='preserve'>
  &uFRM;TYP=E&uSEP;NAM=DUMMY.DUMMY&uSEP;WID=20&uSEP;HEI=1&uSEP;HOC=20&uSEP;VOC=1&uFRM;</DAT>
@@ -617,12 +664,12 @@ params
 	String		pMessages			: INOUT
 endparams
 	
-variables
-	String		vReturnInfo
-	Boolean	vNeedsLock
-	String		vFileProperties
-	String		vFileAttributes
-endvariables
+;variables
+;	String		vReturnInfo
+;	Boolean	vNeedsLock
+;	String		vFileProperties
+;	String		vFileAttributes
+;endvariables
 	
 	return &lt;OK&gt;
 	
@@ -639,21 +686,32 @@ params
 	Boolean pIsConflict : OUT   ; True returned if conflict
 	$MESSAGES$          : INOUT ; Messages
 endparams
-variables
-	datetime vDictTS ; Uniface dictionary timestamp
-	numeric  vImportCount
-	string   vContent
-	string   vFilePath
-	string   vSubDir
-	string   vFolderContents
-endvariables
+;variables
+;	datetime vDictTS ; Uniface dictionary timestamp
+;	numeric  vImportCount
+;	string   vContent
+;	string   vFilePath
+;	string   vSubDir
+;	string   vFolderContents
+;endvariables
 
 	; Import until we find a versioned file that does not need importing
 	pIsConflict = 0
 	$IMPORT_COUNT$ = 0
+	$NOCHECK$ = 0
 
-	; Process folder tree recursively
-	call lpImportFolder($BASEDIR$, $BASEDIR$, pForce)
+	;Check that pDir is a directory
+	if($lfileexists($BASEDIR$) = 2)
+		$ASKMESS_ANSWERS$ = "Yes,No,Yes to All,No to All"
+		; Process folder tree recursively
+		call lpImportFolder($BASEDIR$, $BASEDIR$, pForce, "100")
+	else
+		$ASKMESS_ANSWERS$ = "Yes,No"
+		; Process import file
+		call lpImportFile($BASEDIR$, pForce)
+	endif
+
+	$NOCHECK$ = 0
 
 	return $IMPORT_COUNT$
 
@@ -670,13 +728,13 @@ params
 	string pMessages   : INOUT
 endparams
 
-variables
-	String		vItemStatus
-	Boolean	vHasModifications
-	String		vDate
-	Boolean	vIsLocked
-	numeric	vStatus
-endvariables
+;variables
+;	String		vItemStatus
+;	Boolean	vHasModifications
+;	String		vDate
+;	Boolean	vIsLocked
+;	numeric	vStatus
+;endvariables
 
 	putitem/id pReturnInfo, "STATUS",					""
 	putitem/id pReturnInfo, "DATE",					"" ;COMMIT_TIME.WC_STATUS
@@ -1348,6 +1406,12 @@ end ; getWCInfo
  pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\C3,0,0,0,,0,0,0,," />
 </DSC>
 <OCC>
+<DAT name="UTIMESTAMP">2017-04-07T13:22:20.00</DAT>
+<DAT name="U_FORMLIB">FIL_WRAPPER</DAT>
+<DAT name="U_NAME">ASKMESS_ANSWERS</DAT>
+<DAT name="U_DTYP">S</DAT>
+</OCC>
+<OCC>
 <DAT name="UTIMESTAMP">2015-07-01T16:59:39.00</DAT>
 <DAT name="U_FORMLIB">FIL_WRAPPER</DAT>
 <DAT name="U_NAME">BASEDIR</DAT>
@@ -1379,6 +1443,12 @@ end ; getWCInfo
 <DAT name="U_FORMLIB">FIL_WRAPPER</DAT>
 <DAT name="U_NAME">MESSAGES</DAT>
 <DAT name="U_DTYP">S</DAT>
+</OCC>
+<OCC>
+<DAT name="UTIMESTAMP">2017-04-06T12:37:19.00</DAT>
+<DAT name="U_FORMLIB">FIL_WRAPPER</DAT>
+<DAT name="U_NAME">NOCHECK</DAT>
+<DAT name="U_DTYP">B</DAT>
 </OCC>
 <OCC>
 <DAT name="UTIMESTAMP">2015-06-26T17:17:55.00</DAT>

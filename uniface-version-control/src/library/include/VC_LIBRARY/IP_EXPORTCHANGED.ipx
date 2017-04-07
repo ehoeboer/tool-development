@@ -51,7 +51,7 @@
  pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\C1,0,0,0,,0,0,0,," />
 </DSC>
 <OCC>
-<DAT name="UTIMESTAMP">2016-05-18T09:37:39.00</DAT>
+<DAT name="UTIMESTAMP">2017-04-07T13:55:07.00</DAT>
 <DAT name="USUB">I</DAT>
 <DAT name="UVAR">VC_LIBRARY</DAT>
 <DAT name="ULABEL">IP_EXPORTCHANGED</DAT>
@@ -73,6 +73,7 @@ variables
 	String vTypeList
 	String vObjectType
 	String vAdditionalParams
+	numeric vCount, vIndex
 endvariables
 
 	putitem/id vAdditionalParams, "FORCE_EXPORT", 0
@@ -84,15 +85,20 @@ endvariables
 
 	;Get a list of the types we need to process and loop through calling
 	;lpExportChanged for each type.
-	vTypeList = "&lt;DSP&gt;&uSEP;&lt;USP&gt;&uSEP;&lt;FORM&gt;&uSEP;&lt;SESSION_SVC&gt;&uSEP;&lt;SERVICE&gt;&uSEP;&lt;REPORT&gt;&uSEP;&lt;ENT_SVC&gt;&uSEP;&lt;PROC&gt;&uSEP;&lt;CONSTANT&gt;&uSEP;&lt;GLYPH&gt;&uSEP;&lt;INCLUDE&gt;&uSEP;&lt;MENU&gt;&uSEP;&lt;MESSAGE&gt;&uSEP;&lt;LIBRARY&gt;&uSEP;&lt;MODEL&gt;&uSEP;&lt;STARTUPSHELL&gt;&uSEP;&lt;FIELD_TEMPLATE&gt;&uSEP;&lt;VARIABLES&gt;&uSEP;&lt;TRANSLATION_TABLE&gt;&uSEP;&lt;PANEL&gt;&uSEP;&lt;DEVICE_TABLE&gt;&uSEP;&lt;FORMAT&gt;&uSEP;&lt;FIELD_SYNTAX&gt;&uSEP;&lt;
-&uBS;FIELD_INTERFACE&gt;&uSEP;&lt;FIELD_LAYOUT&gt;&uSEP;&lt;ENTITY_INTERFACE&gt;"
-	getitem vObjectType, vTypeList, -1
-	while($status &gt; 0)
-
+	;;vTypeList = "&lt;DSP&gt;&uSEP;&lt;USP&gt;&uSEP;&lt;FORM&gt;&uSEP;&lt;SESSION_SVC&gt;&uSEP;&lt;SERVICE&gt;&uSEP;&lt;REPORT&gt;&uSEP;&lt;ENT_SVC&gt;&uSEP;&lt;PROC&gt;&uSEP;&lt;CONSTANT&gt;&uSEP;&lt;GLYPH&gt;&uSEP;&lt;INCLUDE&gt;&uSEP;&lt;MENU&gt;&uSEP;&lt;MESSAGE&gt;&uSEP;&lt;LIBRARY&gt;&uSEP;&lt;MODEL&gt;&uSEP;&lt;STARTUPSHELL&gt;&uSEP;&lt;FIELD_TEMPLATE&gt;&uSEP;&lt;VARIABLES&gt;&uSEP;&lt;TRANSLATION_TABLE&gt;&uSEP;&lt;PANEL&gt;&uSEP;&lt;DEVICE_TABLE&gt;&uSEP;&lt;FORMAT&gt;&uSEP;&lt;FIELD_SYNTAX&gt;&uSEP;
+&uBS;&lt;FIELD_INTERFACE&gt;&uSEP;&lt;FIELD_LAYOUT&gt;&uSEP;&lt;ENTITY_INTERFACE&gt;"
+	vTypeList = "&lt;ENTITY_INTERFACE&gt;&uSEP;&lt;FIELD_LAYOUT&gt;&uSEP;&lt;FIELD_INTERFACE&gt;&uSEP;&lt;FIELD_SYNTAX&gt;&uSEP;&lt;FORMAT&gt;&uSEP;&lt;DEVICE_TABLE&gt;&uSEP;&lt;PANEL&gt;&uSEP;&lt;TRANSLATION_TABLE&gt;&uSEP;&lt;VARIABLES&gt;&uSEP;&lt;FIELD_TEMPLATE&gt;&uSEP;&lt;STARTUPSHELL&gt;&uSEP;&lt;MODEL&gt;&uSEP;&lt;LIBRARY&gt;&uSEP;&lt;MESSAGE&gt;&uSEP;&lt;MENU&gt;&uSEP;&lt;INCLUDE&gt;&uSEP;&lt;GLYPH&gt;&uSEP;&lt;CONSTANT&gt;&uSEP;&lt;PROC&gt;&uSEP;&lt;ENT_SVC&gt;&uSEP;&lt;REPORT&gt;&uSEP;&lt;SERVICE&gt;
+&uBS;&uSEP;&lt;SESSION_SVC&gt;&uSEP;&lt;FORM&gt;&uSEP;&lt;USP&gt;&uSEP;&lt;DSP&gt;"
+	vCount = $itemcount(vTypeList) + 1
+	;;getitem vObjectType, vTypeList, -1
+	;;while($status &gt; 0)
+	forlist vObjectType, vIndex in vTypeList
 		call lpExportObject(vObjectType, "", vAdditionalParams)
-		delitem vTypeList, -1
-		getitem vObjectType, vTypeList, -1
-	endwhile
+		message/hint "&gt;&gt;&gt; [Exporting] Processed %%(vCount/vIndex)[round]%%% % - [%%vObjectType]"
+		;;delitem vTypeList, -1
+		;;getitem vObjectType, vTypeList, -1
+	;;endwhile
+	endfor
 
 	; Default is to export Uniface signatures, but we can choose not to export them
 	; if they only have a Uniface Implementation
@@ -100,6 +106,7 @@ endvariables
 		putitem/id vAdditionalParams, "EXPORT_UF_SIG", 0
 	endif
 	call lpExportObject("&lt;SIGNATURE&gt;", "", vAdditionalParams)
+	message/hint "&gt;&gt;&gt; [Exporting] Processed 100 %"
 
 	return &lt;OK&gt;
 

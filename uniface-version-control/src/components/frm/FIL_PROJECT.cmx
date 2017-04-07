@@ -167,8 +167,8 @@
  pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\F1,0,0,0,,0,0,0,," />
 </DSC>
 <OCC>
-<DAT name="UTIMESTAMP">2017-03-28T13:06:36.00</DAT>
-<DAT name="UCOMPSTAMP">2017-03-28T15:06:36.00</DAT>
+<DAT name="UTIMESTAMP">2017-04-06T15:20:58.00</DAT>
+<DAT name="UCOMPSTAMP">2017-04-07T15:55:12.00</DAT>
 <DAT name="ULABEL">FIL_PROJECT</DAT>
 <DAT name="UDESCR" xml:space='preserve'>Filesync Project Screen</DAT>
 <DAT name="WVPOS">3</DAT>
@@ -1403,7 +1403,7 @@ endvariables
 
 	;Reimport all the source under vPath, as it may have changed
 	message/nobeep "Importing updated source..."
-	$vcMain$-&gt;import(vPath, $BaseDir$, CHK_FULLSYNC.BUTTONS, vMessages)
+	$vcMain$-&gt;import(vPath, 0, CHK_FULLSYNC.BUTTONS, vMessages)
 
 	call lpUpdateAllNodeTypes()
 	message/nobeep "Done."
@@ -1487,9 +1487,10 @@ endvariables
 	;Save the currently selected node
 	vSelectionPath = lpBuildSelectionPath(FILE_TREE.DUMMY)
 
-	call lpDoMessages("performing import...")
-	$vcMain$-&gt;import(vPath, $BaseDir$, CHK_FULLSYNC.BUTTONS, vMessages)
-	
+	call lpDoMessages("Performing import...")
+	$status = $vcMain$-&gt;import(vPath, 1, CHK_FULLSYNC.BUTTONS, vMessages)
+	#include VC_LIBRARY:IP_POSTCALL_PRES
+
 	call lpBuildTree()
 	call lpSetFieldSyntax()
 	call lpDoMessages("Import done")
@@ -1600,6 +1601,18 @@ endvariables
 	return &lt;OK&gt;
 
 end ;optionStatus
+
+;--------------------------------------------------------------------
+partner operation GetNodePath
+;--------------------------------------------------------------------
+params
+	String  pPath : OUT
+endparams
+
+	call LPGETNODEPATH(FILE_TREE.DUMMY, pPath)
+	return &lt;OK&gt;
+
+end ;GetNodePath
 
 ;-------------------------------------------------------------------------------
 ; Show message in output box
