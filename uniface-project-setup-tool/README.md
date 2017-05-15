@@ -27,7 +27,7 @@ Information about the developer's local environment is detected from the Uniface
  * Unzip the download into your local Uniface packages directory. This is where you'll keep all your Uniface tooling. These instructions assume this folder is C:\\UnifacePackages\\
  * You should now have a batch file called ProjectSetup.bat in C:\\UnifacePackages\\ along with a folder called ProjectSetup.
  * So that we can invoke the batch file from any where add C:\\UnifacePackages\\ to your path
- * This batch file and the shortcuts that the tool create rely on an environment variable USYS96 to tell them where Uniface is installed. Create this variable now. For a default Uniface installation this might be C:\\Program Files (x86)\\Uniface\\Uniface 9.6.01\\
+ * This batch file and the shortcuts that the tool create rely on an environment variable USYS97 to tell them where Uniface is installed. Create this variable now. For a default Uniface installation this might be C:\\Program Files (x86)\\Uniface\\Uniface 9.7.01\\
  * The tool can now be used by opening a command prompt in the root of the Uniface project you wish to setup and typing "projectsetup"
 
 ## Usage ##
