@@ -1,0 +1,10 @@
+#file .\asn\dbms.asn
+
+[SETTINGS]
+$search_resources  resources_only
+$resources_output  .\bin
+$nls_internal_time UTC
+
+
+[RESOURCES]
+.\bin

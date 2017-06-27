@@ -1,0 +1,22 @@
+#file .\asn\include.asn
+
+[SETTINGS]
+$putmess_logfile   .\log\sigwiz_%p.log
+
+$resources_output  .\bin_sigwiz
+
+[ENTITIES]
+ULANA.DICT		$DBMS_DEF:ULANA.*
+USIMPL.DICT		$DBMS_DEF:USIMPL.*
+USIOPER.DICT	$DBMS_DEF:USIOPER.*
+USIPARM.DICT	$DBMS_DEF:USIPARM.*
+USOPER.DICT		$DBMS_DEF:USOPER.*
+USPARM.DICT		$DBMS_DEF:USPARM.*
+USSPEC.DICT		$DBMS_DEF:USSPEC.*
+USSPCKW.DICT	$DBMS_DEF:USSPCKW.*
+
+[LOGICALS]
+SIGWIZ.CFG = .\adm\sigwiz.cfg
+
+[USER_3GL]
+irtl.dll

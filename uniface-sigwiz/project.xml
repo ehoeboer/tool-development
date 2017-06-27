@@ -6,17 +6,15 @@
 	-->
 	<templates>
 		<template from=".\asn\templates\idf.asn.template" to=".\asn\idf.asn" />
+		<template from=".\asn\templates\sigwiz.asn.template" to=".\asn\sigwiz.asn" />
 		<template from=".\asn\templates\setup.asn.template" to=".\asn\setup.asn" />
-				<template from=".\asn\templates\include.asn.template" to=".\asn\include.asn" />
-				<template from=".\asn\templates\dbms.asn.template" to=".\asn\dbms.asn" />
+		<template from=".\asn\templates\include.asn.template" to=".\asn\include.asn" />
+		<template from=".\asn\templates\dbms.asn.template" to=".\asn\dbms.asn" />
+		<template from=".\adm\templates\sigwiz.cfg.template" to=".\adm\sigwiz.cfg" />
 	</templates>
 
 	<!-- Data files to import into the DEF database -->
 	
-	<data-import-files>
-		<data-import-file location=".\exports\*.xml" />
-	</data-import-files>
-
 	<!--
 		A list of folders that the setup tool should create. These would usually
 		be folders that the project needs but don't make sense to commit to
@@ -24,6 +22,7 @@
 	-->
 	<folders>
 		<folder name=".\bin" />
+		<folder name=".\bin_sigwiz" />
 		<folder name=".\dbms" />
 		<folder name=".\log" />
 		<folder name=".\lst" />
@@ -33,12 +32,12 @@
 
 	<shortcuts>
 		<shortcut name='SigWiz - Development'
-			target='%USYS96%\common\bin\idf.exe'
-			args='/adm="%USYS96%\uniface\adm\" /asn=./asn/idf.asn ?' />
+			target='%USYS97%\common\bin\idf.exe'
+			args='/adm="%USYS97%\uniface\adm\" /asn=./asn/idf.asn ?' />
 
     <shortcut name='SigWiz - Runtime'
-              target='%USYS96%\common\bin\uniface.exe'
-              args='/adm="%USYS96%\uniface\adm" /asn=./asn/idf.asn sigwiz' />
+              target='%USYS97%\common\bin\uniface.exe'
+              args='/adm="%USYS97%\uniface\adm" /asn=./asn/sigwiz.asn ? sigwiz' />
     </shortcuts>
 
     <do-import>1</do-import>

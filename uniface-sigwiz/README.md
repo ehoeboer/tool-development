@@ -33,6 +33,10 @@ To set up the project for development follow the steps above to create uOutlook 
  * Now that the additional menu is enabled we can go to Utilities->Additional->Settings and using the browse button next to "Uniface Source Directory" select ./src. This points the tool at our source code.
  * Everything is now setup and we can go to Utilities->Additional->Project to verify that everything is setup correctly. Visiting this screen will sync your Uniface repository with the src folder. If it's working correctly then you should see the contents of this folder in the tree view.
 
+## Sample signatures ##
+
+Under exports you can find two export files with some sample C and COM call-out signatures. You can import them into SigWiz from the Tools->Import menu.
+
 ## Contributors ##
 * Daniel Iseli
 * George Mockford
