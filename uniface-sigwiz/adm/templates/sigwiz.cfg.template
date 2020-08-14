@@ -1,7 +1,0 @@
-[UPATH]
-COM=COM Call-Out
-S3C=C Call-Out
-;ALL=ALL
-
-[SETTINGS]
-MAX_HITS=50
